@@ -1,0 +1,491 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9CF17A4418431F7F007FF8D9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF17A4318431F7F007FF8D9 /* Foundation.framework */; };
+		9CF17A4618431F7F007FF8D9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF17A4518431F7F007FF8D9 /* CoreGraphics.framework */; };
+		9CF17A4818431F7F007FF8D9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF17A4718431F7F007FF8D9 /* UIKit.framework */; };
+		9CF17A4E18431F7F007FF8D9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9CF17A4C18431F7F007FF8D9 /* InfoPlist.strings */; };
+		9CF17A5018431F7F007FF8D9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF17A4F18431F7F007FF8D9 /* main.m */; };
+		9CF17A5418431F7F007FF8D9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF17A5318431F7F007FF8D9 /* AppDelegate.m */; };
+		9CF17A5718431F7F007FF8D9 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CF17A5518431F7F007FF8D9 /* Main_iPhone.storyboard */; };
+		9CF17A5A18431F7F007FF8D9 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CF17A5818431F7F007FF8D9 /* Main_iPad.storyboard */; };
+		9CF17A5D18431F7F007FF8D9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF17A5C18431F7F007FF8D9 /* ViewController.m */; };
+		9CF17A5F18431F7F007FF8D9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CF17A5E18431F7F007FF8D9 /* Images.xcassets */; };
+		9CF17A6618431F80007FF8D9 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF17A6518431F80007FF8D9 /* XCTest.framework */; };
+		9CF17A6718431F80007FF8D9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF17A4318431F7F007FF8D9 /* Foundation.framework */; };
+		9CF17A6818431F80007FF8D9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF17A4718431F7F007FF8D9 /* UIKit.framework */; };
+		9CF17A7018431F80007FF8D9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9CF17A6E18431F80007FF8D9 /* InfoPlist.strings */; };
+		9CF17A7218431F80007FF8D9 /* iSinooilTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF17A7118431F80007FF8D9 /* iSinooilTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9CF17A6918431F80007FF8D9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9CF17A3818431F7F007FF8D9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9CF17A3F18431F7F007FF8D9;
+			remoteInfo = iSinooil;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9CF17A4018431F7F007FF8D9 /* iSinooil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSinooil.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CF17A4318431F7F007FF8D9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9CF17A4518431F7F007FF8D9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9CF17A4718431F7F007FF8D9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9CF17A4B18431F7F007FF8D9 /* iSinooil-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iSinooil-Info.plist"; sourceTree = "<group>"; };
+		9CF17A4D18431F7F007FF8D9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9CF17A4F18431F7F007FF8D9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9CF17A5118431F7F007FF8D9 /* iSinooil-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iSinooil-Prefix.pch"; sourceTree = "<group>"; };
+		9CF17A5218431F7F007FF8D9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9CF17A5318431F7F007FF8D9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9CF17A5618431F7F007FF8D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		9CF17A5918431F7F007FF8D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		9CF17A5B18431F7F007FF8D9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		9CF17A5C18431F7F007FF8D9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9CF17A5E18431F7F007FF8D9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9CF17A6418431F80007FF8D9 /* iSinooilTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iSinooilTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CF17A6518431F80007FF8D9 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		9CF17A6D18431F80007FF8D9 /* iSinooilTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iSinooilTests-Info.plist"; sourceTree = "<group>"; };
+		9CF17A6F18431F80007FF8D9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9CF17A7118431F80007FF8D9 /* iSinooilTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iSinooilTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9CF17A3D18431F7F007FF8D9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CF17A4618431F7F007FF8D9 /* CoreGraphics.framework in Frameworks */,
+				9CF17A4818431F7F007FF8D9 /* UIKit.framework in Frameworks */,
+				9CF17A4418431F7F007FF8D9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CF17A6118431F80007FF8D9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CF17A6618431F80007FF8D9 /* XCTest.framework in Frameworks */,
+				9CF17A6818431F80007FF8D9 /* UIKit.framework in Frameworks */,
+				9CF17A6718431F80007FF8D9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9CF17A3718431F7F007FF8D9 = {
+			isa = PBXGroup;
+			children = (
+				9CF17A4918431F7F007FF8D9 /* iSinooil */,
+				9CF17A6B18431F80007FF8D9 /* iSinooilTests */,
+				9CF17A4218431F7F007FF8D9 /* Frameworks */,
+				9CF17A4118431F7F007FF8D9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9CF17A4118431F7F007FF8D9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9CF17A4018431F7F007FF8D9 /* iSinooil.app */,
+				9CF17A6418431F80007FF8D9 /* iSinooilTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9CF17A4218431F7F007FF8D9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9CF17A4318431F7F007FF8D9 /* Foundation.framework */,
+				9CF17A4518431F7F007FF8D9 /* CoreGraphics.framework */,
+				9CF17A4718431F7F007FF8D9 /* UIKit.framework */,
+				9CF17A6518431F80007FF8D9 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9CF17A4918431F7F007FF8D9 /* iSinooil */ = {
+			isa = PBXGroup;
+			children = (
+				9CF17A5218431F7F007FF8D9 /* AppDelegate.h */,
+				9CF17A5318431F7F007FF8D9 /* AppDelegate.m */,
+				9CF17A5518431F7F007FF8D9 /* Main_iPhone.storyboard */,
+				9CF17A5818431F7F007FF8D9 /* Main_iPad.storyboard */,
+				9CF17A5B18431F7F007FF8D9 /* ViewController.h */,
+				9CF17A5C18431F7F007FF8D9 /* ViewController.m */,
+				9CF17A5E18431F7F007FF8D9 /* Images.xcassets */,
+				9CF17A4A18431F7F007FF8D9 /* Supporting Files */,
+			);
+			path = iSinooil;
+			sourceTree = "<group>";
+		};
+		9CF17A4A18431F7F007FF8D9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9CF17A4B18431F7F007FF8D9 /* iSinooil-Info.plist */,
+				9CF17A4C18431F7F007FF8D9 /* InfoPlist.strings */,
+				9CF17A4F18431F7F007FF8D9 /* main.m */,
+				9CF17A5118431F7F007FF8D9 /* iSinooil-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9CF17A6B18431F80007FF8D9 /* iSinooilTests */ = {
+			isa = PBXGroup;
+			children = (
+				9CF17A7118431F80007FF8D9 /* iSinooilTests.m */,
+				9CF17A6C18431F80007FF8D9 /* Supporting Files */,
+			);
+			path = iSinooilTests;
+			sourceTree = "<group>";
+		};
+		9CF17A6C18431F80007FF8D9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9CF17A6D18431F80007FF8D9 /* iSinooilTests-Info.plist */,
+				9CF17A6E18431F80007FF8D9 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9CF17A3F18431F7F007FF8D9 /* iSinooil */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9CF17A7518431F80007FF8D9 /* Build configuration list for PBXNativeTarget "iSinooil" */;
+			buildPhases = (
+				9CF17A3C18431F7F007FF8D9 /* Sources */,
+				9CF17A3D18431F7F007FF8D9 /* Frameworks */,
+				9CF17A3E18431F7F007FF8D9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iSinooil;
+			productName = iSinooil;
+			productReference = 9CF17A4018431F7F007FF8D9 /* iSinooil.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9CF17A6318431F80007FF8D9 /* iSinooilTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9CF17A7818431F80007FF8D9 /* Build configuration list for PBXNativeTarget "iSinooilTests" */;
+			buildPhases = (
+				9CF17A6018431F80007FF8D9 /* Sources */,
+				9CF17A6118431F80007FF8D9 /* Frameworks */,
+				9CF17A6218431F80007FF8D9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9CF17A6A18431F80007FF8D9 /* PBXTargetDependency */,
+			);
+			name = iSinooilTests;
+			productName = iSinooilTests;
+			productReference = 9CF17A6418431F80007FF8D9 /* iSinooilTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9CF17A3818431F7F007FF8D9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = Zul;
+				TargetAttributes = {
+					9CF17A6318431F80007FF8D9 = {
+						TestTargetID = 9CF17A3F18431F7F007FF8D9;
+					};
+				};
+			};
+			buildConfigurationList = 9CF17A3B18431F7F007FF8D9 /* Build configuration list for PBXProject "iSinooil" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9CF17A3718431F7F007FF8D9;
+			productRefGroup = 9CF17A4118431F7F007FF8D9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9CF17A3F18431F7F007FF8D9 /* iSinooil */,
+				9CF17A6318431F80007FF8D9 /* iSinooilTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9CF17A3E18431F7F007FF8D9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CF17A5A18431F7F007FF8D9 /* Main_iPad.storyboard in Resources */,
+				9CF17A5F18431F7F007FF8D9 /* Images.xcassets in Resources */,
+				9CF17A5718431F7F007FF8D9 /* Main_iPhone.storyboard in Resources */,
+				9CF17A4E18431F7F007FF8D9 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CF17A6218431F80007FF8D9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CF17A7018431F80007FF8D9 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9CF17A3C18431F7F007FF8D9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CF17A5D18431F7F007FF8D9 /* ViewController.m in Sources */,
+				9CF17A5418431F7F007FF8D9 /* AppDelegate.m in Sources */,
+				9CF17A5018431F7F007FF8D9 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CF17A6018431F80007FF8D9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CF17A7218431F80007FF8D9 /* iSinooilTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9CF17A6A18431F80007FF8D9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9CF17A3F18431F7F007FF8D9 /* iSinooil */;
+			targetProxy = 9CF17A6918431F80007FF8D9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9CF17A4C18431F7F007FF8D9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9CF17A4D18431F7F007FF8D9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		9CF17A5518431F7F007FF8D9 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9CF17A5618431F7F007FF8D9 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		9CF17A5818431F7F007FF8D9 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9CF17A5918431F7F007FF8D9 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		9CF17A6E18431F80007FF8D9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9CF17A6F18431F80007FF8D9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9CF17A7318431F80007FF8D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9CF17A7418431F80007FF8D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9CF17A7618431F80007FF8D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iSinooil/iSinooil-Prefix.pch";
+				INFOPLIST_FILE = "iSinooil/iSinooil-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		9CF17A7718431F80007FF8D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iSinooil/iSinooil-Prefix.pch";
+				INFOPLIST_FILE = "iSinooil/iSinooil-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		9CF17A7918431F80007FF8D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iSinooil.app/iSinooil";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iSinooil/iSinooil-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "iSinooilTests/iSinooilTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		9CF17A7A18431F80007FF8D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iSinooil.app/iSinooil";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iSinooil/iSinooil-Prefix.pch";
+				INFOPLIST_FILE = "iSinooilTests/iSinooilTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9CF17A3B18431F7F007FF8D9 /* Build configuration list for PBXProject "iSinooil" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9CF17A7318431F80007FF8D9 /* Debug */,
+				9CF17A7418431F80007FF8D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9CF17A7518431F80007FF8D9 /* Build configuration list for PBXNativeTarget "iSinooil" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9CF17A7618431F80007FF8D9 /* Debug */,
+				9CF17A7718431F80007FF8D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9CF17A7818431F80007FF8D9 /* Build configuration list for PBXNativeTarget "iSinooilTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9CF17A7918431F80007FF8D9 /* Debug */,
+				9CF17A7A18431F80007FF8D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9CF17A3818431F7F007FF8D9 /* Project object */;
+}
