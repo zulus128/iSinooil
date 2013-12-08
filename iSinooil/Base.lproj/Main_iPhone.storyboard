@@ -1,23 +1,123 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4451" systemVersion="13A461" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ln3-ZL-TUP">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3676"/>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Itj-QG-BEi"/>
+                        <viewControllerLayoutGuide type="bottom" id="WMV-RJ-M4T"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pcl-Q9-FcC" customClass="ScrollView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="main_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="LPS-pH-dyO">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1835"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3hV-8w-Lbg">
+                                        <rect key="frame" x="8" y="58" width="305" height="120"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="6za-FL-mBP"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="delegate" destination="vXZ-lx-hvc" id="xWW-cd-Kri"/>
+                                            <outletCollection property="gestureRecognizers" destination="SlL-vB-hj0" appends="YES" id="9AR-Ef-UAV"/>
+                                        </connections>
+                                    </mapView>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="AlQ-pB-gTk">
+                                        <rect key="frame" x="8" y="0.0" width="305" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="3hV-8w-Lbg" firstAttribute="top" secondItem="AlQ-pB-gTk" secondAttribute="bottom" constant="8" id="51d-tO-9bF"/>
+                                    <constraint firstAttribute="centerX" secondItem="3hV-8w-Lbg" secondAttribute="centerX" id="C3l-Sb-mmJ"/>
+                                    <constraint firstItem="LPS-pH-dyO" firstAttribute="leading" secondItem="pcl-Q9-FcC" secondAttribute="leading" id="D10-Iw-eF0"/>
+                                    <constraint firstItem="AlQ-pB-gTk" firstAttribute="leading" secondItem="pcl-Q9-FcC" secondAttribute="leading" constant="8" id="FdL-Hu-Gpe"/>
+                                    <constraint firstAttribute="trailing" secondItem="LPS-pH-dyO" secondAttribute="trailing" id="GDL-nD-TLk"/>
+                                    <constraint firstItem="LPS-pH-dyO" firstAttribute="top" secondItem="pcl-Q9-FcC" secondAttribute="top" id="VcF-cf-5uG"/>
+                                    <constraint firstAttribute="centerX" secondItem="LPS-pH-dyO" secondAttribute="centerX" id="ncZ-4n-1Um"/>
+                                    <constraint firstAttribute="bottom" secondItem="LPS-pH-dyO" secondAttribute="bottom" id="raW-mV-yzS"/>
+                                    <constraint firstItem="3hV-8w-Lbg" firstAttribute="leading" secondItem="pcl-Q9-FcC" secondAttribute="leading" constant="8" id="tCm-kj-tpu"/>
+                                    <constraint firstItem="AlQ-pB-gTk" firstAttribute="top" secondItem="pcl-Q9-FcC" secondAttribute="top" id="ujW-b5-1Te"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="pcl-Q9-FcC" secondAttribute="bottom" id="11L-eg-SUg"/>
+                            <constraint firstItem="pcl-Q9-FcC" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="G3F-Ud-6sq"/>
+                            <constraint firstItem="pcl-Q9-FcC" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="Tic-f6-jq2"/>
+                            <constraint firstAttribute="trailing" secondItem="pcl-Q9-FcC" secondAttribute="trailing" id="oMg-dF-e7n"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="gnr-Qz-0q6"/>
+                    <connections>
+                        <outlet property="mapView" destination="3hV-8w-Lbg" id="89i-1E-JG2"/>
+                        <outlet property="vertScroll" destination="pcl-Q9-FcC" id="ff5-Uf-pgJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="SlL-vB-hj0">
+                    <connections>
+                        <segue destination="ehy-aB-IHd" kind="push" id="SbP-2V-rpu"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="3H0-GW-RjN"/>
+            </objects>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="597-wg-w3i">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="ln3-ZL-TUP" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hEr-Y0-4zE">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="kpo-mf-x4k"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2qe-1P-VA1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-153" y="9"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="Bzs-Ck-3QR">
+            <objects>
+                <viewController id="ehy-aB-IHd" customClass="MapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="L6x-VD-mv3"/>
+                        <viewControllerLayoutGuide type="bottom" id="UQs-PY-ebv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Qsz-3i-kc0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="1Os-ZV-yy0"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="laS-j2-iWv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1178" y="54"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo.png" width="305" height="50"/>
+        <image name="main_bg.png" width="320" height="917"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
