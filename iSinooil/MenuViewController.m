@@ -34,8 +34,8 @@
     [self.navigationController setNavigationBarHidden:YES animated:animated];
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
@@ -71,16 +71,22 @@
     NSLog(@"news");
 }
 
-- (void) goLeft:(int) tag {
+- (void) makeInvisibleExcludeTag:(int)tag {
 
     for(UIViewController* vc in self.childViewControllers) {
-        
-        if(vc.view.tag != tag)
-            vc.view.hidden = YES;
+
+        vc.view.hidden = (vc.view.tag != tag);
     }
+
+}
+
+- (void) goLeft:(int) tag {
+
+
+    [self makeInvisibleExcludeTag:tag];
+    
     UIView* view = [self.view viewWithTag:tag];
     CGRect fr = self.view.frame;
-    view.hidden = NO;
     view.frame = CGRectMake(fr.size.width - deltaX, fr.origin.y, fr.size.width, fr.size.height);
     [UIView animateWithDuration:anim_delay delay:0.0 options:UIViewAnimationOptionCurveEaseIn
                      animations:^{
@@ -104,6 +110,16 @@
     NSLog(@"map");
 
     [self goLeft:MAPS_VIEW_TAG];
+}
+
+- (void) showMaps {
+    
+    CGRect fr = self.view.frame;
+    UIView* view = [self.view viewWithTag:MAPS_VIEW_TAG];
+    view.frame = CGRectMake(0, fr.origin.y, fr.size.width, fr.size.height);
+
+    [self makeInvisibleExcludeTag:MAPS_VIEW_TAG];
+
 }
 
 @end

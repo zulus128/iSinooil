@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "Common.h"
+#import "MenuViewController.h"
 
 @interface MainViewController ()
 
@@ -99,6 +100,13 @@
                      }
                      completion:^(BOOL finished) {
                      }];
+}
+
+- (IBAction)tapMap:(id)sender {
+
+    NSLog(@"tapMap");
+    
+    [((MenuViewController*)self.parentViewController) showMaps];
 }
 
 @end

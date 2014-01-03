@@ -13,12 +13,13 @@
 #define VERT_SIZE 1835
 
 @interface MainViewController : UIViewController
+
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UIScrollView *vertScroll;
 @property (weak, nonatomic) IBOutlet UIView *topView;
 - (IBAction)menu:(id)sender;
 @property (weak, nonatomic) IBOutlet UIImageView *backgr;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *trailForBg;
 @property (weak, nonatomic) IBOutlet UIImageView *logo;
+- (IBAction)tapMap:(id)sender;
 
 @end
