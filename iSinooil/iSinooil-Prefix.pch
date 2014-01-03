@@ -14,3 +14,8 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 #endif
+
+#define MAIN_VIEW_TAG 1234
+#define MAPS_VIEW_TAG 1235
+#define deltaX 50
+#define anim_delay 0.2f

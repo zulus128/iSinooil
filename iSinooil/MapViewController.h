@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
 @interface MapViewController : UIViewController
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+- (IBAction)menu:(id)sender;
+@property (weak, nonatomic) IBOutlet UIView *slideView;
+@property (weak, nonatomic) IBOutlet UIView *topView;
 
 @end
