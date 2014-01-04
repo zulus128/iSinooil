@@ -7,6 +7,7 @@
 //
 
 #import "MenuViewController.h"
+#import "Common.h"
 
 @interface MenuViewController ()
 
@@ -39,6 +40,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    [Common instance];
+    
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)?
                                 @"Main_iPad":@"Main_iPhone" bundle:nil];
     UIViewController *viewController =  [storyboard instantiateViewControllerWithIdentifier:@"mainController"];
@@ -64,11 +67,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (IBAction)newsPressed:(id)sender {
-    
-    NSLog(@"news");
 }
 
 - (void) makeInvisibleExcludeTag:(int)tag {
@@ -100,16 +98,21 @@
 
 - (IBAction)mainPressed:(id)sender {
     
-    NSLog(@"main");
+//    NSLog(@"main");
 
     [self goLeft:MAIN_VIEW_TAG];
 }
 
 - (IBAction)mapsPressed:(id)sender {
     
-    NSLog(@"map");
+//    NSLog(@"map");
 
     [self goLeft:MAPS_VIEW_TAG];
+}
+
+- (IBAction)newsPressed:(id)sender {
+    
+    NSLog(@"news");
 }
 
 - (void) showMaps {

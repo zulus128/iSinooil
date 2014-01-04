@@ -26,6 +26,9 @@
 		DD46151818751E88008FCD16 /* azs.json in Resources */ = {isa = PBXBuildFile; fileRef = DD46151418751E88008FCD16 /* azs.json */; };
 		DD46151918751E88008FCD16 /* fuel.json in Resources */ = {isa = PBXBuildFile; fileRef = DD46151518751E88008FCD16 /* fuel.json */; };
 		DD46151A18751E88008FCD16 /* news.json in Resources */ = {isa = PBXBuildFile; fileRef = DD46151618751E88008FCD16 /* news.json */; };
+		DDA70D211876DA7200C89F86 /* MapPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA70D201876DA7200C89F86 /* MapPoint.m */; };
+		DDA70D241876E0DD00C89F86 /* MapSource.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA70D231876E0DD00C89F86 /* MapSource.m */; };
+		DDA70D271876EA4400C89F86 /* StationAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA70D261876EA4400C89F86 /* StationAnnotationView.m */; };
 		DDC8734D1875301A00393876 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DDC8734F1875301A00393876 /* Localizable.strings */; };
 		DDC8735318754F4200393876 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC8735218754F4200393876 /* MenuViewController.m */; };
 		DDC873561875ADF600393876 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC873551875ADF600393876 /* Common.m */; };
@@ -157,16 +160,22 @@
 		DD46151418751E88008FCD16 /* azs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = azs.json; sourceTree = "<group>"; };
 		DD46151518751E88008FCD16 /* fuel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fuel.json; sourceTree = "<group>"; };
 		DD46151618751E88008FCD16 /* news.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = news.json; sourceTree = "<group>"; };
-		DDC8734718752EC300393876 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
+		DDA70D1F1876DA7200C89F86 /* MapPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapPoint.h; sourceTree = "<group>"; };
+		DDA70D201876DA7200C89F86 /* MapPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapPoint.m; sourceTree = "<group>"; };
+		DDA70D221876E0DD00C89F86 /* MapSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapSource.h; sourceTree = "<group>"; };
+		DDA70D231876E0DD00C89F86 /* MapSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapSource.m; sourceTree = "<group>"; };
+		DDA70D251876EA4400C89F86 /* StationAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationAnnotationView.h; sourceTree = "<group>"; };
+		DDA70D261876EA4400C89F86 /* StationAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationAnnotationView.m; sourceTree = "<group>"; };
 		DDC8734818752EC300393876 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main_iPad.strings; sourceTree = "<group>"; };
 		DDC8734918752EC300393876 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DDC8734A18752EC300393876 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		DDC8734E1875301A00393876 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		DDC873501875302F00393876 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DDC8734E1875301A00393876 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DDC873501875302F00393876 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DDC8735118754F4200393876 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		DDC8735218754F4200393876 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		DDC873541875ADF600393876 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		DDC873551875ADF600393876 /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
+		DDC873581876C52D00393876 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
 		DDEB474D1854211B006FAED3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		DDEB480018542883006FAED3 /* arrowdown_dark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowdown_dark@2x.png"; sourceTree = "<group>"; };
 		DDEB480118542883006FAED3 /* arrowdown_light@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowdown_light@2x.png"; sourceTree = "<group>"; };
@@ -325,20 +334,17 @@
 				DD46151218751E7A008FCD16 /* jsons */,
 				DDEB48AF18544BD0006FAED3 /* View */,
 				DDEB47FF18542883006FAED3 /* images */,
+				DDA70D281876EA5700C89F86 /* maps */,
 				9CF17A5218431F7F007FF8D9 /* AppDelegate.h */,
 				9CF17A5318431F7F007FF8D9 /* AppDelegate.m */,
 				9CF17A5518431F7F007FF8D9 /* Main_iPhone.storyboard */,
 				9CF17A5818431F7F007FF8D9 /* Main_iPad.storyboard */,
 				9CF17A5B18431F7F007FF8D9 /* MainViewController.h */,
 				9CF17A5C18431F7F007FF8D9 /* MainViewController.m */,
-				DDEB48BA185452A4006FAED3 /* MapViewController.h */,
-				DDEB48BB185452A4006FAED3 /* MapViewController.m */,
-				DDC8735118754F4200393876 /* MenuViewController.h */,
-				DDC8735218754F4200393876 /* MenuViewController.m */,
-				9CF17A5E18431F7F007FF8D9 /* Images.xcassets */,
-				9CF17A4A18431F7F007FF8D9 /* Supporting Files */,
 				DDC873541875ADF600393876 /* Common.h */,
 				DDC873551875ADF600393876 /* Common.m */,
+				9CF17A5E18431F7F007FF8D9 /* Images.xcassets */,
+				9CF17A4A18431F7F007FF8D9 /* Supporting Files */,
 			);
 			path = iSinooil;
 			sourceTree = "<group>";
@@ -382,6 +388,25 @@
 				DD46151618751E88008FCD16 /* news.json */,
 			);
 			name = jsons;
+			sourceTree = "<group>";
+		};
+		DDA70D281876EA5700C89F86 /* maps */ = {
+			isa = PBXGroup;
+			children = (
+				DDEB48BA185452A4006FAED3 /* MapViewController.h */,
+				DDEB48BB185452A4006FAED3 /* MapViewController.m */,
+				DDEB48B318544CF5006FAED3 /* MyMapView.h */,
+				DDEB48B418544CF5006FAED3 /* MyMapView.m */,
+				DDA70D1F1876DA7200C89F86 /* MapPoint.h */,
+				DDA70D201876DA7200C89F86 /* MapPoint.m */,
+				DDA70D221876E0DD00C89F86 /* MapSource.h */,
+				DDA70D231876E0DD00C89F86 /* MapSource.m */,
+				DDA70D251876EA4400C89F86 /* StationAnnotationView.h */,
+				DDA70D261876EA4400C89F86 /* StationAnnotationView.m */,
+				DDC8735118754F4200393876 /* MenuViewController.h */,
+				DDC8735218754F4200393876 /* MenuViewController.m */,
+			);
+			name = maps;
 			sourceTree = "<group>";
 		};
 		DDEB47FF18542883006FAED3 /* images */ = {
@@ -491,8 +516,6 @@
 			children = (
 				DDEB48B018544BF9006FAED3 /* ScrollView.h */,
 				DDEB48B118544BF9006FAED3 /* ScrollView.m */,
-				DDEB48B318544CF5006FAED3 /* MyMapView.h */,
-				DDEB48B418544CF5006FAED3 /* MyMapView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -693,7 +716,10 @@
 				DDEB48B218544BF9006FAED3 /* ScrollView.m in Sources */,
 				9CF17A5418431F7F007FF8D9 /* AppDelegate.m in Sources */,
 				DDC873561875ADF600393876 /* Common.m in Sources */,
+				DDA70D271876EA4400C89F86 /* StationAnnotationView.m in Sources */,
+				DDA70D211876DA7200C89F86 /* MapPoint.m in Sources */,
 				DDC8735318754F4200393876 /* MenuViewController.m in Sources */,
+				DDA70D241876E0DD00C89F86 /* MapSource.m in Sources */,
 				9CF17A5018431F7F007FF8D9 /* main.m in Sources */,
 				DDEB48BC185452A4006FAED3 /* MapViewController.m in Sources */,
 			);
@@ -731,7 +757,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				9CF17A5618431F7F007FF8D9 /* Base */,
-				DDC8734718752EC300393876 /* ru */,
+				DDC873581876C52D00393876 /* ru */,
 			);
 			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";

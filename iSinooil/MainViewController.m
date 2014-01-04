@@ -10,6 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "Common.h"
 #import "MenuViewController.h"
+#import "MapSource.h"
 
 @interface MainViewController ()
 
@@ -70,6 +71,8 @@
 //    CGSize s = [Common currentScreenBoundsDependOnOrientation:toInterfaceOrientation];
     self.vertScroll.contentSize = CGSizeMake(320, 2000);
 
+    self.mapsour = [[MapSource alloc] initWithType:MAPTYPE_MAINMENU];
+    self.mapView.delegate = self.mapsour;
 }
 
 - (BOOL)shouldAutorotate
@@ -103,8 +106,6 @@
 }
 
 - (IBAction)tapMap:(id)sender {
-
-    NSLog(@"tapMap");
     
     [((MenuViewController*)self.parentViewController) showMaps];
 }

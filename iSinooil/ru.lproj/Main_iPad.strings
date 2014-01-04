@@ -1,0 +1,12 @@
+
+/* Class = "IBUISegmentedControl"; Hgp-gU-9tl.segmentTitles[0] = "Карта"; ObjectID = "Hgp-gU-9tl"; */
+"Hgp-gU-9tl.segmentTitles[0]" = "Карта";
+
+/* Class = "IBUISegmentedControl"; Hgp-gU-9tl.segmentTitles[1] = "Список"; ObjectID = "Hgp-gU-9tl"; */
+"Hgp-gU-9tl.segmentTitles[1]" = "Список";
+
+/* Class = "IBUIButton"; normalTitle = "Button"; ObjectID = "cr7-no-SCB"; */
+"cr7-no-SCB.normalTitle" = "КАРТА АЗС";
+
+/* Class = "IBUIButton"; normalTitle = "Button"; ObjectID = "v6Y-za-yMe"; */
+"v6Y-za-yMe.normalTitle" = "ГЛАВНАЯ";

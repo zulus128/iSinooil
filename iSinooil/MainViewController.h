@@ -12,14 +12,18 @@
 #define METERS_PER_MILE 1609.344
 #define VERT_SIZE 1835
 
+@class MapSource;
+
 @interface MainViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UIScrollView *vertScroll;
 @property (weak, nonatomic) IBOutlet UIView *topView;
-- (IBAction)menu:(id)sender;
 @property (weak, nonatomic) IBOutlet UIImageView *backgr;
 @property (weak, nonatomic) IBOutlet UIImageView *logo;
+@property (nonatomic, strong) MapSource* mapsour;
+
 - (IBAction)tapMap:(id)sender;
+- (IBAction)menu:(id)sender;
 
 @end

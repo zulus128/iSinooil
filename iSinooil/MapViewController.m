@@ -9,6 +9,7 @@
 #import "MapViewController.h"
 #import "MenuViewController.h"
 #import "Common.h"
+#import "MapSource.h"
 
 @interface MapViewController ()
 
@@ -18,7 +19,7 @@
 
 - (void) willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
     
-    NSLog(@"will rotate map");
+//    NSLog(@"will rotate map");
     
     CGSize s = [Common currentScreenBoundsDependOnOrientation:toInterfaceOrientation];
     self.topView.frame = CGRectMake(0, 0, s.width, s.height);
@@ -44,23 +45,22 @@
     
     [super viewDidLoad];
 
-//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)?
-//                                @"Main_iPad":@"Main_iPhone" bundle:nil];
-//    
-//    UIViewController *viewController =  [storyboard instantiateViewControllerWithIdentifier:@"mainMenu"];
-
-//    [self.view insertSubview:viewController.view belowSubview:self.view]
-//    [self addChildViewController:viewController];
-//    [self didMoveToParentViewController:viewController];
     self.mapView.userTrackingMode = MKUserTrackingModeFollow;
+    CLLocationCoordinate2D noLocation;
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(noLocation, 500, 500);
+    MKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:viewRegion];
+    [self.mapView setRegion:adjustedRegion animated:YES];
 
-//    [self.view insertSubview:viewController.view atIndex:0];
+    self.mapsour = [[MapSource alloc] initWithType:MAPTYPE_FULLWINDOW];
+    self.mapView.delegate = self.mapsour;
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
+    
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    
+    NSLog(@"!!! MapViewController didReceiveMemoryWarning");
 }
 
 - (IBAction)menu:(id)sender {
@@ -79,6 +79,5 @@
                      }];
     
 }
-
 
 @end
