@@ -51,8 +51,8 @@
 		lng += dlng;
 		NSNumber *latitude = [[NSNumber alloc] initWithFloat:lat * 1e-5];
 		NSNumber *longitude = [[NSNumber alloc] initWithFloat:lng * 1e-5];
-		printf("[%f,", [latitude doubleValue]);
-		printf("%f]", [longitude doubleValue]);
+//		printf("[%f,", [latitude doubleValue]);
+//		printf("%f]", [longitude doubleValue]);
 		CLLocation *loc = [[CLLocation alloc] initWithLatitude:[latitude floatValue] longitude:[longitude floatValue]];
 		[array addObject:loc];
 	}
@@ -67,14 +67,14 @@
 	
 	NSString* apiUrlStr = [NSString stringWithFormat:@"http://maps.google.com/maps?output=dragdir&saddr=%@&daddr=%@", saddr, daddr];
 	NSURL* apiUrl = [NSURL URLWithString:apiUrlStr];
-	NSLog(@"api url: %@", apiUrl);
+//	NSLog(@"api url: %@", apiUrl);
 	NSString *apiResponse = [NSString stringWithContentsOfURL:apiUrl encoding:NSASCIIStringEncoding error:nil];
-	NSLog(@"resp: %@", apiResponse);
+//	NSLog(@"resp: %@", apiResponse);
     NSRange r1 = [apiResponse rangeOfString:@"points:" options:NSCaseInsensitiveSearch];
     NSRange r2 = [apiResponse rangeOfString:@"levels:" options:NSCaseInsensitiveSearch];
 	NSString* encodedPoints = [apiResponse substringWithRange:NSMakeRange(r1.location + 8, r2.location - r1.location - 10)];
 //	NSString* encodedPoints = @"s_seF|nbjVCcB??Pi@|EwG??NDvCbE";//nil;//[apiResponse stringByMatching:@"points:\\\"([^\\\"]*)\\\"" capture:1L];
-	NSLog(@"encoded: %@", encodedPoints);
+//	NSLog(@"encoded: %@", encodedPoints);
 	
 	return [self decodePolyLine:[encodedPoints mutableCopy]];
 }

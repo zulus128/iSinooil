@@ -183,6 +183,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </mapView>
+                            <scrollView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W2L-Hh-4NS">
+                                <rect key="frame" x="40" y="220" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" red="0.93268728256225586" green="0.20602250864526886" blue="0.27544359438091781" alpha="1" colorSpace="calibratedRGB"/>
+                            </scrollView>
                             <view alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YtZ-eo-7aa">
                                 <rect key="frame" x="0.0" y="508" width="320" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -197,6 +202,9 @@
                                             <segment title="Map"/>
                                             <segment title="List"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="pickOne:" destination="ehy-aB-IHd" eventType="valueChanged" id="f5V-r8-vwW"/>
+                                        </connections>
                                     </segmentedControl>
                                 </subviews>
                                 <color key="backgroundColor" red="0.89411771297454834" green="0.94509810209274292" blue="0.7725490927696228" alpha="1" colorSpace="deviceRGB"/>
@@ -244,15 +252,19 @@
                         <color key="backgroundColor" red="0.74117648601531982" green="0.94117653369903564" blue="0.89019614458084106" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
                             <constraint firstItem="YtZ-eo-7aa" firstAttribute="leading" secondItem="Qsz-3i-kc0" secondAttribute="leading" id="7nM-Sc-p9w"/>
+                            <constraint firstAttribute="trailing" secondItem="W2L-Hh-4NS" secondAttribute="trailing" id="8Te-EW-ern"/>
                             <constraint firstAttribute="trailing" secondItem="0rF-1r-Zgz" secondAttribute="trailing" id="AGX-mR-arr"/>
+                            <constraint firstItem="W2L-Hh-4NS" firstAttribute="top" secondItem="6bG-Rj-KHf" secondAttribute="bottom" id="Ajh-Kc-qVi"/>
                             <constraint firstItem="0rF-1r-Zgz" firstAttribute="leading" secondItem="Qsz-3i-kc0" secondAttribute="leading" id="BpG-ti-3cg"/>
                             <constraint firstItem="UQs-PY-ebv" firstAttribute="top" secondItem="Mlw-uB-XSS" secondAttribute="bottom" id="Bwe-aU-1xP"/>
+                            <constraint firstItem="W2L-Hh-4NS" firstAttribute="leading" secondItem="Qsz-3i-kc0" secondAttribute="leading" id="Ckt-0n-Hsh"/>
                             <constraint firstItem="Mlw-uB-XSS" firstAttribute="leading" secondItem="Qsz-3i-kc0" secondAttribute="leading" id="E1v-It-Q8v"/>
                             <constraint firstAttribute="trailing" secondItem="6bG-Rj-KHf" secondAttribute="trailing" id="Ilo-h6-FMp"/>
                             <constraint firstItem="6bG-Rj-KHf" firstAttribute="top" secondItem="L6x-VD-mv3" secondAttribute="bottom" id="RfH-e1-iQe"/>
                             <constraint firstItem="Mlw-uB-XSS" firstAttribute="top" secondItem="Qsz-3i-kc0" secondAttribute="top" id="VkF-XK-czq"/>
                             <constraint firstAttribute="trailing" secondItem="Mlw-uB-XSS" secondAttribute="trailing" id="W7M-tW-Nkx"/>
                             <constraint firstItem="0rF-1r-Zgz" firstAttribute="top" secondItem="Qsz-3i-kc0" secondAttribute="top" id="Wqh-kL-whZ"/>
+                            <constraint firstItem="YtZ-eo-7aa" firstAttribute="top" secondItem="W2L-Hh-4NS" secondAttribute="bottom" id="czD-wt-6OB"/>
                             <constraint firstItem="6bG-Rj-KHf" firstAttribute="leading" secondItem="Qsz-3i-kc0" secondAttribute="leading" id="hdS-NO-jYe"/>
                             <constraint firstAttribute="trailing" secondItem="YtZ-eo-7aa" secondAttribute="trailing" id="hqk-4U-HUe"/>
                             <constraint firstItem="UQs-PY-ebv" firstAttribute="top" secondItem="YtZ-eo-7aa" secondAttribute="bottom" id="kKD-oG-sQO"/>
@@ -261,6 +273,7 @@
                     <navigationItem key="navigationItem" id="1Os-ZV-yy0"/>
                     <connections>
                         <outlet property="mapView" destination="Mlw-uB-XSS" id="x8P-J5-3mr"/>
+                        <outlet property="stationList" destination="W2L-Hh-4NS" id="pwM-TR-3sD"/>
                         <outlet property="topView" destination="Qsz-3i-kc0" id="BIG-we-NKc"/>
                     </connections>
                 </viewController>

@@ -16,7 +16,10 @@
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UIView *topView;
 @property (nonatomic, strong) MapSource* mapsour;
+@property (weak, nonatomic) IBOutlet UIScrollView *stationList;
 
-- (IBAction)menu:(id)sender;
+- (IBAction) pickOne:(id)sender;
+
+- (IBAction) menu:(id)sender;
 
 @end

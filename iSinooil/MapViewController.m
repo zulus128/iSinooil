@@ -63,7 +63,7 @@
     NSLog(@"!!! MapViewController didReceiveMemoryWarning");
 }
 
-- (IBAction)menu:(id)sender {
+- (IBAction) menu:(id)sender {
 
     self.view.hidden = NO;
    
@@ -78,6 +78,23 @@
                      completion:^(BOOL finished) {
                      }];
     
+}
+
+- (IBAction) pickOne:(id)sender {
+    
+    UISegmentedControl *segmentedControl = (UISegmentedControl *)sender;
+//    NSLog(@"index = %d", segmentedControl.selectedSegmentIndex);
+    
+    switch (segmentedControl.selectedSegmentIndex) {
+        case 0:
+            self.mapView.hidden = NO;
+            self.stationList.hidden = YES;
+            break;
+        case 1:
+            self.mapView.hidden = YES;
+            self.stationList.hidden = NO;
+            break;
+    }
 }
 
 @end

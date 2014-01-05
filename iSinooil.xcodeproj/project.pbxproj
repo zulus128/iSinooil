@@ -331,16 +331,14 @@
 		9CF17A4918431F7F007FF8D9 /* iSinooil */ = {
 			isa = PBXGroup;
 			children = (
+				DD613618187854D200059DA8 /* Controller */,
 				DD46151218751E7A008FCD16 /* jsons */,
 				DDEB48AF18544BD0006FAED3 /* View */,
 				DDEB47FF18542883006FAED3 /* images */,
-				DDA70D281876EA5700C89F86 /* maps */,
 				9CF17A5218431F7F007FF8D9 /* AppDelegate.h */,
 				9CF17A5318431F7F007FF8D9 /* AppDelegate.m */,
 				9CF17A5518431F7F007FF8D9 /* Main_iPhone.storyboard */,
 				9CF17A5818431F7F007FF8D9 /* Main_iPad.storyboard */,
-				9CF17A5B18431F7F007FF8D9 /* MainViewController.h */,
-				9CF17A5C18431F7F007FF8D9 /* MainViewController.m */,
 				DDC873541875ADF600393876 /* Common.h */,
 				DDC873551875ADF600393876 /* Common.m */,
 				9CF17A5E18431F7F007FF8D9 /* Images.xcassets */,
@@ -390,21 +388,27 @@
 			name = jsons;
 			sourceTree = "<group>";
 		};
+		DD613618187854D200059DA8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9CF17A5B18431F7F007FF8D9 /* MainViewController.h */,
+				9CF17A5C18431F7F007FF8D9 /* MainViewController.m */,
+				DDC8735118754F4200393876 /* MenuViewController.h */,
+				DDC8735218754F4200393876 /* MenuViewController.m */,
+				DDA70D281876EA5700C89F86 /* maps */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		DDA70D281876EA5700C89F86 /* maps */ = {
 			isa = PBXGroup;
 			children = (
 				DDEB48BA185452A4006FAED3 /* MapViewController.h */,
 				DDEB48BB185452A4006FAED3 /* MapViewController.m */,
-				DDEB48B318544CF5006FAED3 /* MyMapView.h */,
-				DDEB48B418544CF5006FAED3 /* MyMapView.m */,
 				DDA70D1F1876DA7200C89F86 /* MapPoint.h */,
 				DDA70D201876DA7200C89F86 /* MapPoint.m */,
 				DDA70D221876E0DD00C89F86 /* MapSource.h */,
 				DDA70D231876E0DD00C89F86 /* MapSource.m */,
-				DDA70D251876EA4400C89F86 /* StationAnnotationView.h */,
-				DDA70D261876EA4400C89F86 /* StationAnnotationView.m */,
-				DDC8735118754F4200393876 /* MenuViewController.h */,
-				DDC8735218754F4200393876 /* MenuViewController.m */,
 			);
 			name = maps;
 			sourceTree = "<group>";
@@ -514,6 +518,10 @@
 		DDEB48AF18544BD0006FAED3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DDEB48B318544CF5006FAED3 /* MyMapView.h */,
+				DDEB48B418544CF5006FAED3 /* MyMapView.m */,
+				DDA70D251876EA4400C89F86 /* StationAnnotationView.h */,
+				DDA70D261876EA4400C89F86 /* StationAnnotationView.m */,
 				DDEB48B018544BF9006FAED3 /* ScrollView.h */,
 				DDEB48B118544BF9006FAED3 /* ScrollView.m */,
 			);
