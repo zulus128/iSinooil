@@ -10,6 +10,7 @@
 #import "MenuViewController.h"
 #import "Common.h"
 #import "MapSource.h"
+#import "ListDataSource.h"
 
 @interface MapViewController ()
 
@@ -53,6 +54,11 @@
 
     self.mapsour = [[MapSource alloc] initWithType:MAPTYPE_FULLWINDOW];
     self.mapView.delegate = self.mapsour;
+    
+    self.listsour = [[ListDataSource alloc] init];
+    self.stationList.delegate = self.listsour;
+    self.stationList.dataSource = self.listsour;
+    
 }
 
 - (void)didReceiveMemoryWarning {
