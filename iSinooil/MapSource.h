@@ -15,7 +15,6 @@ enum { MAPTYPE_MAINMENU, MAPTYPE_FULLWINDOW };
     
     int type;
     BOOL fsttime;
-    CLLocationCoordinate2D userCoordinate;
 }
 
 -(id) initWithType:(int)typ;

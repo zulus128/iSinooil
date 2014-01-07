@@ -55,7 +55,8 @@
         [self addPoints:mv];
     }
 
-    userCoordinate = userLocation.location.coordinate;
+    [Common instance].userCoordinate = userLocation.location.coordinate;
+//    dispatch_semaphore_signal([Common instance].userCoordUpdatedSem);
 
 #if TARGET_IPHONE_SIMULATOR
     
@@ -65,7 +66,7 @@
         CGFloat latDelta = rand()*.0035/RAND_MAX -.002;
         CGFloat longDelta = rand()*.003/RAND_MAX -.0015;
         
-        CLLocationCoordinate2D newCoord = { userCoordinate.latitude + latDelta, userCoordinate.longitude + longDelta };
+        CLLocationCoordinate2D newCoord = { [Common instance].userCoordinate.latitude + latDelta, [Common instance].userCoordinate.longitude + longDelta };
         MapPoint *mp = [[MapPoint alloc] initWithCoordinate:newCoord title:[NSString stringWithFormat:@"Azam Home %d",i] subTitle:@"Home Sweet Home"];
         [mv addAnnotation:mp];
     }
@@ -121,7 +122,7 @@
     CLLocationCoordinate2D c = view.annotation.coordinate;
     NSLog(@"didSel %f %f", c.latitude, c.longitude);
 
-    MapPoint* me = [[MapPoint alloc] initWithCoordinate:userCoordinate title:@"me" subTitle:@"meme"];
+    MapPoint* me = [[MapPoint alloc] initWithCoordinate:[Common instance].userCoordinate title:@"me" subTitle:@"meme"];
     MapPoint* to = [[MapPoint alloc] initWithCoordinate:c title:@"to" subTitle:@"toto"];
     
     [((MyMapView *)mapView) showRouteFrom:me to:to];

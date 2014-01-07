@@ -30,8 +30,12 @@
 	self = [super init];
 	if(self !=nil) {
         
+//        self.userCoordUpdatedSem = dispatch_semaphore_create(0);
+
         [self parseData];
         
+
+//        [NSLocale currentLocale];
 	}
 	return self;
 }
@@ -94,6 +98,80 @@
         return CGSizeMake(width, height);
     
     return CGSizeMake(height, width);
+}
+
++ (NSMutableArray *)decodePolyLine: (NSMutableString *)encoded {
+    
+	[encoded replaceOccurrencesOfString:@"\\\\" withString:@"\\"
+								options:NSLiteralSearch
+								  range:NSMakeRange(0, [encoded length])];
+	NSInteger len = [encoded length];
+	NSInteger index = 0;
+	NSMutableArray *array = [[NSMutableArray alloc] init];
+	NSInteger lat=0;
+	NSInteger lng=0;
+	while (index < len) {
+		NSInteger b;
+		NSInteger shift = 0;
+		NSInteger result = 0;
+		do {
+			b = [encoded characterAtIndex:index++] - 63;
+			result |= (b & 0x1f) << shift;
+			shift += 5;
+		} while (b >= 0x20);
+		NSInteger dlat = ((result & 1) ? ~(result >> 1) : (result >> 1));
+		lat += dlat;
+		shift = 0;
+		result = 0;
+		do {
+			b = [encoded characterAtIndex:index++] - 63;
+			result |= (b & 0x1f) << shift;
+			shift += 5;
+		} while (b >= 0x20);
+		NSInteger dlng = ((result & 1) ? ~(result >> 1) : (result >> 1));
+		lng += dlng;
+		NSNumber *latitude = [[NSNumber alloc] initWithFloat:lat * 1e-5];
+		NSNumber *longitude = [[NSNumber alloc] initWithFloat:lng * 1e-5];
+        //		printf("[%f,", [latitude doubleValue]);
+        //		printf("%f]", [longitude doubleValue]);
+		CLLocation *loc = [[CLLocation alloc] initWithLatitude:[latitude floatValue] longitude:[longitude floatValue]];
+		[array addObject:loc];
+	}
+	
+	return array;
+}
+
++ (NSString*) callMapServiceFrom:(CLLocationCoordinate2D) f to: (CLLocationCoordinate2D) t {
+
+    NSString* saddr = [NSString stringWithFormat:@"%f,%f", f.latitude, f.longitude];
+	NSString* daddr = [NSString stringWithFormat:@"%f,%f", t.latitude, t.longitude];
+	
+	NSString* apiUrlStr = [NSString stringWithFormat:@"http://maps.google.com/maps?output=dragdir&saddr=%@&daddr=%@", saddr, daddr];
+	NSURL* apiUrl = [NSURL URLWithString:apiUrlStr];
+//	NSLog(@"api url: %@", apiUrl);
+	NSString *apiResponse = [NSString stringWithContentsOfURL:apiUrl encoding:NSASCIIStringEncoding error:nil];
+//	NSLog(@"resp: %@", apiResponse);
+
+    return apiResponse;
+}
+
+- (float) calculateDistTo: (CLLocationCoordinate2D) t {
+
+	NSString* apiResponse = [Common callMapServiceFrom:self.userCoordinate to:t];
+    NSString* ar1 = [[apiResponse componentsSeparatedByString:@"("] objectAtIndex:1];
+    NSString* ar2 = [[ar1 componentsSeparatedByString:@" "] objectAtIndex:0];
+    NSString* ar3 = [ar2 stringByReplacingOccurrencesOfString:@"," withString:@"."];
+    
+    return [ar3 floatValue];
+}
+
++ (NSArray*) calculateRoutesFrom:(CLLocationCoordinate2D) f to: (CLLocationCoordinate2D) t {
+    
+	NSString* apiResponse = [Common callMapServiceFrom:f to:t];
+    NSRange r1 = [apiResponse rangeOfString:@"points:" options:NSCaseInsensitiveSearch];
+    NSRange r2 = [apiResponse rangeOfString:@"levels:" options:NSCaseInsensitiveSearch];
+	NSString* encodedPoints = [apiResponse substringWithRange:NSMakeRange(r1.location + 8, r2.location - r1.location - 10)];
+	return [Common decodePolyLine:[encodedPoints mutableCopy]];
 }
 
 @end

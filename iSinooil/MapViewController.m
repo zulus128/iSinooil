@@ -98,6 +98,7 @@
             break;
         case 1:
             self.mapView.hidden = YES;
+            [self.stationList reloadData];
             self.stationList.hidden = NO;
             break;
     }
