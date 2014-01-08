@@ -1,8 +1,11 @@
 
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "5Yv-tQ-BJB"; */
+"5Yv-tQ-BJB.text" = "Label";
+
 /* Class = "IBUILabel"; text = "Label"; ObjectID = "B4d-a9-RrQ"; */
 "B4d-a9-RrQ.text" = "Label";
 
-/* Class = "IBUILabel"; text = "STATION"; ObjectID = "HRa-Va-JCW"; */
+/* Class = "IBUILabel"; text = "АЗС"; ObjectID = "HRa-Va-JCW"; */
 "HRa-Va-JCW.text" = "АЗС";
 
 /* Class = "IBUISegmentedControl"; Hgp-gU-9tl.segmentTitles[0] = "Карта"; ObjectID = "Hgp-gU-9tl"; */
@@ -11,8 +14,17 @@
 /* Class = "IBUISegmentedControl"; Hgp-gU-9tl.segmentTitles[1] = "Список"; ObjectID = "Hgp-gU-9tl"; */
 "Hgp-gU-9tl.segmentTitles[1]" = "Список";
 
+/* Class = "IBUIButton"; normalTitle = "Send feedback"; ObjectID = "Jcs-ge-0J7"; */
+"Jcs-ge-0J7.normalTitle" = "Оставить отзыв";
+
+/* Class = "IBUILabel"; text = "STATION"; ObjectID = "chB-02-EI8"; */
+"chB-02-EI8.text" = "АЗС";
+
 /* Class = "IBUIButton"; normalTitle = "КАРТА АЗС"; ObjectID = "cr7-no-SCB"; */
 "cr7-no-SCB.normalTitle" = "КАРТА АЗС";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "sQv-sU-cOF"; */
+"sQv-sU-cOF.text" = "Label";
 
 /* Class = "IBUILabel"; text = "22"; ObjectID = "tsm-me-fOe"; */
 "tsm-me-fOe.text" = "22";

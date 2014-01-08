@@ -12,12 +12,15 @@
 @class MapSource;
 @class ListDataSource;
 
-@interface MapViewController : UIViewController 
+@interface MapViewController : UIViewController <UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UIView *topView;
 @property (nonatomic, strong) MapSource* mapsour;
 @property (nonatomic, strong) ListDataSource* listsour;
+@property (weak, nonatomic) IBOutlet UIView *stationDetailView;
+@property (weak, nonatomic) IBOutlet UILabel *stationNumberLab;
+@property (weak, nonatomic) IBOutlet UILabel *stationDescrLab;
 
 @property (weak, nonatomic) IBOutlet UITableView *stationList;
 - (IBAction) pickOne:(id)sender;

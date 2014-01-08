@@ -12,11 +12,6 @@
 
 @implementation ListDataSource
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    return CELL_HEIGHT;
-}
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -65,6 +60,10 @@
         
     });
     
+    for (UIView* v in cell.contentView.subviews) {
+        if(v.tag == ICON_TAG)
+            [v removeFromSuperview];
+    }
     int fuel = ((NSNumber*)[dic valueForKey:STATION_FUEL]).intValue;
     //    NSLog(@"fuel = %d", fuel);
     float x = 20;
@@ -100,6 +99,7 @@
         
         UIImageView* iv = [[UIImageView alloc] initWithFrame:CGRectMake(x, 60, ICON_SIZE, ICON_SIZE)];
         iv.image = [UIImage imageNamed:icon];
+        iv.tag = ICON_TAG;
         [cell.contentView addSubview:iv];
         
         x += GAP_SIZE;
@@ -142,13 +142,14 @@
         
         UIImageView* iv = [[UIImageView alloc] initWithFrame:CGRectMake(x, 60, ICON_SIZE, ICON_SIZE)];
         iv.image = [UIImage imageNamed:icon];
+        iv.tag = ICON_TAG;
         [cell.contentView addSubview:iv];
         
         x += GAP_SIZE1;
     }
     
     int card = ((NSNumber*)[dic valueForKey:STATION_CARD]).intValue;
-    NSLog(@"card = %d", card);
+//    NSLog(@"card = %d", card);
     for (int i = CARD_BIT_VISA; i <= CARD_BIT_MC; i = (i << 1)) {
         
         if (!(card & i))
@@ -169,6 +170,7 @@
         
         UIImageView* iv = [[UIImageView alloc] initWithFrame:CGRectMake(x, 60, ICON_SIZE, ICON_SIZE)];
         iv.image = [UIImage imageNamed:icon];
+        iv.tag = ICON_TAG;
         [cell.contentView addSubview:iv];
         
         x += GAP_SIZE1;

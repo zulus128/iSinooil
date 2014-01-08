@@ -17,6 +17,8 @@
 #define STATION_FUEL @"fuel"
 #define STATION_SERV @"serv"
 #define STATION_CARD @"card"
+#define STATION_PHONE @"phone"
+#define PHONE_NUMBER @"n"
 
 @interface Common : NSObject
 

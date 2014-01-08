@@ -12,6 +12,9 @@
 #define ICON_SIZE 30
 #define GAP_SIZE 23
 #define GAP_SIZE1 30
+#define GAP_SIZE2 40
+
+#define ICON_TAG 775
 
 /*
 ГАЗ 64
@@ -58,6 +61,6 @@ MC 4
 #define CARD_BIT_AE 2
 #define CARD_BIT_MC 4
 
-@interface ListDataSource : NSObject <UITableViewDelegate, UITableViewDataSource>
+@interface ListDataSource : NSObject <UITableViewDataSource>
 
 @end
