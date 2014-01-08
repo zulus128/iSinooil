@@ -12,7 +12,10 @@
 @class MapSource;
 @class ListDataSource;
 
-@interface MapViewController : UIViewController <UITableViewDelegate>
+@interface MapViewController : UIViewController <UITableViewDelegate> {
+    
+    long selectedRow;
+}
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UIView *topView;

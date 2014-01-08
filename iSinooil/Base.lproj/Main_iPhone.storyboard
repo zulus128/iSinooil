@@ -317,15 +317,22 @@
                                         <fontDescription key="fontDescription" type="italicSystem" pointSize="19"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jcs-ge-0J7">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jcs-ge-0J7">
                                         <rect key="frame" x="20" y="410" width="280" height="54"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="280" id="Bb4-mz-j9U"/>
+                                            <constraint firstAttribute="height" constant="54" id="WyJ-Vm-ITG"/>
+                                        </constraints>
                                         <state key="normal" title="Send feedback">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Jcs-ge-0J7" firstAttribute="leading" secondItem="0V8-vD-6N3" secondAttribute="leading" constant="20" id="STl-69-ZLu"/>
+                                </constraints>
                             </view>
                             <view alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0rF-1r-Zgz" userLabel="TopThin">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
@@ -373,6 +380,7 @@
                             <constraint firstItem="P31-Wq-ivE" firstAttribute="leading" secondItem="Qsz-3i-kc0" secondAttribute="leading" id="F3J-3v-q3p"/>
                             <constraint firstAttribute="trailing" secondItem="6bG-Rj-KHf" secondAttribute="trailing" id="Ilo-h6-FMp"/>
                             <constraint firstAttribute="trailing" secondItem="P31-Wq-ivE" secondAttribute="trailing" id="J0y-lx-De7"/>
+                            <constraint firstItem="UQs-PY-ebv" firstAttribute="top" secondItem="Jcs-ge-0J7" secondAttribute="bottom" id="Ncy-bc-2iT"/>
                             <constraint firstAttribute="trailing" secondItem="0V8-vD-6N3" secondAttribute="trailing" id="PPN-2W-zeu"/>
                             <constraint firstItem="6bG-Rj-KHf" firstAttribute="top" secondItem="L6x-VD-mv3" secondAttribute="bottom" id="RfH-e1-iQe"/>
                             <constraint firstItem="0V8-vD-6N3" firstAttribute="top" secondItem="6bG-Rj-KHf" secondAttribute="bottom" id="TNq-8K-N5S"/>

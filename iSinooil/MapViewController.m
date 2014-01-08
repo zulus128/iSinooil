@@ -117,7 +117,23 @@
     return CELL_HEIGHT;
 }
 
+- (void)callTel:(UIButton*)button {
+ 
+    long i = button.tag - ICON_TAG;
+//    NSLog(@"call %ld", i);
+    
+    NSDictionary* dic = [[Common instance].azsjson objectAtIndex:selectedRow];
+    NSArray* tels = [dic objectForKey:STATION_PHONE];
+    NSDictionary* d = [tels objectAtIndex:i];
+    NSString* tel = [d objectForKey:PHONE_NUMBER];
+
+    NSString *phoneNumber = [@"telprompt://" stringByAppendingString:tel];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    selectedRow = indexPath.row;
     
     NSDictionary* dic = [[Common instance].azsjson objectAtIndex:indexPath.row];
     NSString* num = [dic objectForKey:STATION_TITLE];
@@ -125,7 +141,7 @@
     self.stationDescrLab.text = [dic objectForKey:STATION_DESCR];
 
     for (UIView* v in self.stationDetailView.subviews) {
-        if(v.tag == ICON_TAG)
+        if(v.tag >= ICON_TAG)
             [v removeFromSuperview];
     }
 
@@ -140,6 +156,14 @@
         number.text = tel;
         number.tag = ICON_TAG;
         [self.stationDetailView addSubview:number];
+        
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [button addTarget:self action:@selector(callTel:) forControlEvents:UIControlEventTouchDown];
+        [button setTitle:@"Call" forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
+        button.frame = CGRectMake(150.0, y + 5, 40.0, 30.0);
+        button.tag = ICON_TAG + i;
+        [self.stationDetailView addSubview:button];
         
         y += 40;
     }
