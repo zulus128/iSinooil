@@ -24,8 +24,10 @@
 @property (weak, nonatomic) IBOutlet UIView *stationDetailView;
 @property (weak, nonatomic) IBOutlet UILabel *stationNumberLab;
 @property (weak, nonatomic) IBOutlet UILabel *stationDescrLab;
-
 @property (weak, nonatomic) IBOutlet UITableView *stationList;
+
+- (void) showDetail:(int)num;
+
 - (IBAction) pickOne:(id)sender;
 
 - (IBAction) menu:(id)sender;

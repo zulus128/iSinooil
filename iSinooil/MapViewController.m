@@ -54,6 +54,7 @@
 
     self.mapsour = [[MapSource alloc] initWithType:MAPTYPE_FULLWINDOW];
     self.mapView.delegate = self.mapsour;
+    self.mapsour.mapcontr = self;
     
     self.listsour = [[ListDataSource alloc] init];
 //    self.stationList.delegate = self.listsour;
@@ -131,22 +132,20 @@
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    selectedRow = indexPath.row;
-    
-    NSDictionary* dic = [[Common instance].azsjson objectAtIndex:indexPath.row];
+- (void) showStationDetails {
+
+    NSDictionary* dic = [[Common instance].azsjson objectAtIndex:selectedRow];
     NSString* num = [dic objectForKey:STATION_TITLE];
     self.stationNumberLab.text = [[num componentsSeparatedByString:@"№"] objectAtIndex:1];
     self.stationDescrLab.text = [dic objectForKey:STATION_DESCR];
-
+    
     for (UIView* v in self.stationDetailView.subviews) {
         if(v.tag >= ICON_TAG)
             [v removeFromSuperview];
     }
-
+    
     float y = 180;
-
+    
     NSArray* tels = [dic objectForKey:STATION_PHONE];
     for (int i = 0; i < tels.count; i++) {
         
@@ -172,7 +171,7 @@
     //    NSLog(@"fuel = %d", fuel);
     float x = 20;
     y += 10;
-
+    
     for (int i = FUEL_BIT_97; i <= FUEL_BIT_GAS; i = (i << 1)) {
         
         if (!(fuel & i))
@@ -285,8 +284,22 @@
         
         x += GAP_SIZE2;
     }
-
+    
     self.stationDetailView.hidden = NO;
+
+}
+
+- (void) showDetail:(int)num {
+
+    selectedRow = num;
+    [self showStationDetails];
+
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    selectedRow = indexPath.row;
+    [self showStationDetails];
 }
 
 @end

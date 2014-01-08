@@ -11,6 +11,8 @@
 
 enum { MAPTYPE_MAINMENU, MAPTYPE_FULLWINDOW };
 
+@class MapViewController;
+
 @interface MapSource : NSObject <MKMapViewDelegate> {
     
     int type;
@@ -18,5 +20,7 @@ enum { MAPTYPE_MAINMENU, MAPTYPE_FULLWINDOW };
 }
 
 -(id) initWithType:(int)typ;
+
+@property (weak, nonatomic) MapViewController* mapcontr;
 
 @end

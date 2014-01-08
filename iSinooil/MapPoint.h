@@ -22,6 +22,8 @@
 @property (nonatomic,copy) NSString *title;
 @property (nonatomic,copy) NSString *subtitle;
 
+@property (assign, readwrite) int number;
+
 -(id) initWithCoordinate:(CLLocationCoordinate2D) c title:(NSString *) t subTitle:(NSString *) st;
 
 @end

@@ -21,6 +21,9 @@
         self.backgroundColor = [UIColor clearColor];
 //        self.centerOffset = CGPointMake(-5, -5);
         self.enabled = NO;
+        
+        self.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+
     }
     return self;
 }

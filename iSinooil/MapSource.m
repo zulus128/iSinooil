@@ -11,6 +11,7 @@
 #import "StationAnnotationView.h"
 #import "Common.h"
 #import "MyMapView.h"
+#import "MapViewController.h"
 
 @implementation MapSource
 
@@ -32,6 +33,7 @@
 - (void) addPoints:(MKMapView *)mv {
 
     NSArray* arr = [Common instance].azsjson;
+    int i = 0;
     for (NSDictionary* d in arr) {
       
         NSNumber* n = [d valueForKey:STATION_LAT];
@@ -43,7 +45,9 @@
         NSString* subtit = [d valueForKey:STATION_DESCR];
 
         MapPoint *mp = [[MapPoint alloc] initWithCoordinate:coord title:tit subTitle:subtit];
+        mp.number = i++;
         [mv addAnnotation:mp];
+//        NSLog(@"++ %d", mp.number);
     }
 }
 
@@ -61,13 +65,14 @@
 #if TARGET_IPHONE_SIMULATOR
     
     
-    for(int i = 1; i <= 5;i++) {
+    for(int i = 0; i < 4;i++) {
         
         CGFloat latDelta = rand()*.0035/RAND_MAX -.002;
         CGFloat longDelta = rand()*.003/RAND_MAX -.0015;
         
         CLLocationCoordinate2D newCoord = { [Common instance].userCoordinate.latitude + latDelta, [Common instance].userCoordinate.longitude + longDelta };
         MapPoint *mp = [[MapPoint alloc] initWithCoordinate:newCoord title:[NSString stringWithFormat:@"Azam Home %d",i] subTitle:@"Home Sweet Home"];
+        mp.number = i;
         [mv addAnnotation:mp];
     }
     
@@ -137,6 +142,16 @@
     
     return polylineView;
     
+}
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
+    
+   if ([control isKindOfClass:[UIButton class]]) {
+       
+       MapPoint* mp = (MapPoint*) view.annotation;
+//       NSLog(@"--- %d", mp.number);
+       [self.mapcontr showDetail:mp.number];
+   }
 }
 
 @end
