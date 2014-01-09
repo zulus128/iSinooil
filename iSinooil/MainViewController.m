@@ -31,7 +31,7 @@
 
 - (void) willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
     
-//    NSLog(@"will rotate main");
+    NSLog(@"will rotate main");
     
     CGSize s = [Common currentScreenBoundsDependOnOrientation:toInterfaceOrientation];
     self.topView.frame = CGRectMake(0, 0, s.width, s.height);
@@ -41,10 +41,13 @@
     
     float max = (s.width > s.height)?s.width:s.height;
     self.backgr.frame = CGRectMake(0, 0, max, max);
-    
+
     fr = self.logo.frame;
     self.logo.frame = CGRectMake((s.width - fr.size.width) / 2, fr.origin.y, fr.size.width, fr.size.height);
-    
+
+    fr = self.priceView.frame;
+    self.priceView.frame = CGRectMake(fr.origin.x, fr.origin.y, s.width - 20, fr.size.height);
+
 //    NSLog(@"width = %f", s.width);
 }
 

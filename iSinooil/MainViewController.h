@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *backgr;
 @property (weak, nonatomic) IBOutlet UIImageView *logo;
 @property (nonatomic, strong) MapSource* mapsour;
+@property (weak, nonatomic) IBOutlet UIView *priceView;
 
 - (IBAction)tapMap:(id)sender;
 - (IBAction)menu:(id)sender;
