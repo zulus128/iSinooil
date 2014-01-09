@@ -8,6 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		846938E6187A81640037CABC /* ListDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 846938E5187A81640037CABC /* ListDataSource.m */; };
+		84DA054B187D846D004592EC /* HelveticaNeueCyr-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84DA053E187D846D004592EC /* HelveticaNeueCyr-Black.otf */; };
+		84DA054C187D846D004592EC /* HelveticaNeueCyr-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84DA053F187D846D004592EC /* HelveticaNeueCyr-BlackItalic.otf */; };
+		84DA054D187D846D004592EC /* HelveticaNeueCyr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84DA0540187D846D004592EC /* HelveticaNeueCyr-Bold.otf */; };
+		84DA054E187D846D004592EC /* HelveticaNeueCyr-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84DA0541187D846D004592EC /* HelveticaNeueCyr-BoldItalic.otf */; };
+		84DA054F187D846D004592EC /* HelveticaNeueCyr-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84DA0542187D846D004592EC /* HelveticaNeueCyr-Italic.otf */; };
+		84DA0550187D846D004592EC /* HelveticaNeueCyr-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84DA0543187D846D004592EC /* HelveticaNeueCyr-Light.otf */; };
+		84DA0551187D846D004592EC /* HelveticaNeueCyr-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84DA0544187D846D004592EC /* HelveticaNeueCyr-LightItalic.otf */; };
+		84DA0552187D846D004592EC /* HelveticaNeueCyr-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84DA0545187D846D004592EC /* HelveticaNeueCyr-Medium.otf */; };
+		84DA0553187D846D004592EC /* HelveticaNeueCyr-Roman.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84DA0546187D846D004592EC /* HelveticaNeueCyr-Roman.otf */; };
+		84DA0554187D846D004592EC /* HelveticaNeueCyr-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84DA0547187D846D004592EC /* HelveticaNeueCyr-Thin.otf */; };
+		84DA0555187D846D004592EC /* HelveticaNeueCyr-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84DA0548187D846D004592EC /* HelveticaNeueCyr-ThinItalic.otf */; };
+		84DA0556187D846D004592EC /* HelveticaNeueCyr-UltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84DA0549187D846D004592EC /* HelveticaNeueCyr-UltraLight.otf */; };
+		84DA0557187D846D004592EC /* HelveticaNeueCyr-UltraLightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84DA054A187D846D004592EC /* HelveticaNeueCyr-UltraLightItalic.otf */; };
 		84FDF89D187AA9610082595A /* StationViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FDF89C187AA9610082595A /* StationViewCell.m */; };
 		9CF17A4418431F7F007FF8D9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF17A4318431F7F007FF8D9 /* Foundation.framework */; };
 		9CF17A4618431F7F007FF8D9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF17A4518431F7F007FF8D9 /* CoreGraphics.framework */; };
@@ -141,6 +154,19 @@
 		844317EB187D081E00E3FC70 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
 		846938E4187A81640037CABC /* ListDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListDataSource.h; sourceTree = "<group>"; };
 		846938E5187A81640037CABC /* ListDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListDataSource.m; sourceTree = "<group>"; };
+		84DA053E187D846D004592EC /* HelveticaNeueCyr-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueCyr-Black.otf"; sourceTree = "<group>"; };
+		84DA053F187D846D004592EC /* HelveticaNeueCyr-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueCyr-BlackItalic.otf"; sourceTree = "<group>"; };
+		84DA0540187D846D004592EC /* HelveticaNeueCyr-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueCyr-Bold.otf"; sourceTree = "<group>"; };
+		84DA0541187D846D004592EC /* HelveticaNeueCyr-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueCyr-BoldItalic.otf"; sourceTree = "<group>"; };
+		84DA0542187D846D004592EC /* HelveticaNeueCyr-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueCyr-Italic.otf"; sourceTree = "<group>"; };
+		84DA0543187D846D004592EC /* HelveticaNeueCyr-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueCyr-Light.otf"; sourceTree = "<group>"; };
+		84DA0544187D846D004592EC /* HelveticaNeueCyr-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueCyr-LightItalic.otf"; sourceTree = "<group>"; };
+		84DA0545187D846D004592EC /* HelveticaNeueCyr-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueCyr-Medium.otf"; sourceTree = "<group>"; };
+		84DA0546187D846D004592EC /* HelveticaNeueCyr-Roman.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueCyr-Roman.otf"; sourceTree = "<group>"; };
+		84DA0547187D846D004592EC /* HelveticaNeueCyr-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueCyr-Thin.otf"; sourceTree = "<group>"; };
+		84DA0548187D846D004592EC /* HelveticaNeueCyr-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueCyr-ThinItalic.otf"; sourceTree = "<group>"; };
+		84DA0549187D846D004592EC /* HelveticaNeueCyr-UltraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueCyr-UltraLight.otf"; sourceTree = "<group>"; };
+		84DA054A187D846D004592EC /* HelveticaNeueCyr-UltraLightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueCyr-UltraLightItalic.otf"; sourceTree = "<group>"; };
 		84FDF89B187AA9610082595A /* StationViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationViewCell.h; sourceTree = "<group>"; };
 		84FDF89C187AA9610082595A /* StationViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationViewCell.m; sourceTree = "<group>"; };
 		9CF17A4018431F7F007FF8D9 /* iSinooil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSinooil.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -312,6 +338,26 @@
 			name = Data;
 			sourceTree = "<group>";
 		};
+		84DA053D187D844F004592EC /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				84DA053E187D846D004592EC /* HelveticaNeueCyr-Black.otf */,
+				84DA053F187D846D004592EC /* HelveticaNeueCyr-BlackItalic.otf */,
+				84DA0540187D846D004592EC /* HelveticaNeueCyr-Bold.otf */,
+				84DA0541187D846D004592EC /* HelveticaNeueCyr-BoldItalic.otf */,
+				84DA0542187D846D004592EC /* HelveticaNeueCyr-Italic.otf */,
+				84DA0543187D846D004592EC /* HelveticaNeueCyr-Light.otf */,
+				84DA0544187D846D004592EC /* HelveticaNeueCyr-LightItalic.otf */,
+				84DA0545187D846D004592EC /* HelveticaNeueCyr-Medium.otf */,
+				84DA0546187D846D004592EC /* HelveticaNeueCyr-Roman.otf */,
+				84DA0547187D846D004592EC /* HelveticaNeueCyr-Thin.otf */,
+				84DA0548187D846D004592EC /* HelveticaNeueCyr-ThinItalic.otf */,
+				84DA0549187D846D004592EC /* HelveticaNeueCyr-UltraLight.otf */,
+				84DA054A187D846D004592EC /* HelveticaNeueCyr-UltraLightItalic.otf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		9CF17A3718431F7F007FF8D9 = {
 			isa = PBXGroup;
 			children = (
@@ -346,6 +392,7 @@
 		9CF17A4918431F7F007FF8D9 /* iSinooil */ = {
 			isa = PBXGroup;
 			children = (
+				84DA053D187D844F004592EC /* Fonts */,
 				846938E7187A84010037CABC /* Data */,
 				DD613618187854D200059DA8 /* Controller */,
 				DD46151218751E7A008FCD16 /* jsons */,
@@ -623,9 +670,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84DA054C187D846D004592EC /* HelveticaNeueCyr-BlackItalic.otf in Resources */,
 				DDEB489118542883006FAED3 /* icon_wheel@2x.png in Resources */,
 				DDEB487018542883006FAED3 /* icon_amer@2x.png in Resources */,
 				DDEB489B18542883006FAED3 /* icon_menu@2x.png in Resources */,
+				84DA0554187D846D004592EC /* HelveticaNeueCyr-Thin.otf in Resources */,
 				DDEB488D18542883006FAED3 /* icon_visa_pressed@2x.png in Resources */,
 				DDEB488418542883006FAED3 /* icon_oil_pressed@2x.png in Resources */,
 				DDEB487718542883006FAED3 /* icon_cafe_inactive@2x.png in Resources */,
@@ -638,7 +687,10 @@
 				DD46151718751E88008FCD16 /* article.json in Resources */,
 				DDC8734D1875301A00393876 /* Localizable.strings in Resources */,
 				DDEB485A18542883006FAED3 /* arrowleft_white@2x.png in Resources */,
+				84DA054B187D846D004592EC /* HelveticaNeueCyr-Black.otf in Resources */,
 				DD46151818751E88008FCD16 /* azs.json in Resources */,
+				84DA0556187D846D004592EC /* HelveticaNeueCyr-UltraLight.otf in Resources */,
+				84DA0555187D846D004592EC /* HelveticaNeueCyr-ThinItalic.otf in Resources */,
 				DDEB489618542883006FAED3 /* icon_fb@2x.png in Resources */,
 				DDEB486618542883006FAED3 /* icon_92_pressed@2x.png in Resources */,
 				DDEB486018542883006FAED3 /* button_over@2x.png in Resources */,
@@ -659,6 +711,7 @@
 				DDEB488A18542883006FAED3 /* icon_terminal_pressed@2x.png in Resources */,
 				DDEB487E18542883006FAED3 /* icon_market_pressed@2x.png in Resources */,
 				DDEB487C18542883006FAED3 /* icon_market@2x.png in Resources */,
+				84DA054E187D846D004592EC /* HelveticaNeueCyr-BoldItalic.otf in Resources */,
 				DDEB48AE18542894006FAED3 /* сино_ios_fin copy.jpg in Resources */,
 				DDEB48A518542883006FAED3 /* news_over@2x.png in Resources */,
 				DDEB486218542883006FAED3 /* icon_80_inactive@2x.png in Resources */,
@@ -666,14 +719,19 @@
 				DDEB488C18542883006FAED3 /* icon_visa_inactive@2x.png in Resources */,
 				DDEB48A618542883006FAED3 /* price_bg@2x.png in Resources */,
 				DDEB486118542883006FAED3 /* icon_80@2x.png in Resources */,
+				84DA0551187D846D004592EC /* HelveticaNeueCyr-LightItalic.otf in Resources */,
 				DDEB485D18542883006FAED3 /* button1@2x.png in Resources */,
+				84DA0552187D846D004592EC /* HelveticaNeueCyr-Medium.otf in Resources */,
+				84DA054D187D846D004592EC /* HelveticaNeueCyr-Bold.otf in Resources */,
 				DDEB486D18542883006FAED3 /* icon_97@2x.png in Resources */,
 				DDEB487918542883006FAED3 /* icon_diesel@2x.png in Resources */,
 				DDEB486B18542883006FAED3 /* icon_96_inactive@2x.png in Resources */,
+				84DA0557187D846D004592EC /* HelveticaNeueCyr-UltraLightItalic.otf in Resources */,
 				DDEB487B18542883006FAED3 /* icon_diesel_pressed@2x.png in Resources */,
 				DDEB486818542883006FAED3 /* icon_93_inactive@2x.png in Resources */,
 				DDEB489818542883006FAED3 /* icon_fuel@2x.png in Resources */,
 				DDEB489D18542883006FAED3 /* icon_settings@2x.png in Resources */,
+				84DA054F187D846D004592EC /* HelveticaNeueCyr-Italic.otf in Resources */,
 				DDEB489E18542883006FAED3 /* icon_social_over@2x.png in Resources */,
 				DDEB48A918542883006FAED3 /* tab_left@2x.png in Resources */,
 				DDEB487118542883006FAED3 /* icon_amer_inactive@2x.png in Resources */,
@@ -682,10 +740,12 @@
 				DDEB488018542883006FAED3 /* icon_master_inactive@2x.png in Resources */,
 				DDEB488F18542883006FAED3 /* icon_wash_inactive@2x.png in Resources */,
 				DDEB486918542883006FAED3 /* icon_93_pressed@2x.png in Resources */,
+				84DA0550187D846D004592EC /* HelveticaNeueCyr-Light.otf in Resources */,
 				DDEB489918542883006FAED3 /* icon_hotline@2x.png in Resources */,
 				9CF17A4E18431F7F007FF8D9 /* InfoPlist.strings in Resources */,
 				DDEB486A18542883006FAED3 /* icon_96@2x.png in Resources */,
 				DDEB487418542883006FAED3 /* icon_atm_inactive@2x.png in Resources */,
+				84DA0553187D846D004592EC /* HelveticaNeueCyr-Roman.otf in Resources */,
 				DDEB487218542883006FAED3 /* icon_amer_pressed@2x.png in Resources */,
 				DD46151918751E88008FCD16 /* fuel.json in Resources */,
 				DDEB489C18542883006FAED3 /* icon_metrics@2x.png in Resources */,
