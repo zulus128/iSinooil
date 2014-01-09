@@ -11,29 +11,67 @@
 
 @implementation MyMapView
 
+//for iOS7 routing
+//-(void) showRouteTo:(CLLocationCoordinate2D) t {
+//
+//    MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:t addressDictionary:nil];
+//    MKMapItem *destination = [[MKMapItem alloc] initWithPlacemark:placemark];
+////    [mapItem setName:@"Name of your location"];
+////    [mapItem openInMapsWithLaunchOptions:nil];
+//    
+//    MKDirectionsRequest *request = [[MKDirectionsRequest alloc] init];
+//    request.source = [MKMapItem mapItemForCurrentLocation];
+//    request.destination = destination;
+//    request.requestsAlternateRoutes = NO;
+//    request.transportType = MKDirectionsTransportTypeAutomobile;
+//    
+//    MKDirections *directions = [[MKDirections alloc] initWithRequest:request];
+//    
+//    [directions calculateDirectionsWithCompletionHandler:
+//     ^(MKDirectionsResponse *response, NSError *error) {
+//         if (error) {
+//             // Handle Error
+//             NSLog(@"%@", error);
+//         } else {
+//             [self showRoute:response];
+//         }
+//     }];
+//}
+//
+//-(void)showRoute:(MKDirectionsResponse *)response {
+//    
+//    for (MKRoute *route in self.prevRoutes) {
+//        
+//        [self removeOverlay:route.polyline];
+//    }
+//
+//    for (MKRoute *route in response.routes) {
+//        
+//        [self addOverlay:route.polyline level:MKOverlayLevelAboveRoads];
+//    }
+//    
+//    self.prevRoutes = response.routes;
+//}
+
 -(void) showRouteFrom: (MapPoint*) f to:(MapPoint*) t {
 	
     if(!routeView) {
         
         routeView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
 		routeView.userInteractionEnabled = NO;
-//		[self addSubview:routeView];
-		
 		lineColor = [UIColor colorWithWhite:0.2 alpha:0.5];
 
     }
-    
-//	routes = [self calculateRoutesFrom:f.coordinate to:t.coordinate];
 	routes = [Common calculateRoutesFrom:f.coordinate to:t.coordinate];
-	
 	[self updateRouteView];
 
 }
 
 -(void) updateRouteView {
     
-    CLLocationCoordinate2D coordinates[routes.count];
+    [self removeOverlay:self.prevRoute];
     
+    CLLocationCoordinate2D coordinates[routes.count];
     int i = 0;
     for (CLLocation* ckpt in routes) {
         
@@ -43,6 +81,8 @@
     MKPolyline* mp = [MKPolyline polylineWithCoordinates:coordinates count:routes.count];
     [self addOverlay:mp];
 
+    self.prevRoute = mp;
+    
 //	CGContextRef context = 	CGBitmapContextCreate(nil,
 //												  routeView.frame.size.width,
 //												  routeView.frame.size.height,

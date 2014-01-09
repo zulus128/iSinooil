@@ -25,10 +25,15 @@
 @property (weak, nonatomic) IBOutlet UILabel *stationNumberLab;
 @property (weak, nonatomic) IBOutlet UILabel *stationDescrLab;
 @property (weak, nonatomic) IBOutlet UITableView *stationList;
+- (IBAction)mapTouchDown:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *mapButton;
+- (IBAction)listTouchDown:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *listButton;
+
 
 - (void) showDetail:(int)num;
 
-- (IBAction) pickOne:(id)sender;
+//- (IBAction) pickOne:(id)sender;
 
 - (IBAction) menu:(id)sender;
 

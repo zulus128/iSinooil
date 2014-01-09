@@ -61,6 +61,9 @@
     self.stationList.delegate = self;
     self.stationList.dataSource = self.listsour;
     
+    [Common instance].mymapview = self.mapView;
+    
+    [self mapTouchDown:self.mapButton];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -88,23 +91,23 @@
     
 }
 
-- (IBAction) pickOne:(id)sender {
-    
-    UISegmentedControl *segmentedControl = (UISegmentedControl *)sender;
-//    NSLog(@"index = %d", segmentedControl.selectedSegmentIndex);
-    
-    switch (segmentedControl.selectedSegmentIndex) {
-        case 0:
-            self.mapView.hidden = NO;
-            self.stationList.hidden = YES;
-            break;
-        case 1:
-            self.mapView.hidden = YES;
-            [self.stationList reloadData];
-            self.stationList.hidden = NO;
-            break;
-    }
-}
+//- (IBAction) pickOne:(id)sender {
+//    
+//    UISegmentedControl *segmentedControl = (UISegmentedControl *)sender;
+////    NSLog(@"index = %d", segmentedControl.selectedSegmentIndex);
+//    
+//    switch (segmentedControl.selectedSegmentIndex) {
+//        case 0:
+//            self.mapView.hidden = NO;
+//            self.stationList.hidden = YES;
+//            break;
+//        case 1:
+//            self.mapView.hidden = YES;
+//            [self.stationList reloadData];
+//            self.stationList.hidden = NO;
+//            break;
+//    }
+//}
 
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     
@@ -287,6 +290,35 @@
     
     self.stationDetailView.hidden = NO;
 
+}
+
+- (IBAction)mapTouchDown:(UIButton*)button {
+    
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+    [button setBackgroundImage: [UIImage imageNamed:@"tab_left_pressed.png"] forState:UIControlStateNormal];
+
+    [self.listButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+    [self.listButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateHighlighted];
+    [self.listButton setBackgroundImage: [UIImage imageNamed:@"tab_right.png"] forState:UIControlStateNormal];
+    
+    self.mapView.hidden = NO;
+    self.stationList.hidden = YES;
+}
+
+- (IBAction)listTouchDown:(UIButton*)button {
+    
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+    [button setBackgroundImage: [UIImage imageNamed:@"tab_right_pressed.png"] forState:UIControlStateNormal];
+
+    [self.mapButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+    [self.mapButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateHighlighted];
+    [self.mapButton setBackgroundImage: [UIImage imageNamed:@"tab_left.png"] forState:UIControlStateNormal];
+
+    self.mapView.hidden = YES;
+    [self.stationList reloadData];
+    self.stationList.hidden = NO;
 }
 
 - (void) showDetail:(int)num {

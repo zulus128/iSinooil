@@ -135,7 +135,6 @@
 		DDEB48AA18542883006FAED3 /* tab_left_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDEB485418542883006FAED3 /* tab_left_pressed@2x.png */; };
 		DDEB48AB18542883006FAED3 /* tab_right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDEB485518542883006FAED3 /* tab_right@2x.png */; };
 		DDEB48AC18542883006FAED3 /* tab_right_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDEB485618542883006FAED3 /* tab_right_pressed@2x.png */; };
-		DDEB48AE18542894006FAED3 /* сино_ios_fin copy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DDEB48AD18542894006FAED3 /* сино_ios_fin copy.jpg */; };
 		DDEB48B218544BF9006FAED3 /* ScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEB48B118544BF9006FAED3 /* ScrollView.m */; };
 		DDEB48B518544CF5006FAED3 /* MyMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEB48B418544CF5006FAED3 /* MyMapView.m */; };
 		DDEB48BC185452A4006FAED3 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEB48BB185452A4006FAED3 /* MapViewController.m */; };
@@ -152,7 +151,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		844317EB187D081E00E3FC70 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
+		8400A6CF187ECE8B001BF0D6 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
 		846938E4187A81640037CABC /* ListDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListDataSource.h; sourceTree = "<group>"; };
 		846938E5187A81640037CABC /* ListDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListDataSource.m; sourceTree = "<group>"; };
 		84BC6401187E7CBD00BF030B /* head_gr2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = head_gr2.png; sourceTree = "<group>"; };
@@ -297,7 +296,6 @@
 		DDEB485418542883006FAED3 /* tab_left_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_left_pressed@2x.png"; sourceTree = "<group>"; };
 		DDEB485518542883006FAED3 /* tab_right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_right@2x.png"; sourceTree = "<group>"; };
 		DDEB485618542883006FAED3 /* tab_right_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_right_pressed@2x.png"; sourceTree = "<group>"; };
-		DDEB48AD18542894006FAED3 /* сино_ios_fin copy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "сино_ios_fin copy.jpg"; sourceTree = "<group>"; };
 		DDEB48B018544BF9006FAED3 /* ScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollView.h; sourceTree = "<group>"; };
 		DDEB48B118544BF9006FAED3 /* ScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollView.m; sourceTree = "<group>"; };
 		DDEB48B318544CF5006FAED3 /* MyMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMapView.h; sourceTree = "<group>"; };
@@ -480,7 +478,6 @@
 			isa = PBXGroup;
 			children = (
 				84BC6401187E7CBD00BF030B /* head_gr2.png */,
-				DDEB48AD18542894006FAED3 /* сино_ios_fin copy.jpg */,
 				DDEB480018542883006FAED3 /* arrowdown_dark@2x.png */,
 				DDEB480118542883006FAED3 /* arrowdown_light@2x.png */,
 				DDEB480218542883006FAED3 /* arrowleft_red@2x.png */,
@@ -716,7 +713,6 @@
 				DDEB487E18542883006FAED3 /* icon_market_pressed@2x.png in Resources */,
 				DDEB487C18542883006FAED3 /* icon_market@2x.png in Resources */,
 				84DA054E187D846D004592EC /* HelveticaNeueCyr-BoldItalic.otf in Resources */,
-				DDEB48AE18542894006FAED3 /* сино_ios_fin copy.jpg in Resources */,
 				DDEB48A518542883006FAED3 /* news_over@2x.png in Resources */,
 				DDEB486218542883006FAED3 /* icon_80_inactive@2x.png in Resources */,
 				DDEB488918542883006FAED3 /* icon_terminal_inactive@2x.png in Resources */,
@@ -849,7 +845,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				9CF17A5618431F7F007FF8D9 /* Base */,
-				844317EB187D081E00E3FC70 /* ru */,
+				8400A6CF187ECE8B001BF0D6 /* ru */,
 			);
 			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";
@@ -966,7 +962,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iSinooil/iSinooil-Prefix.pch";
 				INFOPLIST_FILE = "iSinooil/iSinooil-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -981,7 +977,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iSinooil/iSinooil-Prefix.pch";
 				INFOPLIST_FILE = "iSinooil/iSinooil-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

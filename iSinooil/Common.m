@@ -7,6 +7,7 @@
 //
 
 #import "Common.h"
+#import <MapKit/MapKit.h>
 
 @implementation Common
 
@@ -100,6 +101,36 @@
     return CGSizeMake(height, width);
 }
 
+//for iOS 7 routing
+//- (float) calculateDistTo: (CLLocationCoordinate2D) t {
+//
+//    MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:t addressDictionary:nil];
+//    MKMapItem *destination = [[MKMapItem alloc] initWithPlacemark:placemark];
+//    
+//    MKDirectionsRequest *request = [[MKDirectionsRequest alloc] init];
+//    request.source = [MKMapItem mapItemForCurrentLocation];
+//    request.destination = destination;
+//    request.requestsAlternateRoutes = NO;
+//    request.transportType = MKDirectionsTransportTypeAutomobile;
+//    MKDirections *directions = [[MKDirections alloc] initWithRequest:request];
+//    
+//    __block float dist = 0;
+//    [directions calculateDirectionsWithCompletionHandler:
+//     ^(MKDirectionsResponse *response, NSError *error) {
+//         if (error) {
+//             // Handle Error
+//         } else {
+//             if (response.routes.count) {
+//                 
+//                 dist = ((MKRoute*)[response.routes objectAtIndex:0]).distance;
+//             }
+//         }
+//     }];
+//
+//    return dist;
+//}
+
+//for iOS 6 routing
 + (NSMutableArray *)decodePolyLine: (NSMutableString *)encoded {
     
 	[encoded replaceOccurrencesOfString:@"\\\\" withString:@"\\"

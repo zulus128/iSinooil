@@ -26,13 +26,14 @@
 
 + (CGSize) currentScreenBoundsDependOnOrientation:(UIInterfaceOrientation) interfaceOrientation;
 + (CGSize) currentScreenBounds;
-+ (NSArray*) calculateRoutesFrom:(CLLocationCoordinate2D) f to: (CLLocationCoordinate2D) t;
 
++ (NSArray*) calculateRoutesFrom:(CLLocationCoordinate2D) f to: (CLLocationCoordinate2D) t;
 - (float) calculateDistTo: (CLLocationCoordinate2D) t;
 
-@property (nonatomic, retain) NSArray* azsjson;
+@property (nonatomic, strong) NSArray* azsjson;
 @property (assign, readwrite) CLLocationCoordinate2D userCoordinate;
 //@property (readwrite) dispatch_semaphore_t userCoordUpdatedSem;
 
+@property (nonatomic, strong) MKMapView* mymapview;
 
 @end

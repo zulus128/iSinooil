@@ -11,13 +11,15 @@
 
 @interface MyMapView : MKMapView {
     
-//    MKMapView* mapView;
 	UIImageView* routeView;
 	NSArray* routes;
 	UIColor* lineColor;
 }
 
-//@property (nonatomic, retain) UIColor* lineColor;
 -(void) showRouteFrom: (MapPoint*) f to:(MapPoint*) t;
+//-(void) showRouteTo:(CLLocationCoordinate2D) t;
+
+//@property (nonatomic, strong) NSArray* prevRoutes;
+@property (nonatomic, strong) MKPolyline* prevRoute;
 
 @end

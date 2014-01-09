@@ -129,19 +129,28 @@
 
     MapPoint* me = [[MapPoint alloc] initWithCoordinate:[Common instance].userCoordinate title:@"me" subTitle:@"meme"];
     MapPoint* to = [[MapPoint alloc] initWithCoordinate:c title:@"to" subTitle:@"toto"];
-    
     [((MyMapView *)mapView) showRouteFrom:me to:to];
+
+//for iOS7 routing    [((MyMapView *)mapView) showRouteTo:c];
     
 }
 
-- (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id <MKOverlay>)overlay {
+//- (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id <MKOverlay>)overlay {
+//    
+//    MKPolylineView *polylineView = [[MKPolylineView alloc] initWithPolyline:overlay];
+//    polylineView.strokeColor = [UIColor greenColor];
+//    polylineView.lineWidth = 5.0;
+//    
+//    return polylineView;
+//    
+//}
+
+- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id < MKOverlay >)overlay {
     
-    MKPolylineView *polylineView = [[MKPolylineView alloc] initWithPolyline:overlay];
-    polylineView.strokeColor = [UIColor greenColor];
-    polylineView.lineWidth = 5.0;
-    
-    return polylineView;
-    
+    MKPolylineRenderer *renderer = [[MKPolylineRenderer alloc] initWithOverlay:overlay];
+    renderer.strokeColor = [UIColor blueColor];
+    renderer.lineWidth = 5.0;
+    return renderer;
 }
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
