@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		846938E6187A81640037CABC /* ListDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 846938E5187A81640037CABC /* ListDataSource.m */; };
+		84BC6402187E7CBD00BF030B /* head_gr2.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BC6401187E7CBD00BF030B /* head_gr2.png */; };
 		84DA054B187D846D004592EC /* HelveticaNeueCyr-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84DA053E187D846D004592EC /* HelveticaNeueCyr-Black.otf */; };
 		84DA054C187D846D004592EC /* HelveticaNeueCyr-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84DA053F187D846D004592EC /* HelveticaNeueCyr-BlackItalic.otf */; };
 		84DA054D187D846D004592EC /* HelveticaNeueCyr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84DA0540187D846D004592EC /* HelveticaNeueCyr-Bold.otf */; };
@@ -154,6 +155,7 @@
 		844317EB187D081E00E3FC70 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
 		846938E4187A81640037CABC /* ListDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListDataSource.h; sourceTree = "<group>"; };
 		846938E5187A81640037CABC /* ListDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListDataSource.m; sourceTree = "<group>"; };
+		84BC6401187E7CBD00BF030B /* head_gr2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = head_gr2.png; sourceTree = "<group>"; };
 		84DA053E187D846D004592EC /* HelveticaNeueCyr-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueCyr-Black.otf"; sourceTree = "<group>"; };
 		84DA053F187D846D004592EC /* HelveticaNeueCyr-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueCyr-BlackItalic.otf"; sourceTree = "<group>"; };
 		84DA0540187D846D004592EC /* HelveticaNeueCyr-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueCyr-Bold.otf"; sourceTree = "<group>"; };
@@ -477,6 +479,7 @@
 		DDEB47FF18542883006FAED3 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				84BC6401187E7CBD00BF030B /* head_gr2.png */,
 				DDEB48AD18542894006FAED3 /* сино_ios_fin copy.jpg */,
 				DDEB480018542883006FAED3 /* arrowdown_dark@2x.png */,
 				DDEB480118542883006FAED3 /* arrowdown_light@2x.png */,
@@ -677,6 +680,7 @@
 				84DA0554187D846D004592EC /* HelveticaNeueCyr-Thin.otf in Resources */,
 				DDEB488D18542883006FAED3 /* icon_visa_pressed@2x.png in Resources */,
 				DDEB488418542883006FAED3 /* icon_oil_pressed@2x.png in Resources */,
+				84BC6402187E7CBD00BF030B /* head_gr2.png in Resources */,
 				DDEB487718542883006FAED3 /* icon_cafe_inactive@2x.png in Resources */,
 				DDEB486318542883006FAED3 /* icon_80_pressed@2x.png in Resources */,
 				DDEB489218542883006FAED3 /* icon_wheel_inactive@2x.png in Resources */,
