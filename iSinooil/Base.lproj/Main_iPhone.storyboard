@@ -249,8 +249,62 @@
                     <view key="view" contentMode="scaleToFill" id="SKN-8E-Cmn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hbz-O5-cSG" userLabel="TopView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="head_gr2.png" translatesAutoresizingMaskIntoConstraints="NO" id="Zee-hY-mTi">
+                                        <rect key="frame" x="20" y="13" width="160" height="43"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ywo-fg-k7u">
+                                        <rect key="frame" x="0.0" y="29" width="43" height="43"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="icon_menu.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="toMenu:" destination="E8K-WK-A03" eventType="touchUpInside" id="gOP-6h-hlm"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Prices" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wSO-VP-fiU">
+                                        <rect key="frame" x="51" y="40" width="249" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Zee-hY-mTi" firstAttribute="leading" secondItem="hbz-O5-cSG" secondAttribute="leading" id="Eeg-oV-oo1"/>
+                                    <constraint firstAttribute="bottom" secondItem="Zee-hY-mTi" secondAttribute="bottom" id="FUh-PU-ke1"/>
+                                    <constraint firstItem="Zee-hY-mTi" firstAttribute="top" secondItem="hbz-O5-cSG" secondAttribute="top" id="UP2-49-yP2"/>
+                                    <constraint firstAttribute="height" constant="70" id="WSE-h1-2so"/>
+                                    <constraint firstAttribute="trailing" secondItem="Zee-hY-mTi" secondAttribute="trailing" id="sbx-4V-AQv"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="t2O-ur-6HE">
+                                <rect key="frame" x="0.0" y="70" width="320" height="498"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.97530934150000004" blue="0.12763108419999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="t2O-ur-6HE" secondAttribute="trailing" id="2rC-fG-Ey1"/>
+                            <constraint firstItem="hbz-O5-cSG" firstAttribute="leading" secondItem="SKN-8E-Cmn" secondAttribute="leading" id="7Pf-A7-uQC"/>
+                            <constraint firstAttribute="trailing" secondItem="hbz-O5-cSG" secondAttribute="trailing" id="JJi-yn-bV4"/>
+                            <constraint firstItem="nnM-Eg-zHO" firstAttribute="top" secondItem="t2O-ur-6HE" secondAttribute="bottom" id="coQ-Fh-psI"/>
+                            <constraint firstItem="hbz-O5-cSG" firstAttribute="top" secondItem="SKN-8E-Cmn" secondAttribute="top" id="lgG-du-fXE"/>
+                            <constraint firstItem="t2O-ur-6HE" firstAttribute="leading" secondItem="SKN-8E-Cmn" secondAttribute="leading" id="nMc-Vu-VDC"/>
+                            <constraint firstItem="t2O-ur-6HE" firstAttribute="top" secondItem="hbz-O5-cSG" secondAttribute="bottom" id="too-Uy-eqU"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="topView" destination="SKN-8E-Cmn" id="Z2V-MJ-jH4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nTj-Ax-plL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -318,7 +372,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view opaque="NO" alpha="0.70000000000000007" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YtZ-eo-7aa" userLabel="Bottom">
+                            <view opaque="NO" alpha="0.70000000000000007" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YtZ-eo-7aa" userLabel="BottomView">
                                 <rect key="frame" x="0.0" y="508" width="320" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -428,7 +482,7 @@
                                     <constraint firstItem="Jcs-ge-0J7" firstAttribute="leading" secondItem="0V8-vD-6N3" secondAttribute="leading" constant="20" id="STl-69-ZLu"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6bG-Rj-KHf" userLabel="Top">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6bG-Rj-KHf" userLabel="TopView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>

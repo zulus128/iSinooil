@@ -95,13 +95,16 @@
         vc.view.hidden = (vc.view.tag != tag);
     }
 
+//    self.view.hidden = YES;
 }
 
 - (void) goLeft:(int) tag {
 
 
     [self makeInvisibleExcludeTag:tag];
-    
+
+//    self.view.hidden = NO;
+
     UIView* view = [self.view viewWithTag:tag];
     CGRect fr = self.view.frame;
     view.frame = CGRectMake(fr.size.width - deltaX, fr.origin.y, fr.size.width, fr.size.height);

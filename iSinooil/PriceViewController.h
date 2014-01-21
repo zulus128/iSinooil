@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface PriceViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIView *topView;
+- (IBAction)toMenu:(id)sender;
 
 @end

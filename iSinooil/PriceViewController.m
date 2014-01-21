@@ -7,20 +7,16 @@
 //
 
 #import "PriceViewController.h"
-
-@interface PriceViewController ()
-
-@end
+#import "Common.h"
 
 @implementation PriceViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+- (void) willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    
+    //    NSLog(@"will rotate price");
+    
+    CGSize s = [Common currentScreenBoundsDependOnOrientation:toInterfaceOrientation];
+    self.topView.frame = CGRectMake(0, 0, s.width, s.height);
 }
 
 - (void)viewDidLoad
@@ -33,6 +29,22 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)toMenu:(id)sender {
+
+    self.view.hidden = NO;
+    
+    CGRect fr = self.view.frame;
+    BOOL b = (fr.origin.x < 1);
+    [UIView animateWithDuration:anim_delay delay:0.0 options:UIViewAnimationOptionCurveEaseIn
+                     animations:^{
+                         
+                         self.view.frame = CGRectMake(b?(fr.size.width - deltaX):0, fr.origin.y, fr.size.width, fr.size.height);
+                         
+                     }
+                     completion:^(BOOL finished) {
+                     }];
 }
 
 @end
