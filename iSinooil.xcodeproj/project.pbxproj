@@ -24,6 +24,7 @@
 		84DA0555187D846D004592EC /* HelveticaNeueCyr-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84DA0548187D846D004592EC /* HelveticaNeueCyr-ThinItalic.otf */; };
 		84DA0556187D846D004592EC /* HelveticaNeueCyr-UltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84DA0549187D846D004592EC /* HelveticaNeueCyr-UltraLight.otf */; };
 		84DA0557187D846D004592EC /* HelveticaNeueCyr-UltraLightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84DA054A187D846D004592EC /* HelveticaNeueCyr-UltraLightItalic.otf */; };
+		84F9C698188EBAA700739533 /* PriceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F9C697188EBAA700739533 /* PriceCell.m */; };
 		84FDF89D187AA9610082595A /* StationViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FDF89C187AA9610082595A /* StationViewCell.m */; };
 		9CF17A4418431F7F007FF8D9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF17A4318431F7F007FF8D9 /* Foundation.framework */; };
 		9CF17A4618431F7F007FF8D9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF17A4518431F7F007FF8D9 /* CoreGraphics.framework */; };
@@ -174,6 +175,8 @@
 		84DA0548187D846D004592EC /* HelveticaNeueCyr-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueCyr-ThinItalic.otf"; sourceTree = "<group>"; };
 		84DA0549187D846D004592EC /* HelveticaNeueCyr-UltraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueCyr-UltraLight.otf"; sourceTree = "<group>"; };
 		84DA054A187D846D004592EC /* HelveticaNeueCyr-UltraLightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueCyr-UltraLightItalic.otf"; sourceTree = "<group>"; };
+		84F9C696188EBAA700739533 /* PriceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceCell.h; sourceTree = "<group>"; };
+		84F9C697188EBAA700739533 /* PriceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceCell.m; sourceTree = "<group>"; };
 		84FDF89B187AA9610082595A /* StationViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationViewCell.h; sourceTree = "<group>"; };
 		84FDF89C187AA9610082595A /* StationViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationViewCell.m; sourceTree = "<group>"; };
 		9CF17A4018431F7F007FF8D9 /* iSinooil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSinooil.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -599,6 +602,8 @@
 				DDEB48B118544BF9006FAED3 /* ScrollView.m */,
 				84FDF89B187AA9610082595A /* StationViewCell.h */,
 				84FDF89C187AA9610082595A /* StationViewCell.m */,
+				84F9C696188EBAA700739533 /* PriceCell.h */,
+				84F9C697188EBAA700739533 /* PriceCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -816,6 +821,7 @@
 				9CF17A5418431F7F007FF8D9 /* AppDelegate.m in Sources */,
 				DDC873561875ADF600393876 /* Common.m in Sources */,
 				DDA70D271876EA4400C89F86 /* StationAnnotationView.m in Sources */,
+				84F9C698188EBAA700739533 /* PriceCell.m in Sources */,
 				DDA70D211876DA7200C89F86 /* MapPoint.m in Sources */,
 				DDC8735318754F4200393876 /* MenuViewController.m in Sources */,
 				DDA70D241876E0DD00C89F86 /* MapSource.m in Sources */,

@@ -7,6 +7,7 @@
 //
 
 #import "PricesDataSource.h"
+#import "PriceCell.h"
 
 @implementation PricesDataSource
 
@@ -32,8 +33,7 @@
     
  
     static NSString *CellIdentifier = @"priceCell";
-    //    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    StationViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    PriceCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     return cell;
 }
