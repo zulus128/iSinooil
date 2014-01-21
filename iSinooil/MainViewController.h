@@ -30,5 +30,6 @@
 
 - (IBAction)tapMap:(id)sender;
 - (IBAction)menu:(id)sender;
+- (IBAction)tapPrice:(id)sender;
 
 @end

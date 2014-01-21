@@ -47,12 +47,16 @@
                                                     <constraint firstAttribute="width" constant="305" id="mxg-Wv-d2U"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="price_border.png" translatesAutoresizingMaskIntoConstraints="NO" id="eLi-cc-FMP">
+                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="price_border.png" translatesAutoresizingMaskIntoConstraints="NO" id="eLi-cc-FMP">
                                                 <rect key="frame" x="7" y="70" width="305" height="70"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="70" id="Imb-tV-psO"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="sZD-i5-p3i" appends="YES" id="kws-Iz-VpN"/>
+                                                </connections>
                                             </imageView>
                                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3hV-8w-Lbg">
                                                 <rect key="frame" x="7" y="148" width="305" height="115"/>
@@ -94,11 +98,6 @@
                                     <constraint firstItem="E2q-A2-mVD" firstAttribute="leading" secondItem="pcl-Q9-FcC" secondAttribute="leading" id="eWm-Ix-J7H"/>
                                 </constraints>
                             </scrollView>
-                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wlN-tz-dxb">
-                                <rect key="frame" x="80" y="142" width="160" height="284"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -125,6 +124,11 @@
                 <tapGestureRecognizer id="xAP-t4-28t">
                     <connections>
                         <action selector="tapMap:" destination="vXZ-lx-hvc" id="C7U-fB-VkL"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="sZD-i5-p3i">
+                    <connections>
+                        <action selector="tapPrice:" destination="vXZ-lx-hvc" id="Rih-4X-qBm"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -237,7 +241,7 @@
         <!--Price View Controller-->
         <scene sceneID="woL-Uf-0Ti">
             <objects>
-                <viewController id="E8K-WK-A03" customClass="PriceViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="priceController" id="E8K-WK-A03" customClass="PriceViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="H5r-jJ-B4u"/>
                         <viewControllerLayoutGuide type="bottom" id="nnM-Eg-zHO"/>

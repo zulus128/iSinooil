@@ -95,6 +95,11 @@
                      }];
 }
 
+- (IBAction)tapPrice:(id)sender {
+    
+    [((MenuViewController*)self.parentViewController) showPrices];
+}
+
 - (IBAction)tapMap:(id)sender {
     
     [((MenuViewController*)self.parentViewController) showMaps];

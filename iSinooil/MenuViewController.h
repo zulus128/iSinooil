@@ -15,5 +15,6 @@
 - (IBAction)mapsPressed:(id)sender;
 
 - (void) showMaps;
+- (void) showPrices;
 
 @end

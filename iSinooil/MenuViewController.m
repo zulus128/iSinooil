@@ -51,12 +51,21 @@
     [self.view addSubview:viewController.view];
     [viewController didMoveToParentViewController:self];
     
+    viewController =  [storyboard instantiateViewControllerWithIdentifier:@"priceController"];
+    viewController.view.tag = PRICE_VIEW_TAG;
+    [self addChildViewController:viewController];
+    [self.view addSubview:viewController.view];
+    [viewController didMoveToParentViewController:self];
+    CGRect fr = self.view.frame;
+    viewController.view.frame = CGRectMake(fr.size.width - deltaX, fr.origin.y, fr.size.width, fr.size.height);
+    viewController.view.hidden = YES;
+    
     viewController =  [storyboard instantiateViewControllerWithIdentifier:@"mapsController"];
     viewController.view.tag = MAPS_VIEW_TAG;
     [self addChildViewController:viewController];
     [self.view addSubview:viewController.view];
     [viewController didMoveToParentViewController:self];
-    CGRect fr = self.view.frame;
+    fr = self.view.frame;
     viewController.view.frame = CGRectMake(fr.size.width - deltaX, fr.origin.y, fr.size.width, fr.size.height);
     viewController.view.hidden = YES;
 
@@ -130,9 +139,19 @@
     CGRect fr = self.view.frame;
     UIView* view = [self.view viewWithTag:MAPS_VIEW_TAG];
     view.frame = CGRectMake(0, fr.origin.y, fr.size.width, fr.size.height);
-
+    
     [self makeInvisibleExcludeTag:MAPS_VIEW_TAG];
+    
+}
 
+- (void) showPrices {
+    
+    CGRect fr = self.view.frame;
+    UIView* view = [self.view viewWithTag:PRICE_VIEW_TAG];
+    view.frame = CGRectMake(0, fr.origin.y, fr.size.width, fr.size.height);
+    
+    [self makeInvisibleExcludeTag:PRICE_VIEW_TAG];
+    
 }
 
 @end
