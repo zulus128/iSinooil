@@ -441,7 +441,7 @@
                         <outlet property="mapView" destination="7gR-NF-8PC" id="slN-hH-Jfs"/>
                         <outlet property="stationDescrLab" destination="Bvp-ag-u32" id="0Hg-DO-R6S"/>
                         <outlet property="stationDetailView" destination="g4i-DP-n2j" id="9eG-49-VPt"/>
-                        <outlet property="stationList" destination="RGu-a5-vfJ" id="7KC-ow-eYl"/>
+                        <outlet property="stationListTable" destination="RGu-a5-vfJ" id="RUf-EE-ppZ"/>
                         <outlet property="stationNumberLab" destination="Jcx-VK-Qfx" id="gzv-KL-v2B"/>
                         <outlet property="topView" destination="kFJ-Ix-U0T" id="bOG-S6-hzg"/>
                     </connections>

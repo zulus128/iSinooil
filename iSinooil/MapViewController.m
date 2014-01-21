@@ -58,8 +58,8 @@
     
     self.listsour = [[StationListDataSource alloc] init];
 //    self.stationList.delegate = self.listsour;
-    self.stationList.delegate = self;
-    self.stationList.dataSource = self.listsour;
+    self.stationListTable.delegate = self;
+    self.stationListTable.dataSource = self.listsour;
     
     [Common instance].mymapview = self.mapView;
     
@@ -303,7 +303,7 @@
     [self.listButton setBackgroundImage: [UIImage imageNamed:@"tab_right.png"] forState:UIControlStateNormal];
     
     self.mapView.hidden = NO;
-    self.stationList.hidden = YES;
+    self.stationListTable.hidden = YES;
 }
 
 - (IBAction)listTouchDown:(UIButton*)button {
@@ -317,8 +317,8 @@
     [self.mapButton setBackgroundImage: [UIImage imageNamed:@"tab_left.png"] forState:UIControlStateNormal];
 
     self.mapView.hidden = YES;
-    [self.stationList reloadData];
-    self.stationList.hidden = NO;
+    [self.stationListTable reloadData];
+    self.stationListTable.hidden = NO;
 }
 
 - (void) showDetail:(int)num {

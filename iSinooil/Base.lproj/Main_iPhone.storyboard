@@ -313,6 +313,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="pricesListTable" destination="t2O-ur-6HE" id="vJl-Bb-2mg"/>
                         <outlet property="topView" destination="SKN-8E-Cmn" id="Z2V-MJ-jH4"/>
                     </connections>
                 </viewController>
@@ -561,7 +562,7 @@
                         <outlet property="mapView" destination="Mlw-uB-XSS" id="x8P-J5-3mr"/>
                         <outlet property="stationDescrLab" destination="5Yv-tQ-BJB" id="OOi-mi-IfH"/>
                         <outlet property="stationDetailView" destination="0V8-vD-6N3" id="XsT-e5-pnn"/>
-                        <outlet property="stationList" destination="P31-Wq-ivE" id="Tdn-ks-aIr"/>
+                        <outlet property="stationListTable" destination="P31-Wq-ivE" id="xYW-Vi-oP1"/>
                         <outlet property="stationNumberLab" destination="sQv-sU-cOF" id="PVq-GI-RO4"/>
                         <outlet property="topView" destination="Qsz-3i-kc0" id="BIG-we-NKc"/>
                     </connections>

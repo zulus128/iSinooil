@@ -24,3 +24,20 @@
 #define TITLELABEL_TAG 300
 //#define FONT_STD(s) [UIFont fontWithName:@"HelveticaNeueCyr-Roman" size:s]
 #define FONT_STD [UIFont fontWithName:@"HelveticaNeueCyr-Bold" size:15.0f]
+
+/*
+ ГАЗ 64
+ ДТ 32
+ АИ-80 16
+ АИ-92 8
+ АИ-93 4
+ АИ-96 2
+ АИ-97 1
+ */
+#define FUEL_BIT_97 1
+#define FUEL_BIT_96 2
+#define FUEL_BIT_93 4
+#define FUEL_BIT_92 8
+#define FUEL_BIT_80 16
+#define FUEL_BIT_DT 32
+#define FUEL_BIT_GAS 64

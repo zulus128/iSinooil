@@ -24,7 +24,7 @@
 @property (weak, nonatomic) IBOutlet UIView *stationDetailView;
 @property (weak, nonatomic) IBOutlet UILabel *stationNumberLab;
 @property (weak, nonatomic) IBOutlet UILabel *stationDescrLab;
-@property (weak, nonatomic) IBOutlet UITableView *stationList;
+@property (weak, nonatomic) IBOutlet UITableView *stationListTable;
 - (IBAction)mapTouchDown:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *mapButton;
 - (IBAction)listTouchDown:(id)sender;

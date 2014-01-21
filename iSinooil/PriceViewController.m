@@ -8,6 +8,7 @@
 
 #import "PriceViewController.h"
 #import "Common.h"
+#import "PricesDataSource.h"
 
 @implementation PriceViewController
 
@@ -26,6 +27,9 @@
     
     UILabel* labelPrices = (UILabel*)[self.topView viewWithTag:TITLELABEL_TAG];
     labelPrices.font = FONT_STD;
+    
+    self.listsour = [[PricesDataSource alloc] init];
+    self.pricesListTable.dataSource = self.listsour;
 }
 
 - (void)didReceiveMemoryWarning

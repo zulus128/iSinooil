@@ -8,8 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class PricesDataSource;
+
 @interface PriceViewController : UIViewController
+
 @property (weak, nonatomic) IBOutlet UIView *topView;
 - (IBAction)toMenu:(id)sender;
+@property (weak, nonatomic) IBOutlet UITableView *pricesListTable;
+
+@property (nonatomic, strong) PricesDataSource* listsour;
 
 @end
