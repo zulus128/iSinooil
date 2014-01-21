@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		846938E6187A81640037CABC /* ListDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 846938E5187A81640037CABC /* ListDataSource.m */; };
+		846938E6187A81640037CABC /* StationListDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 846938E5187A81640037CABC /* StationListDataSource.m */; };
+		847E7CB8188EADB8007401F1 /* PricesDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 847E7CB7188EADB8007401F1 /* PricesDataSource.m */; };
 		84BC6402187E7CBD00BF030B /* head_gr2.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BC6401187E7CBD00BF030B /* head_gr2.png */; };
 		84C68CC2188E524200FD68D0 /* PriceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C68CC1188E524200FD68D0 /* PriceViewController.m */; };
 		84DA054B187D846D004592EC /* HelveticaNeueCyr-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84DA053E187D846D004592EC /* HelveticaNeueCyr-Black.otf */; };
@@ -152,9 +153,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8400A6CF187ECE8B001BF0D6 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
-		846938E4187A81640037CABC /* ListDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListDataSource.h; sourceTree = "<group>"; };
-		846938E5187A81640037CABC /* ListDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListDataSource.m; sourceTree = "<group>"; };
+		841BC884188E9C1D002C3E3B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
+		846938E4187A81640037CABC /* StationListDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationListDataSource.h; sourceTree = "<group>"; };
+		846938E5187A81640037CABC /* StationListDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationListDataSource.m; sourceTree = "<group>"; };
+		847E7CB6188EADB8007401F1 /* PricesDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PricesDataSource.h; sourceTree = "<group>"; };
+		847E7CB7188EADB8007401F1 /* PricesDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PricesDataSource.m; sourceTree = "<group>"; };
 		84BC6401187E7CBD00BF030B /* head_gr2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = head_gr2.png; sourceTree = "<group>"; };
 		84C68CC0188E524200FD68D0 /* PriceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceViewController.h; sourceTree = "<group>"; };
 		84C68CC1188E524200FD68D0 /* PriceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceViewController.m; sourceTree = "<group>"; };
@@ -335,8 +338,10 @@
 		846938E7187A84010037CABC /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				846938E4187A81640037CABC /* ListDataSource.h */,
-				846938E5187A81640037CABC /* ListDataSource.m */,
+				847E7CB6188EADB8007401F1 /* PricesDataSource.h */,
+				847E7CB7188EADB8007401F1 /* PricesDataSource.m */,
+				846938E4187A81640037CABC /* StationListDataSource.h */,
+				846938E5187A81640037CABC /* StationListDataSource.m */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -802,6 +807,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				847E7CB8188EADB8007401F1 /* PricesDataSource.m in Sources */,
 				84C68CC2188E524200FD68D0 /* PriceViewController.m in Sources */,
 				84FDF89D187AA9610082595A /* StationViewCell.m in Sources */,
 				DDEB48B518544CF5006FAED3 /* MyMapView.m in Sources */,
@@ -814,7 +820,7 @@
 				DDC8735318754F4200393876 /* MenuViewController.m in Sources */,
 				DDA70D241876E0DD00C89F86 /* MapSource.m in Sources */,
 				9CF17A5018431F7F007FF8D9 /* main.m in Sources */,
-				846938E6187A81640037CABC /* ListDataSource.m in Sources */,
+				846938E6187A81640037CABC /* StationListDataSource.m in Sources */,
 				DDEB48BC185452A4006FAED3 /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -851,7 +857,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				9CF17A5618431F7F007FF8D9 /* Base */,
-				8400A6CF187ECE8B001BF0D6 /* ru */,
+				841BC884188E9C1D002C3E3B /* ru */,
 			);
 			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";

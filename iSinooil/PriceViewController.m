@@ -19,10 +19,13 @@
     self.topView.frame = CGRectMake(0, 0, s.width, s.height);
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    UILabel* labelPrices = (UILabel*)[self.topView viewWithTag:TITLELABEL_TAG];
+    labelPrices.font = FONT_STD;
 }
 
 - (void)didReceiveMemoryWarning

@@ -10,7 +10,7 @@
 #import <MapKit/MapKit.h>
 
 @class MapSource;
-@class ListDataSource;
+@class StationListDataSource;
 
 @interface MapViewController : UIViewController <UITableViewDelegate> {
     
@@ -20,7 +20,7 @@
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UIView *topView;
 @property (nonatomic, strong) MapSource* mapsour;
-@property (nonatomic, strong) ListDataSource* listsour;
+@property (nonatomic, strong) StationListDataSource* listsour;
 @property (weak, nonatomic) IBOutlet UIView *stationDetailView;
 @property (weak, nonatomic) IBOutlet UILabel *stationNumberLab;
 @property (weak, nonatomic) IBOutlet UILabel *stationDescrLab;

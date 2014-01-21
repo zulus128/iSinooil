@@ -61,6 +61,6 @@ MC 4
 #define CARD_BIT_AE 2
 #define CARD_BIT_MC 4
 
-@interface ListDataSource : NSObject <UITableViewDataSource>
+@interface StationListDataSource : NSObject <UITableViewDataSource>
 
 @end

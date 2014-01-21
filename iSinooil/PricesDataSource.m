@@ -1,16 +1,14 @@
 //
-//  ListDataSource.m
+//  PricesDataSource.m
 //  iSinooil
 //
-//  Created by Admin on 06.01.14.
+//  Created by Admin on 21.01.14.
 //  Copyright (c) 2014 Zul. All rights reserved.
 //
 
-#import "ListDataSource.h"
-#import "StationViewCell.h"
-#import "Common.h"
+#import "PricesDataSource.h"
 
-@implementation ListDataSource
+@implementation PricesDataSource
 
 #pragma mark - Table view data source
 
@@ -27,7 +25,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString *CellIdentifier = @"stationCell";
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    //    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     StationViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     
@@ -37,17 +35,17 @@
     cell.numberLab.text = [[num componentsSeparatedByString:@"№"] objectAtIndex:1];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^(void) {
-
-//        dispatch_semaphore_wait([Common instance].userCoordUpdatedSem, DISPATCH_TIME_FOREVER);
-
-//        NSLog(@"Station %d", indexPath.row);
-
+        
+        //        dispatch_semaphore_wait([Common instance].userCoordUpdatedSem, DISPATCH_TIME_FOREVER);
+        
+        //        NSLog(@"Station %d", indexPath.row);
+        
         NSNumber* n = [dic valueForKey:STATION_LAT];
         CLLocationDegrees lat = n.doubleValue;
         n = [dic valueForKey:STATION_LON];
         CLLocationDegrees lon = n.doubleValue;
         CLLocationCoordinate2D coord = { lat, lon };
-       
+        
         float dist = [[Common instance] calculateDistTo:coord];
         
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -55,7 +53,7 @@
             StationViewCell *updateCell = (id)[tableView cellForRowAtIndexPath:indexPath];
             if (updateCell)
                 updateCell.kmLab.text = [NSString stringWithFormat:@"%.2f km", dist];
-//            NSLog(@"%d %f", indexPath.row, dist);
+            //            NSLog(@"%d %f", indexPath.row, dist);
         });
         
     });
@@ -106,7 +104,7 @@
     }
     
     int serv = ((NSNumber*)[dic valueForKey:STATION_SERV]).intValue;
-//    NSLog(@"serv = %d", serv);
+    //    NSLog(@"serv = %d", serv);
     for (int i = SERV_BIT_MARKET; i <= SERV_BIT_WHEEL; i = (i << 1)) {
         
         if (!(serv & i))
@@ -149,7 +147,7 @@
     }
     
     int card = ((NSNumber*)[dic valueForKey:STATION_CARD]).intValue;
-//    NSLog(@"card = %d", card);
+    //    NSLog(@"card = %d", card);
     for (int i = CARD_BIT_VISA; i <= CARD_BIT_MC; i = (i << 1)) {
         
         if (!(card & i))
@@ -178,56 +176,5 @@
     
     return cell;
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-
- */
 
 @end

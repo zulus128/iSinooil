@@ -10,7 +10,7 @@
 #import "MenuViewController.h"
 #import "Common.h"
 #import "MapSource.h"
-#import "ListDataSource.h"
+#import "StationListDataSource.h"
 
 @interface MapViewController ()
 
@@ -56,7 +56,7 @@
     self.mapView.delegate = self.mapsour;
     self.mapsour.mapcontr = self;
     
-    self.listsour = [[ListDataSource alloc] init];
+    self.listsour = [[StationListDataSource alloc] init];
 //    self.stationList.delegate = self.listsour;
     self.stationList.delegate = self;
     self.stationList.dataSource = self.listsour;
