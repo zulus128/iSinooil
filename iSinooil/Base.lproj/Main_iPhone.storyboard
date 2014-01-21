@@ -234,6 +234,24 @@
             </objects>
             <point key="canvasLocation" x="-153" y="9"/>
         </scene>
+        <!--Price View Controller-->
+        <scene sceneID="woL-Uf-0Ti">
+            <objects>
+                <viewController id="E8K-WK-A03" customClass="PriceViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="H5r-jJ-B4u"/>
+                        <viewControllerLayoutGuide type="bottom" id="nnM-Eg-zHO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SKN-8E-Cmn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nTj-Ax-plL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="378" y="654"/>
+        </scene>
         <!--Map View Controller-->
         <scene sceneID="Bzs-Ck-3QR">
             <objects>
