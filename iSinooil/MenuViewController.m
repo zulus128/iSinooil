@@ -63,6 +63,16 @@
 
 }
 
+//- (BOOL) shouldAutomaticallyForwardAppearanceMethods {
+//    
+//    return YES;
+//}
+//
+//- (BOOL) shouldAutomaticallyForwardRotationMethods {
+//    
+//    return YES;
+//}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

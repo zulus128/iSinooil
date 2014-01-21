@@ -12,43 +12,18 @@
 #import "MenuViewController.h"
 #import "MapSource.h"
 
-@interface MainViewController ()
-
-@end
-
 @implementation MainViewController
 
-//- (void) didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
-//
-//    CGSize s = [Common currentScreenBounds];
-//
-//    self.topView.frame = CGRectMake(0, 0, s.width, s.height);
-//    
-//    CGRect fr = self.mapView.frame;
-//    self.mapView.frame = CGRectMake(fr.origin.x, fr.origin.y, s.width - 20, fr.size.height);
-//    
-//}
-
 - (void) willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-    
-    NSLog(@"will rotate main");
+
+//    NSLog(@"will rotate main");
     
     CGSize s = [Common currentScreenBoundsDependOnOrientation:toInterfaceOrientation];
     self.topView.frame = CGRectMake(0, 0, s.width, s.height);
 
-    CGRect fr = self.mapView.frame;
-    self.mapView.frame = CGRectMake(fr.origin.x, fr.origin.y, s.width - 20, fr.size.height);
-    
-    float max = (s.width > s.height)?s.width:s.height;
-    self.backgr.frame = CGRectMake(0, 0, max, max);
+    self.contentViewH.constant = s.height * 2;
+    self.contentViewW.constant = s.width;
 
-    fr = self.logo.frame;
-    self.logo.frame = CGRectMake((s.width - fr.size.width) / 2, fr.origin.y, fr.size.width, fr.size.height);
-
-    fr = self.priceView.frame;
-    self.priceView.frame = CGRectMake(fr.origin.x, fr.origin.y, s.width - 20, fr.size.height);
-
-//    NSLog(@"width = %f", s.width);
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -72,19 +47,31 @@
     self.mapView.layer.masksToBounds = YES;
   
 //    CGSize s = [Common currentScreenBoundsDependOnOrientation:toInterfaceOrientation];
-    self.vertScroll.contentSize = CGSizeMake(320, 2000);
+//    self.vertScroll.contentSize = CGSizeMake(320, 2000);
 
     self.mapsour = [[MapSource alloc] initWithType:MAPTYPE_MAINMENU];
     self.mapView.delegate = self.mapsour;
+    
+//    self.vertScroll.translatesAutoresizingMaskIntoConstraints  = NO;
+//    self.contView.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    CGSize s = [Common currentScreenBounds];
+    self.topView.frame = CGRectMake(0, 0, s.width, s.height);
+    self.contentViewH.constant = s.height * 2;
+    self.contentViewW.constant = s.width;
+
 }
 
 - (BOOL)shouldAutorotate
 {
+//    NSLog(@"%s", __PRETTY_FUNCTION__);
+
     return YES;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
+//    NSLog(@"%s", __PRETTY_FUNCTION__);
     return YES;
 }
 
