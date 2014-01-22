@@ -68,7 +68,32 @@
     } else {
         
         NSLog(@"Parsing azs: OK!");
-//        NSLog(@"azsjson: %@", [self.azsjson objectAtIndex:2]);
+        //        NSLog(@"azsjson: %@", [self.azsjson objectAtIndex:2]);
+    }
+    
+    NSString* azsFuel = [docpath stringByAppendingPathComponent:@"fuel.json"];
+    fe = [[NSFileManager defaultManager] fileExistsAtPath:azsFuel];
+    if(!fe) {
+        
+        NSString *appFile = [[NSBundle mainBundle] pathForResource:@"fuel" ofType:@"json"];
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        NSError *error;
+        [fileManager copyItemAtPath:appFile toPath:azsFuel error:&error];
+    }
+    
+    NSString *fuel= [NSString stringWithContentsOfFile:azsFuel encoding:NSUTF8StringEncoding error:nil];
+    tardata = [fuel dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary* d = [NSJSONSerialization JSONObjectWithData:tardata options:NSDataReadingUncached error:&error];
+    self.fueljson = [d objectForKey:FUEL_VALUES];
+    
+    if (!self.fueljson) {
+        
+        NSLog(@"Error parsing fuel: %@", error);
+        
+    } else {
+        
+        NSLog(@"Parsing fuel: OK!");
+//        NSLog(@"fueljson: %@", self.fueljson);
     }
     
     

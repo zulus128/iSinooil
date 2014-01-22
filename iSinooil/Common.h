@@ -20,6 +20,12 @@
 #define STATION_PHONE @"phone"
 #define PHONE_NUMBER @"n"
 
+//fuel.json
+#define FUEL_VALUES @"value"
+#define FUEL_BITS @"bits"
+#define FUEL_COST @"cost"
+#define FUEL_NAME @"fuel"
+
 @interface Common : NSObject
 
 + (Common*) instance;
@@ -31,6 +37,8 @@
 - (float) calculateDistTo: (CLLocationCoordinate2D) t;
 
 @property (nonatomic, strong) NSArray* azsjson;
+@property (nonatomic, strong) NSArray* fueljson;
+
 @property (assign, readwrite) CLLocationCoordinate2D userCoordinate;
 //@property (readwrite) dispatch_semaphore_t userCoordUpdatedSem;
 
