@@ -9,6 +9,8 @@
 #import "PriceViewController.h"
 #import "Common.h"
 #import "PricesDataSource.h"
+#import "MenuViewController.h"
+#import "PriceCell.h"
 
 @implementation PriceViewController
 
@@ -59,6 +61,16 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     return PRICECELL_HEIGHT;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    PriceCell *cell = (id)[tableView cellForRowAtIndexPath:indexPath];
+    if (cell) {
+        
+        [((MenuViewController*)self.parentViewController) showStationWithId:cell.stationId];
+    }
+
 }
 
 @end

@@ -11,6 +11,12 @@
 /* Class = "IBUIButton"; normalTitle = "Оставить отзыв"; ObjectID = "Jcs-ge-0J7"; */
 "Jcs-ge-0J7.normalTitle" = "Оставить отзыв";
 
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "WY9-Zw-Bcr"; */
+"WY9-Zw-Bcr.text" = "Label";
+
+/* Class = "IBUILabel"; text = "AI 97"; ObjectID = "bLu-Lr-2B7"; */
+"bLu-Lr-2B7.text" = "AI 97";
+
 /* Class = "IBUILabel"; text = "АЗС"; ObjectID = "chB-02-EI8"; */
 "chB-02-EI8.text" = "АЗС";
 
@@ -19,6 +25,12 @@
 
 /* Class = "IBUILabel"; text = "Label"; ObjectID = "sQv-sU-cOF"; */
 "sQv-sU-cOF.text" = "Label";
+
+/* Class = "IBUILabel"; text = "115"; ObjectID = "spg-8f-C4m"; */
+"spg-8f-C4m.text" = "115";
+
+/* Class = "IBUILabel"; text = "Stations"; ObjectID = "srS-dX-17e"; */
+"srS-dX-17e.text" = "АЗС";
 
 /* Class = "IBUILabel"; text = "22"; ObjectID = "tsm-me-fOe"; */
 "tsm-me-fOe.text" = "22";
@@ -29,7 +41,7 @@
 /* Class = "IBUIButton"; normalTitle = "Главная"; ObjectID = "v6Y-za-yMe"; */
 "v6Y-za-yMe.normalTitle" = "Главная";
 
-/* Class = "IBUILabel"; text = "Prices"; ObjectID = "wSO-VP-fiU"; */
+/* Class = "IBUILabel"; text = "Цены на ГСМ"; ObjectID = "wSO-VP-fiU"; */
 "wSO-VP-fiU.text" = "Цены на ГСМ";
 
 /* Class = "IBUIButton"; normalTitle = "Список"; ObjectID = "ybC-59-AEp"; */

@@ -23,6 +23,7 @@
 @property (nonatomic,copy) NSString *subtitle;
 
 @property (assign, readwrite) int number;
+@property (assign, readwrite) int stationId;
 
 -(id) initWithCoordinate:(CLLocationCoordinate2D) c title:(NSString *) t subTitle:(NSString *) st;
 

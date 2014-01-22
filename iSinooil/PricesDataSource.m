@@ -75,7 +75,22 @@
             break;
         }
     }
-    
+
+    cell.distLabel.text = @"...";
+    cell.distLabel.font = FONT_KM_PRICE_LIST;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^(void) {
+        
+        float dist = [[Common instance] distToNearestStaionWithFuelBit:(indexPath.row + 1) forCell:cell];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            PriceCell *updateCell = (id)[tableView cellForRowAtIndexPath:indexPath];
+            if (updateCell)
+            updateCell.distLabel.text = [NSString stringWithFormat:@"%.1f %@", dist, NSLocalizedString(@"km", nil)];
+        });
+        
+    });
+
     return cell;
 }
 

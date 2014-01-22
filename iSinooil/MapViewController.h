@@ -33,6 +33,8 @@
 
 - (void) showDetail:(int)num;
 
+- (void) showStationWithId:(int)sid;
+
 //- (IBAction) pickOne:(id)sender;
 
 - (IBAction) menu:(id)sender;

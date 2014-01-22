@@ -54,7 +54,7 @@
             
             StationViewCell *updateCell = (id)[tableView cellForRowAtIndexPath:indexPath];
             if (updateCell)
-                updateCell.kmLab.text = [NSString stringWithFormat:@"%.2f km", dist];
+                updateCell.kmLab.text = [NSString stringWithFormat:@"%.1f %@", dist, NSLocalizedString(@"km", nil)];
 //            NSLog(@"%d %f", indexPath.row, dist);
         });
         

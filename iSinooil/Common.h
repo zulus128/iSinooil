@@ -10,6 +10,7 @@
 #import <MapKit/MapKit.h>
 
 //azs.json
+#define STATION_ID @"id"
 #define STATION_TITLE @"ttl"
 #define STATION_DESCR @"desc"
 #define STATION_LAT @"lat"
@@ -26,6 +27,8 @@
 #define FUEL_COST @"cost"
 #define FUEL_NAME @"fuel"
 
+@class PriceCell;
+
 @interface Common : NSObject
 
 + (Common*) instance;
@@ -35,6 +38,7 @@
 
 + (NSArray*) calculateRoutesFrom:(CLLocationCoordinate2D) f to: (CLLocationCoordinate2D) t;
 - (float) calculateDistTo: (CLLocationCoordinate2D) t;
+- (float) distToNearestStaionWithFuelBit:(int)bit forCell:(PriceCell*)pc;
 
 @property (nonatomic, strong) NSArray* azsjson;
 @property (nonatomic, strong) NSArray* fueljson;

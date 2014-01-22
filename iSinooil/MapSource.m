@@ -45,9 +45,13 @@
         NSString* subtit = [d valueForKey:STATION_DESCR];
 
         MapPoint *mp = [[MapPoint alloc] initWithCoordinate:coord title:tit subTitle:subtit];
+        
         mp.number = i++;
+        
+        n = [d valueForKey:STATION_ID];
+        mp.stationId = n.intValue;
+        
         [mv addAnnotation:mp];
-//        NSLog(@"++ %d", mp.number);
     }
 }
 

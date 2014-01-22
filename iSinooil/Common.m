@@ -8,6 +8,7 @@
 
 #import "Common.h"
 #import <MapKit/MapKit.h>
+#import "PriceCell.h"
 
 @implementation Common
 
@@ -219,6 +220,32 @@
     NSString* ar3 = [ar2 stringByReplacingOccurrencesOfString:@"," withString:@"."];
     
     return [ar3 floatValue];
+}
+
+- (float) distToNearestStaionWithFuelBit:(int)bit forCell:(PriceCell*)pc {
+
+    float mindist = 1e8;
+    for (NSDictionary* d in self.azsjson) {
+        
+        int fuel = ((NSNumber*)[d valueForKey:STATION_FUEL]).intValue;
+        if(! (fuel & bit))
+            continue;
+        
+        NSNumber* n = [d valueForKey:STATION_LAT];
+        CLLocationDegrees lat = n.doubleValue;
+        n = [d valueForKey:STATION_LON];
+        CLLocationDegrees lon = n.doubleValue;
+        CLLocationCoordinate2D coord = { lat, lon };
+        float dist = [self calculateDistTo:coord];
+        if (dist < mindist) {
+            
+            mindist = dist;
+            NSNumber* n = [d valueForKey:STATION_ID];
+            pc.stationId = n.intValue;
+        }
+    }
+    
+    return mindist;
 }
 
 + (NSArray*) calculateRoutesFrom:(CLLocationCoordinate2D) f to: (CLLocationCoordinate2D) t {

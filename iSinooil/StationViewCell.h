@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface StationViewCell : UITableViewCell
+
 @property (weak, nonatomic) IBOutlet UILabel *numberLab;
 @property (weak, nonatomic) IBOutlet UILabel *kmLab;
 

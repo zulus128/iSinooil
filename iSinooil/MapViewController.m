@@ -324,6 +324,12 @@
     self.stationListTable.hidden = NO;
 }
 
+- (void) showStationWithId:(int)sid {
+    
+    [self mapTouchDown:self.mapButton];
+    
+}
+
 - (void) showDetail:(int)num {
 
     selectedRow = num;

@@ -8,26 +8,9 @@
 
 #import "MenuViewController.h"
 #import "Common.h"
-
-@interface MenuViewController ()
-
-@end
+#import "MapViewController.h"
 
 @implementation MenuViewController
-
-//- (void) willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-//    
-//    NSLog(@"will rotate menu");
-//}
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewWillAppear:(BOOL)animated {
     
@@ -154,6 +137,21 @@
     view.frame = CGRectMake(0, fr.origin.y, fr.size.width, fr.size.height);
     
     [self makeInvisibleExcludeTag:PRICE_VIEW_TAG];
+    
+}
+
+- (void) showStationWithId:(int) sid {
+    
+    [self showMaps];
+
+    for(UIViewController* vc in self.childViewControllers) {
+        
+        if(vc.view.tag == MAPS_VIEW_TAG) {
+            
+            [((MapViewController*)vc) showStationWithId:sid];
+        }
+    }
+    
     
 }
 

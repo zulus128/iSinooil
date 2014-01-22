@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
 @interface PriceCell : UITableViewCell
+
 @property (weak, nonatomic) IBOutlet UILabel *aiLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *distLabel;
+
+@property (assign, readwrite) int stationId;
 
 @end

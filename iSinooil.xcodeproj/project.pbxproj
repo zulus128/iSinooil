@@ -154,7 +154,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		841BC884188E9C1D002C3E3B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
 		846938E4187A81640037CABC /* StationListDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationListDataSource.h; sourceTree = "<group>"; };
 		846938E5187A81640037CABC /* StationListDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationListDataSource.m; sourceTree = "<group>"; };
 		847E7CB6188EADB8007401F1 /* PricesDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PricesDataSource.h; sourceTree = "<group>"; };
@@ -175,6 +174,7 @@
 		84DA0548187D846D004592EC /* HelveticaNeueCyr-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueCyr-ThinItalic.otf"; sourceTree = "<group>"; };
 		84DA0549187D846D004592EC /* HelveticaNeueCyr-UltraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueCyr-UltraLight.otf"; sourceTree = "<group>"; };
 		84DA054A187D846D004592EC /* HelveticaNeueCyr-UltraLightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueCyr-UltraLightItalic.otf"; sourceTree = "<group>"; };
+		84E42862188FDE360057A55C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
 		84F9C696188EBAA700739533 /* PriceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceCell.h; sourceTree = "<group>"; };
 		84F9C697188EBAA700739533 /* PriceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceCell.m; sourceTree = "<group>"; };
 		84FDF89B187AA9610082595A /* StationViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationViewCell.h; sourceTree = "<group>"; };
@@ -863,7 +863,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				9CF17A5618431F7F007FF8D9 /* Base */,
-				841BC884188E9C1D002C3E3B /* ru */,
+				84E42862188FDE360057A55C /* ru */,
 			);
 			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";
