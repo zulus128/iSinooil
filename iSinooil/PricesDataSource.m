@@ -8,6 +8,7 @@
 
 #import "PricesDataSource.h"
 #import "PriceCell.h"
+#import "Common.h"
 
 @implementation PricesDataSource
 
@@ -61,6 +62,19 @@
     }
     
     cell.aiLabel.text = icon;
+    cell.aiLabel.font = FONT_NAME_PRICE_LIST;
+    
+    for(NSDictionary* d in [Common instance].fueljson) {
+
+        NSNumber* n = [d valueForKey:FUEL_BITS];
+        if((n.intValue - 1) == indexPath.row) {
+            
+            NSNumber* cost = [d valueForKey:FUEL_COST];
+            cell.priceLabel.text = [NSString stringWithFormat:@"%d", cost.intValue];
+            cell.priceLabel.font = FONT_PRICE_LIST;
+            break;
+        }
+    }
     
     return cell;
 }

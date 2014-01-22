@@ -26,7 +26,7 @@
 	// Do any additional setup after loading the view.
     
     UILabel* labelPrices = (UILabel*)[self.topView viewWithTag:TITLELABEL_TAG];
-    labelPrices.font = FONT_STD;
+    labelPrices.font = FONT_STD_TOP_MENU;
     
     self.listsour = [[PricesDataSource alloc] init];
     self.pricesListTable.dataSource = self.listsour;

@@ -4,7 +4,6 @@
 		 {"bits":3,"fuel":"АИ-93","cost":115},
 		 {"bits":4,"fuel":"АИ-92","cost":115},
 		 {"bits":5,"fuel":"АИ-80","cost":89},
-		 {"bits":6,"fuel":"ДТ з.","cost":158},
-		 {"bits":7,"fuel":"ДТ л.","cost":102},
-		 {"bits":8,"fuel":"ГАЗ","cost":69}
+		 {"bits":6,"fuel":"ДТ","cost":158},
+		 {"bits":7,"fuel":"ГАЗ","cost":69}
 ]}

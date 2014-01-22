@@ -63,6 +63,9 @@
     
     [Common instance].mymapview = self.mapView;
     
+    UILabel* labelAZS = (UILabel*)[self.topView viewWithTag:TITLELABEL_TAG];
+    labelAZS.font = FONT_STD_TOP_MENU;
+    
     [self mapTouchDown:self.mapButton];
 }
 
