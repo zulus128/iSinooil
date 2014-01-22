@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface PriceCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *aiLabel;
+@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *distLabel;
 
 @end

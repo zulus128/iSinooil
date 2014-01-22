@@ -10,7 +10,7 @@
 
 @class PricesDataSource;
 
-@interface PriceViewController : UIViewController
+@interface PriceViewController : UIViewController <UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *topView;
 - (IBAction)toMenu:(id)sender;

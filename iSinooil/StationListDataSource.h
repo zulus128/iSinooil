@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-#define CELL_HEIGHT 100
 #define ICON_SIZE 30
 #define GAP_SIZE 23
 #define GAP_SIZE1 30

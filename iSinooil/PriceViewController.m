@@ -30,6 +30,8 @@
     
     self.listsour = [[PricesDataSource alloc] init];
     self.pricesListTable.dataSource = self.listsour;
+    self.pricesListTable.delegate = self;
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,6 +54,11 @@
                      }
                      completion:^(BOOL finished) {
                      }];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return PRICECELL_HEIGHT;
 }
 
 @end

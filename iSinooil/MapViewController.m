@@ -118,7 +118,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    return CELL_HEIGHT;
+    return STATIONCELL_HEIGHT;
 }
 
 - (void)callTel:(UIButton*)button {
