@@ -86,8 +86,10 @@
 
 - (MKAnnotationView *)mapView:(MKMapView *)mv viewForAnnotation:(id <MKAnnotation>)annotation {
     
-    if([annotation isKindOfClass:[MKUserLocation class]])
+    if([annotation isKindOfClass:[MKUserLocation class]]) {
+
         return nil;
+    }
     
     NSString *annotationIdentifier = @"PinViewAnnotation";
     
@@ -128,6 +130,9 @@
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
     
+    if(![view isKindOfClass:[StationAnnotationView class]])
+         return;
+         
     CLLocationCoordinate2D c = view.annotation.coordinate;
     NSLog(@"didSel %f %f", c.latitude, c.longitude);
 

@@ -328,13 +328,15 @@
 - (void) showStationWithId:(int)sid {
     
     [self mapTouchDown:self.mapButton];
-    for(MapPoint* mp in self.mapView.annotations) {
+    for(id<MKAnnotation> mp in self.mapView.annotations) {
         
-        if (sid == mp.stationId) {
+        if ([mp isKindOfClass:[MapPoint class]])
+            if (sid == ((MapPoint*)mp).stationId) {
             
-            [self.mapView selectAnnotation:mp animated:YES];
+                [self.mapView selectAnnotation:mp animated:YES];
+                break;
+            }
         }
-    }
 }
 
 - (void) showDetail:(int)num {
