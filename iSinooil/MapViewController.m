@@ -11,6 +11,7 @@
 #import "Common.h"
 #import "MapSource.h"
 #import "StationListDataSource.h"
+#import "MapPoint.h"
 
 @interface MapViewController ()
 
@@ -327,7 +328,13 @@
 - (void) showStationWithId:(int)sid {
     
     [self mapTouchDown:self.mapButton];
-    
+    for(MapPoint* mp in self.mapView.annotations) {
+        
+        if (sid == mp.stationId) {
+            
+            [self.mapView selectAnnotation:mp animated:YES];
+        }
+    }
 }
 
 - (void) showDetail:(int)num {
