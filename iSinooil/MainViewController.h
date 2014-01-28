@@ -31,5 +31,8 @@
 - (IBAction)tapMap:(id)sender;
 - (IBAction)menu:(id)sender;
 - (IBAction)tapPrice:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *distLabel;
+@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *aiLabel;
 
 @end

@@ -47,6 +47,55 @@
                                                     <constraint firstAttribute="width" constant="305" id="mxg-Wv-d2U"/>
                                                 </constraints>
                                             </imageView>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="115" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KXD-D3-k9Z">
+                                                <rect key="frame" x="112" y="84" width="95" height="45"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="95" id="AU9-ue-gc1"/>
+                                                    <constraint firstAttribute="height" constant="45" id="f9u-vP-cD8"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="price_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="9CL-Ii-gP8">
+                                                <rect key="frame" x="113" y="80" width="95" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="HNn-oA-ZKR"/>
+                                                    <constraint firstAttribute="width" constant="95" id="gLj-fI-JKZ"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="km" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhE-MK-QZ7">
+                                                <rect key="frame" x="240" y="94" width="62" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="62" id="M5A-KV-ZcM"/>
+                                                    <constraint firstAttribute="height" constant="21" id="zCF-Jm-qEh"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowleft_white.png" translatesAutoresizingMaskIntoConstraints="NO" id="urF-oe-CND">
+                                                <rect key="frame" x="208" y="88" width="30" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="IHB-1g-2UV"/>
+                                                    <constraint firstAttribute="height" constant="30" id="xgq-AF-wgw"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AI 97" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z5N-Qn-7iI">
+                                                <rect key="frame" x="20" y="86" width="91" height="41"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="91" id="cis-wY-fxn"/>
+                                                    <constraint firstAttribute="height" constant="41" id="kj2-7O-1dF"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="price_border.png" translatesAutoresizingMaskIntoConstraints="NO" id="eLi-cc-FMP">
                                                 <rect key="frame" x="7" y="70" width="305" height="70"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,8 +121,11 @@
                                         </subviews>
                                         <color key="backgroundColor" red="0.76671444327692195" green="1" blue="0.35554125338827292" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
+                                            <constraint firstItem="mhE-MK-QZ7" firstAttribute="top" secondItem="TS8-GN-iCy" secondAttribute="bottom" constant="30" id="1qx-A7-sBn"/>
+                                            <constraint firstItem="urF-oe-CND" firstAttribute="leading" secondItem="KXD-D3-k9Z" secondAttribute="trailing" constant="1" id="40a-Cc-04G"/>
                                             <constraint firstItem="wrx-d9-TPg" firstAttribute="leading" secondItem="E2q-A2-mVD" secondAttribute="leading" id="4N1-M8-hUB"/>
                                             <constraint firstAttribute="trailing" secondItem="3hV-8w-Lbg" secondAttribute="trailing" constant="8" id="7im-AY-wK3"/>
+                                            <constraint firstItem="urF-oe-CND" firstAttribute="leading" secondItem="9CL-Ii-gP8" secondAttribute="trailing" id="9XQ-lk-Cfs"/>
                                             <constraint firstAttribute="trailing" secondItem="wrx-d9-TPg" secondAttribute="trailing" id="AJI-D3-dBN"/>
                                             <constraint firstAttribute="height" constant="568" id="DWL-QT-Z0V"/>
                                             <constraint firstItem="3hV-8w-Lbg" firstAttribute="leading" secondItem="E2q-A2-mVD" secondAttribute="leading" constant="7" id="FJ6-mH-7na"/>
@@ -82,10 +134,17 @@
                                             <constraint firstAttribute="centerX" secondItem="TS8-GN-iCy" secondAttribute="centerX" constant="-6" id="KKl-V8-MaV"/>
                                             <constraint firstItem="wrx-d9-TPg" firstAttribute="top" secondItem="E2q-A2-mVD" secondAttribute="top" id="PLy-9c-jhf"/>
                                             <constraint firstAttribute="bottom" secondItem="wrx-d9-TPg" secondAttribute="bottom" id="Qtc-W8-dKJ"/>
+                                            <constraint firstItem="mhE-MK-QZ7" firstAttribute="leading" secondItem="urF-oe-CND" secondAttribute="trailing" constant="2" id="R69-eG-0vN"/>
                                             <constraint firstAttribute="trailing" secondItem="eLi-cc-FMP" secondAttribute="trailing" constant="8" id="RLR-Tw-qlU"/>
                                             <constraint firstItem="eLi-cc-FMP" firstAttribute="leading" secondItem="E2q-A2-mVD" secondAttribute="leading" constant="7" id="X7x-Fd-Q0P"/>
+                                            <constraint firstItem="urF-oe-CND" firstAttribute="top" secondItem="TS8-GN-iCy" secondAttribute="bottom" constant="24" id="ZFh-sa-m6Y"/>
                                             <constraint firstItem="3hV-8w-Lbg" firstAttribute="top" secondItem="eLi-cc-FMP" secondAttribute="bottom" constant="8" id="eSK-cX-Zr5"/>
+                                            <constraint firstItem="9CL-Ii-gP8" firstAttribute="top" secondItem="TS8-GN-iCy" secondAttribute="bottom" constant="16" id="ef3-ug-lJT"/>
+                                            <constraint firstAttribute="centerX" secondItem="9CL-Ii-gP8" secondAttribute="centerX" id="eqU-Vo-r4T"/>
+                                            <constraint firstItem="KXD-D3-k9Z" firstAttribute="top" secondItem="TS8-GN-iCy" secondAttribute="bottom" constant="20" id="hG6-bW-RBX"/>
+                                            <constraint firstItem="KXD-D3-k9Z" firstAttribute="leading" secondItem="Z5N-Qn-7iI" secondAttribute="trailing" constant="1" id="hw7-Uz-v4U"/>
                                             <constraint firstItem="eLi-cc-FMP" firstAttribute="top" secondItem="TS8-GN-iCy" secondAttribute="bottom" constant="6" id="o83-cY-nER"/>
+                                            <constraint firstItem="Z5N-Qn-7iI" firstAttribute="top" secondItem="TS8-GN-iCy" secondAttribute="bottom" constant="22" id="wzM-ZC-guN"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -109,12 +168,15 @@
                     </view>
                     <navigationItem key="navigationItem" id="gnr-Qz-0q6"/>
                     <connections>
+                        <outlet property="aiLabel" destination="Z5N-Qn-7iI" id="sm9-dx-FvJ"/>
                         <outlet property="backgr" destination="wrx-d9-TPg" id="D2d-bD-jth"/>
                         <outlet property="contView" destination="E2q-A2-mVD" id="GCR-VH-tKm"/>
                         <outlet property="contentViewH" destination="DWL-QT-Z0V" id="sGI-hH-Sd0"/>
                         <outlet property="contentViewW" destination="Jdn-Ho-wBi" id="sPd-xe-lxT"/>
+                        <outlet property="distLabel" destination="mhE-MK-QZ7" id="d3P-SP-Nre"/>
                         <outlet property="logo" destination="TS8-GN-iCy" id="GnJ-ac-VHS"/>
                         <outlet property="mapView" destination="3hV-8w-Lbg" id="aCw-tk-PDp"/>
+                        <outlet property="priceLabel" destination="KXD-D3-k9Z" id="r2N-cR-PqO"/>
                         <outlet property="priceView" destination="wrx-d9-TPg" id="D22-ln-y6h"/>
                         <outlet property="topView" destination="kh9-bI-dsS" id="WUB-ot-Imi"/>
                         <outlet property="vertScroll" destination="pcl-Q9-FcC" id="ff5-Uf-pgJ"/>
@@ -615,6 +677,7 @@
     </scenes>
     <resources>
         <image name="arrowleft_red.png" width="30" height="30"/>
+        <image name="arrowleft_white.png" width="30" height="30"/>
         <image name="head_gr2.png" width="1" height="125"/>
         <image name="icon_menu.png" width="42" height="42"/>
         <image name="logo.png" width="305" height="50"/>

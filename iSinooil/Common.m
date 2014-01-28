@@ -31,13 +31,10 @@
 	
 	self = [super init];
 	if(self !=nil) {
-        
-//        self.userCoordUpdatedSem = dispatch_semaphore_create(0);
 
         [self parseData];
         
-
-//        [NSLocale currentLocale];
+        self.fuelSelected = 0;
 	}
 	return self;
 }
