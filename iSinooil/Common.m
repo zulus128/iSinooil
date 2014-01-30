@@ -97,6 +97,69 @@
     
 }
 
+- (void) loadData {
+    
+    NSArray* sp = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString* docpath = [sp objectAtIndex: 0];
+    
+    NSString* filePath = [docpath stringByAppendingPathComponent:@"news.json"];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:[NSURL URLWithString:NEWS_URL]];
+    NSHTTPURLResponse* urlResponse = nil;
+    NSError *error = nil;
+    NSData* responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
+    if (responseData == nil) {
+        if (error != nil) {
+            
+            UIAlertView* dialog = [[UIAlertView alloc] init];
+            [dialog setTitle:[self getStringForKey:@"network_error"]];
+            [dialog setMessage:[self getStringForKey:@"network_error1"]];
+            [dialog addButtonWithTitle:@"OK"];
+            [dialog show];
+        }
+    }
+    else {
+        
+        [responseData writeToFile:filePath atomically:YES];
+        NSLog(@"tarifs loaded OK!");
+        
+        
+        filePath = [docpath stringByAppendingPathComponent:@"news.json"];
+        request = [[NSMutableURLRequest alloc] init];
+        [request setURL:[NSURL URLWithString:NEWS_URL]];
+        urlResponse = nil;
+        error = nil;
+        responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
+        if (responseData == nil) {
+            if (error != nil) {
+                
+                UIAlertView* dialog = [[UIAlertView alloc] init];
+                [dialog setTitle:[self getStringForKey:@"network_error"]];
+                [dialog setMessage:[self getStringForKey:@"network_error1"]];
+                [dialog addButtonWithTitle:@"OK"];
+                [dialog show];
+            }
+        }
+        else {
+            
+            [responseData writeToFile:filePath atomically:YES];
+            NSLog(@" news loaded OK!");
+            
+            //            [self parseData];
+        }
+        
+        UIAlertView* dialog = [[UIAlertView alloc] init];
+        [dialog setTitle:nil];
+        [dialog setMessage:[self getStringForKey:@"loadok"]];
+        [dialog addButtonWithTitle:@"OK"];
+        [dialog show];
+        
+        [self parseData];
+    }
+    
+    
+}
+
 + (CGSize) currentScreenBoundsDependOnOrientation:(UIInterfaceOrientation) interfaceOrientation {
     
     CGRect screenBounds = [UIScreen mainScreen].bounds ;

@@ -34,5 +34,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *distLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *aiLabel;
+@property (weak, nonatomic) IBOutlet UIView *newsView;
+@property (weak, nonatomic) IBOutlet UIView *actView;
+@property (weak, nonatomic) IBOutlet UIImageView *newsImage;
+@property (weak, nonatomic) IBOutlet UILabel *ttlLabel;
+@property (weak, nonatomic) IBOutlet UILabel *briefLabel;
 
 @end

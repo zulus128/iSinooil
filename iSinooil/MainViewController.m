@@ -102,15 +102,14 @@
     
     self.mapView.layer.cornerRadius = 5;
     self.mapView.layer.masksToBounds = YES;
-  
-//    CGSize s = [Common currentScreenBoundsDependOnOrientation:toInterfaceOrientation];
-//    self.vertScroll.contentSize = CGSizeMake(320, 2000);
-
+    
+    self.newsView.layer.cornerRadius = 5;
+    self.newsView.layer.masksToBounds = YES;
+    self.actView.layer.cornerRadius = 5;
+    self.actView.layer.masksToBounds = YES;
+    
     self.mapsour = [[MapSource alloc] initWithType:MAPTYPE_MAINMENU];
     self.mapView.delegate = self.mapsour;
-    
-//    self.vertScroll.translatesAutoresizingMaskIntoConstraints  = NO;
-//    self.contView.translatesAutoresizingMaskIntoConstraints = NO;
     
     CGSize s = [Common currentScreenBounds];
     self.topView.frame = CGRectMake(0, 0, s.width, s.height);

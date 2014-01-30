@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
 
+//urls
+#define NEWS_URL @"http://sinoapp.4design.asia/out.php?action=news&last="
+
 //azs.json
 #define STATION_ID @"id"
 #define STATION_TITLE @"ttl"
