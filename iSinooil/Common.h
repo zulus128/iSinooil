@@ -45,6 +45,7 @@
 
 @property (nonatomic, strong) NSArray* azsjson;
 @property (nonatomic, strong) NSArray* fueljson;
+@property (nonatomic, strong) NSArray* newsjson;
 @property (assign, readwrite) CLLocationCoordinate2D userCoordinate;
 @property (nonatomic, strong) MKMapView* mymapview;
 @property (assign, readwrite) int fuelSelected;

@@ -32,6 +32,7 @@
 	self = [super init];
 	if(self !=nil) {
 
+        [self loadData];
         [self parseData];
         
         self.fuelSelected = 0;
@@ -91,7 +92,31 @@
     } else {
         
         NSLog(@"Parsing fuel: OK!");
-//        NSLog(@"fueljson: %@", self.fueljson);
+        //        NSLog(@"fueljson: %@", self.fueljson);
+    }
+    
+    NSString* news = [docpath stringByAppendingPathComponent:@"news.json"];
+    fe = [[NSFileManager defaultManager] fileExistsAtPath:news];
+    if(!fe) {
+        
+        NSString *appFile = [[NSBundle mainBundle] pathForResource:@"news" ofType:@"json"];
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        NSError *error;
+        [fileManager copyItemAtPath:appFile toPath:news error:&error];
+    }
+    
+    NSString *fnews= [NSString stringWithContentsOfFile:news encoding:NSUTF8StringEncoding error:nil];
+    tardata = [fnews dataUsingEncoding:NSUTF8StringEncoding];
+    self.newsjson = [NSJSONSerialization JSONObjectWithData:tardata options:NSDataReadingUncached error:&error];
+    
+//    NSLog(@"news = %@", d);
+    if (!self.newsjson) {
+        
+        NSLog(@"Error parsing news: %@", error);
+        
+    } else {
+        
+        NSLog(@"Parsing news: OK!");
     }
     
     
@@ -112,8 +137,8 @@
         if (error != nil) {
             
             UIAlertView* dialog = [[UIAlertView alloc] init];
-            [dialog setTitle:[self getStringForKey:@"network_error"]];
-            [dialog setMessage:[self getStringForKey:@"network_error1"]];
+            [dialog setTitle:NSLocalizedString(@"title_network_error", nil)];
+            [dialog setMessage:NSLocalizedString(@"network_error", nil)];
             [dialog addButtonWithTitle:@"OK"];
             [dialog show];
         }
@@ -121,40 +146,8 @@
     else {
         
         [responseData writeToFile:filePath atomically:YES];
-        NSLog(@"tarifs loaded OK!");
+        NSLog(@"news loaded OK!");
         
-        
-        filePath = [docpath stringByAppendingPathComponent:@"news.json"];
-        request = [[NSMutableURLRequest alloc] init];
-        [request setURL:[NSURL URLWithString:NEWS_URL]];
-        urlResponse = nil;
-        error = nil;
-        responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
-        if (responseData == nil) {
-            if (error != nil) {
-                
-                UIAlertView* dialog = [[UIAlertView alloc] init];
-                [dialog setTitle:[self getStringForKey:@"network_error"]];
-                [dialog setMessage:[self getStringForKey:@"network_error1"]];
-                [dialog addButtonWithTitle:@"OK"];
-                [dialog show];
-            }
-        }
-        else {
-            
-            [responseData writeToFile:filePath atomically:YES];
-            NSLog(@" news loaded OK!");
-            
-            //            [self parseData];
-        }
-        
-        UIAlertView* dialog = [[UIAlertView alloc] init];
-        [dialog setTitle:nil];
-        [dialog setMessage:[self getStringForKey:@"loadok"]];
-        [dialog addButtonWithTitle:@"OK"];
-        [dialog show];
-        
-        [self parseData];
     }
     
     
