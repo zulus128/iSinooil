@@ -29,6 +29,22 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g7D-Hf-Ueb">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="64" id="L18-Hw-R77"/>
+                                                </constraints>
+                                            </view>
+                                            <view alpha="0.10000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pX0-CR-NtL">
+                                                <rect key="frame" x="0.0" y="64" width="320" height="474"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="474" id="yiU-sz-6nu"/>
+                                                </constraints>
+                                            </view>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xcn-FK-yFP">
                                                 <rect key="frame" x="0.0" y="18" width="43" height="43"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -175,6 +191,24 @@
                                                     <constraint firstAttribute="height" constant="115" id="Ugu-bo-H6B"/>
                                                 </constraints>
                                             </view>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button_border.png" translatesAutoresizingMaskIntoConstraints="NO" id="GVU-ys-JzD" userLabel="HotLine">
+                                                <rect key="frame" x="7" y="517" width="305" height="60"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="hIB-lU-Uqa"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_hotline.png" translatesAutoresizingMaskIntoConstraints="NO" id="x80-lo-O7Z" userLabel="HotLineIcon">
+                                                <rect key="frame" x="19" y="526" width="41" height="41"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Hot Line" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXf-hj-oDL">
+                                                <rect key="frame" x="75" y="536" width="220" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" red="0.76671444327692195" green="1" blue="0.35554125338827292" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -189,7 +223,9 @@
                                             <constraint firstAttribute="height" constant="568" id="DWL-QT-Z0V"/>
                                             <constraint firstItem="3hV-8w-Lbg" firstAttribute="leading" secondItem="E2q-A2-mVD" secondAttribute="leading" constant="7" id="FJ6-mH-7na"/>
                                             <constraint firstItem="TS8-GN-iCy" firstAttribute="top" secondItem="E2q-A2-mVD" secondAttribute="top" constant="14" id="FMq-UA-wuG"/>
+                                            <constraint firstItem="pXf-hj-oDL" firstAttribute="centerX" secondItem="GVU-ys-JzD" secondAttribute="centerX" id="FcN-zS-G6E"/>
                                             <constraint firstItem="v3e-ec-kTu" firstAttribute="leading" secondItem="E2q-A2-mVD" secondAttribute="leading" constant="7" id="H1M-Ly-lZ2"/>
+                                            <constraint firstItem="g7D-Hf-Ueb" firstAttribute="leading" secondItem="E2q-A2-mVD" secondAttribute="leading" id="JPl-mr-BOf"/>
                                             <constraint firstAttribute="width" constant="320" id="Jdn-Ho-wBi"/>
                                             <constraint firstAttribute="centerX" secondItem="TS8-GN-iCy" secondAttribute="centerX" constant="-6" id="KKl-V8-MaV"/>
                                             <constraint firstItem="wrx-d9-TPg" firstAttribute="top" secondItem="E2q-A2-mVD" secondAttribute="top" id="PLy-9c-jhf"/>
@@ -203,10 +239,19 @@
                                             <constraint firstItem="3hV-8w-Lbg" firstAttribute="top" secondItem="eLi-cc-FMP" secondAttribute="bottom" constant="8" id="eSK-cX-Zr5"/>
                                             <constraint firstItem="9CL-Ii-gP8" firstAttribute="top" secondItem="TS8-GN-iCy" secondAttribute="bottom" constant="16" id="ef3-ug-lJT"/>
                                             <constraint firstAttribute="centerX" secondItem="9CL-Ii-gP8" secondAttribute="centerX" id="eqU-Vo-r4T"/>
+                                            <constraint firstItem="GVU-ys-JzD" firstAttribute="top" secondItem="v3e-ec-kTu" secondAttribute="bottom" constant="8" id="fms-CP-Scm"/>
                                             <constraint firstItem="KXD-D3-k9Z" firstAttribute="top" secondItem="TS8-GN-iCy" secondAttribute="bottom" constant="20" id="hG6-bW-RBX"/>
                                             <constraint firstItem="KXD-D3-k9Z" firstAttribute="leading" secondItem="Z5N-Qn-7iI" secondAttribute="trailing" constant="1" id="hw7-Uz-v4U"/>
+                                            <constraint firstAttribute="trailing" secondItem="pX0-CR-NtL" secondAttribute="trailing" id="inl-sH-gdO"/>
+                                            <constraint firstItem="pX0-CR-NtL" firstAttribute="top" secondItem="TS8-GN-iCy" secondAttribute="bottom" id="itw-zh-r5d"/>
+                                            <constraint firstItem="GVU-ys-JzD" firstAttribute="leading" secondItem="E2q-A2-mVD" secondAttribute="leading" constant="7" id="kCo-Pf-yh3"/>
+                                            <constraint firstItem="pXf-hj-oDL" firstAttribute="centerY" secondItem="GVU-ys-JzD" secondAttribute="centerY" id="lzO-Hv-LoI"/>
                                             <constraint firstItem="eLi-cc-FMP" firstAttribute="top" secondItem="TS8-GN-iCy" secondAttribute="bottom" constant="6" id="o83-cY-nER"/>
+                                            <constraint firstAttribute="trailing" secondItem="GVU-ys-JzD" secondAttribute="trailing" constant="8" id="q5i-14-MWg"/>
+                                            <constraint firstItem="pX0-CR-NtL" firstAttribute="leading" secondItem="E2q-A2-mVD" secondAttribute="leading" id="rxi-Yr-fwR"/>
+                                            <constraint firstItem="g7D-Hf-Ueb" firstAttribute="top" secondItem="E2q-A2-mVD" secondAttribute="top" id="tKU-sY-m3w"/>
                                             <constraint firstItem="Z5N-Qn-7iI" firstAttribute="top" secondItem="TS8-GN-iCy" secondAttribute="bottom" constant="22" id="wzM-ZC-guN"/>
+                                            <constraint firstAttribute="trailing" secondItem="g7D-Hf-Ueb" secondAttribute="trailing" id="xIW-TJ-vCC"/>
                                             <constraint firstAttribute="trailing" secondItem="v3e-ec-kTu" secondAttribute="trailing" constant="8" id="xge-Ii-Nzb"/>
                                         </constraints>
                                     </view>
@@ -1000,8 +1045,10 @@
     <resources>
         <image name="arrowleft_red.png" width="30" height="30"/>
         <image name="arrowleft_white.png" width="30" height="30"/>
+        <image name="button_border.png" width="305" height="60"/>
         <image name="head_gr2.png" width="1" height="125"/>
         <image name="icon_back.png" width="16" height="30"/>
+        <image name="icon_hotline.png" width="41" height="41"/>
         <image name="icon_menu.png" width="42" height="42"/>
         <image name="logo.png" width="305" height="50"/>
         <image name="main_bg.png" width="320" height="917"/>
