@@ -95,8 +95,16 @@
         //        NSLog(@"fueljson: %@", self.fueljson);
     }
     
+    
+    [self parseNews];
+}
+
+- (void) parseNews {
+
+    NSArray* sp = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString* docpath = [sp objectAtIndex: 0];
     NSString* news = [docpath stringByAppendingPathComponent:@"news.json"];
-    fe = [[NSFileManager defaultManager] fileExistsAtPath:news];
+    BOOL fe = [[NSFileManager defaultManager] fileExistsAtPath:news];
     if(!fe) {
         
         NSString *appFile = [[NSBundle mainBundle] pathForResource:@"news" ofType:@"json"];
@@ -106,10 +114,12 @@
     }
     
     NSString *fnews= [NSString stringWithContentsOfFile:news encoding:NSUTF8StringEncoding error:nil];
-    tardata = [fnews dataUsingEncoding:NSUTF8StringEncoding];
+    NSData* tardata = [fnews dataUsingEncoding:NSUTF8StringEncoding];
+    NSError* error;
+
     self.newsjson = [NSJSONSerialization JSONObjectWithData:tardata options:NSDataReadingUncached error:&error];
     
-//    NSLog(@"news = %@", d);
+    //    NSLog(@"news = %@", d);
     if (!self.newsjson) {
         
         NSLog(@"Error parsing news: %@", error);
@@ -117,9 +127,23 @@
     } else {
         
         NSLog(@"Parsing news: OK!");
+        
+        if(!self.lastNews) {
+
+            int min = 1e5;
+            for(NSDictionary* d in self.newsjson) {
+                
+                NSNumber* n = [d valueForKey:NEWS_ID];
+                if(n.intValue < min) {
+                    
+                    min = n.intValue;
+                    self.topnews = d;
+                }
+            }
+        }
+
     }
-    
-    
+
 }
 
 - (void) loadData {
@@ -129,7 +153,11 @@
     
     NSString* filePath = [docpath stringByAppendingPathComponent:@"news.json"];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setURL:[NSURL URLWithString:NEWS_URL]];
+    if(self.lastNews)
+        [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%d", NEWS_URL_LAST, self.lastNews]]];
+    else
+        [request setURL:[NSURL URLWithString:NEWS_URL]];
+    
     NSHTTPURLResponse* urlResponse = nil;
     NSError *error = nil;
     NSData* responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
@@ -147,7 +175,6 @@
         
         [responseData writeToFile:filePath atomically:YES];
         NSLog(@"news loaded OK!");
-        
     }
     
     

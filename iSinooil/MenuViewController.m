@@ -51,22 +51,21 @@
     fr = self.view.frame;
     viewController.view.frame = CGRectMake(fr.size.width - deltaX, fr.origin.y, fr.size.width, fr.size.height);
     viewController.view.hidden = YES;
-
+    
+    viewController =  [storyboard instantiateViewControllerWithIdentifier:@"newsController"];
+    viewController.view.tag = NEWS_VIEW_TAG;
+    [self addChildViewController:viewController];
+    [self.view addSubview:viewController.view];
+    [viewController didMoveToParentViewController:self];
+    fr = self.view.frame;
+    viewController.view.frame = CGRectMake(fr.size.width - deltaX, fr.origin.y, fr.size.width, fr.size.height);
+    viewController.view.hidden = YES;
+    
 
 }
 
-//- (BOOL) shouldAutomaticallyForwardAppearanceMethods {
-//    
-//    return YES;
-//}
-//
-//- (BOOL) shouldAutomaticallyForwardRotationMethods {
-//    
-//    return YES;
-//}
-
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
+    
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -117,7 +116,10 @@
 
 - (IBAction)newsPressed:(id)sender {
     
-    NSLog(@"news");
+//    NSLog(@"news");
+
+    [self goLeft:NEWS_VIEW_TAG];
+
 }
 
 - (void) showMaps {

@@ -10,7 +10,8 @@
 #import <MapKit/MapKit.h>
 
 //urls
-#define NEWS_URL @"http://sinoapp.4design.asia/out.php?action=news&last="
+#define NEWS_URL_LAST @"http://sinoapp.4design.asia/out.php?action=news&last="
+#define NEWS_URL @"http://sinoapp.4design.asia/out.php?action=news"
 
 //azs.json
 #define STATION_ID @"id"
@@ -29,6 +30,12 @@
 #define FUEL_BITS @"bits"
 #define FUEL_COST @"cost"
 #define FUEL_NAME @"fuel"
+
+//news.json
+#define NEWS_ID @"id"
+#define NEWS_PIC @"pic"
+#define NEWS_TTL @"ttl"
+#define NEWS_BRIEF @"brief"
 
 @class PriceCell;
 
@@ -49,5 +56,7 @@
 @property (assign, readwrite) CLLocationCoordinate2D userCoordinate;
 @property (nonatomic, strong) MKMapView* mymapview;
 @property (assign, readwrite) int fuelSelected;
+@property (assign, readwrite) int lastNews;
+@property (nonatomic, strong) NSDictionary* topnews;
 
 @end

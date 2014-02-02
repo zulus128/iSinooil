@@ -18,6 +18,8 @@
 #define MAIN_VIEW_TAG 1234
 #define MAPS_VIEW_TAG 1235
 #define PRICE_VIEW_TAG 1236
+#define NEWS_VIEW_TAG 1237
+
 #define deltaX 50
 #define anim_delay 0.2f
 
@@ -27,6 +29,8 @@
 #define FONT_PRICE_LIST [UIFont fontWithName:@"HelveticaNeueCyr-UltraLight" size:40.0f]
 #define FONT_NAME_PRICE_LIST [UIFont fontWithName:@"HelveticaNeueCyr-Thin" size:28.0f]
 #define FONT_KM_PRICE_LIST [UIFont fontWithName:@"HelveticaNeueCyr-Roman" size:14.0f]
+#define FONT_NEWS_TITLE [UIFont fontWithName:@"HelveticaNeueCyr-Roman" size:15.0f]
+#define FONT_NEWS_BRIEF [UIFont fontWithName:@"HelveticaNeueCyr-Light" size:10.0f]
 
 /*
  ГАЗ 64

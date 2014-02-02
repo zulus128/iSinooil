@@ -11,6 +11,7 @@
 #import "Common.h"
 #import "MenuViewController.h"
 #import "MapSource.h"
+#import "UIImageView+WebCache.h"
 
 @implementation MainViewController
 
@@ -89,6 +90,18 @@
 
 }
 
+- (void) updateNews {
+
+//    NSLog(@"topnews = %@", [Common instance].topnews);
+    
+//    NSString* pic = [[Common instance].topnews valueForKey:NEWS_PIC];
+    NSString* pic = @"http://sinoapp.4design.asia/images/w/norm/150/d225c97be3cb7ab1e02a717386ae1c78.jpg";
+    
+    [self.newsImage setImageWithURL:[NSURL URLWithString:pic] placeholderImage:[UIImage imageNamed:@"placeholder-icon"]];
+    self.ttlLabel.text = [[Common instance].topnews valueForKey:NEWS_TTL];
+    self.briefLabel.text = [[Common instance].topnews valueForKey:NEWS_BRIEF];
+}
+
 - (void)viewDidLoad {
     
     [super viewDidLoad];
@@ -116,7 +129,11 @@
     self.contentViewH.constant = s.height * 2;
     self.contentViewW.constant = s.width;
 
+    self.ttlLabel.font = FONT_NEWS_TITLE;
+    self.briefLabel.font = FONT_NEWS_BRIEF;
+
     [self updateFuelPrice];
+    [self updateNews];
 }
 
 - (BOOL)shouldAutorotate
