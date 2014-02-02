@@ -8,6 +8,8 @@
 
 #import "NewsDataSource.h"
 #import "NewsCell.h"
+#import "Common.h"
+#import "UIImageView+WebCache.h"
 
 @implementation NewsDataSource
 
@@ -21,7 +23,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     
-    return 0;
+    return [[Common instance] getNewsCount];;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -29,6 +31,36 @@
     
     static NSString *CellIdentifier = @"newsCell";
     NewsCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    NSDictionary* news = [[Common instance] getNewsAt:indexPath.row];
+
+    if(!indexPath.row) {
+    
+        cell.time.font = FONT_NEWS_TOPNEWS;
+        cell.time.text = NSLocalizedString(@"daynews", nil);
+        cell.time.textColor = [UIColor blackColor];
+    }
+    else {
+
+        cell.time.font = FONT_NEWS_DATE;
+        cell.time.textColor = [UIColor grayColor];
+        NSNumber* n = [news valueForKey:START_DATE];
+        NSDate* date = [NSDate dateWithTimeIntervalSince1970:n.longValue];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+        [dateFormatter setLocale:[NSLocale currentLocale]];
+        NSString *formattedDateString = [dateFormatter stringFromDate:date];
+//        NSLog(@"date = %@   %@", formattedDateString, [[NSLocale currentLocale] localeIdentifier]);
+//        NSLog(@"formattedDateString for locale %@: %@", [[dateFormatter locale] localeIdentifier], formattedDateString);
+
+        cell.time.text = formattedDateString;
+    }
+    
+    NSString* pic = [news valueForKey:NEWS_PIC];
+    [cell.pic setImageWithURL:[NSURL URLWithString:pic] placeholderImage:[UIImage imageNamed:@"placeholder-icon"]];
+
+    cell.brief.font = FONT_NEWS_BRIEF;
+    cell.brief.text = [news valueForKey:NEWS_BRIEF];
     
     return cell;
 }

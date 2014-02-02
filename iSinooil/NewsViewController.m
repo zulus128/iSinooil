@@ -9,6 +9,7 @@
 #import "NewsViewController.h"
 #import "Common.h"
 #import "NewsDataSource.h"
+#import "NewsDetailViewController.h"
 
 @implementation NewsViewController
 
@@ -60,7 +61,10 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+ 
+    NewsDetailViewController* detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"newsDetailController"];
+    detailViewController.news = [[Common instance] getNewsAt:indexPath.row];
+    [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
 @end

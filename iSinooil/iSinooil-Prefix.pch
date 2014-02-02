@@ -30,7 +30,9 @@
 #define FONT_NAME_PRICE_LIST [UIFont fontWithName:@"HelveticaNeueCyr-Thin" size:28.0f]
 #define FONT_KM_PRICE_LIST [UIFont fontWithName:@"HelveticaNeueCyr-Roman" size:14.0f]
 #define FONT_NEWS_TITLE [UIFont fontWithName:@"HelveticaNeueCyr-Roman" size:15.0f]
+#define FONT_NEWS_TOPNEWS [UIFont fontWithName:@"HelveticaNeueCyr-Roman" size:18.0f]
 #define FONT_NEWS_BRIEF [UIFont fontWithName:@"HelveticaNeueCyr-Light" size:10.0f]
+#define FONT_NEWS_DATE [UIFont fontWithName:@"HelveticaNeueCyr-Roman" size:14.0f]
 
 /*
  ГАЗ 64

@@ -130,13 +130,13 @@
         
         if(!self.lastNews) {
 
-            int min = 1e5;
+            int m = 0;
             for(NSDictionary* d in self.newsjson) {
                 
                 NSNumber* n = [d valueForKey:NEWS_ID];
-                if(n.intValue < min) {
+                if(n.intValue > m) {
                     
-                    min = n.intValue;
+                    m = n.intValue;
                     self.topnews = d;
                 }
             }
@@ -178,6 +178,16 @@
     }
     
     
+}
+
+- (int) getNewsCount {
+    
+    return self.newsjson.count;
+}
+
+- (NSDictionary*) getNewsAt:(int)n {
+    
+    return [self.newsjson objectAtIndex:n];
 }
 
 + (CGSize) currentScreenBoundsDependOnOrientation:(UIInterfaceOrientation) interfaceOrientation {

@@ -36,6 +36,8 @@
 #define NEWS_PIC @"pic"
 #define NEWS_TTL @"ttl"
 #define NEWS_BRIEF @"brief"
+#define START_DATE @"sd"
+#define END_DATE @"ed"
 
 @class PriceCell;
 
@@ -49,6 +51,9 @@
 + (NSArray*) calculateRoutesFrom:(CLLocationCoordinate2D) f to: (CLLocationCoordinate2D) t;
 - (float) calculateDistTo: (CLLocationCoordinate2D) t;
 - (float) distToNearestStaionWithFuelBit:(int)bit forCell:(PriceCell*)pc;
+
+- (int) getNewsCount;
+- (NSDictionary*) getNewsAt:(int)n;
 
 @property (nonatomic, strong) NSArray* azsjson;
 @property (nonatomic, strong) NSArray* fueljson;
