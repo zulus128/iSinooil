@@ -44,7 +44,7 @@
 
         cell.time.font = FONT_NEWS_DATE;
         cell.time.textColor = [UIColor grayColor];
-        NSNumber* n = [news valueForKey:START_DATE];
+        NSNumber* n = [news valueForKey:NEWS_START_DATE];
         NSDate* date = [NSDate dateWithTimeIntervalSince1970:n.longValue];
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateStyle:NSDateFormatterMediumStyle];

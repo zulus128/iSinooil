@@ -12,6 +12,7 @@
 //urls
 #define NEWS_URL_LAST @"http://sinoapp.4design.asia/out.php?action=news&last="
 #define NEWS_URL @"http://sinoapp.4design.asia/out.php?action=news"
+#define NEWS_URL_FULL @"http://sinoapp.4design.asia/out.php?action=fulltext&id="
 
 //azs.json
 #define STATION_ID @"id"
@@ -36,8 +37,9 @@
 #define NEWS_PIC @"pic"
 #define NEWS_TTL @"ttl"
 #define NEWS_BRIEF @"brief"
-#define START_DATE @"sd"
-#define END_DATE @"ed"
+#define NEWS_START_DATE @"sd"
+#define NEWS_END_DATE @"ed"
+#define NEWS_FULLTEXT @"txt"
 
 @class PriceCell;
 
@@ -54,6 +56,7 @@
 
 - (int) getNewsCount;
 - (NSDictionary*) getNewsAt:(int)n;
+- (NSString*) getNewsFullText:(int)n;
 
 @property (nonatomic, strong) NSArray* azsjson;
 @property (nonatomic, strong) NSArray* fueljson;

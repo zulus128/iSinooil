@@ -190,6 +190,56 @@
     return [self.newsjson objectAtIndex:n];
 }
 
+- (NSString*) getNewsFullText:(int)n {
+    
+    NSString* res = @"";
+//    NSDictionary* d = [self.newsjson objectAtIndex:n];
+//    NSNumber* num = [d valueForKey:NEWS_ID];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+
+    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%d", NEWS_URL_FULL, n]]];
+    
+    NSHTTPURLResponse* urlResponse = nil;
+    NSError *error = nil;
+    NSData* responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
+    if (responseData == nil) {
+        if (error != nil) {
+            
+            UIAlertView* dialog = [[UIAlertView alloc] init];
+            [dialog setTitle:NSLocalizedString(@"title_network_error", nil)];
+            [dialog setMessage:NSLocalizedString(@"network_error", nil)];
+            [dialog addButtonWithTitle:@"OK"];
+            [dialog show];
+        }
+    }
+    else {
+        
+        NSArray* arr = [NSJSONSerialization JSONObjectWithData:responseData options:NSDataReadingUncached error:&error];
+        
+//        NSLog(@"dic = %@", dic);
+        if (!arr) {
+            
+            NSLog(@"Error parsing FULL news: %@", error);
+            
+        } else {
+            
+            NSLog(@"Parsing FULL news: OK!");
+            NSDictionary* dic = [arr objectAtIndex:0];
+            res = [dic objectForKey:NEWS_FULLTEXT];
+        }
+    }
+
+    NSString *myHTML = [NSString stringWithFormat:@"<html> \n"
+                        "<head> \n"
+                        "<style type=\"text/css\"> \n"
+                        "body {font-family: \"%@\"; font-size: %@;}\n"
+                        "</style> \n"
+                        "</head> \n"
+                        "<body>%@</body> \n"
+                        "</html>", @"HelveticaNeueCyr-Light", [NSNumber numberWithInt:11], res];
+    return myHTML;
+}
+
 + (CGSize) currentScreenBoundsDependOnOrientation:(UIInterfaceOrientation) interfaceOrientation {
     
     CGRect screenBounds = [UIScreen mainScreen].bounds ;

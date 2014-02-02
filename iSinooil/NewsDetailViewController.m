@@ -8,6 +8,7 @@
 
 #import "NewsDetailViewController.h"
 #import "Common.h"
+#import "UIImageView+WebCache.h"
 
 @implementation NewsDetailViewController
 
@@ -24,7 +25,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    NSNumber* n = [self.news valueForKey:START_DATE];
+    NSNumber* n = [self.news valueForKey:NEWS_START_DATE];
     NSDate* date = [NSDate dateWithTimeIntervalSince1970:n.longValue];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
@@ -33,6 +34,20 @@
     self.date.font = FONT_NEWS_DATE;
     self.date.text = formattedDateString;
 
+    self.ttl.font = FONT_NEWS_TITLE;
+    self.ttl.text = [self.news valueForKey:NEWS_TTL];
+    
+    NSString* p = [self.news valueForKey:NEWS_PIC];
+    [self.pic setImageWithURL:[NSURL URLWithString:p] placeholderImage:[UIImage imageNamed:@"placeholder-icon"]];
+
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^(void) {
+    
+        NSNumber* i = [self.news valueForKey:NEWS_ID];
+        NSString* s = [[Common instance] getNewsFullText:i.intValue];
+//        NSLog(@"text = %@", s);
+        [self.webView loadHTMLString:s baseURL:nil];
+
+    });
 
 }
 

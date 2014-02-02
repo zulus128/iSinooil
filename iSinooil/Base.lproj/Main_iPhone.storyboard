@@ -535,7 +535,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="300" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O9L-yc-2Qr">
-                                        <rect key="frame" x="124" y="40" width="176" height="21"/>
+                                        <rect key="frame" x="124" y="43" width="176" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="249" id="1ss-Li-lXs"/>
@@ -574,10 +574,25 @@
                                     <constraint firstItem="qyX-tS-9i8" firstAttribute="leading" secondItem="nre-Zf-84B" secondAttribute="leading" id="FJc-QM-fHT"/>
                                     <constraint firstAttribute="trailing" secondItem="O9L-yc-2Qr" secondAttribute="trailing" constant="20" id="QXq-9Z-p67"/>
                                     <constraint firstAttribute="bottom" secondItem="qyX-tS-9i8" secondAttribute="bottom" id="QZP-qE-Umn"/>
-                                    <constraint firstItem="O9L-yc-2Qr" firstAttribute="top" secondItem="nre-Zf-84B" secondAttribute="top" constant="40" id="Sfp-uY-zPX"/>
+                                    <constraint firstItem="O9L-yc-2Qr" firstAttribute="top" secondItem="nre-Zf-84B" secondAttribute="top" constant="43" id="Sfp-uY-zPX"/>
                                     <constraint firstAttribute="height" constant="70" id="vsL-Uo-TAi"/>
                                 </constraints>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aKC-dv-52f">
+                                <rect key="frame" x="8" y="90" width="115" height="103"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="161" translatesAutoresizingMaskIntoConstraints="NO" id="5tD-kK-x25">
+                                <rect key="frame" x="139" y="90" width="161" height="103"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ijK-Fy-5Ec">
+                                <rect key="frame" x="8" y="201" width="304" height="359"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -588,6 +603,9 @@
                     </view>
                     <connections>
                         <outlet property="date" destination="O9L-yc-2Qr" id="GFh-Ue-d64"/>
+                        <outlet property="pic" destination="aKC-dv-52f" id="cNR-L0-buR"/>
+                        <outlet property="ttl" destination="5tD-kK-x25" id="NhB-XN-AVq"/>
+                        <outlet property="webView" destination="ijK-Fy-5Ec" id="Y9T-Wf-Hfe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I9K-LV-yeQ" userLabel="First Responder" sceneMemberID="firstResponder"/>

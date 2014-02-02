@@ -14,5 +14,8 @@
 
 - (IBAction)back:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *date;
+@property (weak, nonatomic) IBOutlet UILabel *ttl;
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (weak, nonatomic) IBOutlet UIImageView *pic;
 
 @end
