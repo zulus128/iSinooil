@@ -22,7 +22,7 @@
     CGSize s = [Common currentScreenBoundsDependOnOrientation:toInterfaceOrientation];
     self.topView.frame = CGRectMake(0, 0, s.width, s.height);
 
-    self.contentViewH.constant = s.height * 2;
+    self.contentViewH.constant = 870;//s.height * 2;
     self.contentViewW.constant = s.width;
 
 }
@@ -31,6 +31,8 @@
 
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:animated];
+    self.contentViewH.constant = 870;//s.height * 2;
+
 }
 
 - (void) updateFuelPrice {
@@ -107,6 +109,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+
     self.mapView.userTrackingMode = MKUserTrackingModeFollow;
     CLLocationCoordinate2D noLocation;
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(noLocation, 500, 500);
@@ -132,6 +135,13 @@
     self.ttlLabel.font = FONT_NEWS_TITLE;
     self.briefLabel.font = FONT_NEWS_BRIEF;
 
+    self.hotlineLabel.font = FONT_MAINMENU;
+    self.settingsLabel.font = FONT_MAINMENU;
+    self.seealsoLabel.font = FONT_MAINMENU_SEEALSO;
+    self.ishopLabel.font = FONT_MAINMENU;
+    self.siteLabel.font = FONT_MAINMENU;
+    self.netwLabel.font = FONT_MAINMENU;
+    
     [self updateFuelPrice];
     [self updateNews];
 }

@@ -41,5 +41,11 @@
 @property (weak, nonatomic) IBOutlet UIImageView *newsImage;
 @property (weak, nonatomic) IBOutlet UILabel *ttlLabel;
 @property (weak, nonatomic) IBOutlet UILabel *briefLabel;
+@property (weak, nonatomic) IBOutlet UILabel *hotlineLabel;
+@property (weak, nonatomic) IBOutlet UILabel *settingsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *seealsoLabel;
+@property (weak, nonatomic) IBOutlet UILabel *ishopLabel;
+@property (weak, nonatomic) IBOutlet UILabel *siteLabel;
+@property (weak, nonatomic) IBOutlet UILabel *netwLabel;
 
 @end

@@ -2,8 +2,14 @@
 /* Class = "IBUILabel"; text = "Label"; ObjectID = "5Yv-tQ-BJB"; */
 "5Yv-tQ-BJB.text" = "Label";
 
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "5tD-kK-x25"; */
+"5tD-kK-x25.text" = "Title";
+
 /* Class = "IBUILabel"; text = "Label"; ObjectID = "B4d-a9-RrQ"; */
 "B4d-a9-RrQ.text" = "Label";
+
+/* Class = "IBUILabel"; text = "Internet Shop"; ObjectID = "EiB-fo-t7K"; */
+"EiB-fo-t7K.text" = "Интернет-магазин";
 
 /* Class = "IBUILabel"; text = "АЗС"; ObjectID = "HRa-Va-JCW"; */
 "HRa-Va-JCW.text" = "АЗС";
@@ -26,6 +32,9 @@
 /* Class = "IBUILabel"; text = "time"; ObjectID = "YWC-6g-Pv1"; */
 "YWC-6g-Pv1.text" = "time";
 
+/* Class = "IBUILabel"; text = "Settings"; ObjectID = "Z2z-EY-SXt"; */
+"Z2z-EY-SXt.text" = "Настройки";
+
 /* Class = "IBUILabel"; text = "AI 97"; ObjectID = "Z5N-Qn-7iI"; */
 "Z5N-Qn-7iI.text" = "AI 97";
 
@@ -44,14 +53,26 @@
 /* Class = "IBUIButton"; normalTitle = "Новости"; ObjectID = "eMQ-ac-jf6"; */
 "eMQ-ac-jf6.normalTitle" = "Новости";
 
-/* Class = "IBUIButton"; normalTitle = "News"; ObjectID = "fwl-A5-G0P"; */
+/* Class = "IBUIButton"; normalTitle = "Новости"; ObjectID = "fwl-A5-G0P"; */
 "fwl-A5-G0P.normalTitle" = "Новости";
+
+/* Class = "IBUILabel"; text = "Also visit:"; ObjectID = "gWV-Nc-55P"; */
+"gWV-Nc-55P.text" = "Посетите также:";
+
+/* Class = "IBUILabel"; text = "SINOOIL web-site"; ObjectID = "iAG-zW-pa0"; */
+"iAG-zW-pa0.text" = "Сайт SINOOIL";
+
+/* Class = "IBUILabel"; text = "Networks:"; ObjectID = "l9s-l3-tk0"; */
+"l9s-l3-tk0.text" = "Сообщества:";
 
 /* Class = "IBUILabel"; text = "km"; ObjectID = "mhE-MK-QZ7"; */
 "mhE-MK-QZ7.text" = "km";
 
 /* Class = "IBUILabel"; text = "brief"; ObjectID = "nZC-a7-puL"; */
 "nZC-a7-puL.text" = "brief";
+
+/* Class = "IBUILabel"; text = "Hot Line"; ObjectID = "pXf-hj-oDL"; */
+"pXf-hj-oDL.text" = "Горячая линия";
 
 /* Class = "IBUILabel"; text = "Label"; ObjectID = "sQv-sU-cOF"; */
 "sQv-sU-cOF.text" = "Label";
