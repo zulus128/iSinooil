@@ -179,4 +179,9 @@
     [((MenuViewController*)self.parentViewController) showMaps];
 }
 
+- (IBAction)tapNews:(id)sender {
+
+    [((MenuViewController*)self.parentViewController) showNews];
+}
+
 @end

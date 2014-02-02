@@ -7,26 +7,29 @@
 //
 
 #import "NewsViewController.h"
-
-@interface NewsViewController ()
-
-@end
+#import "Common.h"
+#import "NewsDataSource.h"
 
 @implementation NewsViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+- (void) willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    
+    //    NSLog(@"will rotate news");
+    
+    CGSize s = [Common currentScreenBoundsDependOnOrientation:toInterfaceOrientation];
+    self.topView.frame = CGRectMake(0, 0, s.width, s.height);
 }
 
-- (void)viewDidLoad
-{
+
+
+- (void)viewDidLoad {
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    self.newssour = [[NewsDataSource alloc] init];
+    self.newsTable.dataSource = self.newssour;
+    self.newsTable.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,6 +52,15 @@
                      }
                      completion:^(BOOL finished) {
                      }];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return NEWSCELL_HEIGHT;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
 }
 
 @end

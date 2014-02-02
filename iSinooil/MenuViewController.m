@@ -142,6 +142,16 @@
     
 }
 
+- (void) showNews {
+    
+    CGRect fr = self.view.frame;
+    UIView* view = [self.view viewWithTag:NEWS_VIEW_TAG];
+    view.frame = CGRectMake(0, fr.origin.y, fr.size.width, fr.size.height);
+    
+    [self makeInvisibleExcludeTag:NEWS_VIEW_TAG];
+    
+}
+
 - (void) showStationWithId:(int) sid {
     
     [self showMaps];

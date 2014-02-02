@@ -16,6 +16,7 @@
 
 - (void) showMaps;
 - (void) showPrices;
+- (void) showNews;
 - (void) showStationWithId:(int) sid;
 
 @end

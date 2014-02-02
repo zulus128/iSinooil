@@ -11,8 +11,17 @@
 /* Class = "IBUIButton"; normalTitle = "Оставить отзыв"; ObjectID = "Jcs-ge-0J7"; */
 "Jcs-ge-0J7.normalTitle" = "Оставить отзыв";
 
+/* Class = "IBUILabel"; text = "115"; ObjectID = "KXD-D3-k9Z"; */
+"KXD-D3-k9Z.text" = "115";
+
+/* Class = "IBUILabel"; text = "ttl"; ObjectID = "OOj-wf-H5w"; */
+"OOj-wf-H5w.text" = "ttl";
+
 /* Class = "IBUILabel"; text = "Label"; ObjectID = "WY9-Zw-Bcr"; */
 "WY9-Zw-Bcr.text" = "Label";
+
+/* Class = "IBUILabel"; text = "AI 97"; ObjectID = "Z5N-Qn-7iI"; */
+"Z5N-Qn-7iI.text" = "AI 97";
 
 /* Class = "IBUILabel"; text = "AI 97"; ObjectID = "bLu-Lr-2B7"; */
 "bLu-Lr-2B7.text" = "AI 97";
@@ -23,13 +32,25 @@
 /* Class = "IBUIButton"; normalTitle = "Карта АЗС"; ObjectID = "cr7-no-SCB"; */
 "cr7-no-SCB.normalTitle" = "Карта АЗС";
 
+/* Class = "IBUILabel"; text = "News"; ObjectID = "dMT-iY-TJr"; */
+"dMT-iY-TJr.text" = "Новости";
+
+/* Class = "IBUIButton"; normalTitle = "NEWS"; ObjectID = "eMQ-ac-jf6"; */
+"eMQ-ac-jf6.normalTitle" = "Новости";
+
+/* Class = "IBUILabel"; text = "km"; ObjectID = "mhE-MK-QZ7"; */
+"mhE-MK-QZ7.text" = "km";
+
+/* Class = "IBUILabel"; text = "brief"; ObjectID = "nZC-a7-puL"; */
+"nZC-a7-puL.text" = "brief";
+
 /* Class = "IBUILabel"; text = "Label"; ObjectID = "sQv-sU-cOF"; */
 "sQv-sU-cOF.text" = "Label";
 
 /* Class = "IBUILabel"; text = "115"; ObjectID = "spg-8f-C4m"; */
 "spg-8f-C4m.text" = "115";
 
-/* Class = "IBUILabel"; text = "Stations"; ObjectID = "srS-dX-17e"; */
+/* Class = "IBUILabel"; text = "АЗС"; ObjectID = "srS-dX-17e"; */
 "srS-dX-17e.text" = "АЗС";
 
 /* Class = "IBUILabel"; text = "22"; ObjectID = "tsm-me-fOe"; */
