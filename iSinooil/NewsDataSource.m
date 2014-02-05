@@ -22,8 +22,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    
-    return [[Common instance] getNewsCount];;
+    int c = [[Common instance] getNewsCount];
+//    NSLog(@"-news count = %d", c);
+    return c;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

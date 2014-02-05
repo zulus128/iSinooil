@@ -10,7 +10,7 @@
 #import <MapKit/MapKit.h>
 
 //urls
-#define NEWS_URL_LAST @"http://sinoapp.4design.asia/out.php?action=news&last="
+#define NEWS_URL_LAST @"http://sinoapp.4design.asia/out.php?action=news&from="
 #define NEWS_URL @"http://sinoapp.4design.asia/out.php?action=news"
 #define NEWS_URL_FULL @"http://sinoapp.4design.asia/out.php?action=fulltext&id="
 
@@ -55,6 +55,8 @@
 - (float) distToNearestStaionWithFuelBit:(int)bit forCell:(PriceCell*)pc;
 
 - (int) getNewsCount;
+- (void) loadNewsData;
+//- (void) getNewsNextBlock;
 - (NSDictionary*) getNewsAt:(int)n;
 - (NSString*) getNewsFullText:(int)n;
 

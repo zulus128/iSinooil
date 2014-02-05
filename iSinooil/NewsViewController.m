@@ -10,6 +10,7 @@
 #import "Common.h"
 #import "NewsDataSource.h"
 #import "NewsDetailViewController.h"
+#import "UIScrollView+SVInfiniteScrolling.h"
 
 @implementation NewsViewController
 
@@ -31,10 +32,18 @@
     self.newssour = [[NewsDataSource alloc] init];
     self.newsTable.dataSource = self.newssour;
     self.newsTable.delegate = self;
+    
+    [self.newsTable addInfiniteScrollingWithActionHandler:^{
+        
+//        NSLog(@"end of table");
+        [[Common instance] loadNewsData];
+        [self.newsTable.infiniteScrollingView stopAnimating];
+        [self.newsTable reloadData];
+    }];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
+    
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

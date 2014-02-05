@@ -32,10 +32,13 @@
 	self = [super init];
 	if(self !=nil) {
 
-        [self loadData];
         [self parseData];
         
         self.fuelSelected = 0;
+        self.newsjson = [NSArray array];
+
+        [self loadNewsData];
+//        [self parseNews];
 	}
 	return self;
 }
@@ -96,7 +99,7 @@
     }
     
     
-    [self parseNews];
+//    [self parseNews];
 }
 
 - (void) parseNews {
@@ -117,7 +120,7 @@
     NSData* tardata = [fnews dataUsingEncoding:NSUTF8StringEncoding];
     NSError* error;
 
-    self.newsjson = [NSJSONSerialization JSONObjectWithData:tardata options:NSDataReadingUncached error:&error];
+    self.newsjson = [self.newsjson arrayByAddingObjectsFromArray:[NSJSONSerialization JSONObjectWithData:tardata options:NSDataReadingUncached error:&error]];
     
     //    NSLog(@"news = %@", d);
     if (!self.newsjson) {
@@ -128,31 +131,40 @@
         
         NSLog(@"Parsing news: OK!");
         
-        if(!self.lastNews) {
+//        if(!self.lastNews) {
 
-            int m = 0;
+            int max = 0;
+            int min = 1e4;
             for(NSDictionary* d in self.newsjson) {
                 
                 NSNumber* n = [d valueForKey:NEWS_ID];
-                if(n.intValue > m) {
+                if(n.intValue > max) {
                     
-                    m = n.intValue;
+                    max = n.intValue;
                     self.topnews = d;
                 }
+                if(n.intValue < min) {
+                    
+                    min = n.intValue;
+                    self.lastNews = n.intValue;
+                }
             }
-        }
+            
+//            NSLog(@"max = %d, min = %d", max, min);
+//        }
 
     }
 
 }
 
-- (void) loadData {
+- (void) loadNewsData {
     
     NSArray* sp = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString* docpath = [sp objectAtIndex: 0];
     
     NSString* filePath = [docpath stringByAppendingPathComponent:@"news.json"];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+//    NSLog(@"--- load news from %d", self.lastNews);
     if(self.lastNews)
         [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%d", NEWS_URL_LAST, self.lastNews]]];
     else
@@ -177,6 +189,7 @@
         NSLog(@"news loaded OK!");
     }
     
+    [self parseNews];
     
 }
 
@@ -184,6 +197,11 @@
     
     return self.newsjson.count;
 }
+
+//- (void) getNewsNextBlock {
+//    
+//    
+//}
 
 - (NSDictionary*) getNewsAt:(int)n {
     
