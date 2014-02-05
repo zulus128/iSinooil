@@ -36,9 +36,10 @@
         
         self.fuelSelected = 0;
         self.newsjson = [NSArray array];
+        self.actsjson = [NSArray array];
 
         [self loadNewsData];
-//        [self parseNews];
+        [self loadActsData];
 	}
 	return self;
 }
@@ -198,17 +199,12 @@
     return self.newsjson.count;
 }
 
-//- (void) getNewsNextBlock {
-//    
-//    
-//}
-
 - (NSDictionary*) getNewsAt:(int)n {
     
     return [self.newsjson objectAtIndex:n];
 }
 
-- (NSString*) getNewsFullText:(int)n {
+- (NSString*) getNewsActFullText:(int)n {
     
     NSString* res = @"";
 //    NSDictionary* d = [self.newsjson objectAtIndex:n];
@@ -237,11 +233,11 @@
 //        NSLog(@"dic = %@", dic);
         if (!arr) {
             
-            NSLog(@"Error parsing FULL news: %@", error);
+            NSLog(@"Error parsing FULL text: %@", error);
             
         } else {
             
-            NSLog(@"Parsing FULL news: OK!");
+            NSLog(@"Parsing FULL text: OK!");
             NSDictionary* dic = [arr objectAtIndex:0];
             res = [dic objectForKey:NEWS_FULLTEXT];
         }
@@ -256,6 +252,100 @@
                         "<body>%@</body> \n"
                         "</html>", @"HelveticaNeueCyr-Light", [NSNumber numberWithInt:11], res];
     return myHTML;
+}
+
+- (void) parseActs {
+    
+    NSArray* sp = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString* docpath = [sp objectAtIndex: 0];
+    NSString* news = [docpath stringByAppendingPathComponent:@"acts.json"];
+    BOOL fe = [[NSFileManager defaultManager] fileExistsAtPath:news];
+    if(!fe) {
+        
+        NSString *appFile = [[NSBundle mainBundle] pathForResource:@"acts" ofType:@"json"];
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        NSError *error;
+        [fileManager copyItemAtPath:appFile toPath:news error:&error];
+    }
+    
+    NSString *fnews= [NSString stringWithContentsOfFile:news encoding:NSUTF8StringEncoding error:nil];
+    NSData* tardata = [fnews dataUsingEncoding:NSUTF8StringEncoding];
+    NSError* error;
+    
+    self.actsjson = [self.actsjson arrayByAddingObjectsFromArray:[NSJSONSerialization JSONObjectWithData:tardata options:NSDataReadingUncached error:&error]];
+    
+    if (!self.actsjson) {
+        
+        NSLog(@"Error parsing actions: %@", error);
+        
+    } else {
+        
+        NSLog(@"Parsing actions: OK!");
+        
+        int max = 0;
+        int min = 1e4;
+        for(NSDictionary* d in self.actsjson) {
+            
+            NSNumber* n = [d valueForKey:NEWS_ID];
+            if(n.intValue > max) {
+                
+                max = n.intValue;
+                self.topact = d;
+            }
+            if(n.intValue < min) {
+                
+                min = n.intValue;
+                self.lastAct = n.intValue;
+            }
+        }
+        
+    }
+    
+}
+
+- (void) loadActsData {
+    
+    NSArray* sp = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString* docpath = [sp objectAtIndex: 0];
+    
+    NSString* filePath = [docpath stringByAppendingPathComponent:@"acts.json"];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    if(self.lastAct)
+        [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%d", ACTS_URL_LAST, self.lastAct]]];
+    else
+        [request setURL:[NSURL URLWithString:ACTS_URL]];
+    
+    NSHTTPURLResponse* urlResponse = nil;
+    NSError *error = nil;
+    NSData* responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
+    if (responseData == nil) {
+        if (error != nil) {
+            
+            UIAlertView* dialog = [[UIAlertView alloc] init];
+            [dialog setTitle:NSLocalizedString(@"title_network_error", nil)];
+            [dialog setMessage:NSLocalizedString(@"network_error", nil)];
+            [dialog addButtonWithTitle:@"OK"];
+            [dialog show];
+        }
+    }
+    else {
+        
+        [responseData writeToFile:filePath atomically:YES];
+        NSLog(@"actions loaded OK!");
+    }
+    
+    [self parseActs];
+    
+}
+
+- (int) getActsCount {
+    
+    return self.actsjson.count;
+}
+
+- (NSDictionary*) getActAt:(int)n {
+    
+    return [self.actsjson objectAtIndex:n];
 }
 
 + (CGSize) currentScreenBoundsDependOnOrientation:(UIInterfaceOrientation) interfaceOrientation {

@@ -92,16 +92,17 @@
 
 }
 
-- (void) updateNews {
+- (void) updateNewsActs {
 
-//    NSLog(@"topnews = %@", [Common instance].topnews);
-    
     NSString* pic = [[Common instance].topnews valueForKey:NEWS_PIC];
-//    NSString* pic = @"http://sinoapp.4design.asia/images/w/norm/150/d225c97be3cb7ab1e02a717386ae1c78.jpg";
-    
     [self.newsImage setImageWithURL:[NSURL URLWithString:pic] placeholderImage:[UIImage imageNamed:@"placeholder-icon"]];
     self.ttlLabel.text = [[Common instance].topnews valueForKey:NEWS_TTL];
     self.briefLabel.text = [[Common instance].topnews valueForKey:NEWS_BRIEF];
+
+    pic = [[Common instance].topact valueForKey:NEWS_PIC];
+    [self.actImage setImageWithURL:[NSURL URLWithString:pic] placeholderImage:[UIImage imageNamed:@"placeholder-icon"]];
+    self.attlLabel.text = [[Common instance].topact valueForKey:NEWS_TTL];
+    self.abriefLabel.text = [[Common instance].topact valueForKey:NEWS_BRIEF];
 }
 
 - (void)viewDidLoad {
@@ -134,6 +135,9 @@
 
     self.ttlLabel.font = FONT_NEWS_TITLE;
     self.briefLabel.font = FONT_NEWS_BRIEF;
+    self.attlLabel.font = FONT_ACTS_TITLE;
+    self.attlLabel.textColor = [UIColor grayColor];
+    self.abriefLabel.font = FONT_NEWS_BRIEF;
 
     self.hotlineLabel.font = FONT_MAINMENU;
     self.settingsLabel.font = FONT_MAINMENU;
@@ -143,7 +147,7 @@
     self.netwLabel.font = FONT_MAINMENU;
     
     [self updateFuelPrice];
-    [self updateNews];
+    [self updateNewsActs];
 }
 
 - (BOOL)shouldAutorotate
@@ -192,6 +196,36 @@
 - (IBAction)tapNews:(id)sender {
 
     [((MenuViewController*)self.parentViewController) showNews];
+}
+
+- (IBAction)tapActions:(id)sender {
+    
+    NSLog(@"tap actions");
+}
+
+- (IBAction)tapTop:(id)sender {
+    
+    NSLog(@"tap top");
+}
+
+- (IBAction)tapShop:(id)sender {
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URL_SHOP]];
+}
+
+- (IBAction)tapSite:(id)sender {
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URL_SITE]];
+}
+
+- (IBAction)tapFB:(id)sender {
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URL_FB]];
+}
+
+- (IBAction)tapVK:(id)sender {
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URL_VK]];
 }
 
 @end

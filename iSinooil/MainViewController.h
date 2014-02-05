@@ -32,6 +32,12 @@
 - (IBAction)menu:(id)sender;
 - (IBAction)tapPrice:(id)sender;
 - (IBAction)tapNews:(id)sender;
+- (IBAction)tapActions:(id)sender;
+- (IBAction)tapTop:(id)sender;
+- (IBAction)tapShop:(id)sender;
+- (IBAction)tapSite:(id)sender;
+- (IBAction)tapFB:(id)sender;
+- (IBAction)tapVK:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UILabel *distLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
@@ -41,6 +47,9 @@
 @property (weak, nonatomic) IBOutlet UIImageView *newsImage;
 @property (weak, nonatomic) IBOutlet UILabel *ttlLabel;
 @property (weak, nonatomic) IBOutlet UILabel *briefLabel;
+@property (weak, nonatomic) IBOutlet UILabel *attlLabel;
+@property (weak, nonatomic) IBOutlet UILabel *abriefLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *actImage;
 @property (weak, nonatomic) IBOutlet UILabel *hotlineLabel;
 @property (weak, nonatomic) IBOutlet UILabel *settingsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *seealsoLabel;

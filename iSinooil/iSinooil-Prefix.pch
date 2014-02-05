@@ -35,6 +35,7 @@
 #define FONT_NEWS_DATE [UIFont fontWithName:@"HelveticaNeueCyr-Roman" size:14.0f]
 #define FONT_MAINMENU [UIFont fontWithName:@"HelveticaNeueCyr-Roman" size:18.0f]
 #define FONT_MAINMENU_SEEALSO [UIFont fontWithName:@"HelveticaNeueCyr-Roman" size:14.0f]
+#define FONT_ACTS_TITLE [UIFont fontWithName:@"HelveticaNeueCyr-Roman" size:12.0f]
 
 /*
  ГАЗ 64
