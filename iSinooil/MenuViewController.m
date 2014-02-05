@@ -91,6 +91,7 @@
 
 - (void) goLeft:(int) tag {
 
+//    NSLog(@"tag = %d", tag);
 
     [self makeInvisibleExcludeTag:tag];
 
@@ -121,6 +122,14 @@
 //    NSLog(@"map");
 
     [self goLeft:MAPS_VIEW_TAG];
+}
+
+- (IBAction)aboutPressed:(id)sender {
+}
+
+- (IBAction)actionsPressed:(id)sender {
+    
+    [self goLeft:ACTS_VIEW_TAG];
 }
 
 - (IBAction)newsPressed:(id)sender {

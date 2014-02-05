@@ -191,6 +191,7 @@
 		849A29A818A22C8300A68987 /* ActsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActsViewController.m; sourceTree = "<group>"; };
 		849A29AA18A22EDF00A68987 /* ActCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActCell.h; sourceTree = "<group>"; };
 		849A29AB18A22EDF00A68987 /* ActCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActCell.m; sourceTree = "<group>"; };
+		849A29AE18A2385D00A68987 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
 		84BC6401187E7CBD00BF030B /* head_gr2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = head_gr2.png; sourceTree = "<group>"; };
 		84C68CC0188E524200FD68D0 /* PriceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceViewController.h; sourceTree = "<group>"; };
 		84C68CC1188E524200FD68D0 /* PriceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceViewController.m; sourceTree = "<group>"; };
@@ -267,7 +268,6 @@
 		DDA70D261876EA4400C89F86 /* StationAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationAnnotationView.m; sourceTree = "<group>"; };
 		DDB2E99E189E3A5D0080FE75 /* NewsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsDetailViewController.h; sourceTree = "<group>"; };
 		DDB2E99F189E3A5D0080FE75 /* NewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsDetailViewController.m; sourceTree = "<group>"; };
-		DDB2E9A4189E6B680080FE75 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
 		DDC8734818752EC300393876 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main_iPad.strings; sourceTree = "<group>"; };
 		DDC8734918752EC300393876 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DDC8734A18752EC300393876 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -997,7 +997,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				9CF17A5618431F7F007FF8D9 /* Base */,
-				DDB2E9A4189E6B680080FE75 /* ru */,
+				849A29AE18A2385D00A68987 /* ru */,
 			);
 			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";

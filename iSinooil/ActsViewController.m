@@ -32,7 +32,7 @@
     [self.actTable addInfiniteScrollingWithActionHandler:^{
         
         //        NSLog(@"end of table");
-        [[Common instance] loadNewsData];
+        [[Common instance] loadActsData];
         [self.actTable.infiniteScrollingView stopAnimating];
         [self.actTable reloadData];
     }];

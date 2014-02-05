@@ -13,6 +13,8 @@
 - (IBAction)newsPressed:(id)sender;
 - (IBAction)mainPressed:(id)sender;
 - (IBAction)mapsPressed:(id)sender;
+- (IBAction)aboutPressed:(id)sender;
+- (IBAction)actionsPressed:(id)sender;
 
 - (void) showMaps;
 - (void) showPrices;

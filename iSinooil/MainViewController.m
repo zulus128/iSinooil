@@ -96,13 +96,27 @@
 
     NSString* pic = [[Common instance].topnews valueForKey:NEWS_PIC];
     [self.newsImage setImageWithURL:[NSURL URLWithString:pic] placeholderImage:[UIImage imageNamed:@"placeholder-icon"]];
-    self.ttlLabel.text = [[Common instance].topnews valueForKey:NEWS_TTL];
+//    self.ttlLabel.text = [[Common instance].topnews valueForKey:NEWS_TTL];
+    self.ttlLabel.text = NSLocalizedString(@"daynews", nil);
     self.briefLabel.text = [[Common instance].topnews valueForKey:NEWS_BRIEF];
 
     pic = [[Common instance].topact valueForKey:NEWS_PIC];
     [self.actImage setImageWithURL:[NSURL URLWithString:pic] placeholderImage:[UIImage imageNamed:@"placeholder-icon"]];
-    self.attlLabel.text = [[Common instance].topact valueForKey:NEWS_TTL];
     self.abriefLabel.text = [[Common instance].topact valueForKey:NEWS_BRIEF];
+    
+    NSNumber* n = [[Common instance].topact valueForKey:NEWS_START_DATE];
+    NSDate* date = [NSDate dateWithTimeIntervalSince1970:n.longValue];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    [dateFormatter setLocale:[NSLocale currentLocale]];
+    NSString *formattedDateString = [dateFormatter stringFromDate:date];
+    
+    n = [[Common instance].topact valueForKey:NEWS_END_DATE];
+    date = [NSDate dateWithTimeIntervalSince1970:n.longValue];
+    NSString *formattedDateString1 = [dateFormatter stringFromDate:date];
+    
+    self.attlLabel.text = [NSString stringWithFormat:@"%@ - %@", formattedDateString, formattedDateString1];
+    
 }
 
 - (void)viewDidLoad {

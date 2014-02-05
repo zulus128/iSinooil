@@ -42,7 +42,11 @@
     [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
     [dateFormatter setLocale:[NSLocale currentLocale]];
     NSString *formattedDateString = [dateFormatter stringFromDate:date];
-    cell.time.text = formattedDateString;
+    n = [act valueForKey:NEWS_END_DATE];
+    date = [NSDate dateWithTimeIntervalSince1970:n.longValue];
+    NSString *formattedDateString1 = [dateFormatter stringFromDate:date];
+    cell.time.text = [NSString stringWithFormat:@"%@ - %@", formattedDateString, formattedDateString1];
+
 
     NSString* pic = [act valueForKey:NEWS_PIC];
     [cell.pic setImageWithURL:[NSURL URLWithString:pic] placeholderImage:[UIImage imageNamed:@"placeholder-icon"]];
