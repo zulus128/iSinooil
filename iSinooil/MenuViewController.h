@@ -18,5 +18,6 @@
 - (void) showPrices;
 - (void) showNews;
 - (void) showStationWithId:(int) sid;
+- (void) showActions;
 
 @end

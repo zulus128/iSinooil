@@ -43,7 +43,7 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^(void) {
     
         NSNumber* i = [self.news valueForKey:NEWS_ID];
-        NSString* s = [[Common instance] getNewsFullText:i.intValue];
+        NSString* s = [[Common instance] getNewsActFullText:i.intValue];
 //        NSLog(@"text = %@", s);
         [self.webView loadHTMLString:s baseURL:nil];
 

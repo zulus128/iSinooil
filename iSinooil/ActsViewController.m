@@ -1,18 +1,18 @@
 //
-//  NewsViewController.m
+//  ActsViewController.m
 //  iSinooil
 //
-//  Created by вадим on 2/2/14.
+//  Created by Admin on 05.02.14.
 //  Copyright (c) 2014 Zul. All rights reserved.
 //
 
-#import "NewsViewController.h"
+#import "ActsViewController.h"
 #import "Common.h"
-#import "NewsDataSource.h"
-#import "NewsDetailViewController.h"
+#import "ActsDataSource.h"
 #import "UIScrollView+SVInfiniteScrolling.h"
+#import "NewsDetailViewController.h"
 
-@implementation NewsViewController
+@implementation ActsViewController
 
 - (void) willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
     
@@ -25,16 +25,16 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    self.newssour = [[NewsDataSource alloc] init];
-    self.newsTable.dataSource = self.newssour;
-    self.newsTable.delegate = self;
+    self.actsour = [[ActsDataSource alloc] init];
+    self.actTable.dataSource = self.actsour;
+    self.actTable.delegate = self;
     
-    [self.newsTable addInfiniteScrollingWithActionHandler:^{
+    [self.actTable addInfiniteScrollingWithActionHandler:^{
         
-//        NSLog(@"end of table");
+        //        NSLog(@"end of table");
         [[Common instance] loadNewsData];
-        [self.newsTable.infiniteScrollingView stopAnimating];
-        [self.newsTable reloadData];
+        [self.actTable.infiniteScrollingView stopAnimating];
+        [self.actTable reloadData];
     }];
 }
 
@@ -66,10 +66,12 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
- 
+    
     NewsDetailViewController* detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"newsDetailController"];
-    detailViewController.news = [[Common instance] getNewsAt:indexPath.row];
+    detailViewController.news = [[Common instance] getActAt:indexPath.row];
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
+
+
 
 @end

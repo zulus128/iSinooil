@@ -65,12 +65,11 @@
 - (int) getNewsCount;
 - (void) loadNewsData;
 - (NSDictionary*) getNewsAt:(int)n;
-- (NSString*) getNewsFullText:(int)n;
+- (NSString*) getNewsActFullText:(int)n;
 
 - (int) getActsCount;
 - (void) loadActsData;
 - (NSDictionary*) getActAt:(int)n;
-- (NSString*) getActFullText:(int)n;
 
 @property (nonatomic, strong) NSArray* azsjson;
 @property (nonatomic, strong) NSArray* fueljson;

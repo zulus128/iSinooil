@@ -13,6 +13,9 @@
 		844293AF18A1EDC700DDC7F3 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 844293A918A1EDC700DDC7F3 /* release_notes.md */; };
 		846938E6187A81640037CABC /* StationListDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 846938E5187A81640037CABC /* StationListDataSource.m */; };
 		847E7CB8188EADB8007401F1 /* PricesDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 847E7CB7188EADB8007401F1 /* PricesDataSource.m */; };
+		849A29A618A22AE900A68987 /* ActsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A29A518A22AE900A68987 /* ActsDataSource.m */; };
+		849A29A918A22C8300A68987 /* ActsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A29A818A22C8300A68987 /* ActsViewController.m */; };
+		849A29AC18A22EDF00A68987 /* ActCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A29AB18A22EDF00A68987 /* ActCell.m */; };
 		84BC6402187E7CBD00BF030B /* head_gr2.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BC6401187E7CBD00BF030B /* head_gr2.png */; };
 		84C68CC2188E524200FD68D0 /* PriceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C68CC1188E524200FD68D0 /* PriceViewController.m */; };
 		84DA054B187D846D004592EC /* HelveticaNeueCyr-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84DA053E187D846D004592EC /* HelveticaNeueCyr-Black.otf */; };
@@ -182,6 +185,12 @@
 		846938E5187A81640037CABC /* StationListDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationListDataSource.m; sourceTree = "<group>"; };
 		847E7CB6188EADB8007401F1 /* PricesDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PricesDataSource.h; sourceTree = "<group>"; };
 		847E7CB7188EADB8007401F1 /* PricesDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PricesDataSource.m; sourceTree = "<group>"; };
+		849A29A418A22AE900A68987 /* ActsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActsDataSource.h; sourceTree = "<group>"; };
+		849A29A518A22AE900A68987 /* ActsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActsDataSource.m; sourceTree = "<group>"; };
+		849A29A718A22C8300A68987 /* ActsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActsViewController.h; sourceTree = "<group>"; };
+		849A29A818A22C8300A68987 /* ActsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActsViewController.m; sourceTree = "<group>"; };
+		849A29AA18A22EDF00A68987 /* ActCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActCell.h; sourceTree = "<group>"; };
+		849A29AB18A22EDF00A68987 /* ActCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActCell.m; sourceTree = "<group>"; };
 		84BC6401187E7CBD00BF030B /* head_gr2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = head_gr2.png; sourceTree = "<group>"; };
 		84C68CC0188E524200FD68D0 /* PriceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceViewController.h; sourceTree = "<group>"; };
 		84C68CC1188E524200FD68D0 /* PriceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceViewController.m; sourceTree = "<group>"; };
@@ -410,6 +419,8 @@
 				847E7CB7188EADB8007401F1 /* PricesDataSource.m */,
 				846938E4187A81640037CABC /* StationListDataSource.h */,
 				846938E5187A81640037CABC /* StationListDataSource.m */,
+				849A29A418A22AE900A68987 /* ActsDataSource.h */,
+				849A29A518A22AE900A68987 /* ActsDataSource.m */,
 				DD3F7474189E15260082CD30 /* NewsDataSource.h */,
 				DD3F7475189E15260082CD30 /* NewsDataSource.m */,
 			);
@@ -563,6 +574,8 @@
 				DD3F7472189E147F0082CD30 /* NewsViewController.m */,
 				DDB2E99E189E3A5D0080FE75 /* NewsDetailViewController.h */,
 				DDB2E99F189E3A5D0080FE75 /* NewsDetailViewController.m */,
+				849A29A718A22C8300A68987 /* ActsViewController.h */,
+				849A29A818A22C8300A68987 /* ActsViewController.m */,
 				84C68CC0188E524200FD68D0 /* PriceViewController.h */,
 				84C68CC1188E524200FD68D0 /* PriceViewController.m */,
 				9CF17A5B18431F7F007FF8D9 /* MainViewController.h */,
@@ -706,6 +719,8 @@
 				84F9C697188EBAA700739533 /* PriceCell.m */,
 				DD3F7477189E164C0082CD30 /* NewsCell.h */,
 				DD3F7478189E164C0082CD30 /* NewsCell.m */,
+				849A29AA18A22EDF00A68987 /* ActCell.h */,
+				849A29AB18A22EDF00A68987 /* ActCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -919,9 +934,12 @@
 			files = (
 				DD3F7470189E082F0082CD30 /* UIImageView+WebCache.m in Sources */,
 				847E7CB8188EADB8007401F1 /* PricesDataSource.m in Sources */,
+				849A29A918A22C8300A68987 /* ActsViewController.m in Sources */,
 				84C68CC2188E524200FD68D0 /* PriceViewController.m in Sources */,
 				84FDF89D187AA9610082595A /* StationViewCell.m in Sources */,
 				DDEB48B518544CF5006FAED3 /* MyMapView.m in Sources */,
+				849A29AC18A22EDF00A68987 /* ActCell.m in Sources */,
+				849A29A618A22AE900A68987 /* ActsDataSource.m in Sources */,
 				9CF17A5D18431F7F007FF8D9 /* MainViewController.m in Sources */,
 				DDEB48B218544BF9006FAED3 /* ScrollView.m in Sources */,
 				9CF17A5418431F7F007FF8D9 /* AppDelegate.m in Sources */,

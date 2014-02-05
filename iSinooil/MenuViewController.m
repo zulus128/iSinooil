@@ -61,6 +61,15 @@
     viewController.view.frame = CGRectMake(fr.size.width - deltaX, fr.origin.y, fr.size.width, fr.size.height);
     viewController.view.hidden = YES;
     
+    viewController =  [storyboard instantiateViewControllerWithIdentifier:@"actsController"];
+    viewController.view.tag = ACTS_VIEW_TAG;
+    [self addChildViewController:viewController];
+    [self.view addSubview:viewController.view];
+    [viewController didMoveToParentViewController:self];
+    fr = self.view.frame;
+    viewController.view.frame = CGRectMake(fr.size.width - deltaX, fr.origin.y, fr.size.width, fr.size.height);
+    viewController.view.hidden = YES;
+    
 
 }
 
@@ -149,6 +158,16 @@
     view.frame = CGRectMake(0, fr.origin.y, fr.size.width, fr.size.height);
     
     [self makeInvisibleExcludeTag:NEWS_VIEW_TAG];
+    
+}
+
+- (void) showActions {
+    
+    CGRect fr = self.view.frame;
+    UIView* view = [self.view viewWithTag:ACTS_VIEW_TAG];
+    view.frame = CGRectMake(0, fr.origin.y, fr.size.width, fr.size.height);
+    
+    [self makeInvisibleExcludeTag:ACTS_VIEW_TAG];
     
 }
 

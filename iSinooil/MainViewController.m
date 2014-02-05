@@ -200,7 +200,7 @@
 
 - (IBAction)tapActions:(id)sender {
     
-    NSLog(@"tap actions");
+    [((MenuViewController*)self.parentViewController) showActions];
 }
 
 - (IBAction)tapTop:(id)sender {
