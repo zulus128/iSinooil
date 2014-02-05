@@ -21,8 +21,7 @@
     
     CGSize s = [Common currentScreenBoundsDependOnOrientation:toInterfaceOrientation];
     self.topView.frame = CGRectMake(0, 0, s.width, s.height);
-
-    self.contentViewH.constant = 870;//s.height * 2;
+    self.contentViewH.constant = s.height > VERT_SIZE?s.height:VERT_SIZE;
     self.contentViewW.constant = s.width;
 
 }
@@ -31,7 +30,8 @@
 
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:animated];
-    self.contentViewH.constant = 870;//s.height * 2;
+    CGSize s = [Common currentScreenBounds];
+    self.contentViewH.constant = s.height > VERT_SIZE?s.height:VERT_SIZE;
 
 }
 

@@ -2,22 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIAppFonts</key>
-	<array>
-		<string>HelveticaNeueCyr-Black.otf</string>
-		<string>HelveticaNeueCyr-BlackItalic.otf</string>
-		<string>HelveticaNeueCyr-Bold.otf</string>
-		<string>HelveticaNeueCyr-BoldItalic.otf</string>
-		<string>HelveticaNeueCyr-Italic.otf</string>
-		<string>HelveticaNeueCyr-Light.otf</string>
-		<string>HelveticaNeueCyr-LightItalic.otf</string>
-		<string>HelveticaNeueCyr-Medium.otf</string>
-		<string>HelveticaNeueCyr-Roman.otf</string>
-		<string>HelveticaNeueCyr-Thin.otf</string>
-		<string>HelveticaNeueCyr-ThinItalic.otf</string>
-		<string>HelveticaNeueCyr-UltraLight.otf</string>
-		<string>HelveticaNeueCyr-UltraLightItalic.otf</string>
-	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
@@ -40,10 +24,26 @@
 	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>HelveticaNeueCyr-Black.otf</string>
+		<string>HelveticaNeueCyr-BlackItalic.otf</string>
+		<string>HelveticaNeueCyr-Bold.otf</string>
+		<string>HelveticaNeueCyr-BoldItalic.otf</string>
+		<string>HelveticaNeueCyr-Italic.otf</string>
+		<string>HelveticaNeueCyr-Light.otf</string>
+		<string>HelveticaNeueCyr-LightItalic.otf</string>
+		<string>HelveticaNeueCyr-Medium.otf</string>
+		<string>HelveticaNeueCyr-Roman.otf</string>
+		<string>HelveticaNeueCyr-Thin.otf</string>
+		<string>HelveticaNeueCyr-ThinItalic.otf</string>
+		<string>HelveticaNeueCyr-UltraLight.otf</string>
+		<string>HelveticaNeueCyr-UltraLightItalic.otf</string>
+	</array>
 	<key>UIMainStoryboardFile</key>
 	<string>Main_iPhone</string>
 	<key>UIMainStoryboardFile~ipad</key>
-	<string>Main_iPad</string>
+	<string>Main_iPhone</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

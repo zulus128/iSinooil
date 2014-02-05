@@ -25,16 +25,16 @@
     
     [Common instance];
     
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)?
-                                @"Main_iPad":@"Main_iPhone" bundle:nil];
-    UIViewController *viewController =  [storyboard instantiateViewControllerWithIdentifier:@"mainController"];
+//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)?
+//                                @"Main_iPad":@"Main_iPhone" bundle:nil];
+    UIViewController *viewController =  [self.storyboard instantiateViewControllerWithIdentifier:@"mainController"];
     viewController.view.tag = MAIN_VIEW_TAG;
 //    viewController.view.hidden = YES;
     [self addChildViewController:viewController];
     [self.view addSubview:viewController.view];
     [viewController didMoveToParentViewController:self];
     
-    viewController =  [storyboard instantiateViewControllerWithIdentifier:@"priceController"];
+    viewController =  [self.storyboard instantiateViewControllerWithIdentifier:@"priceController"];
     viewController.view.tag = PRICE_VIEW_TAG;
     [self addChildViewController:viewController];
     [self.view addSubview:viewController.view];
@@ -43,7 +43,7 @@
     viewController.view.frame = CGRectMake(fr.size.width - deltaX, fr.origin.y, fr.size.width, fr.size.height);
     viewController.view.hidden = YES;
     
-    viewController =  [storyboard instantiateViewControllerWithIdentifier:@"mapsController"];
+    viewController =  [self.storyboard instantiateViewControllerWithIdentifier:@"mapsController"];
     viewController.view.tag = MAPS_VIEW_TAG;
     [self addChildViewController:viewController];
     [self.view addSubview:viewController.view];
@@ -52,7 +52,7 @@
     viewController.view.frame = CGRectMake(fr.size.width - deltaX, fr.origin.y, fr.size.width, fr.size.height);
     viewController.view.hidden = YES;
     
-    viewController =  [storyboard instantiateViewControllerWithIdentifier:@"newsController"];
+    viewController =  [self.storyboard instantiateViewControllerWithIdentifier:@"newsController"];
     viewController.view.tag = NEWS_VIEW_TAG;
     [self addChildViewController:viewController];
     [self.view addSubview:viewController.view];
@@ -61,7 +61,7 @@
     viewController.view.frame = CGRectMake(fr.size.width - deltaX, fr.origin.y, fr.size.width, fr.size.height);
     viewController.view.hidden = YES;
     
-    viewController =  [storyboard instantiateViewControllerWithIdentifier:@"actsController"];
+    viewController =  [self.storyboard instantiateViewControllerWithIdentifier:@"actsController"];
     viewController.view.tag = ACTS_VIEW_TAG;
     [self addChildViewController:viewController];
     [self.view addSubview:viewController.view];

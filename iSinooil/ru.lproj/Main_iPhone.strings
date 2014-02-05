@@ -1,5 +1,5 @@
 
-/* Class = "IBUIButton"; normalTitle = "Actions"; ObjectID = "0IU-e8-WXc"; */
+/* Class = "IBUIButton"; normalTitle = "Акции"; ObjectID = "0IU-e8-WXc"; */
 "0IU-e8-WXc.normalTitle" = "Акции";
 
 /* Class = "IBUILabel"; text = "Label"; ObjectID = "5Yv-tQ-BJB"; */
@@ -23,7 +23,7 @@
 /* Class = "IBUILabel"; text = "115"; ObjectID = "KXD-D3-k9Z"; */
 "KXD-D3-k9Z.text" = "115";
 
-/* Class = "IBUIButton"; normalTitle = "About company"; ObjectID = "Mbg-Ti-m7T"; */
+/* Class = "IBUIButton"; normalTitle = "О компании"; ObjectID = "Mbg-Ti-m7T"; */
 "Mbg-Ti-m7T.normalTitle" = "О компании";
 
 /* Class = "IBUILabel"; text = "Date"; ObjectID = "O9L-yc-2Qr"; */
@@ -110,7 +110,7 @@
 /* Class = "IBUIButton"; normalTitle = "Главная"; ObjectID = "v6Y-za-yMe"; */
 "v6Y-za-yMe.normalTitle" = "Главная";
 
-/* Class = "IBUILabel"; text = "Actions"; ObjectID = "vwS-dx-u4r"; */
+/* Class = "IBUILabel"; text = "Акции"; ObjectID = "vwS-dx-u4r"; */
 "vwS-dx-u4r.text" = "Акции";
 
 /* Class = "IBUILabel"; text = "Цены на ГСМ"; ObjectID = "wSO-VP-fiU"; */
