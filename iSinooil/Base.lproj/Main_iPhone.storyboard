@@ -995,7 +995,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="toMenu:" destination="Kc4-yY-d1Q" eventType="touchUpInside" id="Hak-GA-L1T"/>
+                                            <action selector="toMenu:" destination="fVp-WM-kGK" eventType="touchUpInside" id="g4K-IH-FF9"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1014,7 +1014,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="6Wn-4J-xbo"/>
                                 </constraints>
-                                <inset key="imageEdgeInsets" minX="-150" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="-80" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Contacts" image="contacts_white.png" backgroundImage="button1.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>

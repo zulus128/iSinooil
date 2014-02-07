@@ -25,6 +25,7 @@
 		84CC0F8A18A4B1AF006F84C6 /* bubble_ligth_tail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84CC0F8418A4B1AF006F84C6 /* bubble_ligth_tail@2x.png */; };
 		84CC0F8B18A4B1AF006F84C6 /* contacts_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84CC0F8518A4B1AF006F84C6 /* contacts_white@2x.png */; };
 		84CC0F8C18A4B1AF006F84C6 /* contacts@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84CC0F8618A4B1AF006F84C6 /* contacts@2x.png */; };
+		84CC0F9018A4BF09006F84C6 /* about.json in Resources */ = {isa = PBXBuildFile; fileRef = 84CC0F8F18A4BF09006F84C6 /* about.json */; };
 		84DA054B187D846D004592EC /* HelveticaNeueCyr-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84DA053E187D846D004592EC /* HelveticaNeueCyr-Black.otf */; };
 		84DA054C187D846D004592EC /* HelveticaNeueCyr-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84DA053F187D846D004592EC /* HelveticaNeueCyr-BlackItalic.otf */; };
 		84DA054D187D846D004592EC /* HelveticaNeueCyr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84DA0540187D846D004592EC /* HelveticaNeueCyr-Bold.otf */; };
@@ -179,7 +180,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		84079CB718A2467300DCF52A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
 		844293A318A1ED0F00DDC7F3 /* UIScrollView+SVInfiniteScrolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVInfiniteScrolling.h"; sourceTree = "<group>"; };
 		844293A418A1ED0F00DDC7F3 /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
 		844293A718A1EDC700DDC7F3 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
@@ -209,6 +209,8 @@
 		84CC0F8418A4B1AF006F84C6 /* bubble_ligth_tail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bubble_ligth_tail@2x.png"; sourceTree = "<group>"; };
 		84CC0F8518A4B1AF006F84C6 /* contacts_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "contacts_white@2x.png"; sourceTree = "<group>"; };
 		84CC0F8618A4B1AF006F84C6 /* contacts@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "contacts@2x.png"; sourceTree = "<group>"; };
+		84CC0F8E18A4BBC0006F84C6 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
+		84CC0F8F18A4BF09006F84C6 /* about.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = about.json; sourceTree = "<group>"; };
 		84DA053E187D846D004592EC /* HelveticaNeueCyr-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueCyr-Black.otf"; sourceTree = "<group>"; };
 		84DA053F187D846D004592EC /* HelveticaNeueCyr-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueCyr-BlackItalic.otf"; sourceTree = "<group>"; };
 		84DA0540187D846D004592EC /* HelveticaNeueCyr-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueCyr-Bold.otf"; sourceTree = "<group>"; };
@@ -588,6 +590,7 @@
 				DD46151418751E88008FCD16 /* azs.json */,
 				DD46151518751E88008FCD16 /* fuel.json */,
 				DD46151618751E88008FCD16 /* news.json */,
+				84CC0F8F18A4BF09006F84C6 /* about.json */,
 			);
 			name = jsons;
 			sourceTree = "<group>";
@@ -938,6 +941,7 @@
 				DDEB486C18542883006FAED3 /* icon_96_pressed@2x.png in Resources */,
 				DDEB485B18542883006FAED3 /* arrowup_dark@2x.png in Resources */,
 				DDEB487F18542883006FAED3 /* icon_master@2x.png in Resources */,
+				84CC0F9018A4BF09006F84C6 /* about.json in Resources */,
 				DDEB488118542883006FAED3 /* icon_master_pressed@2x.png in Resources */,
 				DDEB48A418542883006FAED3 /* news_bg@2x.png in Resources */,
 				DDEB488818542883006FAED3 /* icon_terminal@2x.png in Resources */,
@@ -1030,7 +1034,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				9CF17A5618431F7F007FF8D9 /* Base */,
-				84079CB718A2467300DCF52A /* ru */,
+				84CC0F8E18A4BBC0006F84C6 /* ru */,
 			);
 			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";

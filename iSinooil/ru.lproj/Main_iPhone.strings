@@ -35,6 +35,9 @@
 /* Class = "IBUILabel"; text = "abrief"; ObjectID = "SzI-eF-Dp7"; */
 "SzI-eF-Dp7.text" = "abrief";
 
+/* Class = "IBUIButton"; normalTitle = "Contacts"; ObjectID = "U3f-XO-dbm"; */
+"U3f-XO-dbm.normalTitle" = "Контакты и адреса";
+
 /* Class = "IBUILabel"; text = "Label"; ObjectID = "WY9-Zw-Bcr"; */
 "WY9-Zw-Bcr.text" = "Label";
 
@@ -121,3 +124,6 @@
 
 /* Class = "IBUIButton"; normalTitle = "Список"; ObjectID = "ybC-59-AEp"; */
 "ybC-59-AEp.normalTitle" = "Список";
+
+/* Class = "IBUILabel"; text = "About company"; ObjectID = "zVK-ZD-jLI"; */
+"zVK-ZD-jLI.text" = "О компании";

@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface AboutViewController : UIViewController
+
+- (IBAction)toMenu:(id)sender;
+
 @property (weak, nonatomic) IBOutlet UIView *topView;
 
 @end

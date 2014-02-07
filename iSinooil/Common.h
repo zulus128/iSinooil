@@ -22,6 +22,12 @@
 #define ACTS_URL_LAST @"http://sinoapp.4design.asia/out.php?action=actions&from="
 #define ACTS_URL @"http://sinoapp.4design.asia/out.php?action=actions"
 
+#define ABOUT_URL @"http://sinoapp.4design.asia/out.php?action=content"
+
+#define AZS_URL @"http://sinoapp.4design.asia/out.php?action=stations"
+
+#define FUEL_URL @"http://sinoapp.4design.asia/out.php?action=prices"
+
 //azs.json
 #define STATION_ID @"id"
 #define STATION_TITLE @"ttl"
@@ -33,6 +39,9 @@
 #define STATION_CARD @"card"
 #define STATION_PHONE @"phone"
 #define PHONE_NUMBER @"n"
+
+//about.json
+#define ABOUT_VALUES @"pages"
 
 //fuel.json
 #define FUEL_VALUES @"value"
@@ -73,6 +82,7 @@
 
 @property (nonatomic, strong) NSArray* azsjson;
 @property (nonatomic, strong) NSArray* fueljson;
+@property (nonatomic, strong) NSArray* aboutjson;
 @property (nonatomic, strong) NSArray* newsjson;
 @property (nonatomic, strong) NSArray* actsjson;
 @property (assign, readwrite) CLLocationCoordinate2D userCoordinate;

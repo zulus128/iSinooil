@@ -32,6 +32,11 @@
 	self = [super init];
 	if(self !=nil) {
 
+        
+        [self loadAboutData];
+        [self loadAzsData];
+        [self loadFuelData];
+        
         [self parseData];
         
         self.fuelSelected = 0;
@@ -97,6 +102,31 @@
         
         NSLog(@"Parsing fuel: OK!");
         //        NSLog(@"fueljson: %@", self.fueljson);
+    }
+    
+    NSString* ab = [docpath stringByAppendingPathComponent:@"about.json"];
+    fe = [[NSFileManager defaultManager] fileExistsAtPath:ab];
+    if(!fe) {
+        
+        NSString *appFile = [[NSBundle mainBundle] pathForResource:@"about" ofType:@"json"];
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        NSError *error;
+        [fileManager copyItemAtPath:appFile toPath:ab error:&error];
+    }
+    
+    NSString* abf = [NSString stringWithContentsOfFile:ab encoding:NSUTF8StringEncoding error:nil];
+    tardata = [abf dataUsingEncoding:NSUTF8StringEncoding];
+    d = [NSJSONSerialization JSONObjectWithData:tardata options:NSDataReadingUncached error:&error];
+    self.aboutjson = [d objectForKey:ABOUT_VALUES];
+    
+    if (!self.aboutjson) {
+        
+        NSLog(@"Error parsing about: %@", error);
+        
+    } else {
+        
+        NSLog(@"Parsing about: OK!");
+//        NSLog(@"aboutjson: %@", self.aboutjson);
     }
     
     
@@ -346,6 +376,99 @@
 - (NSDictionary*) getActAt:(int)n {
     
     return [self.actsjson objectAtIndex:n];
+}
+
+- (void) loadAboutData {
+    
+    NSArray* sp = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString* docpath = [sp objectAtIndex: 0];
+    
+    NSString* filePath = [docpath stringByAppendingPathComponent:@"about.json"];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    
+    [request setURL:[NSURL URLWithString:ABOUT_URL]];
+    
+    NSHTTPURLResponse* urlResponse = nil;
+    NSError *error = nil;
+    NSData* responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
+    if (responseData == nil) {
+        if (error != nil) {
+            
+            UIAlertView* dialog = [[UIAlertView alloc] init];
+            [dialog setTitle:NSLocalizedString(@"title_network_error", nil)];
+            [dialog setMessage:NSLocalizedString(@"network_error", nil)];
+            [dialog addButtonWithTitle:@"OK"];
+            [dialog show];
+        }
+    }
+    else {
+        
+        [responseData writeToFile:filePath atomically:YES];
+        NSLog(@"abouts loaded OK!");
+    }
+    
+}
+
+- (void) loadAzsData {
+    
+    NSArray* sp = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString* docpath = [sp objectAtIndex: 0];
+    
+    NSString* filePath = [docpath stringByAppendingPathComponent:@"azs.json"];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    
+    [request setURL:[NSURL URLWithString:AZS_URL]];
+    
+    NSHTTPURLResponse* urlResponse = nil;
+    NSError *error = nil;
+    NSData* responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
+    if (responseData == nil) {
+        if (error != nil) {
+            
+            UIAlertView* dialog = [[UIAlertView alloc] init];
+            [dialog setTitle:NSLocalizedString(@"title_network_error", nil)];
+            [dialog setMessage:NSLocalizedString(@"network_error", nil)];
+            [dialog addButtonWithTitle:@"OK"];
+            [dialog show];
+        }
+    }
+    else {
+        
+        [responseData writeToFile:filePath atomically:YES];
+        NSLog(@"azss loaded OK!");
+    }
+    
+}
+
+- (void) loadFuelData {
+    
+    NSArray* sp = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString* docpath = [sp objectAtIndex: 0];
+    
+    NSString* filePath = [docpath stringByAppendingPathComponent:@"fuel.json"];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    
+    [request setURL:[NSURL URLWithString:FUEL_URL]];
+    
+    NSHTTPURLResponse* urlResponse = nil;
+    NSError *error = nil;
+    NSData* responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
+    if (responseData == nil) {
+        if (error != nil) {
+            
+            UIAlertView* dialog = [[UIAlertView alloc] init];
+            [dialog setTitle:NSLocalizedString(@"title_network_error", nil)];
+            [dialog setMessage:NSLocalizedString(@"network_error", nil)];
+            [dialog addButtonWithTitle:@"OK"];
+            [dialog show];
+        }
+    }
+    else {
+        
+        [responseData writeToFile:filePath atomically:YES];
+        NSLog(@"fuels loaded OK!");
+    }
+    
 }
 
 + (CGSize) currentScreenBoundsDependOnOrientation:(UIInterfaceOrientation) interfaceOrientation {
