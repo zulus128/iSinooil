@@ -21,5 +21,6 @@
 - (void) showNews;
 - (void) showStationWithId:(int) sid;
 - (void) showActions;
+- (void) showAbout;
 
 @end

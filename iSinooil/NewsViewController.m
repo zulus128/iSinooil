@@ -29,6 +29,9 @@
     self.newsTable.dataSource = self.newssour;
     self.newsTable.delegate = self;
     
+    UILabel* labelPrices = (UILabel*)[self.topView viewWithTag:TITLELABEL_TAG];
+    labelPrices.font = FONT_STD_TOP_MENU;
+    
     [self.newsTable addInfiniteScrollingWithActionHandler:^{
         
 //        NSLog(@"end of table");

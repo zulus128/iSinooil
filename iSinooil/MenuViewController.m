@@ -70,6 +70,15 @@
     viewController.view.frame = CGRectMake(fr.size.width - deltaX, fr.origin.y, fr.size.width, fr.size.height);
     viewController.view.hidden = YES;
     
+    viewController =  [self.storyboard instantiateViewControllerWithIdentifier:@"aboutController"];
+    viewController.view.tag = ABOUT_VIEW_TAG;
+    [self addChildViewController:viewController];
+    [self.view addSubview:viewController.view];
+    [viewController didMoveToParentViewController:self];
+    fr = self.view.frame;
+    viewController.view.frame = CGRectMake(fr.size.width - deltaX, fr.origin.y, fr.size.width, fr.size.height);
+    viewController.view.hidden = YES;
+    
 
 }
 
@@ -125,6 +134,8 @@
 }
 
 - (IBAction)aboutPressed:(id)sender {
+    
+    [self goLeft:ABOUT_VIEW_TAG];
 }
 
 - (IBAction)actionsPressed:(id)sender {
@@ -177,7 +188,15 @@
     view.frame = CGRectMake(0, fr.origin.y, fr.size.width, fr.size.height);
     
     [self makeInvisibleExcludeTag:ACTS_VIEW_TAG];
+}
+
+- (void) showAbout {
     
+    CGRect fr = self.view.frame;
+    UIView* view = [self.view viewWithTag:ABOUT_VIEW_TAG];
+    view.frame = CGRectMake(0, fr.origin.y, fr.size.width, fr.size.height);
+    
+    [self makeInvisibleExcludeTag:ABOUT_VIEW_TAG];
 }
 
 - (void) showStationWithId:(int) sid {

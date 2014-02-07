@@ -12,6 +12,7 @@
 
 @interface ActsViewController : UIViewController <UITableViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UIView *topView;
 - (IBAction)toMenu:(id)sender;
 @property (weak, nonatomic) IBOutlet UITableView *actTable;
 

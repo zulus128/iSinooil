@@ -219,7 +219,9 @@
 
 - (IBAction)tapTop:(id)sender {
     
-    NSLog(@"tap top");
+//    NSLog(@"tap top");
+    [((MenuViewController*)self.parentViewController) showAbout];
+
 }
 
 - (IBAction)tapShop:(id)sender {

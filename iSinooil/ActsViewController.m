@@ -29,6 +29,9 @@
     self.actTable.dataSource = self.actsour;
     self.actTable.delegate = self;
     
+    UILabel* labelPrices = (UILabel*)[self.topView viewWithTag:TITLELABEL_TAG];
+    labelPrices.font = FONT_STD_TOP_MENU;
+    
     [self.actTable addInfiniteScrollingWithActionHandler:^{
         
         //        NSLog(@"end of table");

@@ -20,6 +20,7 @@
 #define PRICE_VIEW_TAG 1236
 #define NEWS_VIEW_TAG 1237
 #define ACTS_VIEW_TAG 1238
+#define ABOUT_VIEW_TAG 1239
 
 #define deltaX 50
 #define anim_delay 0.2f
