@@ -67,7 +67,9 @@
     NSString *azs= [NSString stringWithContentsOfFile:azsPath encoding:NSUTF8StringEncoding error:nil];
     NSData* tardata = [azs dataUsingEncoding:NSUTF8StringEncoding];
     NSError* error;
-    self.azsjson = [NSJSONSerialization JSONObjectWithData:tardata options:NSDataReadingUncached error:&error];
+    NSDictionary* d = [NSJSONSerialization JSONObjectWithData:tardata options:NSDataReadingUncached error:&error];
+    
+    self.azsjson = [d objectForKey:AZS_VALUES];
     
     if (!self.azsjson) {
         
@@ -76,7 +78,7 @@
     } else {
         
         NSLog(@"Parsing azs: OK!");
-        //        NSLog(@"azsjson: %@", [self.azsjson objectAtIndex:2]);
+//        NSLog(@"azsjson: %@", self.azsjson);
     }
     
     NSString* azsFuel = [docpath stringByAppendingPathComponent:@"fuel.json"];
@@ -91,7 +93,7 @@
     
     NSString *fuel= [NSString stringWithContentsOfFile:azsFuel encoding:NSUTF8StringEncoding error:nil];
     tardata = [fuel dataUsingEncoding:NSUTF8StringEncoding];
-    NSDictionary* d = [NSJSONSerialization JSONObjectWithData:tardata options:NSDataReadingUncached error:&error];
+    d = [NSJSONSerialization JSONObjectWithData:tardata options:NSDataReadingUncached error:&error];
     self.fueljson = [d objectForKey:FUEL_VALUES];
     
     if (!self.fueljson) {
@@ -101,7 +103,7 @@
     } else {
         
         NSLog(@"Parsing fuel: OK!");
-        //        NSLog(@"fueljson: %@", self.fueljson);
+//        NSLog(@"fueljson: %@", self.fueljson);
     }
     
     NSString* ab = [docpath stringByAppendingPathComponent:@"about.json"];
@@ -595,6 +597,8 @@
 
 - (float) distToNearestStaionWithFuelBit:(int)bit forCell:(PriceCell*)pc {
 
+    //    NSLog(@"bit = %d", bit);
+    
     float mindist = 1e8;
     for (NSDictionary* d in self.azsjson) {
         

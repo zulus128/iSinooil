@@ -39,6 +39,7 @@
 #define STATION_CARD @"card"
 #define STATION_PHONE @"phone"
 #define PHONE_NUMBER @"n"
+#define AZS_VALUES @"items"
 
 //about.json
 #define ABOUT_VALUES @"pages"
