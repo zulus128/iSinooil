@@ -16,4 +16,5 @@
 
 - (IBAction)showDetails:(id)sender;
 @property (weak, nonatomic) IBOutlet UIWebView *webview;
+@property (weak, nonatomic) IBOutlet UIButton *bcontacts;
 @end

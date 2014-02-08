@@ -23,7 +23,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    [Common instance];
+    [Common instance].menucontr = self;
     
 //    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)?
 //                                @"Main_iPad":@"Main_iPhone" bundle:nil];
@@ -88,6 +88,7 @@
     viewController.view.frame = CGRectMake(fr.size.width - deltaX, fr.origin.y, fr.size.width, fr.size.height);
     viewController.view.hidden = YES;
     
+    [self refresh];
 
 }
 
@@ -95,6 +96,21 @@
     
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) refresh {
+    
+    [self.bmain setTitle:NSLocalizedString(@"Main", nil) forState:UIControlStateNormal];
+    [self.babout setTitle:NSLocalizedString(@"About", nil) forState:UIControlStateNormal];
+    [self.bmap setTitle:NSLocalizedString(@"Map", nil) forState:UIControlStateNormal];
+    [self.bnews setTitle:NSLocalizedString(@"News", nil) forState:UIControlStateNormal];
+    [self.bacts setTitle:NSLocalizedString(@"Actions", nil) forState:UIControlStateNormal];
+    
+    for(UIViewController* vc in self.childViewControllers) {
+        
+        [vc refresh];
+    }
+    
 }
 
 - (void) makeInvisibleExcludeTag:(int)tag {

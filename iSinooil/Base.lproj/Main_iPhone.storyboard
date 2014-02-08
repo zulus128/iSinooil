@@ -719,6 +719,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="gpB-xy-qNE"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="babout" destination="Mbg-Ti-m7T" id="hpK-hK-X2V"/>
+                        <outlet property="bacts" destination="0IU-e8-WXc" id="849-Vo-gaT"/>
+                        <outlet property="bmain" destination="v6Y-za-yMe" id="LrH-X0-Nv2"/>
+                        <outlet property="bmap" destination="cr7-no-SCB" id="aYf-3B-6pu"/>
+                        <outlet property="bnews" destination="eMQ-ac-jf6" id="Rqu-Th-r8p"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="twI-fB-qZl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -960,6 +967,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backlab" destination="fwl-A5-G0P" id="s6h-PT-Ke7"/>
                         <outlet property="date" destination="O9L-yc-2Qr" id="GFh-Ue-d64"/>
                         <outlet property="pic" destination="aKC-dv-52f" id="cNR-L0-buR"/>
                         <outlet property="ttl" destination="5tD-kK-x25" id="NhB-XN-AVq"/>
@@ -1169,6 +1177,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bcontacts" destination="U3f-XO-dbm" id="Cyu-Y5-fma"/>
                         <outlet property="topView" destination="uhv-5J-zPM" id="gDw-oE-qf3"/>
                         <outlet property="webview" destination="RSU-ay-dba" id="2wc-6N-aUx"/>
                     </connections>
@@ -1367,7 +1376,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="300" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Contacts" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCw-4Z-hWZ">
-                                        <rect key="frame" x="124" y="41" width="176" height="21"/>
+                                        <rect key="frame" x="124" y="43" width="176" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1432,6 +1441,7 @@
                         <outlet property="branchesView" destination="cFO-m7-iGM" id="iH4-qg-YOb"/>
                         <outlet property="centralLabel" destination="gu7-as-qQf" id="OjV-Yf-4jZ"/>
                         <outlet property="centralOfficeView" destination="eqi-V7-bol" id="zEa-UB-1sy"/>
+                        <outlet property="labout" destination="Whj-m0-ot8" id="9TY-1Z-Ft2"/>
                         <outlet property="map" destination="mat-Yo-xDI" id="GM4-vV-LI3"/>
                         <outlet property="officeButton" destination="GUK-bK-bmy" id="Kj0-TP-sjU"/>
                         <outlet property="topView" destination="fgA-Rm-SjT" id="TXP-BK-wNb"/>

@@ -17,5 +17,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *ttl;
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UIImageView *pic;
+@property (weak, nonatomic) IBOutlet UIButton *backlab;
 
 @end

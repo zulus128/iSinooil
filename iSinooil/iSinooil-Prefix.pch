@@ -15,6 +15,13 @@
     #import <Foundation/Foundation.h>
 #endif
 
+#import "UIViewController+Refresh.h"
+
+#import "Common.h"
+#undef NSLocalizedString
+#define NSLocalizedString(key,_comment) [[Common instance] getStringForKey:key]
+
+
 #define MAIN_VIEW_TAG 1234
 #define MAPS_VIEW_TAG 1235
 #define PRICE_VIEW_TAG 1236

@@ -12,23 +12,20 @@
 enum {L_RU, L_ENG, L_KZ};
 enum {M_KM, M_MI, M_MT}; //km, miles, metres
 
+//#define NSLocalizedString(@"AIGAS", nil)
+
 //urls
 #define URL_SHOP @"http://sinooilshop.kz/"
 #define URL_SITE @"http://www.sinooil.kz/"
 #define URL_FB @"https://www.facebook.com/sinooil.kz"
 #define URL_VK @"http://vk.com/sinooil"
-
 #define NEWS_URL_LAST @"http://sinoapp.4design.asia/out.php?action=news&from="
 #define NEWS_URL @"http://sinoapp.4design.asia/out.php?action=news"
 #define NEWS_URL_FULL @"http://sinoapp.4design.asia/out.php?action=fulltext&id="
-
 #define ACTS_URL_LAST @"http://sinoapp.4design.asia/out.php?action=actions&from="
 #define ACTS_URL @"http://sinoapp.4design.asia/out.php?action=actions"
-
 #define ABOUT_URL @"http://sinoapp.4design.asia/out.php?action=content"
-
 #define AZS_URL @"http://sinoapp.4design.asia/out.php?action=stations"
-
 #define FUEL_URL @"http://sinoapp.4design.asia/out.php?action=prices"
 
 //azs.json
@@ -66,6 +63,8 @@ enum {M_KM, M_MI, M_MT}; //km, miles, metres
 #define NEWS_FULLTEXT @"txt"
 
 @class PriceCell;
+//@class MenuViewController;
+#import "MenuViewController.h"
 
 @interface Common : NSObject
 
@@ -90,6 +89,8 @@ enum {M_KM, M_MI, M_MT}; //km, miles, metres
 - (int) getBranchesCount;
 - (NSDictionary*) getBranchAt:(int)n;
 
+- (NSString*) getStringForKey:(NSString*)key;
+
 @property (nonatomic, strong) NSArray* azsjson;
 @property (nonatomic, strong) NSArray* fueljson;
 @property (nonatomic, strong) NSArray* aboutjson;
@@ -104,5 +105,7 @@ enum {M_KM, M_MI, M_MT}; //km, miles, metres
 @property (nonatomic, strong) NSDictionary* topact;
 @property (assign, readwrite) int lang;
 @property (assign, readwrite) int metrics;
+@property (nonatomic, retain) NSBundle* languageBundle;
+@property (nonatomic, weak) MenuViewController* menucontr;
 
 @end

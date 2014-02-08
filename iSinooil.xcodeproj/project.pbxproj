@@ -80,6 +80,7 @@
 		DDBE9BB418A674A9000FB34D /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDBE9BB318A674A9000FB34D /* SettingsViewController.m */; };
 		DDBE9BB918A679F1000FB34D /* SettingsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DDBE9BB818A679F1000FB34D /* SettingsCell.m */; };
 		DDBE9BBC18A67A78000FB34D /* SettingsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = DDBE9BBB18A67A78000FB34D /* SettingsDataSource.m */; };
+		DDBE9BC418A6ADDB000FB34D /* UIViewController+Refresh.m in Sources */ = {isa = PBXBuildFile; fileRef = DDBE9BC318A6ADDB000FB34D /* UIViewController+Refresh.m */; };
 		DDC8734D1875301A00393876 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DDC8734F1875301A00393876 /* Localizable.strings */; };
 		DDC8735318754F4200393876 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC8735218754F4200393876 /* MenuViewController.m */; };
 		DDC873561875ADF600393876 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC873551875ADF600393876 /* Common.m */; };
@@ -301,6 +302,13 @@
 		DDBE9BB818A679F1000FB34D /* SettingsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsCell.m; sourceTree = "<group>"; };
 		DDBE9BBA18A67A78000FB34D /* SettingsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsDataSource.h; sourceTree = "<group>"; };
 		DDBE9BBB18A67A78000FB34D /* SettingsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsDataSource.m; sourceTree = "<group>"; };
+		DDBE9BBD18A6AB0B000FB34D /* kk-KZ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "kk-KZ"; path = "kk-KZ.lproj/Main_iPhone.strings"; sourceTree = "<group>"; };
+		DDBE9BBE18A6AB0B000FB34D /* kk-KZ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "kk-KZ"; path = "kk-KZ.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		DDBE9BBF18A6AB0B000FB34D /* kk-KZ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "kk-KZ"; path = "kk-KZ.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		DDBE9BC018A6AB0B000FB34D /* kk-KZ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "kk-KZ"; path = "kk-KZ.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		DDBE9BC118A6ABF9000FB34D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DDBE9BC218A6ADDB000FB34D /* UIViewController+Refresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Refresh.h"; sourceTree = "<group>"; };
+		DDBE9BC318A6ADDB000FB34D /* UIViewController+Refresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Refresh.m"; sourceTree = "<group>"; };
 		DDC8734918752EC300393876 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DDC8734A18752EC300393876 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DDC8734E1875301A00393876 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -541,6 +549,8 @@
 				DDEB47FF18542883006FAED3 /* images */,
 				9CF17A5218431F7F007FF8D9 /* AppDelegate.h */,
 				9CF17A5318431F7F007FF8D9 /* AppDelegate.m */,
+				DDBE9BC218A6ADDB000FB34D /* UIViewController+Refresh.h */,
+				DDBE9BC318A6ADDB000FB34D /* UIViewController+Refresh.m */,
 				DDC873541875ADF600393876 /* Common.h */,
 				DDC873551875ADF600393876 /* Common.m */,
 				9CF17A5E18431F7F007FF8D9 /* Images.xcassets */,
@@ -845,6 +855,7 @@
 				en,
 				Base,
 				ru,
+				"kk-KZ",
 			);
 			mainGroup = 9CF17A3718431F7F007FF8D9;
 			productRefGroup = 9CF17A4118431F7F007FF8D9 /* Products */;
@@ -1006,6 +1017,7 @@
 				DDBE9BA718A6315A000FB34D /* AboutDetailViewController.m in Sources */,
 				DDBE9BAC18A66BEE000FB34D /* BranchesDataSource.m in Sources */,
 				84C68CC2188E524200FD68D0 /* PriceViewController.m in Sources */,
+				DDBE9BC418A6ADDB000FB34D /* UIViewController+Refresh.m in Sources */,
 				84FDF89D187AA9610082595A /* StationViewCell.m in Sources */,
 				DDEB48B518544CF5006FAED3 /* MyMapView.m in Sources */,
 				849A29AC18A22EDF00A68987 /* ActCell.m in Sources */,
@@ -1062,6 +1074,7 @@
 			children = (
 				9CF17A4D18431F7F007FF8D9 /* en */,
 				DDC8734918752EC300393876 /* ru */,
+				DDBE9BBE18A6AB0B000FB34D /* kk-KZ */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -1071,6 +1084,7 @@
 			children = (
 				9CF17A5618431F7F007FF8D9 /* Base */,
 				DDBE9BB618A678C9000FB34D /* ru */,
+				DDBE9BBD18A6AB0B000FB34D /* kk-KZ */,
 			);
 			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";
@@ -1080,6 +1094,7 @@
 			children = (
 				9CF17A6F18431F80007FF8D9 /* en */,
 				DDC8734A18752EC300393876 /* ru */,
+				DDBE9BC018A6AB0B000FB34D /* kk-KZ */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -1089,6 +1104,8 @@
 			children = (
 				DDC8734E1875301A00393876 /* Base */,
 				DDC873501875302F00393876 /* ru */,
+				DDBE9BBF18A6AB0B000FB34D /* kk-KZ */,
+				DDBE9BC118A6ABF9000FB34D /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

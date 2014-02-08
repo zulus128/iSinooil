@@ -20,6 +20,14 @@
     self.view.frame = CGRectMake(0, 0, s.width, s.height);
 }
 
+- (void) refresh {
+    
+    UILabel* labelPrices = (UILabel*)[self.topView viewWithTag:TITLELABEL_TAG];
+    labelPrices.font = FONT_STD_TOP_MENU;
+    labelPrices.text = NSLocalizedString(@"News", nil);
+    
+}
+
 - (void)viewDidLoad {
     
     [super viewDidLoad];
@@ -29,9 +37,6 @@
     self.newsTable.dataSource = self.newssour;
     self.newsTable.delegate = self;
     
-    UILabel* labelPrices = (UILabel*)[self.topView viewWithTag:TITLELABEL_TAG];
-    labelPrices.font = FONT_STD_TOP_MENU;
-    
     [self.newsTable addInfiniteScrollingWithActionHandler:^{
         
 //        NSLog(@"end of table");
@@ -39,6 +44,8 @@
         [self.newsTable.infiniteScrollingView stopAnimating];
         [self.newsTable reloadData];
     }];
+    
+    [self refresh];
 }
 
 - (void)didReceiveMemoryWarning {

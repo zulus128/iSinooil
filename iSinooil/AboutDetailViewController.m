@@ -21,14 +21,24 @@
     return self;
 }
 
+- (void) refresh {
+    
+    UILabel* labelPrices = (UILabel*)[self.topView viewWithTag:TITLELABEL_TAG];
+    labelPrices.font = FONT_STD_TOP_MENU;
+    labelPrices.text = NSLocalizedString(@"Contacts", nil);
+    self.centralLabel.text = NSLocalizedString(@"centraloffice", nil);
+    self.addrLabel.text = NSLocalizedString(@"officeaddr", nil);
+    [self.labout setTitle:NSLocalizedString(@"About", nil) forState:UIControlStateNormal];
+    [self.officeButton setTitle:NSLocalizedString(@"OfficeButton", nil) forState:UIControlStateNormal];
+    [self.branchesButton setTitle:NSLocalizedString(@"Branches", nil) forState:UIControlStateNormal];
+
+}
+
 - (void)viewDidLoad {
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    UILabel* labelPrices = (UILabel*)[self.topView viewWithTag:TITLELABEL_TAG];
-    labelPrices.font = FONT_STD_TOP_MENU;
-
     self.centralLabel.font = FONT_ABOUT_CENTRALOFFICE;
     self.addrLabel.font = FONT_ABOUT_ADDR;
     
@@ -47,6 +57,7 @@
     self.branchesTableView.dataSource = self.brsour;
     self.branchesTableView.delegate = self;
 
+    [self refresh];
 }
 
 - (void)didReceiveMemoryWarning

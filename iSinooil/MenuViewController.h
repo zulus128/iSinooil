@@ -23,5 +23,10 @@
 - (void) showActions;
 - (void) showAbout;
 - (void) showSettings;
+@property (weak, nonatomic) IBOutlet UIButton *bmain;
+@property (weak, nonatomic) IBOutlet UIButton *babout;
+@property (weak, nonatomic) IBOutlet UIButton *bmap;
+@property (weak, nonatomic) IBOutlet UIButton *bnews;
+@property (weak, nonatomic) IBOutlet UIButton *bacts;
 
 @end

@@ -1,0 +1,168 @@
+
+/* Class = "IBUIButton"; normalTitle = "Actions"; ObjectID = "0IU-e8-WXc"; */
+"0IU-e8-WXc.normalTitle" = "Actions";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "5Yv-tQ-BJB"; */
+"5Yv-tQ-BJB.text" = "Label";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "5tD-kK-x25"; */
+"5tD-kK-x25.text" = "Title";
+
+/* Class = "IBUILabel"; text = "Name"; ObjectID = "AWd-rf-1M2"; */
+"AWd-rf-1M2.text" = "Name";
+
+/* Class = "IBUIButton"; normalTitle = "Branches"; ObjectID = "AzQ-xJ-ysq"; */
+"AzQ-xJ-ysq.normalTitle" = "Branches";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "B4d-a9-RrQ"; */
+"B4d-a9-RrQ.text" = "Label";
+
+/* Class = "IBUILabel"; text = "Addr"; ObjectID = "Blj-VQ-e8P"; */
+"Blj-VQ-e8P.text" = "Addr";
+
+/* Class = "IBUILabel"; text = "Internet Shop"; ObjectID = "EiB-fo-t7K"; */
+"EiB-fo-t7K.text" = "Internet Shop";
+
+/* Class = "IBUIButton"; normalTitle = "Сentral office"; ObjectID = "GUK-bK-bmy"; */
+"GUK-bK-bmy.normalTitle" = "Сentral office";
+
+/* Class = "IBUILabel"; text = "STATION"; ObjectID = "HRa-Va-JCW"; */
+"HRa-Va-JCW.text" = "STATION";
+
+/* Class = "IBUIButton"; normalTitle = "Send feedback"; ObjectID = "Jcs-ge-0J7"; */
+"Jcs-ge-0J7.normalTitle" = "Send feedback";
+
+/* Class = "IBUILabel"; text = "115"; ObjectID = "KXD-D3-k9Z"; */
+"KXD-D3-k9Z.text" = "115";
+
+/* Class = "IBUIButton"; normalTitle = "About company"; ObjectID = "Mbg-Ti-m7T"; */
+"Mbg-Ti-m7T.normalTitle" = "About company";
+
+/* Class = "IBUILabel"; text = "Branch"; ObjectID = "NNb-KT-B8G"; */
+"NNb-KT-B8G.text" = "Branch";
+
+/* Class = "IBUILabel"; text = "Date"; ObjectID = "O9L-yc-2Qr"; */
+"O9L-yc-2Qr.text" = "Date";
+
+/* Class = "IBUILabel"; text = "ttl"; ObjectID = "OOj-wf-H5w"; */
+"OOj-wf-H5w.text" = "ttl";
+
+/* Class = "IBUILabel"; text = "abrief"; ObjectID = "SzI-eF-Dp7"; */
+"SzI-eF-Dp7.text" = "abrief";
+
+/* Class = "IBUIButton"; normalTitle = "Contacts"; ObjectID = "U3f-XO-dbm"; */
+"U3f-XO-dbm.normalTitle" = "Contacts";
+
+/* Class = "IBUIButton"; normalTitle = "+7 701 123-45-67"; ObjectID = "VmB-bo-yak"; */
+"VmB-bo-yak.normalTitle" = "+7 701 123-45-67";
+
+/* Class = "IBUILabel"; text = "km"; ObjectID = "WY9-Zw-Bcr"; */
+"WY9-Zw-Bcr.text" = "km";
+
+/* Class = "IBUIButton"; normalTitle = "About company"; ObjectID = "Whj-m0-ot8"; */
+"Whj-m0-ot8.normalTitle" = "About company";
+
+/* Class = "IBUILabel"; text = "attl"; ObjectID = "Y7U-lh-5Lg"; */
+"Y7U-lh-5Lg.text" = "attl";
+
+/* Class = "IBUILabel"; text = "time"; ObjectID = "YWC-6g-Pv1"; */
+"YWC-6g-Pv1.text" = "time";
+
+/* Class = "IBUILabel"; text = "Settings"; ObjectID = "Z2z-EY-SXt"; */
+"Z2z-EY-SXt.text" = "Settings";
+
+/* Class = "IBUILabel"; text = "AI 97"; ObjectID = "Z5N-Qn-7iI"; */
+"Z5N-Qn-7iI.text" = "AI 97";
+
+/* Class = "IBUILabel"; text = "Contacts"; ObjectID = "aCw-4Z-hWZ"; */
+"aCw-4Z-hWZ.text" = "Contacts";
+
+/* Class = "IBUILabel"; text = "AI 97"; ObjectID = "bLu-Lr-2B7"; */
+"bLu-Lr-2B7.text" = "AI 97";
+
+/* Class = "IBUILabel"; text = "STATION"; ObjectID = "chB-02-EI8"; */
+"chB-02-EI8.text" = "STATION";
+
+/* Class = "IBUIButton"; normalTitle = "Station map"; ObjectID = "cr7-no-SCB"; */
+"cr7-no-SCB.normalTitle" = "Station map";
+
+/* Class = "IBUILabel"; text = "News"; ObjectID = "dMT-iY-TJr"; */
+"dMT-iY-TJr.text" = "News";
+
+/* Class = "IBUIButton"; normalTitle = "News"; ObjectID = "eMQ-ac-jf6"; */
+"eMQ-ac-jf6.normalTitle" = "News";
+
+/* Class = "IBUIButton"; normalTitle = "News"; ObjectID = "fwl-A5-G0P"; */
+"fwl-A5-G0P.normalTitle" = "News";
+
+/* Class = "IBUILabel"; text = "Also visit:"; ObjectID = "gWV-Nc-55P"; */
+"gWV-Nc-55P.text" = "Also visit:";
+
+/* Class = "IBUILabel"; text = "Central office"; ObjectID = "gu7-as-qQf"; */
+"gu7-as-qQf.text" = "Central office";
+
+/* Class = "IBUILabel"; text = "SINOOIL web-site"; ObjectID = "iAG-zW-pa0"; */
+"iAG-zW-pa0.text" = "SINOOIL web-site";
+
+/* Class = "IBUILabel"; text = "Value"; ObjectID = "krj-8x-YLj"; */
+"krj-8x-YLj.text" = "Value";
+
+/* Class = "IBUILabel"; text = "Networks:"; ObjectID = "l9s-l3-tk0"; */
+"l9s-l3-tk0.text" = "Networks:";
+
+/* Class = "IBUILabel"; text = "time"; ObjectID = "lIc-Zj-hDo"; */
+"lIc-Zj-hDo.text" = "time";
+
+/* Class = "IBUILabel"; text = "Settings"; ObjectID = "mTv-YY-r0e"; */
+"mTv-YY-r0e.text" = "Settings";
+
+/* Class = "IBUILabel"; text = "km"; ObjectID = "mhE-MK-QZ7"; */
+"mhE-MK-QZ7.text" = "km";
+
+/* Class = "IBUILabel"; text = "brief"; ObjectID = "nZC-a7-puL"; */
+"nZC-a7-puL.text" = "brief";
+
+/* Class = "IBUILabel"; text = "Hot Line"; ObjectID = "pXf-hj-oDL"; */
+"pXf-hj-oDL.text" = "Hot Line";
+
+/* Class = "IBUILabel"; text = "Name"; ObjectID = "peL-pf-HSC"; */
+"peL-pf-HSC.text" = "Name";
+
+/* Class = "IBUILabel"; text = "Almaty, Raimbek str. 74"; ObjectID = "rq0-fj-tSS"; */
+"rq0-fj-tSS.text" = "Almaty, Raimbek str. 74";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "sQv-sU-cOF"; */
+"sQv-sU-cOF.text" = "Label";
+
+/* Class = "IBUILabel"; text = "115"; ObjectID = "spg-8f-C4m"; */
+"spg-8f-C4m.text" = "115";
+
+/* Class = "IBUILabel"; text = "Stations"; ObjectID = "srS-dX-17e"; */
+"srS-dX-17e.text" = "Stations";
+
+/* Class = "IBUILabel"; text = "22"; ObjectID = "tsm-me-fOe"; */
+"tsm-me-fOe.text" = "22";
+
+/* Class = "IBUILabel"; text = "brief"; ObjectID = "twU-1u-sx2"; */
+"twU-1u-sx2.text" = "brief";
+
+/* Class = "IBUIButton"; normalTitle = "Map"; ObjectID = "uQ7-Ab-CYh"; */
+"uQ7-Ab-CYh.normalTitle" = "Map";
+
+/* Class = "IBUIButton"; normalTitle = "Main"; ObjectID = "v6Y-za-yMe"; */
+"v6Y-za-yMe.normalTitle" = "Main";
+
+/* Class = "IBUILabel"; text = "Actions"; ObjectID = "vwS-dx-u4r"; */
+"vwS-dx-u4r.text" = "Actions";
+
+/* Class = "IBUILabel"; text = "Prices"; ObjectID = "wSO-VP-fiU"; */
+"wSO-VP-fiU.text" = "Prices";
+
+/* Class = "IBUILabel"; text = "brief"; ObjectID = "xkS-jD-5kq"; */
+"xkS-jD-5kq.text" = "brief";
+
+/* Class = "IBUIButton"; normalTitle = "List"; ObjectID = "ybC-59-AEp"; */
+"ybC-59-AEp.normalTitle" = "List";
+
+/* Class = "IBUILabel"; text = "About company"; ObjectID = "zVK-ZD-jLI"; */
+"zVK-ZD-jLI.text" = "About company";

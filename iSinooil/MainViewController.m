@@ -33,6 +33,21 @@
     CGSize s = [Common currentScreenBounds];
     self.contentViewH.constant = s.height > VERT_SIZE?s.height:VERT_SIZE;
 
+    [self refresh];
+
+}
+
+- (void) refresh {
+
+    [self updateFuelPrice];
+    [self updateNewsActs];
+
+    self.hotlineLabel.text = NSLocalizedString(@"HotLine", nil);
+    self.settingsLabel.text = NSLocalizedString(@"Settings", nil);
+    self.seealsoLabel.text = NSLocalizedString(@"SeeAlso", nil);
+    self.ishopLabel.text = NSLocalizedString(@"IShop", nil);
+    self.siteLabel.text = NSLocalizedString(@"Site", nil);
+    self.netwLabel.text = NSLocalizedString(@"Networks", nil);
 }
 
 - (void) updateFuelPrice {
@@ -160,8 +175,6 @@
     self.siteLabel.font = FONT_MAINMENU;
     self.netwLabel.font = FONT_MAINMENU;
     
-    [self updateFuelPrice];
-    [self updateNewsActs];
 }
 
 - (BOOL)shouldAutorotate

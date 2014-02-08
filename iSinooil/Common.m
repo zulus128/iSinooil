@@ -9,6 +9,7 @@
 #import "Common.h"
 #import <MapKit/MapKit.h>
 #import "PriceCell.h"
+#import "MenuViewController.h"
 
 @implementation Common
 
@@ -32,6 +33,23 @@
 	self = [super init];
 	if(self !=nil) {
 
+        int l = [[NSUserDefaults standardUserDefaults] integerForKey:@"language"];
+//        NSLog(@"lang = %d", l);
+        NSString* ls = @"ru";
+        switch (l) {
+            case L_RU:
+                ls = @"ru";
+                break;
+            case L_ENG:
+                ls = @"en";
+                break;
+            case L_KZ:
+                ls = @"kk-KZ";
+                break;
+        }
+        NSString* path = [[NSBundle mainBundle] pathForResource:ls ofType:@"lproj"];
+        self.languageBundle = [NSBundle bundleWithPath:path];
+        self.lang = l;
         
         [self loadAboutData];
         [self loadAzsData];
@@ -644,6 +662,16 @@
     }
     
     return mindist;
+}
+
+- (NSString*) getStringForKey:(NSString*)key {
+    
+//    NSLog(@"++");
+//    if(self.languageBundle == nil)
+//        return NSLocalizedString(key, nil);
+    
+    return NSLocalizedStringFromTableInBundle(key, nil, self.languageBundle, nil);
+    
 }
 
 + (NSArray*) calculateRoutesFrom:(CLLocationCoordinate2D) f to: (CLLocationCoordinate2D) t {

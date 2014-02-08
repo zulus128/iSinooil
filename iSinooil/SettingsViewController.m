@@ -18,19 +18,26 @@
     self.view.frame = CGRectMake(0, 0, s.width, s.height);
 }
 
+- (void) refresh {
+    
+    UILabel* labelPrices = (UILabel*)[self.topView viewWithTag:TITLELABEL_TAG];
+    labelPrices.font = FONT_STD_TOP_MENU;
+    labelPrices.text = NSLocalizedString(@"Settings", nil);
+}
+
 - (void)viewDidLoad {
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    UILabel* labelPrices = (UILabel*)[self.topView viewWithTag:TITLELABEL_TAG];
-    labelPrices.font = FONT_STD_TOP_MENU;
 
     self.setsour = [[SettingsDataSource alloc] init];
     self.settTableView.dataSource = self.setsour;
     self.settTableView.delegate = self;
 
     selectedRow = -1;
+    
+    [self refresh];
 }
 
 - (void)didReceiveMemoryWarning
@@ -60,6 +67,13 @@
     [Common instance].lang = L_RU;
     [self hidePopup];
     [self.settTableView reloadData];
+
+    [[NSUserDefaults standardUserDefaults] setInteger:L_RU forKey:@"language"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    NSString* path = [[NSBundle mainBundle] pathForResource:@"ru" ofType:@"lproj"];
+    [Common instance].languageBundle = [NSBundle bundleWithPath:path];
+    [[Common instance].menucontr refresh];
+
 }
 
 - (void) enSelected {
@@ -67,6 +81,12 @@
     [Common instance].lang = L_ENG;
     [self hidePopup];
     [self.settTableView reloadData];
+    
+    [[NSUserDefaults standardUserDefaults] setInteger:L_ENG forKey:@"language"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    NSString* path = [[NSBundle mainBundle] pathForResource:@"en" ofType:@"lproj"];
+    [Common instance].languageBundle = [NSBundle bundleWithPath:path];
+    [[Common instance].menucontr refresh];
 }
 
 - (void) kzSelected {
@@ -74,6 +94,12 @@
     [Common instance].lang = L_KZ;
     [self hidePopup];
     [self.settTableView reloadData];
+    
+    [[NSUserDefaults standardUserDefaults] setInteger:L_KZ forKey:@"language"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    NSString* path = [[NSBundle mainBundle] pathForResource:@"kk-KZ" ofType:@"lproj"];
+    [Common instance].languageBundle = [NSBundle bundleWithPath:path];
+    [[Common instance].menucontr refresh];
 }
 
 - (void) kmSelected {
@@ -81,6 +107,8 @@
     [Common instance].metrics = M_KM;
     [self hidePopup];
     [self.settTableView reloadData];
+    [[Common instance].menucontr refresh];
+
 }
 
 - (void) miSelected {
@@ -88,6 +116,7 @@
     [Common instance].metrics = M_MI;
     [self hidePopup];
     [self.settTableView reloadData];
+    [[Common instance].menucontr refresh];
 }
 
 - (void) meSelected {
@@ -95,6 +124,7 @@
     [Common instance].metrics = M_MT;
     [self hidePopup];
     [self.settTableView reloadData];
+    [[Common instance].menucontr refresh];
 }
 
 - (void) hidePopup {
@@ -109,7 +139,7 @@
     [Common instance].fuelSelected = (button.tag - 1);
     [self hidePopup];
     [self.settTableView reloadData];
-    
+    [[Common instance].menucontr refresh];
 }
 
 - (void) showPopup {

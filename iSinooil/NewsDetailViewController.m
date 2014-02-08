@@ -20,6 +20,12 @@
 //    self.view.frame = CGRectMake(0, 0, s.width, s.height);
 //}
 
+- (void) refresh {
+    
+    [self.backlab setTitle:NSLocalizedString(@"News", nil) forState:UIControlStateNormal];
+    
+}
+
 - (void)viewDidLoad {
     
     [super viewDidLoad];
@@ -49,6 +55,7 @@
 
     });
 
+    [self refresh];
 }
 
 - (void)didReceiveMemoryWarning

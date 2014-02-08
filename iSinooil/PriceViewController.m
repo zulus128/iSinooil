@@ -22,18 +22,24 @@
     self.topView.frame = CGRectMake(0, 0, s.width, s.height);
 }
 
+- (void) refresh {
+    
+    UILabel* labelPrices = (UILabel*)[self.topView viewWithTag:TITLELABEL_TAG];
+    labelPrices.font = FONT_STD_TOP_MENU;
+    labelPrices.text = NSLocalizedString(@"Prices", nil);
+    
+}
+
 - (void)viewDidLoad {
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    UILabel* labelPrices = (UILabel*)[self.topView viewWithTag:TITLELABEL_TAG];
-    labelPrices.font = FONT_STD_TOP_MENU;
-    
     self.listsour = [[PricesDataSource alloc] init];
     self.pricesListTable.dataSource = self.listsour;
     self.pricesListTable.delegate = self;
 
+    [self refresh];
 }
 
 - (void)didReceiveMemoryWarning

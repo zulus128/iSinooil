@@ -18,13 +18,19 @@
     self.view.frame = CGRectMake(0, 0, s.width, s.height);
 }
 
+- (void) refresh {
+    
+    UILabel* labelPrices = (UILabel*)[self.topView viewWithTag:TITLELABEL_TAG];
+    labelPrices.font = FONT_STD_TOP_MENU;
+    labelPrices.text = NSLocalizedString(@"About", nil);
+    [self.bcontacts setTitle:NSLocalizedString(@"Contacts", nil) forState:UIControlStateNormal];
+
+}
+
 - (void)viewDidLoad {
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    
-    UILabel* labelPrices = (UILabel*)[self.topView viewWithTag:TITLELABEL_TAG];
-    labelPrices.font = FONT_STD_TOP_MENU;
     
     for(NSDictionary* d in [Common instance].aboutjson) {
         
@@ -46,6 +52,7 @@
         }
     }
     
+    [self refresh];
 }
 
 - (void)didReceiveMemoryWarning
