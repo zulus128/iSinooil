@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
 
+enum {L_RU, L_ENG, L_KZ};
+enum {M_KM, M_MI, M_MT}; //km, miles, metres
+
 //urls
 #define URL_SHOP @"http://sinooilshop.kz/"
 #define URL_SITE @"http://www.sinooil.kz/"
@@ -99,5 +102,7 @@
 @property (assign, readwrite) int lastAct;
 @property (nonatomic, strong) NSDictionary* topnews;
 @property (nonatomic, strong) NSDictionary* topact;
+@property (assign, readwrite) int lang;
+@property (assign, readwrite) int metrics;
 
 @end

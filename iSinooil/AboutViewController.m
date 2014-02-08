@@ -69,6 +69,7 @@
                      completion:^(BOOL finished) {
                      }];
 }
+
 - (IBAction)showDetails:(id)sender {
     
     AboutDetailViewController* detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"aboutDetailController"];

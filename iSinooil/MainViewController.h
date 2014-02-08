@@ -38,6 +38,7 @@
 - (IBAction)tapSite:(id)sender;
 - (IBAction)tapFB:(id)sender;
 - (IBAction)tapVK:(id)sender;
+- (IBAction)tapSettings:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UILabel *distLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;

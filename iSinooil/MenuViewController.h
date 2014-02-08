@@ -22,5 +22,6 @@
 - (void) showStationWithId:(int) sid;
 - (void) showActions;
 - (void) showAbout;
+- (void) showSettings;
 
 @end

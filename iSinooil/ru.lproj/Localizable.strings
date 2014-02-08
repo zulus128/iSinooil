@@ -18,3 +18,12 @@
 "network_error" = "Проверьте соединение и попробуйте обновить данные еще раз.";
 "daynews" = "Новость дня";
 "centraloffice" = "Центральный офис";
+"settingsname" = "Язык";
+"settingsfuel" = "Топливо";
+"settingsmetre" = "Измерение";
+"lang_ru" = "РУС";
+"lang_eng" = "АНГ";
+"lang_kz" = "КАЗ";
+"km" = "км";
+"miles" = "мили";
+"metres" = "м";

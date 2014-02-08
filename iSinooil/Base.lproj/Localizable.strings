@@ -18,3 +18,12 @@
 "network_error" = "Check Internet connection and ry again.";
 "daynews" = "News of the day";
 "centraloffice" = "Central office";
+"settingsname" = "Language";
+"settingsfuel" = "Fuel";
+"settingsmetre" = "Metrics";
+"lang_ru" = "RU";
+"lang_eng" = "EN";
+"lang_kz" = "KZ";
+"km" = "km";
+"miles" = "miles";
+"metres" = "m";

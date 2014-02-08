@@ -35,7 +35,7 @@
 /* Class = "IBUIButton"; normalTitle = "О компании"; ObjectID = "Mbg-Ti-m7T"; */
 "Mbg-Ti-m7T.normalTitle" = "О компании";
 
-/* Class = "IBUILabel"; text = "Branch"; ObjectID = "NNb-KT-B8G"; */
+/* Class = "IBUILabel"; text = "Филиал"; ObjectID = "NNb-KT-B8G"; */
 "NNb-KT-B8G.text" = "Филиал";
 
 /* Class = "IBUILabel"; text = "Date"; ObjectID = "O9L-yc-2Qr"; */
@@ -106,6 +106,9 @@
 
 /* Class = "IBUILabel"; text = "time"; ObjectID = "lIc-Zj-hDo"; */
 "lIc-Zj-hDo.text" = "time";
+
+/* Class = "IBUILabel"; text = "Settings"; ObjectID = "mTv-YY-r0e"; */
+"mTv-YY-r0e.text" = "Настройки";
 
 /* Class = "IBUILabel"; text = "km"; ObjectID = "mhE-MK-QZ7"; */
 "mhE-MK-QZ7.text" = "km";

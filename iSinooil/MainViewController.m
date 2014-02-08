@@ -244,4 +244,9 @@
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URL_VK]];
 }
 
+- (IBAction)tapSettings:(id)sender {
+
+    [((MenuViewController*)self.parentViewController) showSettings];
+}
+
 @end

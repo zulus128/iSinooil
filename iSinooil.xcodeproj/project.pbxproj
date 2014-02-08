@@ -78,6 +78,8 @@
 		DDBE9BAC18A66BEE000FB34D /* BranchesDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = DDBE9BAB18A66BEE000FB34D /* BranchesDataSource.m */; };
 		DDBE9BAF18A66D20000FB34D /* BranchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DDBE9BAE18A66D20000FB34D /* BranchCell.m */; };
 		DDBE9BB418A674A9000FB34D /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDBE9BB318A674A9000FB34D /* SettingsViewController.m */; };
+		DDBE9BB918A679F1000FB34D /* SettingsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DDBE9BB818A679F1000FB34D /* SettingsCell.m */; };
+		DDBE9BBC18A67A78000FB34D /* SettingsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = DDBE9BBB18A67A78000FB34D /* SettingsDataSource.m */; };
 		DDC8734D1875301A00393876 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DDC8734F1875301A00393876 /* Localizable.strings */; };
 		DDC8735318754F4200393876 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC8735218754F4200393876 /* MenuViewController.m */; };
 		DDC873561875ADF600393876 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC873551875ADF600393876 /* Common.m */; };
@@ -292,9 +294,13 @@
 		DDBE9BAB18A66BEE000FB34D /* BranchesDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BranchesDataSource.m; sourceTree = "<group>"; };
 		DDBE9BAD18A66D20000FB34D /* BranchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BranchCell.h; sourceTree = "<group>"; };
 		DDBE9BAE18A66D20000FB34D /* BranchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BranchCell.m; sourceTree = "<group>"; };
-		DDBE9BB118A67295000FB34D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
 		DDBE9BB218A674A9000FB34D /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		DDBE9BB318A674A9000FB34D /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		DDBE9BB618A678C9000FB34D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
+		DDBE9BB718A679F1000FB34D /* SettingsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsCell.h; sourceTree = "<group>"; };
+		DDBE9BB818A679F1000FB34D /* SettingsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsCell.m; sourceTree = "<group>"; };
+		DDBE9BBA18A67A78000FB34D /* SettingsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsDataSource.h; sourceTree = "<group>"; };
+		DDBE9BBB18A67A78000FB34D /* SettingsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsDataSource.m; sourceTree = "<group>"; };
 		DDC8734918752EC300393876 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DDC8734A18752EC300393876 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DDC8734E1875301A00393876 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -451,6 +457,8 @@
 				DD3F7475189E15260082CD30 /* NewsDataSource.m */,
 				DDBE9BAA18A66BEE000FB34D /* BranchesDataSource.h */,
 				DDBE9BAB18A66BEE000FB34D /* BranchesDataSource.m */,
+				DDBE9BBA18A67A78000FB34D /* SettingsDataSource.h */,
+				DDBE9BBB18A67A78000FB34D /* SettingsDataSource.m */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -771,6 +779,8 @@
 				849A29AB18A22EDF00A68987 /* ActCell.m */,
 				DDBE9BAD18A66D20000FB34D /* BranchCell.h */,
 				DDBE9BAE18A66D20000FB34D /* BranchCell.m */,
+				DDBE9BB718A679F1000FB34D /* SettingsCell.h */,
+				DDBE9BB818A679F1000FB34D /* SettingsCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -989,7 +999,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD3F7470189E082F0082CD30 /* UIImageView+WebCache.m in Sources */,
+				DDBE9BBC18A67A78000FB34D /* SettingsDataSource.m in Sources */,
 				847E7CB8188EADB8007401F1 /* PricesDataSource.m in Sources */,
+				DDBE9BB918A679F1000FB34D /* SettingsCell.m in Sources */,
 				849A29A918A22C8300A68987 /* ActsViewController.m in Sources */,
 				DDBE9BA718A6315A000FB34D /* AboutDetailViewController.m in Sources */,
 				DDBE9BAC18A66BEE000FB34D /* BranchesDataSource.m in Sources */,
@@ -1058,7 +1070,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				9CF17A5618431F7F007FF8D9 /* Base */,
-				DDBE9BB118A67295000FB34D /* ru */,
+				DDBE9BB618A678C9000FB34D /* ru */,
 			);
 			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";
