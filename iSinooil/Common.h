@@ -45,6 +45,7 @@
 #define ABOUT_VALUES @"pages"
 #define ABOUT_ID @"id"
 #define ABOUT_TXT @"txt"
+#define ABOUT_TTL @"ttl"
 
 //fuel.json
 #define FUEL_VALUES @"value"
@@ -82,6 +83,9 @@
 - (int) getActsCount;
 - (void) loadActsData;
 - (NSDictionary*) getActAt:(int)n;
+
+- (int) getBranchesCount;
+- (NSDictionary*) getBranchAt:(int)n;
 
 @property (nonatomic, strong) NSArray* azsjson;
 @property (nonatomic, strong) NSArray* fueljson;

@@ -380,6 +380,29 @@
     return [self.actsjson objectAtIndex:n];
 }
 
+- (int) getBranchesCount {
+    
+    return (self.aboutjson.count - 1);
+}
+
+- (NSDictionary*) getBranchAt:(int)n {
+    
+    int i = 0;
+    NSDictionary* res = nil;
+    for(NSDictionary* d in self.aboutjson) {
+        
+        NSNumber* nn = [d valueForKey:ABOUT_ID];
+        if (nn.intValue == 1)
+            continue;
+        if(i == n) {
+            res = d;
+            break;
+        }
+        i++;
+    }
+    return res;
+}
+
 - (void) loadAboutData {
     
     NSArray* sp = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);

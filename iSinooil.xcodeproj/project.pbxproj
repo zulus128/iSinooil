@@ -75,6 +75,9 @@
 		DDA70D271876EA4400C89F86 /* StationAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA70D261876EA4400C89F86 /* StationAnnotationView.m */; };
 		DDB2E9A0189E3A5D0080FE75 /* NewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB2E99F189E3A5D0080FE75 /* NewsDetailViewController.m */; };
 		DDBE9BA718A6315A000FB34D /* AboutDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDBE9BA618A6315A000FB34D /* AboutDetailViewController.m */; };
+		DDBE9BAC18A66BEE000FB34D /* BranchesDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = DDBE9BAB18A66BEE000FB34D /* BranchesDataSource.m */; };
+		DDBE9BAF18A66D20000FB34D /* BranchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DDBE9BAE18A66D20000FB34D /* BranchCell.m */; };
+		DDBE9BB418A674A9000FB34D /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDBE9BB318A674A9000FB34D /* SettingsViewController.m */; };
 		DDC8734D1875301A00393876 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DDC8734F1875301A00393876 /* Localizable.strings */; };
 		DDC8735318754F4200393876 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC8735218754F4200393876 /* MenuViewController.m */; };
 		DDC873561875ADF600393876 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC873551875ADF600393876 /* Common.m */; };
@@ -285,7 +288,13 @@
 		DDB2E99F189E3A5D0080FE75 /* NewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsDetailViewController.m; sourceTree = "<group>"; };
 		DDBE9BA518A6315A000FB34D /* AboutDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutDetailViewController.h; sourceTree = "<group>"; };
 		DDBE9BA618A6315A000FB34D /* AboutDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutDetailViewController.m; sourceTree = "<group>"; };
-		DDBE9BA918A64135000FB34D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
+		DDBE9BAA18A66BEE000FB34D /* BranchesDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BranchesDataSource.h; sourceTree = "<group>"; };
+		DDBE9BAB18A66BEE000FB34D /* BranchesDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BranchesDataSource.m; sourceTree = "<group>"; };
+		DDBE9BAD18A66D20000FB34D /* BranchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BranchCell.h; sourceTree = "<group>"; };
+		DDBE9BAE18A66D20000FB34D /* BranchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BranchCell.m; sourceTree = "<group>"; };
+		DDBE9BB118A67295000FB34D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
+		DDBE9BB218A674A9000FB34D /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		DDBE9BB318A674A9000FB34D /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		DDC8734918752EC300393876 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DDC8734A18752EC300393876 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DDC8734E1875301A00393876 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -440,6 +449,8 @@
 				849A29A518A22AE900A68987 /* ActsDataSource.m */,
 				DD3F7474189E15260082CD30 /* NewsDataSource.h */,
 				DD3F7475189E15260082CD30 /* NewsDataSource.m */,
+				DDBE9BAA18A66BEE000FB34D /* BranchesDataSource.h */,
+				DDBE9BAB18A66BEE000FB34D /* BranchesDataSource.m */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -617,6 +628,8 @@
 				9CF17A5C18431F7F007FF8D9 /* MainViewController.m */,
 				DDC8735118754F4200393876 /* MenuViewController.h */,
 				DDC8735218754F4200393876 /* MenuViewController.m */,
+				DDBE9BB218A674A9000FB34D /* SettingsViewController.h */,
+				DDBE9BB318A674A9000FB34D /* SettingsViewController.m */,
 				DDA70D281876EA5700C89F86 /* maps */,
 			);
 			name = Controller;
@@ -756,6 +769,8 @@
 				DD3F7478189E164C0082CD30 /* NewsCell.m */,
 				849A29AA18A22EDF00A68987 /* ActCell.h */,
 				849A29AB18A22EDF00A68987 /* ActCell.m */,
+				DDBE9BAD18A66D20000FB34D /* BranchCell.h */,
+				DDBE9BAE18A66D20000FB34D /* BranchCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -977,6 +992,7 @@
 				847E7CB8188EADB8007401F1 /* PricesDataSource.m in Sources */,
 				849A29A918A22C8300A68987 /* ActsViewController.m in Sources */,
 				DDBE9BA718A6315A000FB34D /* AboutDetailViewController.m in Sources */,
+				DDBE9BAC18A66BEE000FB34D /* BranchesDataSource.m in Sources */,
 				84C68CC2188E524200FD68D0 /* PriceViewController.m in Sources */,
 				84FDF89D187AA9610082595A /* StationViewCell.m in Sources */,
 				DDEB48B518544CF5006FAED3 /* MyMapView.m in Sources */,
@@ -991,6 +1007,7 @@
 				844293A518A1ED0F00DDC7F3 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				DD3F7476189E15260082CD30 /* NewsDataSource.m in Sources */,
 				DDB2E9A0189E3A5D0080FE75 /* NewsDetailViewController.m in Sources */,
+				DDBE9BAF18A66D20000FB34D /* BranchCell.m in Sources */,
 				DDA70D211876DA7200C89F86 /* MapPoint.m in Sources */,
 				DDC8735318754F4200393876 /* MenuViewController.m in Sources */,
 				DD3F746B189E082F0082CD30 /* SDImageCache.m in Sources */,
@@ -998,6 +1015,7 @@
 				DD3F746D189E082F0082CD30 /* SDWebImageDownloader.m in Sources */,
 				DD3F746F189E082F0082CD30 /* SDWebImagePrefetcher.m in Sources */,
 				DD3F7479189E164C0082CD30 /* NewsCell.m in Sources */,
+				DDBE9BB418A674A9000FB34D /* SettingsViewController.m in Sources */,
 				9CF17A5018431F7F007FF8D9 /* main.m in Sources */,
 				846938E6187A81640037CABC /* StationListDataSource.m in Sources */,
 				84CC0F7F18A4AFC9006F84C6 /* AboutViewController.m in Sources */,
@@ -1040,7 +1058,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				9CF17A5618431F7F007FF8D9 /* Base */,
-				DDBE9BA918A64135000FB34D /* ru */,
+				DDBE9BB118A67295000FB34D /* ru */,
 			);
 			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";

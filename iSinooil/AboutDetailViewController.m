@@ -8,6 +8,7 @@
 
 #import "AboutDetailViewController.h"
 #import "MapPoint.h"
+#import "BranchesDataSource.h"
 
 @implementation AboutDetailViewController
 
@@ -42,6 +43,10 @@
 
     [self officeButtonDown:self.officeButton];
 
+    self.brsour = [[BranchesDataSource alloc] init];
+    self.branchesTableView.dataSource = self.brsour;
+    self.branchesTableView.delegate = self;
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -74,6 +79,8 @@
     [self.branchesButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateHighlighted];
     [self.branchesButton setBackgroundImage: [UIImage imageNamed:@"tab_right.png"] forState:UIControlStateNormal];
     
+    self.centralOfficeView.hidden = NO;
+    self.branchesView.hidden = YES;
 }
 
 - (IBAction)branchesButtonDown:(UIButton*)button{
@@ -85,6 +92,18 @@
     [self.officeButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
     [self.officeButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateHighlighted];
     [self.officeButton setBackgroundImage: [UIImage imageNamed:@"tab_left.png"] forState:UIControlStateNormal];
+
+    self.centralOfficeView.hidden = YES;
+    self.branchesView.hidden = NO;
+
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return BRANCHCELL_HEIGHT;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
 }
 

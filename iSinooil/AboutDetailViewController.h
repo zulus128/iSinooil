@@ -9,8 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 
+@class BranchesDataSource;
+
 @interface AboutDetailViewController : UIViewController <UITableViewDelegate>
+
 - (IBAction)back:(id)sender;
+
 @property (weak, nonatomic) IBOutlet UIView *topView;
 @property (weak, nonatomic) IBOutlet UILabel *centralLabel;
 @property (weak, nonatomic) IBOutlet UILabel *addrLabel;
@@ -20,5 +24,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *branchesButton;
 - (IBAction)officeButtonDown:(UIButton*)button;
 - (IBAction)branchesButtonDown:(UIButton*)button;
+@property (weak, nonatomic) IBOutlet UIView *branchesView;
+@property (weak, nonatomic) IBOutlet UIView *centralOfficeView;
+@property (weak, nonatomic) IBOutlet UITableView *branchesTableView;
+
+@property (nonatomic, strong) BranchesDataSource* brsour;
 
 @end
