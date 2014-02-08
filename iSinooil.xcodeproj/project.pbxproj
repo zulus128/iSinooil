@@ -74,6 +74,7 @@
 		DDA70D241876E0DD00C89F86 /* MapSource.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA70D231876E0DD00C89F86 /* MapSource.m */; };
 		DDA70D271876EA4400C89F86 /* StationAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA70D261876EA4400C89F86 /* StationAnnotationView.m */; };
 		DDB2E9A0189E3A5D0080FE75 /* NewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB2E99F189E3A5D0080FE75 /* NewsDetailViewController.m */; };
+		DDBE9BA718A6315A000FB34D /* AboutDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDBE9BA618A6315A000FB34D /* AboutDetailViewController.m */; };
 		DDC8734D1875301A00393876 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DDC8734F1875301A00393876 /* Localizable.strings */; };
 		DDC8735318754F4200393876 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC8735218754F4200393876 /* MenuViewController.m */; };
 		DDC873561875ADF600393876 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC873551875ADF600393876 /* Common.m */; };
@@ -283,6 +284,8 @@
 		DDA70D261876EA4400C89F86 /* StationAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationAnnotationView.m; sourceTree = "<group>"; };
 		DDB2E99E189E3A5D0080FE75 /* NewsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsDetailViewController.h; sourceTree = "<group>"; };
 		DDB2E99F189E3A5D0080FE75 /* NewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsDetailViewController.m; sourceTree = "<group>"; };
+		DDBE9BA518A6315A000FB34D /* AboutDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutDetailViewController.h; sourceTree = "<group>"; };
+		DDBE9BA618A6315A000FB34D /* AboutDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutDetailViewController.m; sourceTree = "<group>"; };
 		DDC8734918752EC300393876 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DDC8734A18752EC300393876 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DDC8734E1875301A00393876 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -600,6 +603,8 @@
 			children = (
 				84CC0F7D18A4AFC9006F84C6 /* AboutViewController.h */,
 				84CC0F7E18A4AFC9006F84C6 /* AboutViewController.m */,
+				DDBE9BA518A6315A000FB34D /* AboutDetailViewController.h */,
+				DDBE9BA618A6315A000FB34D /* AboutDetailViewController.m */,
 				DD3F7471189E147F0082CD30 /* NewsViewController.h */,
 				DD3F7472189E147F0082CD30 /* NewsViewController.m */,
 				DDB2E99E189E3A5D0080FE75 /* NewsDetailViewController.h */,
@@ -971,6 +976,7 @@
 				DD3F7470189E082F0082CD30 /* UIImageView+WebCache.m in Sources */,
 				847E7CB8188EADB8007401F1 /* PricesDataSource.m in Sources */,
 				849A29A918A22C8300A68987 /* ActsViewController.m in Sources */,
+				DDBE9BA718A6315A000FB34D /* AboutDetailViewController.m in Sources */,
 				84C68CC2188E524200FD68D0 /* PriceViewController.m in Sources */,
 				84FDF89D187AA9610082595A /* StationViewCell.m in Sources */,
 				DDEB48B518544CF5006FAED3 /* MyMapView.m in Sources */,

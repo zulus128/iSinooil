@@ -14,4 +14,6 @@
 
 @property (weak, nonatomic) IBOutlet UIView *topView;
 
+- (IBAction)showDetails:(id)sender;
+@property (weak, nonatomic) IBOutlet UIWebView *webview;
 @end

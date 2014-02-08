@@ -8,6 +8,7 @@
 
 #import "AboutViewController.h"
 #import "Common.h"
+#import "AboutDetailViewController.h"
 
 @implementation AboutViewController
 
@@ -17,13 +18,33 @@
     self.view.frame = CGRectMake(0, 0, s.width, s.height);
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
     UILabel* labelPrices = (UILabel*)[self.topView viewWithTag:TITLELABEL_TAG];
     labelPrices.font = FONT_STD_TOP_MENU;
+    
+    for(NSDictionary* d in [Common instance].aboutjson) {
+        
+        NSNumber* n = [d valueForKey:ABOUT_ID];
+//        NSLog(@"id = %d", n.intValue);
+        if(n.intValue == 1) {
+            
+            NSString *myHTML = [NSString stringWithFormat:@"<html> \n"
+                                "<head> \n"
+                                "<style type=\"text/css\"> \n"
+                                "body {font-family: \"%@\"; font-size: %@;}\n"
+                                "</style> \n"
+                                "</head> \n"
+                                "<body>%@</body> \n"
+                                "</html>", @"HelveticaNeueCyr-Light", [NSNumber numberWithInt:11], [d valueForKey:ABOUT_TXT]];
+
+            [self.webview loadHTMLString:myHTML baseURL:nil];
+            break;
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,4 +68,11 @@
                      completion:^(BOOL finished) {
                      }];
 }
+- (IBAction)showDetails:(id)sender {
+    
+    AboutDetailViewController* detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"aboutDetailController"];
+    [self.navigationController pushViewController:detailViewController animated:YES];
+
+}
+
 @end

@@ -43,6 +43,8 @@
 
 //about.json
 #define ABOUT_VALUES @"pages"
+#define ABOUT_ID @"id"
+#define ABOUT_TXT @"txt"
 
 //fuel.json
 #define FUEL_VALUES @"value"
