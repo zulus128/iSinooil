@@ -1063,11 +1063,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eqi-V7-bol" userLabel="CentralOfficeView">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eqi-V7-bol" userLabel="CentralOfficeView">
                                 <rect key="frame" x="0.0" y="69" width="320" height="499"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Central office" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gu7-as-qQf">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Central office" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gu7-as-qQf">
                                         <rect key="frame" x="20" y="3" width="280" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
@@ -1078,7 +1078,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VmB-bo-yak">
-                                        <rect key="frame" x="8" y="55" width="305" height="60"/>
+                                        <rect key="frame" x="8" y="47" width="305" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="47q-Ag-lIs"/>
@@ -1092,20 +1092,20 @@
                                             <action selector="callOffice:" destination="sSm-5j-CJj" eventType="touchUpInside" id="gX6-Ux-ed9"/>
                                         </connections>
                                     </button>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mat-Yo-xDI">
-                                        <rect key="frame" x="0.0" y="160" width="320" height="271"/>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mat-Yo-xDI">
+                                        <rect key="frame" x="0.0" y="152" width="320" height="279"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     </mapView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contacts.png" translatesAutoresizingMaskIntoConstraints="NO" id="yMN-eu-ij2">
-                                        <rect key="frame" x="20" y="120" width="30" height="30"/>
+                                        <rect key="frame" x="20" y="112" width="30" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="0bz-Zh-VXD"/>
                                             <constraint firstAttribute="height" constant="30" id="27C-YC-Zn7"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Almaty, Raimbek str. 74" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rq0-fj-tSS">
-                                        <rect key="frame" x="69" y="126" width="231" height="21"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Almaty, Raimbek str. 74" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rq0-fj-tSS">
+                                        <rect key="frame" x="69" y="118" width="231" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="yL9-vA-jk6"/>
@@ -1120,7 +1120,7 @@
                                     <constraint firstItem="gu7-as-qQf" firstAttribute="top" secondItem="eqi-V7-bol" secondAttribute="top" constant="3" id="1bY-R3-tGo"/>
                                     <constraint firstAttribute="trailing" secondItem="mat-Yo-xDI" secondAttribute="trailing" id="2MB-Ae-RXg"/>
                                     <constraint firstItem="rq0-fj-tSS" firstAttribute="top" secondItem="VmB-bo-yak" secondAttribute="bottom" constant="11" id="8ju-jf-6mQ"/>
-                                    <constraint firstItem="VmB-bo-yak" firstAttribute="top" secondItem="gu7-as-qQf" secondAttribute="bottom" constant="8" id="JmC-qV-ASd"/>
+                                    <constraint firstItem="VmB-bo-yak" firstAttribute="top" secondItem="gu7-as-qQf" secondAttribute="bottom" id="JmC-qV-ASd"/>
                                     <constraint firstItem="gu7-as-qQf" firstAttribute="leading" secondItem="eqi-V7-bol" secondAttribute="leading" constant="20" id="P2R-Wq-O4V"/>
                                     <constraint firstItem="yMN-eu-ij2" firstAttribute="leading" secondItem="eqi-V7-bol" secondAttribute="leading" constant="20" id="SSU-T6-YQQ"/>
                                     <constraint firstItem="rq0-fj-tSS" firstAttribute="leading" secondItem="yMN-eu-ij2" secondAttribute="trailing" constant="19" id="VNF-gW-WbW"/>
@@ -1153,6 +1153,7 @@
                                 </state>
                                 <connections>
                                     <action selector="mapTouchDown:" destination="ehy-aB-IHd" eventType="touchDown" id="CTP-ZC-0dE"/>
+                                    <action selector="officeButtonDown:" destination="sSm-5j-CJj" eventType="touchUpInside" id="hw6-Gk-mai"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AzQ-xJ-ysq" userLabel="BranchesButton">
@@ -1172,10 +1173,11 @@
                                 </state>
                                 <state key="highlighted" backgroundImage="tab_right_pressed.png"/>
                                 <connections>
+                                    <action selector="branchesButtonDown:" destination="sSm-5j-CJj" eventType="touchUpInside" id="YfU-Y8-kA7"/>
                                     <action selector="listTouchDown:" destination="ehy-aB-IHd" eventType="touchDown" id="4VH-xc-fww"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fgA-Rm-SjT" userLabel="TopView">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fgA-Rm-SjT" userLabel="TopView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
@@ -1240,8 +1242,10 @@
                     </view>
                     <connections>
                         <outlet property="addrLabel" destination="rq0-fj-tSS" id="KzE-fV-pEh"/>
+                        <outlet property="branchesButton" destination="AzQ-xJ-ysq" id="IOU-Hn-yfC"/>
                         <outlet property="centralLabel" destination="gu7-as-qQf" id="OjV-Yf-4jZ"/>
                         <outlet property="map" destination="mat-Yo-xDI" id="GM4-vV-LI3"/>
+                        <outlet property="officeButton" destination="GUK-bK-bmy" id="Kj0-TP-sjU"/>
                         <outlet property="topView" destination="fgA-Rm-SjT" id="TXP-BK-wNb"/>
                     </connections>
                 </viewController>

@@ -40,6 +40,8 @@
     MapPoint *mp = [[MapPoint alloc] initWithCoordinate:officeLoc title:@"SINOOIL" subTitle:NSLocalizedString(@"centraloffice", nil)];
 	[self.map addAnnotation:mp];
 
+    [self officeButtonDown:self.officeButton];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -60,6 +62,30 @@
     NSString *phoneNumber = [@"telprompt://" stringByAppendingString:tel];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
 
+}
+
+- (IBAction)officeButtonDown:(UIButton*)button {
+
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+    [button setBackgroundImage: [UIImage imageNamed:@"tab_left_pressed.png"] forState:UIControlStateNormal];
+    
+    [self.branchesButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+    [self.branchesButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateHighlighted];
+    [self.branchesButton setBackgroundImage: [UIImage imageNamed:@"tab_right.png"] forState:UIControlStateNormal];
+    
+}
+
+- (IBAction)branchesButtonDown:(UIButton*)button{
+    
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+    [button setBackgroundImage: [UIImage imageNamed:@"tab_right_pressed.png"] forState:UIControlStateNormal];
+    
+    [self.officeButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+    [self.officeButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateHighlighted];
+    [self.officeButton setBackgroundImage: [UIImage imageNamed:@"tab_left.png"] forState:UIControlStateNormal];
+    
 }
 
 @end

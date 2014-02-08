@@ -16,5 +16,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *addrLabel;
 - (IBAction)callOffice:(id)sender;
 @property (weak, nonatomic) IBOutlet MKMapView *map;
+@property (weak, nonatomic) IBOutlet UIButton *officeButton;
+@property (weak, nonatomic) IBOutlet UIButton *branchesButton;
+- (IBAction)officeButtonDown:(UIButton*)button;
+- (IBAction)branchesButtonDown:(UIButton*)button;
 
 @end
