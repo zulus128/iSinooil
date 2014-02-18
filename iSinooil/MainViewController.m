@@ -113,16 +113,28 @@
     [self.newsImage setImageWithURL:[NSURL URLWithString:pic] placeholderImage:[UIImage imageNamed:@"placeholder-icon"]];
 //    self.ttlLabel.text = [[Common instance].topnews valueForKey:NEWS_TTL];
     self.ttlLabel.text = NSLocalizedString(@"daynews", nil);
-    self.briefLabel.text = [[Common instance].topnews valueForKey:NEWS_BRIEF];
-
+//    self.briefLabel.text = [[Common instance].topnews valueForKey:NEWS_BRIEF];
+    NSString *labelText = [[Common instance].topnews valueForKey:NEWS_BRIEF];
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:labelText];
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    [paragraphStyle setLineSpacing:4];
+    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [labelText length])];
+    self.briefLabel.attributedText = attributedString;
+    
     pic = [[Common instance].topact valueForKey:NEWS_PIC];
     [self.actImage setImageWithURL:[NSURL URLWithString:pic] placeholderImage:[UIImage imageNamed:@"placeholder-icon"]];
-    self.abriefLabel.text = [[Common instance].topact valueForKey:NEWS_BRIEF];
-    
+//    self.abriefLabel.text = [[Common instance].topact valueForKey:NEWS_BRIEF];
+    labelText = [[Common instance].topact valueForKey:NEWS_BRIEF];
+    attributedString = [[NSMutableAttributedString alloc] initWithString:labelText];
+    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [labelText length])];
+    self.abriefLabel.attributedText = attributedString;
+   
     NSNumber* n = [[Common instance].topact valueForKey:NEWS_START_DATE];
     NSDate* date = [NSDate dateWithTimeIntervalSince1970:n.longValue];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+//    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    [dateFormatter setDateStyle:NSDateFormatterShortStyle];
+    [dateFormatter setDateFormat:@"dd.MM.yy"];
     [dateFormatter setLocale:[NSLocale currentLocale]];
     NSString *formattedDateString = [dateFormatter stringFromDate:date];
     
