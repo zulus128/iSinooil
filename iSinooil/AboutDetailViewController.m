@@ -12,15 +12,6 @@
 
 @implementation AboutDetailViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void) refresh {
     
     UILabel* labelPrices = (UILabel*)[self.topView viewWithTag:TITLELABEL_TAG];
@@ -41,7 +32,11 @@
     
     self.centralLabel.font = FONT_ABOUT_CENTRALOFFICE;
     self.addrLabel.font = FONT_ABOUT_ADDR;
-    
+    [self.centralLabel setTextColor:COLOR_ABOUT_CENTRALOFFICE];
+    [[self.callButton titleLabel] setFont:FONT_ABOUT_CALLOFFICE];
+    [[self.officeButton titleLabel] setFont:FONT_ABOUT_TOGGLE_BUTTONS];
+    [[self.branchesButton titleLabel] setFont:FONT_ABOUT_TOGGLE_BUTTONS];
+
     self.map.userTrackingMode = MKUserTrackingModeNone;
     CLLocationCoordinate2D officeLoc = { 43.27143, 76.95885 };
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(officeLoc, 1500, 1500);

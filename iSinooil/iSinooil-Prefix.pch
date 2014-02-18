@@ -46,13 +46,18 @@
 #define FONT_MAINMENU [UIFont fontWithName:@"HelveticaNeueCyr-Roman" size:18.0f]
 #define FONT_MAINMENU_SEEALSO [UIFont fontWithName:@"HelveticaNeueCyr-Roman" size:14.0f]
 #define FONT_ACTS_TITLE [UIFont fontWithName:@"HelveticaNeueCyr-Roman" size:10.0f]
-#define FONT_ABOUT_CENTRALOFFICE [UIFont fontWithName:@"HelveticaNeueCyr-Roman" size:18.0f]
-#define FONT_ABOUT_ADDR [UIFont fontWithName:@"HelveticaNeueCyr-Roman" size:14.0f]
 #define FONT_BRANCH_TITLE [UIFont fontWithName:@"HelveticaNeueCyr-Roman" size:24.0f]
 #define FONT_BRANCH_ADDR [UIFont fontWithName:@"HelveticaNeueCyr-Roman" size:18.0f]
 #define FONT_SETTINGS_LABEL [UIFont fontWithName:@"HelveticaNeueCyr-Thin" size:20.0f]
 #define FONT_SETTINGS_VALUE [UIFont fontWithName:@"HelveticaNeueCyr-Roman" size:20.0f]
 #define SETT_POPUP_FONT [UIFont fontWithName:@"HelveticaNeueCyr-Thin" size:20.0f]
+
+#define FONT_ABOUT_CENTRALOFFICE [UIFont fontWithName:@"HelveticaNeueCyr-Light" size:24.0f]
+#define FONT_ABOUT_CALLOFFICE [UIFont fontWithName:@"HelveticaNeueCyr-Light" size:20.0f]
+#define FONT_ABOUT_ADDR [UIFont fontWithName:@"HelveticaNeueCyr-Light" size:15.0f]
+#define FONT_ABOUT_TOGGLE_BUTTONS [UIFont fontWithName:@"HelveticaNeueCyr-Light" size:20.0f]
+
+#define COLOR_ABOUT_CENTRALOFFICE [UIColor colorWithRed:(0x2d/255.f) green:(0x2d/255.f) blue:(0x2d/255.f) alpha:1.0f]
 
 /*
  ГАЗ 64

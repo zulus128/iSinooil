@@ -67,6 +67,9 @@
     UILabel* labelAZS = (UILabel*)[self.topView viewWithTag:TITLELABEL_TAG];
     labelAZS.font = FONT_STD_TOP_MENU;
     
+    [[self.listButton titleLabel] setFont:FONT_ABOUT_TOGGLE_BUTTONS];
+    [[self.mapButton titleLabel] setFont:FONT_ABOUT_TOGGLE_BUTTONS];
+
     [self mapTouchDown:self.mapButton];
 }
 

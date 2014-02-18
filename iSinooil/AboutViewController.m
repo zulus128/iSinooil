@@ -41,11 +41,11 @@
             NSString *myHTML = [NSString stringWithFormat:@"<html> \n"
                                 "<head> \n"
                                 "<style type=\"text/css\"> \n"
-                                "body {font-family: \"%@\"; font-size: %@;}\n"
+                                "body {font-family: \"%@\"; font-size: %@; line-height:1.4;}\n"
                                 "</style> \n"
                                 "</head> \n"
                                 "<body>%@</body> \n"
-                                "</html>", @"HelveticaNeueCyr-Light", [NSNumber numberWithInt:11], [d valueForKey:ABOUT_TXT]];
+                                "</html>", @"HelveticaNeueCyr-Light", [NSNumber numberWithInt:12], [d valueForKey:ABOUT_TXT]];
 
             [self.webview loadHTMLString:myHTML baseURL:nil];
             break;

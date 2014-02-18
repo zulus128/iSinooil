@@ -28,6 +28,7 @@
 @property (weak, nonatomic) IBOutlet UIView *centralOfficeView;
 @property (weak, nonatomic) IBOutlet UITableView *branchesTableView;
 @property (weak, nonatomic) IBOutlet UIButton *labout;
+@property (weak, nonatomic) IBOutlet UIButton *callButton;
 
 @property (nonatomic, strong) BranchesDataSource* brsour;
 
