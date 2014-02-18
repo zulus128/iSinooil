@@ -180,12 +180,12 @@
     self.attlLabel.textColor = [UIColor grayColor];
     self.abriefLabel.font = FONT_NEWS_BRIEF;
 
-    self.hotlineLabel.font = FONT_MAINMENU;
-    self.settingsLabel.font = FONT_MAINMENU;
+    self.hotlineLabel.font = FONT_MAINMENU_HOTLINE;
+    self.settingsLabel.font = FONT_MAINMENU_HOTLINE;
     self.seealsoLabel.font = FONT_MAINMENU_SEEALSO;
-    self.ishopLabel.font = FONT_MAINMENU;
-    self.siteLabel.font = FONT_MAINMENU;
-    self.netwLabel.font = FONT_MAINMENU;
+    self.ishopLabel.font = FONT_MAINMENU_ISHOP;
+    self.siteLabel.font = FONT_MAINMENU_ISHOP;
+    self.netwLabel.font = FONT_MAINMENU_ISHOP;
     
 }
 

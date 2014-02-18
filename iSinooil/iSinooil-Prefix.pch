@@ -42,7 +42,6 @@
 #define FONT_NEWS_TOPNEWS [UIFont fontWithName:@"HelveticaNeueCyr-Roman" size:18.0f]
 #define FONT_NEWS_DATE [UIFont fontWithName:@"HelveticaNeueCyr-Roman" size:14.0f]
 #define FONT_MAINMENU [UIFont fontWithName:@"HelveticaNeueCyr-Roman" size:18.0f]
-#define FONT_MAINMENU_SEEALSO [UIFont fontWithName:@"HelveticaNeueCyr-Roman" size:14.0f]
 #define FONT_BRANCH_TITLE [UIFont fontWithName:@"HelveticaNeueCyr-Roman" size:24.0f]
 #define FONT_BRANCH_ADDR [UIFont fontWithName:@"HelveticaNeueCyr-Roman" size:18.0f]
 #define FONT_SETTINGS_LABEL [UIFont fontWithName:@"HelveticaNeueCyr-Thin" size:20.0f]
@@ -56,6 +55,9 @@
 #define FONT_NEWS_TITLE [UIFont fontWithName:@"HelveticaNeueCyr-Light" size:24.0f]
 #define FONT_NEWS_BRIEF [UIFont fontWithName:@"HelveticaNeueCyr-Light" size:12.0f]
 #define FONT_ACTS_TITLE [UIFont fontWithName:@"HelveticaNeueCyr-Light" size:15.0f]
+#define FONT_MAINMENU_HOTLINE [UIFont fontWithName:@"HelveticaNeueCyr-Light" size:24.0f]
+#define FONT_MAINMENU_SEEALSO [UIFont fontWithName:@"HelveticaNeueCyr-Bold" size:15.0f]
+#define FONT_MAINMENU_ISHOP [UIFont fontWithName:@"HelveticaNeueCyr-Light" size:20.0f]
 
 #define COLOR_ABOUT_CENTRALOFFICE [UIColor colorWithRed:(0x2d/255.f) green:(0x2d/255.f) blue:(0x2d/255.f) alpha:1.0f]
 
