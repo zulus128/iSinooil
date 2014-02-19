@@ -11,6 +11,7 @@
 @interface BranchCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *branchLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *addrLabel;
+
+@property (weak, nonatomic) IBOutlet UIWebView *addrWebview;
 
 @end

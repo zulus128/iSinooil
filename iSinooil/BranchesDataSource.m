@@ -37,8 +37,19 @@
     cell.branchLabel.font = FONT_BRANCH_TITLE;
     cell.nameLabel.font = FONT_BRANCH_TITLE;
     cell.nameLabel.text = [branch valueForKey:ABOUT_TTL];
-    cell.addrLabel.font = FONT_BRANCH_ADDR;
-    cell.addrLabel.text = [branch valueForKey:ABOUT_TXT];
+//    cell.addrLabel.font = FONT_BRANCH_ADDR;
+//    cell.addrLabel.text = [branch valueForKey:ABOUT_TXT];
+    
+    NSString *myHTML = [NSString stringWithFormat:@"<html> \n"
+                        "<head> \n"
+                        "<style type=\"text/css\"> \n"
+                        "body {font-family: \"%@\"; font-size: %@; line-height:1.0;}\n"
+                        "</style> \n"
+                        "</head> \n"
+                        "<body>%@</body> \n"
+                        "</html>", @"HelveticaNeueCyr-Light", [NSNumber numberWithInt:12], [branch valueForKey:ABOUT_TXT]];
+    
+    [cell.addrWebview loadHTMLString:myHTML baseURL:nil];
     
     return cell;
 }

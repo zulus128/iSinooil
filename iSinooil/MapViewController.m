@@ -43,7 +43,6 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-
     
     self.mapView.userTrackingMode = MKUserTrackingModeFollow;
     CLLocationCoordinate2D noLocation;
@@ -157,8 +156,9 @@
     NSArray* tels = [dic objectForKey:STATION_PHONE];
     for (int i = 0; i < tels.count; i++) {
         
-        NSDictionary* d = [tels objectAtIndex:i];
-        NSString* tel = [d objectForKey:PHONE_NUMBER];
+//        NSDictionary* d = [tels objectAtIndex:i];
+//        NSString* tel = [d objectForKey:PHONE_NUMBER];
+        NSString* tel = (NSString*)[tels objectAtIndex:i];
         UILabel* number = [[UILabel alloc] initWithFrame:CGRectMake(20, y, 150, 40)];
         number.text = tel;
         number.tag = ICON_TAG;

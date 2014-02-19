@@ -1332,17 +1332,15 @@
                                                             <color key="textColor" red="0.9326872826" green="0.20602250859999999" blue="0.27544359439999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Addr" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="291" translatesAutoresizingMaskIntoConstraints="NO" id="Blj-VQ-e8P">
+                                                        <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XSa-3E-PH5">
                                                             <rect key="frame" x="20" y="61" width="291" height="52"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
+                                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </webView>
                                                     </subviews>
                                                 </tableViewCellContentView>
                                                 <connections>
-                                                    <outlet property="addrLabel" destination="Blj-VQ-e8P" id="YWN-QU-UCg"/>
+                                                    <outlet property="addrWebview" destination="XSa-3E-PH5" id="5WR-ER-8Yc"/>
                                                     <outlet property="branchLabel" destination="NNb-KT-B8G" id="2Vg-Gw-fMG"/>
                                                     <outlet property="nameLabel" destination="peL-pf-HSC" id="mFT-H3-MmC"/>
                                                 </connections>
