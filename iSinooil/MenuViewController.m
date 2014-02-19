@@ -18,11 +18,21 @@
     [self.navigationController setNavigationBarHidden:YES animated:animated];
 }
 
+//-(UIStatusBarStyle)preferredStatusBarStyle {
+//
+//    return UIStatusBarStyleLightContent;
+//}
+
+//- (BOOL)prefersStatusBarHidden {
+//    return NO; // your own visibility code
+//}
+
 - (void)viewDidLoad {
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    
+
+
     [Common instance].menucontr = self;
     
 //    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)?
@@ -120,7 +130,8 @@
         vc.view.hidden = (vc.view.tag != tag);
     }
 
-//    self.view.hidden = YES;
+    [[UIApplication sharedApplication] setStatusBarStyle:(tag == MAIN_VIEW_TAG)?UIStatusBarStyleDefault:UIStatusBarStyleLightContent animated:YES];
+
 }
 
 - (void) goLeft:(int) tag {
@@ -130,6 +141,7 @@
     [self makeInvisibleExcludeTag:tag];
 
 //    self.view.hidden = NO;
+
 
     UIView* view = [self.view viewWithTag:tag];
     CGRect fr = self.view.frame;

@@ -13,10 +13,6 @@
 #import "StationListDataSource.h"
 #import "MapPoint.h"
 
-@interface MapViewController ()
-
-@end
-
 @implementation MapViewController
 
 - (void) willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
@@ -41,12 +37,14 @@
     
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:animated];
+
 }
 
 - (void)viewDidLoad {
     
     [super viewDidLoad];
 
+    
     self.mapView.userTrackingMode = MKUserTrackingModeFollow;
     CLLocationCoordinate2D noLocation;
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(noLocation, 500, 500);

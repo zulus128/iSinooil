@@ -109,3 +109,7 @@ enum {M_KM, M_MI, M_MT}; //km, miles, metres
 @property (nonatomic, weak) MenuViewController* menucontr;
 
 @end
+
+//@interface UINavigationController (StatusBarStyle)
+//
+//@end

@@ -14,6 +14,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [TestFlight takeOff:@"d2f5e1af-8cd7-463e-b1b5-4f6fd0319b12"];
+    
+    
+//    [application setStatusBarHidden:NO];
+//    [application setStatusBarStyle:UIStatusBarStyleDefault];
+//    [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
+//    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+
     return YES;
 }
 							

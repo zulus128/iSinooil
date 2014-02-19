@@ -146,12 +146,25 @@
     
 }
 
+//-(UIStatusBarStyle)preferredStatusBarStyle {
+//    
+////    return UIStatusBarStyleLightContent;
+//    return UIStatusBarStyleDefault;
+//}
+
+
+
 - (void)viewDidLoad {
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    
+//    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
 
+//    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+//    [self setNeedsStatusBarAppearanceUpdate];
+//    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+//    self.navigationController.navigationBarHidden = YES;
+    
     self.mapView.userTrackingMode = MKUserTrackingModeFollow;
     CLLocationCoordinate2D noLocation;
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(noLocation, 500, 500);
@@ -220,6 +233,9 @@
                      }
                      completion:^(BOOL finished) {
                      }];
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:!b?UIStatusBarStyleDefault:UIStatusBarStyleLightContent animated:YES];
+
 }
 
 - (IBAction)tapPrice:(id)sender {
