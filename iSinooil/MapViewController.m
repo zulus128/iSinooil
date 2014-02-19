@@ -12,6 +12,7 @@
 #import "MapSource.h"
 #import "StationListDataSource.h"
 #import "MapPoint.h"
+#import "StationDetailViewController.h"
 
 @implementation MapViewController
 
@@ -22,6 +23,9 @@
     CGSize s = [Common currentScreenBoundsDependOnOrientation:toInterfaceOrientation];
     self.topView.frame = CGRectMake(0, 0, s.width, s.height);
     
+//    self.detailViewH.constant = s.height;
+//    self.detailViewW.constant = s.width;
+
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -125,176 +129,10 @@
     return STATIONCELL_HEIGHT;
 }
 
-- (void)callTel:(UIButton*)button {
- 
-    long i = button.tag - ICON_TAG;
-//    NSLog(@"call %ld", i);
-    
-    NSDictionary* dic = [[Common instance].azsjson objectAtIndex:selectedRow];
-    NSArray* tels = [dic objectForKey:STATION_PHONE];
-    NSDictionary* d = [tels objectAtIndex:i];
-    NSString* tel = [d objectForKey:PHONE_NUMBER];
-
-    NSString *phoneNumber = [@"telprompt://" stringByAppendingString:tel];
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
-}
-
 - (void) showStationDetails {
 
-    NSDictionary* dic = [[Common instance].azsjson objectAtIndex:selectedRow];
-    NSString* num = [dic objectForKey:STATION_TITLE];
-    self.stationNumberLab.text = [[num componentsSeparatedByString:@"№"] objectAtIndex:1];
-    self.stationDescrLab.text = [dic objectForKey:STATION_DESCR];
-    
-    for (UIView* v in self.stationDetailView.subviews) {
-        if(v.tag >= ICON_TAG)
-            [v removeFromSuperview];
-    }
-    
-    float y = 180;
-    
-    NSArray* tels = [dic objectForKey:STATION_PHONE];
-    for (int i = 0; i < tels.count; i++) {
-        
-//        NSDictionary* d = [tels objectAtIndex:i];
-//        NSString* tel = [d objectForKey:PHONE_NUMBER];
-        NSString* tel = (NSString*)[tels objectAtIndex:i];
-        UILabel* number = [[UILabel alloc] initWithFrame:CGRectMake(20, y, 150, 40)];
-        number.text = tel;
-        number.tag = ICON_TAG;
-        [self.stationDetailView addSubview:number];
-        
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        [button addTarget:self action:@selector(callTel:) forControlEvents:UIControlEventTouchDown];
-        [button setTitle:@"Call" forState:UIControlStateNormal];
-        [button setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
-        button.frame = CGRectMake(150.0, y + 5, 40.0, 30.0);
-        button.tag = ICON_TAG + i;
-        [self.stationDetailView addSubview:button];
-        
-        y += 40;
-    }
-    
-    int fuel = ((NSNumber*)[dic valueForKey:STATION_FUEL]).intValue;
-    //    NSLog(@"fuel = %d", fuel);
-    float x = 20;
-    y += 10;
-    
-    for (int i = FUEL_BIT_97; i <= FUEL_BIT_GAS; i = (i << 1)) {
-        
-        if (!(fuel & i))
-            continue;
-        
-        NSString* icon = @"icon_97.png";
-        switch (i) {
-            case FUEL_BIT_97:
-                icon = @"icon_97.png";
-                break;
-            case FUEL_BIT_96:
-                icon = @"icon_96.png";
-                break;
-            case FUEL_BIT_93:
-                icon = @"icon_93.png";
-                break;
-            case FUEL_BIT_92:
-                icon = @"icon_92.png";
-                break;
-            case FUEL_BIT_80:
-                icon = @"icon_80.png";
-                break;
-            case FUEL_BIT_DT:
-                icon = @"icon_diesel.png";
-                break;
-            case FUEL_BIT_GAS:
-                icon = @"icon_diesel.png";
-                break;
-        }
-        
-        UIImageView* iv = [[UIImageView alloc] initWithFrame:CGRectMake(x, y, ICON_SIZE, ICON_SIZE)];
-        iv.image = [UIImage imageNamed:icon];
-        iv.tag = ICON_TAG;
-        [self.stationDetailView addSubview:iv];
-        
-        x += GAP_SIZE2;
-    }
-    
-    x = 20;
-    y += 40;
-    int serv = ((NSNumber*)[dic valueForKey:STATION_SERV]).intValue;
-    //    NSLog(@"serv = %d", serv);
-    for (int i = SERV_BIT_MARKET; i <= SERV_BIT_WHEEL; i = (i << 1)) {
-        
-        if (!(serv & i))
-            continue;
-        
-        NSString* icon = @"icon_market.png";
-        switch (i) {
-            case SERV_BIT_MARKET:
-                icon = @"icon_market.png";
-                break;
-            case SERV_BIT_CAFE:
-                icon = @"icon_cafe.png";
-                break;
-            case SERV_BIT_TERM:
-                icon = @"icon_terminal.png";
-                break;
-            case SERV_BIT_ATM:
-                icon = @"icon_atm.png";
-                break;
-            case SERV_BIT_WASH:
-                icon = @"icon_wash.png";
-                break;
-            case SERV_BIT_STO:
-                icon = @"icon_service.png";
-                break;
-            case SERV_BIT_OIL:
-                icon = @"icon_oil.png";
-                break;
-            case SERV_BIT_WHEEL:
-                icon = @"icon_wheel.png";
-                break;
-        }
-        
-        UIImageView* iv = [[UIImageView alloc] initWithFrame:CGRectMake(x, y, ICON_SIZE, ICON_SIZE)];
-        iv.image = [UIImage imageNamed:icon];
-        iv.tag = ICON_TAG;
-        [self.stationDetailView addSubview:iv];
-        
-        x += GAP_SIZE2;
-    }
-    
-    x = 20;
-    y += 40;
-    int card = ((NSNumber*)[dic valueForKey:STATION_CARD]).intValue;
-    //    NSLog(@"card = %d", card);
-    for (int i = CARD_BIT_VISA; i <= CARD_BIT_MC; i = (i << 1)) {
-        
-        if (!(card & i))
-            continue;
-        
-        NSString* icon = @"icon_visa.png";
-        switch (i) {
-            case CARD_BIT_VISA:
-                icon = @"icon_visa.png";
-                break;
-            case CARD_BIT_AE:
-                icon = @"icon_amer.png";
-                break;
-            case CARD_BIT_MC:
-                icon = @"icon_master.png";
-                break;
-        }
-        
-        UIImageView* iv = [[UIImageView alloc] initWithFrame:CGRectMake(x, y, ICON_SIZE, ICON_SIZE)];
-        iv.image = [UIImage imageNamed:icon];
-        iv.tag = ICON_TAG;
-        [self.stationDetailView addSubview:iv];
-        
-        x += GAP_SIZE2;
-    }
-    
-    self.stationDetailView.hidden = NO;
-
+    StationDetailViewController* detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"stationDetailController"];
+    [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
 - (IBAction)mapTouchDown:(UIButton*)button {
@@ -342,14 +180,16 @@
 
 - (void) showDetail:(int)num {
 
-    selectedRow = num;
+//    selectedRow = num;
+    [Common instance].stationRowSelected = num;
     [self showStationDetails];
 
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    selectedRow = indexPath.row;
+//    selectedRow = indexPath.row;
+    [Common instance].stationRowSelected = indexPath.row;
     [self showStationDetails];
 }
 

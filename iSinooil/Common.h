@@ -99,6 +99,7 @@ enum {M_KM, M_MI, M_MT}; //km, miles, metres
 @property (assign, readwrite) CLLocationCoordinate2D userCoordinate;
 @property (nonatomic, strong) MKMapView* mymapview;
 @property (assign, readwrite) int fuelSelected;
+@property (assign, readwrite) int stationRowSelected;
 @property (assign, readwrite) int lastNews;
 @property (assign, readwrite) int lastAct;
 @property (nonatomic, strong) NSDictionary* topnews;
@@ -109,7 +110,3 @@ enum {M_KM, M_MI, M_MT}; //km, miles, metres
 @property (nonatomic, weak) MenuViewController* menucontr;
 
 @end
-
-//@interface UINavigationController (StatusBarStyle)
-//
-//@end

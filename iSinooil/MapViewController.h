@@ -14,7 +14,7 @@
 
 @interface MapViewController : UIViewController <UITableViewDelegate> {
     
-    long selectedRow;
+//    long selectedRow;
 }
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
@@ -29,7 +29,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *mapButton;
 - (IBAction)listTouchDown:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *listButton;
-
 
 - (void) showDetail:(int)num;
 

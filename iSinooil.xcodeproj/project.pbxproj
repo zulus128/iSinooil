@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84397BB718B4F61D0059C1D8 /* StationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84397BB618B4F61D0059C1D8 /* StationDetailViewController.m */; };
 		844293A518A1ED0F00DDC7F3 /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = 844293A418A1ED0F00DDC7F3 /* UIScrollView+SVInfiniteScrolling.m */; };
 		844293AD18A1EDC700DDC7F3 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 844293A718A1EDC700DDC7F3 /* libTestFlight.a */; };
 		844293AE18A1EDC700DDC7F3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 844293A818A1EDC700DDC7F3 /* README.md */; };
@@ -188,6 +189,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		84397BB518B4F61D0059C1D8 /* StationDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationDetailViewController.h; sourceTree = "<group>"; };
+		84397BB618B4F61D0059C1D8 /* StationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationDetailViewController.m; sourceTree = "<group>"; };
 		844293A318A1ED0F00DDC7F3 /* UIScrollView+SVInfiniteScrolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVInfiniteScrolling.h"; sourceTree = "<group>"; };
 		844293A418A1ED0F00DDC7F3 /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
 		844293A718A1EDC700DDC7F3 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
@@ -665,6 +668,8 @@
 				DDA70D201876DA7200C89F86 /* MapPoint.m */,
 				DDA70D221876E0DD00C89F86 /* MapSource.h */,
 				DDA70D231876E0DD00C89F86 /* MapSource.m */,
+				84397BB518B4F61D0059C1D8 /* StationDetailViewController.h */,
+				84397BB618B4F61D0059C1D8 /* StationDetailViewController.m */,
 			);
 			name = maps;
 			sourceTree = "<group>";
@@ -1022,6 +1027,7 @@
 				DDBE9BAC18A66BEE000FB34D /* BranchesDataSource.m in Sources */,
 				84C68CC2188E524200FD68D0 /* PriceViewController.m in Sources */,
 				DDBE9BC418A6ADDB000FB34D /* UIViewController+Refresh.m in Sources */,
+				84397BB718B4F61D0059C1D8 /* StationDetailViewController.m in Sources */,
 				84FDF89D187AA9610082595A /* StationViewCell.m in Sources */,
 				DDEB48B518544CF5006FAED3 /* MyMapView.m in Sources */,
 				849A29AC18A22EDF00A68987 /* ActCell.m in Sources */,
