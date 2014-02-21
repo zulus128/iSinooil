@@ -12,20 +12,25 @@
 
 - (void) willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
     
-    CGSize s = [Common currentScreenBoundsDependOnOrientation:toInterfaceOrientation];
-
-    self.detailViewH.constant = s.height - 70;
-    self.detailViewW.constant = s.width;
- 
     [self refresh];
 }
 
 - (void) refresh {
-    
+
+    [self.backlab setTitle:NSLocalizedString(@"StationList", nil) forState:UIControlStateNormal];
+
+    CGSize s = [Common currentScreenBounds];
+    self.detailViewW.constant = s.width;
+
     NSDictionary* dic = [[Common instance].azsjson objectAtIndex:[Common instance].stationRowSelected];
     NSString* num = [dic objectForKey:STATION_TITLE];
     self.stationNumberLab.text = [[num componentsSeparatedByString:@"№"] objectAtIndex:1];
     self.stationDescrLab.text = [dic objectForKey:STATION_DESCR];
+
+    self.st_name1.text = [[num componentsSeparatedByString:@"№"] objectAtIndex:0];
+    self.st_name.text = num;
+    
+//    NSLog(@"station = %@", dic);
     
     for (UIView* v in self.stationDetailView.subviews) {
         if(v.tag >= ICON_TAG)
@@ -33,28 +38,6 @@
     }
     
     float y = 180;
-    
-    NSArray* tels = [dic objectForKey:STATION_PHONE];
-    for (int i = 0; i < tels.count; i++) {
-        
-        //        NSDictionary* d = [tels objectAtIndex:i];
-        //        NSString* tel = [d objectForKey:PHONE_NUMBER];
-        NSString* tel = (NSString*)[tels objectAtIndex:i];
-        UILabel* number = [[UILabel alloc] initWithFrame:CGRectMake(20, y, 150, 40)];
-        number.text = tel;
-        number.tag = ICON_TAG;
-        [self.stationDetailView addSubview:number];
-        
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        [button addTarget:self action:@selector(callTel:) forControlEvents:UIControlEventTouchDown];
-        [button setTitle:@"Call" forState:UIControlStateNormal];
-        [button setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
-        button.frame = CGRectMake(150.0, y + 5, 40.0, 30.0);
-        button.tag = ICON_TAG + i;
-        [self.stationDetailView addSubview:button];
-        
-        y += 40;
-    }
     
     int fuel = ((NSNumber*)[dic valueForKey:STATION_FUEL]).intValue;
     //    NSLog(@"fuel = %d", fuel);
@@ -97,10 +80,15 @@
         [self.stationDetailView addSubview:iv];
         
         x += GAP_SIZE2;
+        if(x >= (s.width - 20)) {
+            x = 20;
+            y += 40;
+        }
+
     }
     
-    x = 20;
-    y += 40;
+//    x = 20;
+//    y += 40;
     int serv = ((NSNumber*)[dic valueForKey:STATION_SERV]).intValue;
     //    NSLog(@"serv = %d", serv);
     for (int i = SERV_BIT_MARKET; i <= SERV_BIT_WHEEL; i = (i << 1)) {
@@ -142,10 +130,14 @@
         [self.stationDetailView addSubview:iv];
         
         x += GAP_SIZE2;
+        if(x >= (s.width - 20)) {
+            x = 20;
+            y += 40;
+        }
     }
     
-    x = 20;
-    y += 40;
+//    x = 20;
+//    y += 40;
     int card = ((NSNumber*)[dic valueForKey:STATION_CARD]).intValue;
     //    NSLog(@"card = %d", card);
     for (int i = CARD_BIT_VISA; i <= CARD_BIT_MC; i = (i << 1)) {
@@ -172,10 +164,57 @@
         [self.stationDetailView addSubview:iv];
         
         x += GAP_SIZE2;
+        if(x >= (s.width - 20)) {
+            x = 20;
+            y += 40;
+        }
     }
+
+    y += 80;
+
+    NSArray* tels = [dic objectForKey:STATION_PHONE];
+    for (int i = 0; i < tels.count; i++) {
+
+        //        NSDictionary* d = [tels objectAtIndex:i];
+        //        NSString* tel = [d objectForKey:PHONE_NUMBER];
+
+        NSString* tel = (NSString*)[tels objectAtIndex:i];
+//        UILabel* number = [[UILabel alloc] initWithFrame:CGRectMake(20, y, 150, 40)];
+//        number.text = tel;
+//        number.tag = ICON_TAG;
+//        [self.stationDetailView addSubview:number];
+
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [button addTarget:self action:@selector(callTel:) forControlEvents:UIControlEventTouchDown];
+        [button setTitle:tel forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        button.frame = CGRectMake(8, y, 305, 60);
+        button.tag = ICON_TAG + i;
+        [button setImage:[UIImage imageNamed:@"icon_call.png"] forState:UIControlStateNormal];
+        button.imageEdgeInsets = UIEdgeInsetsMake(0, -50, 0, 0);
+        [button setBackgroundImage:[UIImage imageNamed:@"button2.png"] forState:UIControlStateNormal];
+        [self.stationDetailView addSubview:button];
+        
+        y += 70;
+    }
+
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button addTarget:self action:@selector(callBack:) forControlEvents:UIControlEventTouchDown];
+    [button setTitle:NSLocalizedString(@"Feedback", nil) forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    button.frame = CGRectMake(8, y, 305, 60);
+    button.tag = ICON_TAG;
+    [button setImage:[UIImage imageNamed:@"icon_feedback.png"] forState:UIControlStateNormal];
+    button.imageEdgeInsets = UIEdgeInsetsMake(0, -50, 0, 0);
+    [button setBackgroundImage:[UIImage imageNamed:@"button1.png"] forState:UIControlStateNormal];
+    [self.stationDetailView addSubview:button];
+
+    y += 60;
     
-//    self.stationDetailView.hidden = NO;
-    
+    self.detailViewH.constant = y;
+}
+
+- (void)callBack:(UIButton*)button {
 }
 
 - (void)callTel:(UIButton*)button {

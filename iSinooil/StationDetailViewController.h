@@ -19,5 +19,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *stationNumberLab;
 @property (weak, nonatomic) IBOutlet UILabel *stationDescrLab;
 @property (weak, nonatomic) IBOutlet UIView *stationDetailView;
+@property (weak, nonatomic) IBOutlet UIButton *backlab;
+@property (weak, nonatomic) IBOutlet UILabel *st_name;
+@property (weak, nonatomic) IBOutlet UILabel *st_name1;
 
 @end
