@@ -10,6 +10,7 @@
 #import <MapKit/MapKit.h>
 #import "PriceCell.h"
 #import "MenuViewController.h"
+#import "Reachability.h"
 
 @implementation Common
 
@@ -50,6 +51,44 @@
         NSString* path = [[NSBundle mainBundle] pathForResource:ls ofType:@"lproj"];
         self.languageBundle = [NSBundle bundleWithPath:path];
         self.lang = l;
+        
+        
+        Reachability* internetReachable = [Reachability reachabilityForInternetConnection];
+        NetworkStatus internetStatus = [internetReachable currentReachabilityStatus];
+        switch (internetStatus)
+        {
+            case NotReachable:
+            {
+                NSLog(@"The internet is down.");
+                self.internetActive = NO;
+                
+                break;
+            }
+            case ReachableViaWiFi:
+            {
+                NSLog(@"The internet is working via WIFI.");
+                self.internetActive = YES;
+                
+                break;
+            }
+            case ReachableViaWWAN:
+            {
+                NSLog(@"The internet is working via WWAN.");
+                self.internetActive = YES;
+                
+                break;
+            }
+        }
+        
+        if(!self.internetActive) {
+            
+            UIAlertView* dialog = [[UIAlertView alloc] init];
+            [dialog setTitle:NSLocalizedString1(@"title_network_error", nil)];
+            [dialog setMessage:NSLocalizedString1(@"network_error", nil)];
+            [dialog addButtonWithTitle:@"OK"];
+            [dialog show];
+
+        }
         
         [self loadAboutData];
         [self loadAzsData];
@@ -225,11 +264,11 @@
     NSError *error = nil;
     NSData* responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
     if (responseData == nil) {
-        if (error != nil) {
+        if ((error != nil) && self.internetActive) {
             
             UIAlertView* dialog = [[UIAlertView alloc] init];
-            [dialog setTitle:NSLocalizedString(@"title_network_error", nil)];
-            [dialog setMessage:NSLocalizedString(@"network_error", nil)];
+            [dialog setTitle:NSLocalizedString1(@"title_network_error", nil)];
+            [dialog setMessage:NSLocalizedString1(@"network_error", nil)];
             [dialog addButtonWithTitle:@"OK"];
             [dialog show];
         }
@@ -267,11 +306,11 @@
     NSError *error = nil;
     NSData* responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
     if (responseData == nil) {
-        if (error != nil) {
+        if ((error != nil) && self.internetActive) {
             
             UIAlertView* dialog = [[UIAlertView alloc] init];
-            [dialog setTitle:NSLocalizedString(@"title_network_error", nil)];
-            [dialog setMessage:NSLocalizedString(@"network_error", nil)];
+            [dialog setTitle:NSLocalizedString1(@"title_network_error", nil)];
+            [dialog setMessage:NSLocalizedString1(@"network_error", nil)];
             [dialog addButtonWithTitle:@"OK"];
             [dialog show];
         }
@@ -369,11 +408,11 @@
     NSError *error = nil;
     NSData* responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
     if (responseData == nil) {
-        if (error != nil) {
+        if ((error != nil) && self.internetActive) {
             
             UIAlertView* dialog = [[UIAlertView alloc] init];
-            [dialog setTitle:NSLocalizedString(@"title_network_error", nil)];
-            [dialog setMessage:NSLocalizedString(@"network_error", nil)];
+            [dialog setTitle:NSLocalizedString1(@"title_network_error", nil)];
+            [dialog setMessage:NSLocalizedString1(@"network_error", nil)];
             [dialog addButtonWithTitle:@"OK"];
             [dialog show];
         }
@@ -435,11 +474,11 @@
     NSError *error = nil;
     NSData* responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
     if (responseData == nil) {
-        if (error != nil) {
+        if ((error != nil) && self.internetActive) {
             
             UIAlertView* dialog = [[UIAlertView alloc] init];
-            [dialog setTitle:NSLocalizedString(@"title_network_error", nil)];
-            [dialog setMessage:NSLocalizedString(@"network_error", nil)];
+            [dialog setTitle:NSLocalizedString1(@"title_network_error", nil)];
+            [dialog setMessage:NSLocalizedString1(@"network_error", nil)];
             [dialog addButtonWithTitle:@"OK"];
             [dialog show];
         }
@@ -466,11 +505,11 @@
     NSError *error = nil;
     NSData* responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
     if (responseData == nil) {
-        if (error != nil) {
+        if ((error != nil) && self.internetActive) {
             
             UIAlertView* dialog = [[UIAlertView alloc] init];
-            [dialog setTitle:NSLocalizedString(@"title_network_error", nil)];
-            [dialog setMessage:NSLocalizedString(@"network_error", nil)];
+            [dialog setTitle:NSLocalizedString1(@"title_network_error", nil)];
+            [dialog setMessage:NSLocalizedString1(@"network_error", nil)];
             [dialog addButtonWithTitle:@"OK"];
             [dialog show];
         }
@@ -497,11 +536,11 @@
     NSError *error = nil;
     NSData* responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
     if (responseData == nil) {
-        if (error != nil) {
+        if ((error != nil) && self.internetActive) {
             
             UIAlertView* dialog = [[UIAlertView alloc] init];
-            [dialog setTitle:NSLocalizedString(@"title_network_error", nil)];
-            [dialog setMessage:NSLocalizedString(@"network_error", nil)];
+            [dialog setTitle:NSLocalizedString1(@"title_network_error", nil)];
+            [dialog setMessage:NSLocalizedString1(@"network_error", nil)];
             [dialog addButtonWithTitle:@"OK"];
             [dialog show];
         }
@@ -682,6 +721,33 @@
 	NSString* encodedPoints = [apiResponse substringWithRange:NSMakeRange(r1.location + 8, r2.location - r1.location - 10)];
 	return [Common decodePolyLine:[encodedPoints mutableCopy]];
 }
+
+- (void) regDeviceForPush:(NSString*)dev_id {
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:DEVICE_REG_URL, dev_id]]];
+    
+    NSHTTPURLResponse* urlResponse = nil;
+    NSError *error = nil;
+    NSData* responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
+    if (responseData == nil) {
+        if ((error != nil) && self.internetActive) {
+            
+            UIAlertView* dialog = [[UIAlertView alloc] init];
+            [dialog setTitle:NSLocalizedString1(@"title_network_error", nil)];
+            [dialog setMessage:NSLocalizedString1(@"network_error", nil)];
+            [dialog addButtonWithTitle:@"OK"];
+            [dialog show];
+        }
+    }
+    else {
+        
+        NSString* newStr = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+        NSLog(@"device registered OK:%@", newStr);
+    }
+    
+}
+
 
 @end
 

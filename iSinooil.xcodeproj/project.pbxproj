@@ -57,6 +57,10 @@
 		9CF17A6818431F80007FF8D9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF17A4718431F7F007FF8D9 /* UIKit.framework */; };
 		9CF17A7018431F80007FF8D9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9CF17A6E18431F80007FF8D9 /* InfoPlist.strings */; };
 		9CF17A7218431F80007FF8D9 /* iSinooilTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF17A7118431F80007FF8D9 /* iSinooilTests.m */; };
+		DD1E4A7718C314A4008658ED /* icon_fueltype.png in Resources */ = {isa = PBXBuildFile; fileRef = DD1E4A7618C314A4008658ED /* icon_fueltype.png */; };
+		DD1E4A7A18C31E51008658ED /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = DD1E4A7918C31E51008658ED /* Reachability.m */; };
+		DD1E4A7C18C324B9008658ED /* acts.json in Resources */ = {isa = PBXBuildFile; fileRef = DD1E4A7B18C324B9008658ED /* acts.json */; };
+		DD1E4A7F18C32A95008658ED /* HotlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD1E4A7E18C32A95008658ED /* HotlineViewController.m */; };
 		DD3F746A189E082F0082CD30 /* placeholder-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DD3F7459189E082F0082CD30 /* placeholder-icon.png */; };
 		DD3F746B189E082F0082CD30 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3F745B189E082F0082CD30 /* SDImageCache.m */; };
 		DD3F746C189E082F0082CD30 /* SDWebImageDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3F745F189E082F0082CD30 /* SDWebImageDecoder.m */; };
@@ -67,7 +71,6 @@
 		DD3F7473189E147F0082CD30 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3F7472189E147F0082CD30 /* NewsViewController.m */; };
 		DD3F7476189E15260082CD30 /* NewsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3F7475189E15260082CD30 /* NewsDataSource.m */; };
 		DD3F7479189E164C0082CD30 /* NewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3F7478189E164C0082CD30 /* NewsCell.m */; };
-		DD46151718751E88008FCD16 /* article.json in Resources */ = {isa = PBXBuildFile; fileRef = DD46151318751E88008FCD16 /* article.json */; };
 		DD46151818751E88008FCD16 /* azs.json in Resources */ = {isa = PBXBuildFile; fileRef = DD46151418751E88008FCD16 /* azs.json */; };
 		DD46151918751E88008FCD16 /* fuel.json in Resources */ = {isa = PBXBuildFile; fileRef = DD46151518751E88008FCD16 /* fuel.json */; };
 		DD46151A18751E88008FCD16 /* news.json in Resources */ = {isa = PBXBuildFile; fileRef = DD46151618751E88008FCD16 /* news.json */; };
@@ -258,6 +261,12 @@
 		9CF17A6D18431F80007FF8D9 /* iSinooilTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iSinooilTests-Info.plist"; sourceTree = "<group>"; };
 		9CF17A6F18431F80007FF8D9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9CF17A7118431F80007FF8D9 /* iSinooilTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iSinooilTests.m; sourceTree = "<group>"; };
+		DD1E4A7618C314A4008658ED /* icon_fueltype.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_fueltype.png; sourceTree = "<group>"; };
+		DD1E4A7818C31E51008658ED /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		DD1E4A7918C31E51008658ED /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		DD1E4A7B18C324B9008658ED /* acts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = acts.json; sourceTree = "<group>"; };
+		DD1E4A7D18C32A95008658ED /* HotlineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotlineViewController.h; sourceTree = "<group>"; };
+		DD1E4A7E18C32A95008658ED /* HotlineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotlineViewController.m; sourceTree = "<group>"; };
 		DD3F7459189E082F0082CD30 /* placeholder-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder-icon.png"; sourceTree = "<group>"; };
 		DD3F745A189E082F0082CD30 /* SDImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDImageCache.h; sourceTree = "<group>"; };
 		DD3F745B189E082F0082CD30 /* SDImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDImageCache.m; sourceTree = "<group>"; };
@@ -281,7 +290,6 @@
 		DD3F7475189E15260082CD30 /* NewsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsDataSource.m; sourceTree = "<group>"; };
 		DD3F7477189E164C0082CD30 /* NewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsCell.h; sourceTree = "<group>"; };
 		DD3F7478189E164C0082CD30 /* NewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsCell.m; sourceTree = "<group>"; };
-		DD46151318751E88008FCD16 /* article.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = article.json; sourceTree = "<group>"; };
 		DD46151418751E88008FCD16 /* azs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = azs.json; sourceTree = "<group>"; };
 		DD46151518751E88008FCD16 /* fuel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fuel.json; sourceTree = "<group>"; };
 		DD46151618751E88008FCD16 /* news.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = news.json; sourceTree = "<group>"; };
@@ -559,6 +567,8 @@
 				DDBE9BC318A6ADDB000FB34D /* UIViewController+Refresh.m */,
 				DDC873541875ADF600393876 /* Common.h */,
 				DDC873551875ADF600393876 /* Common.m */,
+				DD1E4A7818C31E51008658ED /* Reachability.h */,
+				DD1E4A7918C31E51008658ED /* Reachability.m */,
 				9CF17A5E18431F7F007FF8D9 /* Images.xcassets */,
 				9CF17A4A18431F7F007FF8D9 /* Supporting Files */,
 			);
@@ -624,7 +634,7 @@
 		DD46151218751E7A008FCD16 /* jsons */ = {
 			isa = PBXGroup;
 			children = (
-				DD46151318751E88008FCD16 /* article.json */,
+				DD1E4A7B18C324B9008658ED /* acts.json */,
 				DD46151418751E88008FCD16 /* azs.json */,
 				DD46151518751E88008FCD16 /* fuel.json */,
 				DD46151618751E88008FCD16 /* news.json */,
@@ -654,6 +664,8 @@
 				DDC8735218754F4200393876 /* MenuViewController.m */,
 				DDBE9BB218A674A9000FB34D /* SettingsViewController.h */,
 				DDBE9BB318A674A9000FB34D /* SettingsViewController.m */,
+				DD1E4A7D18C32A95008658ED /* HotlineViewController.h */,
+				DD1E4A7E18C32A95008658ED /* HotlineViewController.m */,
 				DDA70D281876EA5700C89F86 /* maps */,
 			);
 			name = Controller;
@@ -695,6 +707,7 @@
 				DDEB484018542883006FAED3 /* icon_fb@2x.png */,
 				DDEB484118542883006FAED3 /* icon_feedback@2x.png */,
 				DDEB484218542883006FAED3 /* icon_fuel@2x.png */,
+				DD1E4A7618C314A4008658ED /* icon_fueltype.png */,
 				DDEB484318542883006FAED3 /* icon_hotline@2x.png */,
 				DDEB484418542883006FAED3 /* icon_language@2x.png */,
 				DDEB484518542883006FAED3 /* icon_menu@2x.png */,
@@ -896,7 +909,6 @@
 				DD3F746A189E082F0082CD30 /* placeholder-icon.png in Resources */,
 				DDEB489018542883006FAED3 /* icon_wash_pressed@2x.png in Resources */,
 				DDEB489518542883006FAED3 /* icon_call@2x.png in Resources */,
-				DD46151718751E88008FCD16 /* article.json in Resources */,
 				DDC8734D1875301A00393876 /* Localizable.strings in Resources */,
 				DDEB485A18542883006FAED3 /* arrowleft_white@2x.png in Resources */,
 				84DA054B187D846D004592EC /* HelveticaNeueCyr-Black.otf in Resources */,
@@ -947,8 +959,10 @@
 				84CC0F8C18A4B1AF006F84C6 /* contacts@2x.png in Resources */,
 				DDEB489D18542883006FAED3 /* icon_settings@2x.png in Resources */,
 				84DA054F187D846D004592EC /* HelveticaNeueCyr-Italic.otf in Resources */,
+				DD1E4A7718C314A4008658ED /* icon_fueltype.png in Resources */,
 				DDEB489E18542883006FAED3 /* icon_social_over@2x.png in Resources */,
 				DDEB48A918542883006FAED3 /* tab_left@2x.png in Resources */,
+				DD1E4A7C18C324B9008658ED /* acts.json in Resources */,
 				DDEB487118542883006FAED3 /* icon_amer_inactive@2x.png in Resources */,
 				844293AE18A1EDC700DDC7F3 /* README.md in Resources */,
 				DDEB485C18542883006FAED3 /* arrowup_light@2x.png in Resources */,
@@ -1042,6 +1056,7 @@
 				DD3F7476189E15260082CD30 /* NewsDataSource.m in Sources */,
 				DDB2E9A0189E3A5D0080FE75 /* NewsDetailViewController.m in Sources */,
 				DDBE9BAF18A66D20000FB34D /* BranchCell.m in Sources */,
+				DD1E4A7F18C32A95008658ED /* HotlineViewController.m in Sources */,
 				DDA70D211876DA7200C89F86 /* MapPoint.m in Sources */,
 				DDC8735318754F4200393876 /* MenuViewController.m in Sources */,
 				DD3F746B189E082F0082CD30 /* SDImageCache.m in Sources */,
@@ -1052,6 +1067,7 @@
 				DDBE9BB418A674A9000FB34D /* SettingsViewController.m in Sources */,
 				9CF17A5018431F7F007FF8D9 /* main.m in Sources */,
 				846938E6187A81640037CABC /* StationListDataSource.m in Sources */,
+				DD1E4A7A18C31E51008658ED /* Reachability.m in Sources */,
 				84CC0F7F18A4AFC9006F84C6 /* AboutViewController.m in Sources */,
 				DD3F7473189E147F0082CD30 /* NewsViewController.m in Sources */,
 				DD3F746E189E082F0082CD30 /* SDWebImageManager.m in Sources */,
@@ -1200,8 +1216,8 @@
 		9CF17A7618431F80007FF8D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iSinooil/iSinooil-Prefix.pch";
 				INFOPLIST_FILE = "iSinooil/iSinooil-Info.plist";
@@ -1221,8 +1237,8 @@
 		9CF17A7718431F80007FF8D9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iSinooil/iSinooil-Prefix.pch";
 				INFOPLIST_FILE = "iSinooil/iSinooil-Info.plist";

@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "TestFlight.h"
+#import "Common.h"
 
 @implementation AppDelegate
 
@@ -30,11 +31,21 @@
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken  {
 
     NSLog(@"My PUSH token is: %@", deviceToken);
+//    NSString* newStr = [[NSString alloc] initWithData:deviceToken encoding:NSUTF8StringEncoding];
+    NSString * tokenAsString = [[[deviceToken description]
+                                 stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]]
+                                stringByReplacingOccurrencesOfString:@" " withString:@""];
+    [[Common instance] regDeviceForPush:tokenAsString];
+    [[NSUserDefaults standardUserDefaults] setObject:tokenAsString forKey:DEVICE_TOKEN];
+
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
     
     NSLog(@"Failed to get PUSH token, error: %@", error);
+    [[Common instance] regDeviceForPush:PUSH_ID_FOR_SIMULATOR];
+   [[NSUserDefaults standardUserDefaults] setObject:PUSH_ID_FOR_SIMULATOR forKey:DEVICE_TOKEN];
+
 }
 
 - (void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {

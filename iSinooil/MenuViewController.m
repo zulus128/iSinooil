@@ -98,6 +98,15 @@
     viewController.view.frame = CGRectMake(fr.size.width - deltaX, fr.origin.y, fr.size.width, fr.size.height);
     viewController.view.hidden = YES;
     
+    viewController =  [self.storyboard instantiateViewControllerWithIdentifier:@"hotlineController"];
+    viewController.view.tag = HOT_VIEW_TAG;
+    [self addChildViewController:viewController];
+    [self.view addSubview:viewController.view];
+    [viewController didMoveToParentViewController:self];
+    fr = self.view.frame;
+    viewController.view.frame = CGRectMake(fr.size.width - deltaX, fr.origin.y, fr.size.width, fr.size.height);
+    viewController.view.hidden = YES;
+    
     [self refresh];
 
 }
@@ -243,6 +252,16 @@
     view.frame = CGRectMake(0, fr.origin.y, fr.size.width, fr.size.height);
     
     [self makeInvisibleExcludeTag:SETT_VIEW_TAG];
+
+}
+
+- (void) showHotline {
+
+    CGRect fr = self.view.frame;
+    UIView* view = [self.view viewWithTag:HOT_VIEW_TAG];
+    view.frame = CGRectMake(0, fr.origin.y, fr.size.width, fr.size.height);
+    
+    [self makeInvisibleExcludeTag:HOT_VIEW_TAG];
 
 }
 

@@ -23,6 +23,7 @@
 - (void) showActions;
 - (void) showAbout;
 - (void) showSettings;
+- (void) showHotline;
 @property (weak, nonatomic) IBOutlet UIButton *bmain;
 @property (weak, nonatomic) IBOutlet UIButton *babout;
 @property (weak, nonatomic) IBOutlet UIButton *bmap;

@@ -286,8 +286,13 @@
 }
 
 - (IBAction)tapSettings:(id)sender {
-
+    
     [((MenuViewController*)self.parentViewController) showSettings];
+}
+
+- (IBAction)tapHotline:(id)sender {
+    
+    [((MenuViewController*)self.parentViewController) showHotline];
 }
 
 @end

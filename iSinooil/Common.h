@@ -19,6 +19,8 @@ enum {M_KM, M_MI, M_MT}; //km, miles, metres
 
 //#define NSLocalizedString(@"AIGAS", nil)
 
+#define DEVICE_TOKEN @"deviceToken"
+#define PUSH_ID_FOR_SIMULATOR @"11223344556677"
 //urls
 #define URL_SHOP @"http://sinooilshop.kz/"
 #define URL_SITE @"http://www.sinooil.kz/"
@@ -32,6 +34,7 @@ enum {M_KM, M_MI, M_MT}; //km, miles, metres
 #define ABOUT_URL @"http://sinoapp.4design.asia/out.php?action=content"
 #define AZS_URL @"http://sinoapp.4design.asia/out.php?action=stations"
 #define FUEL_URL @"http://sinoapp.4design.asia/out.php?action=prices"
+#define DEVICE_REG_URL @"http://sinoapp.4design.asia/out.php?action=new&device_id=%@&type=ios"
 
 //azs.json
 #define STATION_ID @"id"
@@ -79,6 +82,9 @@ enum {M_KM, M_MI, M_MT}; //km, miles, metres
 + (CGSize) currentScreenBounds;
 
 + (NSArray*) calculateRoutesFrom:(CLLocationCoordinate2D) f to: (CLLocationCoordinate2D) t;
+
+- (void) regDeviceForPush:(NSString*)dev_id;
+    
 - (float) calculateDistTo: (CLLocationCoordinate2D) t;
 - (float) distToNearestStaionWithFuelBit:(int)bit forCell:(PriceCell*)pc;
 
@@ -113,5 +119,6 @@ enum {M_KM, M_MI, M_MT}; //km, miles, metres
 @property (assign, readwrite) int metrics;
 @property (nonatomic, retain) NSBundle* languageBundle;
 @property (nonatomic, weak) MenuViewController* menucontr;
+@property (assign, readwrite) BOOL internetActive;
 
 @end

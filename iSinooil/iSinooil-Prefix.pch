@@ -20,6 +20,7 @@
 #import "Common.h"
 #undef NSLocalizedString
 #define NSLocalizedString(key,_comment) [[Common instance] getStringForKey:key]
+#define NSLocalizedString1(key,_comment) [self getStringForKey:key]
 
 
 #define MAIN_VIEW_TAG 1234
@@ -29,6 +30,7 @@
 #define ACTS_VIEW_TAG 1238
 #define ABOUT_VIEW_TAG 1239
 #define SETT_VIEW_TAG 1240
+#define HOT_VIEW_TAG 1241
 
 #define deltaX 50
 #define anim_delay 0.2f
@@ -58,6 +60,8 @@
 #define FONT_MAINMENU_HOTLINE [UIFont fontWithName:@"HelveticaNeueCyr-Light" size:24.0f]
 #define FONT_MAINMENU_SEEALSO [UIFont fontWithName:@"HelveticaNeueCyr-Bold" size:15.0f]
 #define FONT_MAINMENU_ISHOP [UIFont fontWithName:@"HelveticaNeueCyr-Light" size:20.0f]
+
+#define FONT_HOTLINE_LABEL [UIFont fontWithName:@"HelveticaNeueCyr-Light" size:16.0f]
 
 #define COLOR_ABOUT_CENTRALOFFICE [UIColor colorWithRed:(0x2d/255.f) green:(0x2d/255.f) blue:(0x2d/255.f) alpha:1.0f]
 
