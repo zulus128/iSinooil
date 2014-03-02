@@ -1084,6 +1084,23 @@
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FW1-yI-0Wx">
                                         <rect key="frame" x="0.0" y="1" width="320" height="309"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HBy-lR-Aml">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="309"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="309" id="gOZ-E3-LPg"/>
+                                                    <constraint firstAttribute="width" constant="320" id="lr8-cC-Ii9"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="HBy-lR-Aml" secondAttribute="trailing" id="7z0-oe-01n"/>
+                                            <constraint firstItem="HBy-lR-Aml" firstAttribute="top" secondItem="FW1-yI-0Wx" secondAttribute="top" id="EIh-Dr-y5M"/>
+                                            <constraint firstAttribute="bottom" secondItem="HBy-lR-Aml" secondAttribute="bottom" id="heb-3f-7hC"/>
+                                            <constraint firstItem="HBy-lR-Aml" firstAttribute="leading" secondItem="FW1-yI-0Wx" secondAttribute="leading" id="slN-IF-7sf"/>
+                                        </constraints>
                                     </scrollView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
