@@ -6,6 +6,11 @@
 //  Copyright (c) 2014 Zul. All rights reserved.
 //
 
+
+//http://habrahabr.ru/company/ruswizards/blog/156811/
+//https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/RemoteNotificationsPG.pdf
+//http://habrahabr.ru/post/178775/
+
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
 
