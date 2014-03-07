@@ -20,7 +20,7 @@ enum { MAPTYPE_MAINMENU, MAPTYPE_FULLWINDOW };
 }
 
 -(id) initWithType:(int)typ;
-- (void)removeAllPinsButUserLocation;
+- (void)refreshPins;
 
 @property (weak, nonatomic) MapViewController* mapcontr;
 

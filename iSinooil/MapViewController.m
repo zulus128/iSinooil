@@ -26,6 +26,7 @@
 //    self.detailViewH.constant = s.height;
 //    self.detailViewW.constant = s.width;
     
+//    [self.mapsour removeAllPinsButUserLocation];
 
 }
 
@@ -42,6 +43,7 @@
 
     int i = button.tag - ICON_TAG;
     [Common instance].fuel = [Common instance].fuel | i;
+    [self.mapsour refreshPins];
 
     NSString* icon = @"icon_97";
     switch (i) {
@@ -80,6 +82,7 @@
     
     int i = button.tag - ICON_TAG;
     [Common instance].serv = [Common instance].serv | i;
+    [self.mapsour refreshPins];
 
     NSString* icon = @"icon_market";
     switch (i) {
@@ -121,6 +124,7 @@
     button.selected = !button.selected;
     int i = button.tag - ICON_TAG;
     [Common instance].card = [Common instance].card | i;
+    [self.mapsour refreshPins];
 
     NSString* icon = @"icon_visa";
     switch (i) {

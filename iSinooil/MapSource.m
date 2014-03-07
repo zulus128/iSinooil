@@ -25,7 +25,7 @@
 	return self;
 }
 
-- (void)removeAllPinsButUserLocation {
+- (void)refreshPins {
 
     id userLocation = [self.mapcontr.mapView userLocation];
     [self.mapcontr.mapView removeAnnotations:[self.mapcontr.mapView annotations]];
@@ -33,6 +33,8 @@
     if ( userLocation != nil ) {
         [self.mapcontr.mapView addAnnotation:userLocation]; // will cause user location pin to blink
     }
+    
+    [self addPoints:self.mapcontr.mapView];
 }
 //- (void)mapViewWillStartLocatingUser:(MKMapView *)mapView {
 //
@@ -46,21 +48,32 @@
     for (NSDictionary* d in arr) {
       
         NSNumber* n = [d valueForKey:STATION_LAT];
-        CLLocationDegrees lat = n.doubleValue;
-        n = [d valueForKey:STATION_LON];
-        CLLocationDegrees lon = n.doubleValue;
-        CLLocationCoordinate2D coord = { lat, lon };
-        NSString* tit = [d valueForKey:STATION_TITLE];
-        NSString* subtit = [d valueForKey:STATION_DESCR];
+        
+        NSNumber* nf = [d valueForKey:STATION_FUEL];
+        BOOL bf = nf.intValue & [Common instance].fuel;
+        NSNumber* ns = [d valueForKey:STATION_SERV];
+        BOOL bs = ns.intValue & [Common instance].serv;
+        NSNumber* nc = [d valueForKey:STATION_CARD];
+        BOOL bc = nc.intValue & [Common instance].card;
+        
+        if(bf && bs && bc) {
 
-        MapPoint *mp = [[MapPoint alloc] initWithCoordinate:coord title:tit subTitle:subtit];
-        
-        mp.number = i++;
-        
-        n = [d valueForKey:STATION_ID];
-        mp.stationId = n.intValue;
-        
-        [mv addAnnotation:mp];
+            CLLocationDegrees lat = n.doubleValue;
+            n = [d valueForKey:STATION_LON];
+            CLLocationDegrees lon = n.doubleValue;
+            CLLocationCoordinate2D coord = { lat, lon };
+            NSString* tit = [d valueForKey:STATION_TITLE];
+            NSString* subtit = [d valueForKey:STATION_DESCR];
+
+            MapPoint *mp = [[MapPoint alloc] initWithCoordinate:coord title:tit subTitle:subtit];
+            
+            mp.number = i++;
+            
+            n = [d valueForKey:STATION_ID];
+            mp.stationId = n.intValue;
+            
+            [mv addAnnotation:mp];
+        }
     }
 }
 
