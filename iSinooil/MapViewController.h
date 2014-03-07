@@ -17,6 +17,7 @@
 @interface MapViewController : UIViewController <UITableViewDelegate> {
     
 //    long selectedRow;
+
 }
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;

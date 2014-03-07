@@ -120,5 +120,8 @@ enum {M_KM, M_MI, M_MT}; //km, miles, metres
 @property (nonatomic, retain) NSBundle* languageBundle;
 @property (nonatomic, weak) MenuViewController* menucontr;
 @property (assign, readwrite) BOOL internetActive;
+@property (assign, readwrite) int fuel;
+@property (assign, readwrite) int card;
+@property (assign, readwrite) int serv;
 
 @end

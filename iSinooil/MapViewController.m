@@ -38,10 +38,11 @@
     
     //    NSLog(@"down");
     UIButton *button=(UIButton *)sender;
-    
     button.selected = !button.selected;
-    
+
     int i = button.tag - ICON_TAG;
+    [Common instance].fuel = [Common instance].fuel | i;
+
     NSString* icon = @"icon_97";
     switch (i) {
         case FUEL_BIT_97:
@@ -75,10 +76,11 @@
     
     //    NSLog(@"down");
     UIButton *button=(UIButton *)sender;
-    
     button.selected = !button.selected;
     
     int i = button.tag - ICON_TAG;
+    [Common instance].serv = [Common instance].serv | i;
+
     NSString* icon = @"icon_market";
     switch (i) {
         case SERV_BIT_MARKET:
@@ -104,6 +106,32 @@
             break;
         case SERV_BIT_WHEEL:
             icon = @"icon_wheel";
+            break;
+    }
+    
+    [button setImage:[UIImage imageNamed:[NSString stringWithFormat:(button.selected?@"%@_pressed.png":@"%@.png"), icon]] forState:UIControlStateNormal];
+    
+}
+
+-(void)buttonTouchDown3:(id)sender {
+    
+    //    NSLog(@"down");
+    UIButton *button=(UIButton *)sender;
+    
+    button.selected = !button.selected;
+    int i = button.tag - ICON_TAG;
+    [Common instance].card = [Common instance].card | i;
+
+    NSString* icon = @"icon_visa";
+    switch (i) {
+        case CARD_BIT_VISA:
+            icon = @"icon_visa";
+            break;
+        case CARD_BIT_AE:
+            icon = @"icon_amer";
+            break;
+        case CARD_BIT_MC:
+            icon = @"icon_master";
             break;
     }
     
@@ -164,6 +192,8 @@
         [button setImage:[UIImage imageNamed:icon] forState:UIControlStateNormal];
         button.tag = ICON_TAG + i;
         [self.filterView addSubview:button];
+        if ([Common instance].fuel & i)
+            [self buttonTouchDown1:button];
         
         x += GAP_SIZE3;
         if(x >= (s.width - 20)) {
@@ -214,6 +244,8 @@
         [button setImage:[UIImage imageNamed:icon] forState:UIControlStateNormal];
         button.tag = ICON_TAG + i;
         [self.filterView addSubview:button];
+        if ([Common instance].serv & i)
+            [self buttonTouchDown2:button];
         
         x += GAP_SIZE3;
         if(x >= (s.width - 20)) {
@@ -237,11 +269,20 @@
                 break;
         }
         
-        UIImageView* iv = [[UIImageView alloc] initWithFrame:CGRectMake(x, y, ICON_SIZE, ICON_SIZE)];
-        iv.image = [UIImage imageNamed:icon];
-        iv.tag = ICON_TAG;
-        [self.filterView addSubview:iv];
-        
+//        UIImageView* iv = [[UIImageView alloc] initWithFrame:CGRectMake(x, y, ICON_SIZE, ICON_SIZE)];
+//        iv.image = [UIImage imageNamed:icon];
+//        iv.tag = ICON_TAG;
+//        [self.filterView addSubview:iv];
+
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [button addTarget:self action:@selector(buttonTouchDown3:) forControlEvents:UIControlEventTouchDown];
+        button.frame = CGRectMake(x, y, ICON_SIZE, ICON_SIZE);
+        [button setImage:[UIImage imageNamed:icon] forState:UIControlStateNormal];
+        button.tag = ICON_TAG + i;
+        [self.filterView addSubview:button];
+        if ([Common instance].card & i)
+            [self buttonTouchDown3:button];
+
         x += GAP_SIZE3;
         if(x >= (s.width - 20)) {
             x = 5;
@@ -249,15 +290,6 @@
         }
     }
 
-}
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -323,24 +355,6 @@
                      }];
     
 }
-
-//- (IBAction) pickOne:(id)sender {
-//    
-//    UISegmentedControl *segmentedControl = (UISegmentedControl *)sender;
-////    NSLog(@"index = %d", segmentedControl.selectedSegmentIndex);
-//    
-//    switch (segmentedControl.selectedSegmentIndex) {
-//        case 0:
-//            self.mapView.hidden = NO;
-//            self.stationList.hidden = YES;
-//            break;
-//        case 1:
-//            self.mapView.hidden = YES;
-//            [self.stationList reloadData];
-//            self.stationList.hidden = NO;
-//            break;
-//    }
-//}
 
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     

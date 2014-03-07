@@ -25,6 +25,15 @@
 	return self;
 }
 
+- (void)removeAllPinsButUserLocation {
+
+    id userLocation = [self.mapcontr.mapView userLocation];
+    [self.mapcontr.mapView removeAnnotations:[self.mapcontr.mapView annotations]];
+    
+    if ( userLocation != nil ) {
+        [self.mapcontr.mapView addAnnotation:userLocation]; // will cause user location pin to blink
+    }
+}
 //- (void)mapViewWillStartLocatingUser:(MKMapView *)mapView {
 //
 //    NSLog(@"mapViewWillStartLocatingUser");
