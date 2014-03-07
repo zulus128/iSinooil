@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 
+#define GAP_SIZE3 35
+
 @class MapSource;
 @class StationListDataSource;
 
@@ -37,5 +39,6 @@
 //- (IBAction) pickOne:(id)sender;
 
 - (IBAction) menu:(id)sender;
+@property (weak, nonatomic) IBOutlet UIView *filterView;
 
 @end
