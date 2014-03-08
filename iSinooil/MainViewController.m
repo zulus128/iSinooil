@@ -96,6 +96,10 @@
     self.distLabel.font = FONT_KM_PRICE_LIST;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^(void) {
         
+        if(![Common instance].freeOfSems)
+            dispatch_semaphore_wait([Common instance].allowSemaphore, DISPATCH_TIME_FOREVER);
+//        NSLog(@"go1");
+
         float dist = [[Common instance] distToNearestStaionWithFuelBit:([Common instance].fuelSelected + 1) forCell:nil];
         
         dispatch_async(dispatch_get_main_queue(), ^{

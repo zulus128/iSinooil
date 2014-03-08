@@ -1975,6 +1975,25 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Almaty" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I39-wc-2KW" userLabel="Dropdown Label - Label">
+                                        <rect key="frame" x="127" y="38" width="161" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="161" id="C0e-a6-2vX"/>
+                                            <constraint firstAttribute="height" constant="21" id="hA7-yQ-m8D"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowdown_light.png" translatesAutoresizingMaskIntoConstraints="NO" id="3HW-uE-VIl">
+                                        <rect key="frame" x="296" y="46" width="16" height="10"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="10" id="ALq-Bz-e4l"/>
+                                            <constraint firstAttribute="width" constant="16" id="JxE-Rs-JJU"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1983,8 +2002,12 @@
                                     <constraint firstAttribute="height" constant="70" id="GTM-yE-qCE"/>
                                     <constraint firstAttribute="height" secondItem="2dj-XE-4gF" secondAttribute="height" id="TT9-Vd-jqZ"/>
                                     <constraint firstAttribute="width" secondItem="2dj-XE-4gF" secondAttribute="width" id="VFd-E0-qxD"/>
+                                    <constraint firstAttribute="trailing" secondItem="3HW-uE-VIl" secondAttribute="trailing" constant="8" id="dCo-gc-a57"/>
                                     <constraint firstItem="2dj-XE-4gF" firstAttribute="leading" secondItem="6bG-Rj-KHf" secondAttribute="leading" id="gJP-La-daR"/>
                                     <constraint firstItem="iI6-7y-Khq" firstAttribute="top" secondItem="6bG-Rj-KHf" secondAttribute="top" constant="27" id="pUm-qb-Tyv"/>
+                                    <constraint firstItem="3HW-uE-VIl" firstAttribute="top" secondItem="6bG-Rj-KHf" secondAttribute="top" constant="46" id="pbT-1C-fe1"/>
+                                    <constraint firstItem="3HW-uE-VIl" firstAttribute="leading" secondItem="I39-wc-2KW" secondAttribute="trailing" constant="8" id="qEm-Js-Rfa"/>
+                                    <constraint firstItem="I39-wc-2KW" firstAttribute="top" secondItem="6bG-Rj-KHf" secondAttribute="top" constant="38" id="rme-Xm-P09"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQ7-Ab-CYh" userLabel="MapButton">
@@ -2060,6 +2083,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="1Os-ZV-yy0"/>
                     <connections>
+                        <outlet property="dropdown" destination="I39-wc-2KW" id="YWN-aF-h7L"/>
                         <outlet property="filterView" destination="vEM-Y4-Nz2" id="Olu-SH-WKf"/>
                         <outlet property="listButton" destination="ybC-59-AEp" id="u9B-MW-NLs"/>
                         <outlet property="mapButton" destination="uQ7-Ab-CYh" id="fdy-O6-FJT"/>
@@ -2351,6 +2375,7 @@
     </scenes>
     <resources>
         <image name="arrowdown_dark.png" width="16" height="10"/>
+        <image name="arrowdown_light.png" width="16" height="10"/>
         <image name="arrowleft_red.png" width="30" height="30"/>
         <image name="arrowleft_white.png" width="30" height="30"/>
         <image name="arrowup_dark.png" width="16" height="10"/>

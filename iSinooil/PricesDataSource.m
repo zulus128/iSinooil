@@ -80,13 +80,16 @@
     cell.distLabel.font = FONT_KM_PRICE_LIST;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^(void) {
         
+        if(![Common instance].freeOfSems)
+            dispatch_semaphore_wait([Common instance].allowSemaphore, DISPATCH_TIME_FOREVER);
+
         float dist = [[Common instance] distToNearestStaionWithFuelBit:(indexPath.row + 1) forCell:cell];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
             PriceCell *updateCell = (id)[tableView cellForRowAtIndexPath:indexPath];
             if (updateCell)
-            updateCell.distLabel.text = [NSString stringWithFormat:@"%.1f %@", dist, NSLocalizedString(@"km", nil)];
+                updateCell.distLabel.text = [NSString stringWithFormat:@"%.1f %@", dist, NSLocalizedString(@"km", nil)];
         });
         
     });

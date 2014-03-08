@@ -42,7 +42,10 @@
     button.selected = !button.selected;
 
     int i = button.tag - ICON_TAG;
-    [Common instance].fuel = [Common instance].fuel | i;
+    if(button.selected)
+        [Common instance].fuel = [Common instance].fuel | i;
+    else
+        [Common instance].fuel = [Common instance].fuel & (~i);
     [self.mapsour refreshPins];
 
     NSString* icon = @"icon_97";
@@ -81,7 +84,10 @@
     button.selected = !button.selected;
     
     int i = button.tag - ICON_TAG;
-    [Common instance].serv = [Common instance].serv | i;
+    if(button.selected)
+        [Common instance].serv = [Common instance].serv | i;
+    else
+        [Common instance].serv = [Common instance].serv & (~i);
     [self.mapsour refreshPins];
 
     NSString* icon = @"icon_market";
@@ -123,7 +129,10 @@
     
     button.selected = !button.selected;
     int i = button.tag - ICON_TAG;
-    [Common instance].card = [Common instance].card | i;
+    if(button.selected)
+        [Common instance].card = [Common instance].card | i;
+    else
+        [Common instance].card = [Common instance].card & (~i);
     [self.mapsour refreshPins];
 
     NSString* icon = @"icon_visa";
@@ -143,7 +152,15 @@
     
 }
 
+- (void) refreshDropdown {
+
+}
+
 - (void) refresh {
+    
+//    NSLog(@"fuel: %d", [Common instance].fuel);
+
+    [self refreshDropdown];
     
     UILabel* labelPrices = (UILabel*)[self.topView viewWithTag:TITLELABEL_TAG];
     labelPrices.font = FONT_STD_TOP_MENU;
@@ -319,8 +336,20 @@
     
     self.listsour = [[StationListDataSource alloc] init];
 //    self.stationList.delegate = self.listsour;
+  
     self.stationListTable.delegate = self;
     self.stationListTable.dataSource = self.listsour;
+
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^(void) {
+//        
+//        dispatch_semaphore_wait([Common instance].allowSemaphore, DISPATCH_TIME_FOREVER);
+//        
+//        NSLog(@"go3");
+//        self.stationListTable.delegate = self;
+//        self.stationListTable.dataSource = self.listsour;
+//        [self.stationListTable reloadData];
+//        
+//    });
     
     [Common instance].mymapview = self.mapView;
     
@@ -330,6 +359,8 @@
     [[self.listButton titleLabel] setFont:FONT_ABOUT_TOGGLE_BUTTONS];
     [[self.mapButton titleLabel] setFont:FONT_ABOUT_TOGGLE_BUTTONS];
 
+    self.dropdown.font = FONT_MAP_DROPDOWN;
+    
     [self mapTouchDown:self.mapButton];
     
     [self refresh];
@@ -436,6 +467,52 @@
 //    selectedRow = indexPath.row;
     [Common instance].stationRowSelected = indexPath.row;
     [self showStationDetails];
+}
+
+- (void) showPopup {
+    
+    //    NSLog(@"showPopup");
+    
+    UIView* old = [self.view viewWithTag:POPUP_TAG];
+    [old removeFromSuperview];
+    
+    int cnt = 10;
+    
+//    UIView* v = [[UIView alloc] initWithFrame:CGRectMake(, , POPUP_WIDTH, cnt * POPUPBUTTON_HEIGHT)];
+//    v.layer.cornerRadius = 5;
+//    v.layer.masksToBounds = YES;
+//    v.tag = POPUP_TAG;
+//    v.backgroundColor = [UIColor clearColor];
+//    [self.view addSubview:v];
+//    
+//    UIView* vv = [[UIView alloc] initWithFrame:CGRectMake(0, 0, POPUP_WIDTH, cnt * POPUPBUTTON_HEIGHT)];
+//    vv.layer.cornerRadius = 5;
+//    vv.layer.masksToBounds = YES;
+//    vv.backgroundColor = [UIColor grayColor];
+//    vv.alpha = 0.7f;
+//    [v addSubview:vv];
+//    
+//    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [button addTarget:self action:@selector(ruSelected) forControlEvents:UIControlEventTouchDown];
+//    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+//    [button setTitle:NSLocalizedString(@"lang_ru", nil) forState:UIControlStateNormal];
+//    button.titleLabel.font = SETT_POPUP_FONT;
+//    button.frame = CGRectMake(0, 0 * POPUPBUTTON_HEIGHT, POPUP_WIDTH, POPUPBUTTON_HEIGHT);
+//    [v addSubview:button];
+//    button = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [button addTarget:self action:@selector(enSelected) forControlEvents:UIControlEventTouchDown];
+//    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+//    [button setTitle:NSLocalizedString(@"lang_eng", nil) forState:UIControlStateNormal];
+//    button.titleLabel.font = SETT_POPUP_FONT;
+//    button.frame = CGRectMake(0, 1 * POPUPBUTTON_HEIGHT, POPUP_WIDTH, POPUPBUTTON_HEIGHT);
+//    [v addSubview:button];
+//    button = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [button addTarget:self action:@selector(kzSelected) forControlEvents:UIControlEventTouchDown];
+//    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+//    [button setTitle:NSLocalizedString(@"lang_kz", nil) forState:UIControlStateNormal];
+//    button.titleLabel.font = SETT_POPUP_FONT;
+//    button.frame = CGRectMake(0, 2 * POPUPBUTTON_HEIGHT, POPUP_WIDTH, POPUPBUTTON_HEIGHT);
+//    [v addSubview:button];
 }
 
 @end

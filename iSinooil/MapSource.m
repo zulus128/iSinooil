@@ -31,7 +31,8 @@
     [self.mapcontr.mapView removeAnnotations:[self.mapcontr.mapView annotations]];
     
     if ( userLocation != nil ) {
-        [self.mapcontr.mapView addAnnotation:userLocation]; // will cause user location pin to blink
+//        [self.mapcontr.mapView addAnnotation:userLocation]; // will cause user location pin to blink
+        self.mapcontr.mapView.showsUserLocation = YES;
     }
     
     [self addPoints:self.mapcontr.mapView];
@@ -47,17 +48,16 @@
     int i = 0;
     for (NSDictionary* d in arr) {
       
-        NSNumber* n = [d valueForKey:STATION_LAT];
-        
         NSNumber* nf = [d valueForKey:STATION_FUEL];
-        BOOL bf = nf.intValue & [Common instance].fuel;
+        BOOL bf = [Common instance].fuel?((nf.intValue & [Common instance].fuel) == [Common instance].fuel):YES;
         NSNumber* ns = [d valueForKey:STATION_SERV];
-        BOOL bs = ns.intValue & [Common instance].serv;
+        BOOL bs = [Common instance].serv?((ns.intValue & [Common instance].serv) == [Common instance].serv):YES;
         NSNumber* nc = [d valueForKey:STATION_CARD];
-        BOOL bc = nc.intValue & [Common instance].card;
+        BOOL bc = [Common instance].card?((nc.intValue & [Common instance].card) == [Common instance].card):YES;
         
         if(bf && bs && bc) {
 
+            NSNumber* n = [d valueForKey:STATION_LAT];
             CLLocationDegrees lat = n.doubleValue;
             n = [d valueForKey:STATION_LON];
             CLLocationDegrees lon = n.doubleValue;
@@ -79,30 +79,43 @@
 
 - (void)mapView:(MKMapView *)mv didUpdateUserLocation:(MKUserLocation *)userLocation {
 
-    if(!fsttime) {
+    if(![Common instance].fsttime) {
         
-        fsttime = YES;
+        [Common instance].fsttime = YES;
         [self addPoints:mv];
-    }
-
-    [Common instance].userCoordinate = userLocation.location.coordinate;
-//    dispatch_semaphore_signal([Common instance].userCoordUpdatedSem);
-
+        [Common instance].userCoordinate = userLocation.location.coordinate;
+        [[Common instance] fillDists];
+        
 #if TARGET_IPHONE_SIMULATOR
-    
-    
-    for(int i = 0; i < 4;i++) {
         
-        CGFloat latDelta = rand()*.0035/RAND_MAX -.002;
-        CGFloat longDelta = rand()*.003/RAND_MAX -.0015;
         
-        CLLocationCoordinate2D newCoord = { [Common instance].userCoordinate.latitude + latDelta, [Common instance].userCoordinate.longitude + longDelta };
-        MapPoint *mp = [[MapPoint alloc] initWithCoordinate:newCoord title:[NSString stringWithFormat:@"Azam Home %d",i] subTitle:@"Home Sweet Home"];
-        mp.number = i;
-        [mv addAnnotation:mp];
-    }
-    
+        for(int i = 0; i < 4;i++) {
+            
+            CGFloat latDelta = rand()*.0035/RAND_MAX -.002;
+            CGFloat longDelta = rand()*.003/RAND_MAX -.0015;
+            
+            CLLocationCoordinate2D newCoord = { [Common instance].userCoordinate.latitude + latDelta, [Common instance].userCoordinate.longitude + longDelta };
+            MapPoint *mp = [[MapPoint alloc] initWithCoordinate:newCoord title:[NSString stringWithFormat:@"Azam Home %d",i] subTitle:@"Home Sweet Home"];
+            mp.number = i;
+            [mv addAnnotation:mp];
+        }
+        
 #endif
+        
+//        dispatch_semaphore_signal([Common instance].allowSemaphore);
+
+        return;
+    }
+
+    CLLocation *oldLocation = [[CLLocation alloc] initWithCoordinate:[Common instance].userCoordinate altitude:1 horizontalAccuracy:1 verticalAccuracy:-1 timestamp:nil];
+    [Common instance].userCoordinate = userLocation.location.coordinate;
+    CLLocation* newLocation = userLocation.location;
+    CLLocationDistance distance = [newLocation distanceFromLocation:oldLocation];
+//    NSLog(@"change location to %f meters", distance);
+    if(distance > 100) {
+        
+        [[Common instance] setAllNeedDistancesUpdate];
+    }
     
 }
 

@@ -39,6 +39,15 @@
     self.pricesListTable.dataSource = self.listsour;
     self.pricesListTable.delegate = self;
 
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^(void) {
+//        
+//        dispatch_semaphore_wait([Common instance].allowSemaphore, DISPATCH_TIME_FOREVER);
+//        
+//        NSLog(@"go2");
+//        [self.pricesListTable reloadData];
+//
+//    });
+    
     [self refresh];
 }
 

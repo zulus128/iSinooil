@@ -34,6 +34,10 @@
 	self = [super init];
 	if(self !=nil) {
 
+//        self.needDistancesUpdate = YES;
+        
+        self.allowSemaphore = dispatch_semaphore_create(0);
+
         int l = [[NSUserDefaults standardUserDefaults] integerForKey:@"language"];
 //        NSLog(@"lang = %d", l);
         NSString* ls = @"ru";
@@ -102,6 +106,21 @@
 
         [self loadNewsData];
         [self loadActsData];
+        
+        self.azsDistances = [NSMutableDictionary dictionary];
+        for (NSDictionary* d in self.azsjson) {
+            
+            NSNumber* lat = [d valueForKey:STATION_LAT];
+            NSNumber* lon = [d valueForKey:STATION_LON];
+            NSString* n = [d valueForKey:STATION_ID];
+            NSMutableDictionary* item = [NSMutableDictionary dictionary];
+            [item setObject:[NSNumber numberWithFloat:0] forKey:AZS_DIST];
+            [item setObject:[NSNumber numberWithInt:1] forKey:AZS_NEEDUPDATE];
+            [item setObject:lat forKey:AZS_LAT];
+            [item setObject:lon forKey:AZS_LON];
+            
+            [self.azsDistances setObject:item forKey:n];
+        }
 	}
 	return self;
 }
@@ -665,19 +684,83 @@
     return apiResponse;
 }
 
-- (float) calculateDistTo: (CLLocationCoordinate2D) t {
+- (void) setAllNeedDistancesUpdate {
+ 
+    NSLog(@"--Distances update!");
+    
+    NSMutableDictionary* new = [NSMutableDictionary dictionary];
+    for (NSDictionary* d in self.azsjson) {
+        
+        NSNumber* lat = [d valueForKey:STATION_LAT];
+        NSNumber* lon = [d valueForKey:STATION_LON];
+        NSString* n = [d valueForKey:STATION_ID];
 
+        NSDictionary* dcurr = [self.azsDistances objectForKey:n];
+        NSNumber* res = [dcurr valueForKey:AZS_DIST];
+        
+        NSMutableDictionary* item = [NSMutableDictionary dictionary];
+        [item setObject:res forKey:AZS_DIST];
+        [item setObject:[NSNumber numberWithInt:1] forKey:AZS_NEEDUPDATE];
+        [item setObject:lat forKey:AZS_LAT];
+        [item setObject:lon forKey:AZS_LON];
+        
+        [new setObject:item forKey:n];
+    }
+
+    self.azsDistances = new;
+}
+
+//- (float) calculateDistTo: (CLLocationCoordinate2D) t {
+- (float) calculateDistToStation: (int) station_id {
+    
+    float rrr;
+    
+//    @synchronized(self)
+//	{
+//    NSLog(@"dict = %@", self.azsDistances);
+    
+    NSNumber *n = [NSNumber numberWithInt:station_id];
+    NSDictionary* d = [self.azsDistances objectForKey:n.stringValue];
+//    NSLog(@"dict = %@", d);
+    NSNumber* nu = [d valueForKey:AZS_NEEDUPDATE];
+    
+    if(!nu.intValue) {
+        
+        NSNumber* res = [d valueForKey:AZS_DIST];
+        return res.floatValue;
+    }
+    
+    NSNumber* nlat = [d valueForKey:AZS_LAT];
+    CLLocationDegrees lat = nlat.doubleValue;
+    NSNumber* nlon = [d valueForKey:AZS_LON];
+    CLLocationDegrees lon = nlon.doubleValue;
+    CLLocationCoordinate2D t = { lat, lon };
+    
 	NSString* apiResponse = [Common callMapServiceFrom:self.userCoordinate to:t];
+    
     NSString* ar1 = [[apiResponse componentsSeparatedByString:@"("] objectAtIndex:1];
-    NSString* ar2 = [[ar1 componentsSeparatedByString:@" "] objectAtIndex:0];
+//    NSString* ar2 = [[ar1 componentsSeparatedByString:@" "] objectAtIndex:0];
+    NSString* ar2 = [ar1 stringByReplacingOccurrencesOfString:@" " withString:@""];
     NSString* ar3 = [ar2 stringByReplacingOccurrencesOfString:@"," withString:@"."];
     
-    return [ar3 floatValue];
+    rrr = [ar3 floatValue];
+
+//    NSLog(@"--- TO %d resp: %f", station_id, rrr);
+
+    NSMutableDictionary* item = [NSMutableDictionary dictionary];
+    [item setObject:[NSNumber numberWithFloat:rrr] forKey:AZS_DIST];
+    [item setObject:[NSNumber numberWithInt:0] forKey:AZS_NEEDUPDATE];
+    [item setObject:nlat forKey:AZS_LAT];
+    [item setObject:nlon forKey:AZS_LON];
+    
+    [self.azsDistances setObject:item forKey:n.stringValue];
+   
+//    NSLog(@"calculateDistToStation: %@  %f", n, rrr);
+//    }//synchronized
+    return rrr;
 }
 
 - (float) distToNearestStaionWithFuelBit:(int)bit forCell:(PriceCell*)pc {
-
-    //    NSLog(@"bit = %d", bit);
     
     float mindist = 1e8;
     for (NSDictionary* d in self.azsjson) {
@@ -686,21 +769,71 @@
         if(! (fuel & bit))
             continue;
         
-        NSNumber* n = [d valueForKey:STATION_LAT];
-        CLLocationDegrees lat = n.doubleValue;
-        n = [d valueForKey:STATION_LON];
-        CLLocationDegrees lon = n.doubleValue;
-        CLLocationCoordinate2D coord = { lat, lon };
-        float dist = [self calculateDistTo:coord];
+//        NSNumber* n = [d valueForKey:STATION_LAT];
+//        CLLocationDegrees lat = n.doubleValue;
+//        n = [d valueForKey:STATION_LON];
+//        CLLocationDegrees lon = n.doubleValue;
+//        CLLocationCoordinate2D coord = { lat, lon };
+
+        NSNumber* n = [d valueForKey:STATION_ID];
+        
+//        float dist = [self calculateDistTo:coord];
+        float dist = [self calculateDistToStation:n.intValue];
         if (dist < mindist) {
             
             mindist = dist;
-            NSNumber* n = [d valueForKey:STATION_ID];
+//            NSNumber* n = [d valueForKey:STATION_ID];
             pc.stationId = n.intValue;
+            
+//            NSLog(@"bit = %d, station = %d", bit, n.intValue);
+
         }
     }
     
     return mindist;
+}
+
+- (void) increment {
+    
+    @synchronized(self) {
+        
+        self.dist_upd_cnt ++;
+//        NSLog(@"count = %d %d", self.dist_upd_cnt, self.azsjson.count);
+        if (self.dist_upd_cnt >= self.azsjson.count) {
+            
+            for (int i = 0; i < 100; i++) {
+
+                dispatch_semaphore_signal([Common instance].allowSemaphore);
+            }
+
+            NSLog(@"all dists updated");
+            
+            self.freeOfSems = YES;
+        }
+    }
+}
+
+- (void) fillDists {
+//    int i = 0;
+//    for (NSDictionary* d in self.azsjson) {
+//        
+//        NSNumber* n = [d valueForKey:STATION_ID];
+//        i++;
+//    }
+//    NSLog(@"i = %d", i);
+    
+    self.dist_upd_cnt = 0;
+    for (NSDictionary* d in self.azsjson) {
+        
+        NSNumber* n = [d valueForKey:STATION_ID];
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^(void) {
+       
+//            NSLog(@"---- %d", n.intValue);
+            [self calculateDistToStation:n.intValue];
+//            NSLog(@"++++ %d", n.intValue);
+            [self increment];
+        });
+    }
 }
 
 - (NSString*) getStringForKey:(NSString*)key {

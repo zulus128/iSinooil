@@ -16,7 +16,7 @@ enum { MAPTYPE_MAINMENU, MAPTYPE_FULLWINDOW };
 @interface MapSource : NSObject <MKMapViewDelegate> {
     
     int type;
-    BOOL fsttime;
+//    BOOL fsttime;
 }
 
 -(id) initWithType:(int)typ;

@@ -11,6 +11,10 @@
 
 #define GAP_SIZE3 35
 
+#define POPUP_TAG 778
+#define POPUPBUTTON_HEIGHT 35
+#define POPUP_WIDTH 80
+
 @class MapSource;
 @class StationListDataSource;
 
@@ -32,6 +36,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *mapButton;
 - (IBAction)listTouchDown:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *listButton;
+@property (weak, nonatomic) IBOutlet UILabel *dropdown;
 
 - (void) showDetail:(int)num;
 

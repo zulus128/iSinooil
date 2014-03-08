@@ -70,6 +70,12 @@ enum {M_KM, M_MI, M_MT}; //km, miles, metres
 #define NEWS_END_DATE @"ed"
 #define NEWS_FULLTEXT @"txt"
 
+#define AZS_ID @"id"
+#define AZS_DIST @"azsdist"
+#define AZS_NEEDUPDATE @"needupd"
+#define AZS_LAT @"lat"
+#define AZS_LON @"lng"
+
 @class PriceCell;
 //@class MenuViewController;
 #import "MenuViewController.h"
@@ -84,8 +90,12 @@ enum {M_KM, M_MI, M_MT}; //km, miles, metres
 + (NSArray*) calculateRoutesFrom:(CLLocationCoordinate2D) f to: (CLLocationCoordinate2D) t;
 
 - (void) regDeviceForPush:(NSString*)dev_id;
-    
-- (float) calculateDistTo: (CLLocationCoordinate2D) t;
+
+- (void) fillDists;
+- (void) setAllNeedDistancesUpdate;
+
+//- (float) calculateDistTo: (CLLocationCoordinate2D) t;
+- (float) calculateDistToStation: (int) station_id;
 - (float) distToNearestStaionWithFuelBit:(int)bit forCell:(PriceCell*)pc;
 
 - (int) getNewsCount;
@@ -123,5 +133,14 @@ enum {M_KM, M_MI, M_MT}; //km, miles, metres
 @property (assign, readwrite) int fuel;
 @property (assign, readwrite) int card;
 @property (assign, readwrite) int serv;
+//@property (assign, readwrite) BOOL needDistancesUpdate;
+@property (nonatomic, strong) NSMutableDictionary* azsDistances;
+
+@property (strong, readwrite) dispatch_semaphore_t allowSemaphore;
+@property (assign, readwrite) int dist_upd_cnt;
+@property (assign, readwrite) BOOL fsttime;
+@property (assign, readwrite) BOOL freeOfSems;
+
+@property (assign, readwrite) int selectedCity;
 
 @end
