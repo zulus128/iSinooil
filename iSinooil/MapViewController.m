@@ -154,6 +154,45 @@
 
 - (void) refreshDropdown {
 
+    UIView* old = [self.view viewWithTag:POPUP_TAG];
+    [old removeFromSuperview];
+
+    NSString* s = NSLocalizedString(@"AllCities", nil);
+
+    switch ([Common instance].selectedCity) {
+        case 1:
+            s = NSLocalizedString(@"Aktau", nil);
+            break;
+        case 2:
+            s = NSLocalizedString(@"Aktobe", nil);
+            break;
+        case 3:
+            s = NSLocalizedString(@"Almaty", nil);
+            break;
+        case 4:
+            s = NSLocalizedString(@"Astana", nil);
+            break;
+        case 5:
+            s = NSLocalizedString(@"Atyrau", nil);
+            break;
+        case 6:
+            s = NSLocalizedString(@"Kizilorda", nil);
+            break;
+        case 7:
+            s = NSLocalizedString(@"Taraz", nil);
+            break;
+        case 8:
+            s = NSLocalizedString(@"Ust-Kamenogorsk", nil);
+            break;
+        case 9:
+            s = NSLocalizedString(@"Shimkent", nil);
+            break;
+        case 0:
+            s = NSLocalizedString(@"AllCities", nil);
+            break;
+    }
+    
+    self.dropdown.text = s;
 }
 
 - (void) refresh {
@@ -469,50 +508,81 @@
     [self showStationDetails];
 }
 
-- (void) showPopup {
+-(void) citySelected:(id)sender {
+
+    UIButton* button = (UIButton*)sender;
+//    NSLog(@"city %d selected", button.tag);
+    [Common instance].selectedCity = button.tag;
+    [self refreshDropdown];
+}
+
+- (IBAction)goPopup:(id)sender {
     
-    //    NSLog(@"showPopup");
+    NSLog(@"showPopup");
     
     UIView* old = [self.view viewWithTag:POPUP_TAG];
     [old removeFromSuperview];
     
     int cnt = 10;
+    CGRect f = self.dropdown.frame;
+    UIView* v = [[UIView alloc] initWithFrame:CGRectMake(f.origin.x + 10, f.origin.y + 20, POPUP_WIDTH, cnt * POPUPBUTTON_HEIGHT)];
+    v.layer.cornerRadius = 5;
+    v.layer.masksToBounds = YES;
+    v.tag = POPUP_TAG;
+    v.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:v];
     
-//    UIView* v = [[UIView alloc] initWithFrame:CGRectMake(, , POPUP_WIDTH, cnt * POPUPBUTTON_HEIGHT)];
-//    v.layer.cornerRadius = 5;
-//    v.layer.masksToBounds = YES;
-//    v.tag = POPUP_TAG;
-//    v.backgroundColor = [UIColor clearColor];
-//    [self.view addSubview:v];
-//    
-//    UIView* vv = [[UIView alloc] initWithFrame:CGRectMake(0, 0, POPUP_WIDTH, cnt * POPUPBUTTON_HEIGHT)];
-//    vv.layer.cornerRadius = 5;
-//    vv.layer.masksToBounds = YES;
-//    vv.backgroundColor = [UIColor grayColor];
-//    vv.alpha = 0.7f;
-//    [v addSubview:vv];
-//    
-//    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-//    [button addTarget:self action:@selector(ruSelected) forControlEvents:UIControlEventTouchDown];
-//    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-//    [button setTitle:NSLocalizedString(@"lang_ru", nil) forState:UIControlStateNormal];
-//    button.titleLabel.font = SETT_POPUP_FONT;
-//    button.frame = CGRectMake(0, 0 * POPUPBUTTON_HEIGHT, POPUP_WIDTH, POPUPBUTTON_HEIGHT);
-//    [v addSubview:button];
-//    button = [UIButton buttonWithType:UIButtonTypeCustom];
-//    [button addTarget:self action:@selector(enSelected) forControlEvents:UIControlEventTouchDown];
-//    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-//    [button setTitle:NSLocalizedString(@"lang_eng", nil) forState:UIControlStateNormal];
-//    button.titleLabel.font = SETT_POPUP_FONT;
-//    button.frame = CGRectMake(0, 1 * POPUPBUTTON_HEIGHT, POPUP_WIDTH, POPUPBUTTON_HEIGHT);
-//    [v addSubview:button];
-//    button = [UIButton buttonWithType:UIButtonTypeCustom];
-//    [button addTarget:self action:@selector(kzSelected) forControlEvents:UIControlEventTouchDown];
-//    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-//    [button setTitle:NSLocalizedString(@"lang_kz", nil) forState:UIControlStateNormal];
-//    button.titleLabel.font = SETT_POPUP_FONT;
-//    button.frame = CGRectMake(0, 2 * POPUPBUTTON_HEIGHT, POPUP_WIDTH, POPUPBUTTON_HEIGHT);
-//    [v addSubview:button];
-}
+    UIView* vv = [[UIView alloc] initWithFrame:CGRectMake(0, 0, POPUP_WIDTH, cnt * POPUPBUTTON_HEIGHT)];
+    vv.layer.cornerRadius = 5;
+    vv.layer.masksToBounds = YES;
+    vv.backgroundColor = [UIColor grayColor];
+    vv.alpha = 0.7f;
+    [v addSubview:vv];
+    
+    for(int i = 0; i < 10; i++) {
+    
+        NSString* s = NSLocalizedString(@"AllCities", nil);
+        switch (i) {
+            case 1:
+                s = NSLocalizedString(@"Aktau", nil);
+                break;
+            case 2:
+                s = NSLocalizedString(@"Aktobe", nil);
+                break;
+            case 3:
+                s = NSLocalizedString(@"Almaty", nil);
+                break;
+            case 4:
+                s = NSLocalizedString(@"Astana", nil);
+                break;
+            case 5:
+                s = NSLocalizedString(@"Atyrau", nil);
+                break;
+            case 6:
+                s = NSLocalizedString(@"Kizilorda", nil);
+                break;
+            case 7:
+                s = NSLocalizedString(@"Taraz", nil);
+                break;
+            case 8:
+                s = NSLocalizedString(@"Ust-Kamenogorsk", nil);
+                break;
+            case 9:
+                s = NSLocalizedString(@"Shimkent", nil);
+                break;
+            case 0:
+                s = NSLocalizedString(@"AllCities", nil);
+                break;
+        }
+
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [button addTarget:self action:@selector(citySelected:) forControlEvents:UIControlEventTouchDown];
+        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [button setTitle:s forState:UIControlStateNormal];
+        button.titleLabel.font = MAP_POPUP_FONT;
+        button.tag = i;
+        button.frame = CGRectMake(0, i * POPUPBUTTON_HEIGHT, POPUP_WIDTH, POPUPBUTTON_HEIGHT);
+        [v addSubview:button];
+    }}
 
 @end

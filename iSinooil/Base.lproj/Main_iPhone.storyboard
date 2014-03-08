@@ -1975,9 +1975,10 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Almaty" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I39-wc-2KW" userLabel="Dropdown Label - Label">
-                                        <rect key="frame" x="127" y="38" width="161" height="21"/>
+                                    <label opaque="NO" clipsSubviews="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Almaty" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I39-wc-2KW" userLabel="Dropdown Label - Label">
+                                        <rect key="frame" x="127" y="41" width="161" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="161" id="C0e-a6-2vX"/>
                                             <constraint firstAttribute="height" constant="21" id="hA7-yQ-m8D"/>
@@ -1985,6 +1986,9 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="mNf-X8-sx2" appends="YES" id="yrG-uk-IYr"/>
+                                        </connections>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowdown_light.png" translatesAutoresizingMaskIntoConstraints="NO" id="3HW-uE-VIl">
                                         <rect key="frame" x="296" y="46" width="16" height="10"/>
@@ -2007,7 +2011,7 @@
                                     <constraint firstItem="iI6-7y-Khq" firstAttribute="top" secondItem="6bG-Rj-KHf" secondAttribute="top" constant="27" id="pUm-qb-Tyv"/>
                                     <constraint firstItem="3HW-uE-VIl" firstAttribute="top" secondItem="6bG-Rj-KHf" secondAttribute="top" constant="46" id="pbT-1C-fe1"/>
                                     <constraint firstItem="3HW-uE-VIl" firstAttribute="leading" secondItem="I39-wc-2KW" secondAttribute="trailing" constant="8" id="qEm-Js-Rfa"/>
-                                    <constraint firstItem="I39-wc-2KW" firstAttribute="top" secondItem="6bG-Rj-KHf" secondAttribute="top" constant="38" id="rme-Xm-P09"/>
+                                    <constraint firstItem="I39-wc-2KW" firstAttribute="top" secondItem="6bG-Rj-KHf" secondAttribute="top" constant="41" id="rme-Xm-P09"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQ7-Ab-CYh" userLabel="MapButton">
@@ -2093,6 +2097,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="laS-j2-iWv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="mNf-X8-sx2">
+                    <connections>
+                        <action selector="goPopup:" destination="ehy-aB-IHd" id="gOr-Fn-7Jj"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1071" y="-391"/>
         </scene>
