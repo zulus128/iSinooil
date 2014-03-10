@@ -64,6 +64,7 @@
 #define FONT_HOTLINE_LABEL [UIFont fontWithName:@"HelveticaNeueCyr-Light" size:16.0f]
 #define FONT_MAP_DROPDOWN [UIFont fontWithName:@"HelveticaNeueCyr-Light" size:16.0f]
 #define MAP_POPUP_FONT [UIFont fontWithName:@"HelveticaNeueCyr-Thin" size:16.0f]
+#define BUTTON_MAP_POPUP_FONT [UIFont fontWithName:@"HelveticaNeueCyr-Bold" size:16.0f]
 
 #define COLOR_ABOUT_CENTRALOFFICE [UIColor colorWithRed:(0x2d/255.f) green:(0x2d/255.f) blue:(0x2d/255.f) alpha:1.0f]
 

@@ -157,40 +157,41 @@
     UIView* old = [self.view viewWithTag:POPUP_TAG];
     [old removeFromSuperview];
 
-    NSString* s = NSLocalizedString(@"AllCities", nil);
-
-    switch ([Common instance].selectedCity) {
-        case 1:
-            s = NSLocalizedString(@"Aktau", nil);
-            break;
-        case 2:
-            s = NSLocalizedString(@"Aktobe", nil);
-            break;
-        case 3:
-            s = NSLocalizedString(@"Almaty", nil);
-            break;
-        case 4:
-            s = NSLocalizedString(@"Astana", nil);
-            break;
-        case 5:
-            s = NSLocalizedString(@"Atyrau", nil);
-            break;
-        case 6:
-            s = NSLocalizedString(@"Kizilorda", nil);
-            break;
-        case 7:
-            s = NSLocalizedString(@"Taraz", nil);
-            break;
-        case 8:
-            s = NSLocalizedString(@"Ust-Kamenogorsk", nil);
-            break;
-        case 9:
-            s = NSLocalizedString(@"Shimkent", nil);
-            break;
-        case 0:
-            s = NSLocalizedString(@"AllCities", nil);
-            break;
-    }
+    NSString* s = [[Common instance] getCurrentCityName];
+    
+//    NSString* s = NSLocalizedString(@"AllCities", nil);
+//    switch ([Common instance].selectedCity) {
+//        case 1:
+//            s = NSLocalizedString(@"Aktau", nil);
+//            break;
+//        case 2:
+//            s = NSLocalizedString(@"Aktobe", nil);
+//            break;
+//        case 3:
+//            s = NSLocalizedString(@"Almaty", nil);
+//            break;
+//        case 4:
+//            s = NSLocalizedString(@"Astana", nil);
+//            break;
+//        case 5:
+//            s = NSLocalizedString(@"Atyrau", nil);
+//            break;
+//        case 6:
+//            s = NSLocalizedString(@"Kizilorda", nil);
+//            break;
+//        case 7:
+//            s = NSLocalizedString(@"Taraz", nil);
+//            break;
+//        case 8:
+//            s = NSLocalizedString(@"Ust-Kamenogorsk", nil);
+//            break;
+//        case 9:
+//            s = NSLocalizedString(@"Shimkent", nil);
+//            break;
+//        case 0:
+//            s = NSLocalizedString(@"AllCities", nil);
+//            break;
+//    }
     
     self.dropdown.text = s;
 }
@@ -518,12 +519,12 @@
 
 - (IBAction)goPopup:(id)sender {
     
-    NSLog(@"showPopup");
+//    NSLog(@"showPopup");
     
     UIView* old = [self.view viewWithTag:POPUP_TAG];
     [old removeFromSuperview];
     
-    int cnt = 10;
+    int cnt = [Common instance].cityjson.count + 1;
     CGRect f = self.dropdown.frame;
     UIView* v = [[UIView alloc] initWithFrame:CGRectMake(f.origin.x + 10, f.origin.y + 20, POPUP_WIDTH, cnt * POPUPBUTTON_HEIGHT)];
     v.layer.cornerRadius = 5;
@@ -535,52 +536,59 @@
     UIView* vv = [[UIView alloc] initWithFrame:CGRectMake(0, 0, POPUP_WIDTH, cnt * POPUPBUTTON_HEIGHT)];
     vv.layer.cornerRadius = 5;
     vv.layer.masksToBounds = YES;
-    vv.backgroundColor = [UIColor grayColor];
-    vv.alpha = 0.7f;
+    vv.backgroundColor = [UIColor blackColor];
+    vv.alpha = 0.4f;
     [v addSubview:vv];
     
-    for(int i = 0; i < 10; i++) {
+    for(int i = 0; i < cnt; i++) {
     
         NSString* s = NSLocalizedString(@"AllCities", nil);
-        switch (i) {
-            case 1:
-                s = NSLocalizedString(@"Aktau", nil);
-                break;
-            case 2:
-                s = NSLocalizedString(@"Aktobe", nil);
-                break;
-            case 3:
-                s = NSLocalizedString(@"Almaty", nil);
-                break;
-            case 4:
-                s = NSLocalizedString(@"Astana", nil);
-                break;
-            case 5:
-                s = NSLocalizedString(@"Atyrau", nil);
-                break;
-            case 6:
-                s = NSLocalizedString(@"Kizilorda", nil);
-                break;
-            case 7:
-                s = NSLocalizedString(@"Taraz", nil);
-                break;
-            case 8:
-                s = NSLocalizedString(@"Ust-Kamenogorsk", nil);
-                break;
-            case 9:
-                s = NSLocalizedString(@"Shimkent", nil);
-                break;
-            case 0:
-                s = NSLocalizedString(@"AllCities", nil);
-                break;
+        if(i > 0) {
+
+            NSDictionary* d = [[Common instance].cityjson objectAtIndex:(i - 1)];
+            s = [d valueForKey:CITY_NAME];
         }
+        
+//        NSString* s = NSLocalizedString(@"AllCities", nil);
+//        switch (i) {
+//            case 1:
+//                s = NSLocalizedString(@"Aktau", nil);
+//                break;
+//            case 2:
+//                s = NSLocalizedString(@"Aktobe", nil);
+//                break;
+//            case 3:
+//                s = NSLocalizedString(@"Almaty", nil);
+//                break;
+//            case 4:
+//                s = NSLocalizedString(@"Astana", nil);
+//                break;
+//            case 5:
+//                s = NSLocalizedString(@"Atyrau", nil);
+//                break;
+//            case 6:
+//                s = NSLocalizedString(@"Kizilorda", nil);
+//                break;
+//            case 7:
+//                s = NSLocalizedString(@"Taraz", nil);
+//                break;
+//            case 8:
+//                s = NSLocalizedString(@"Ust-Kamenogorsk", nil);
+//                break;
+//            case 9:
+//                s = NSLocalizedString(@"Shimkent", nil);
+//                break;
+//            case 0:
+//                s = NSLocalizedString(@"AllCities", nil);
+//                break;
+//        }
 
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         [button addTarget:self action:@selector(citySelected:) forControlEvents:UIControlEventTouchDown];
         [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [button setTitle:s forState:UIControlStateNormal];
-        button.titleLabel.font = MAP_POPUP_FONT;
-        button.tag = i;
+        button.titleLabel.font = BUTTON_MAP_POPUP_FONT;
+        button.tag = (i - 1);
         button.frame = CGRectMake(0, i * POPUPBUTTON_HEIGHT, POPUP_WIDTH, POPUPBUTTON_HEIGHT);
         [v addSubview:button];
     }}

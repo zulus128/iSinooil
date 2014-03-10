@@ -71,6 +71,7 @@
 		DD3F7473189E147F0082CD30 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3F7472189E147F0082CD30 /* NewsViewController.m */; };
 		DD3F7476189E15260082CD30 /* NewsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3F7475189E15260082CD30 /* NewsDataSource.m */; };
 		DD3F7479189E164C0082CD30 /* NewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3F7478189E164C0082CD30 /* NewsCell.m */; };
+		DD43BBF918CDB0FA005F8ECB /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = DD43BBF818CDB0FA005F8ECB /* cities.json */; };
 		DD46151818751E88008FCD16 /* azs.json in Resources */ = {isa = PBXBuildFile; fileRef = DD46151418751E88008FCD16 /* azs.json */; };
 		DD46151918751E88008FCD16 /* fuel.json in Resources */ = {isa = PBXBuildFile; fileRef = DD46151518751E88008FCD16 /* fuel.json */; };
 		DD46151A18751E88008FCD16 /* news.json in Resources */ = {isa = PBXBuildFile; fileRef = DD46151618751E88008FCD16 /* news.json */; };
@@ -303,6 +304,7 @@
 		DD3F7475189E15260082CD30 /* NewsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsDataSource.m; sourceTree = "<group>"; };
 		DD3F7477189E164C0082CD30 /* NewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsCell.h; sourceTree = "<group>"; };
 		DD3F7478189E164C0082CD30 /* NewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsCell.m; sourceTree = "<group>"; };
+		DD43BBF818CDB0FA005F8ECB /* cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
 		DD46151418751E88008FCD16 /* azs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = azs.json; sourceTree = "<group>"; };
 		DD46151518751E88008FCD16 /* fuel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fuel.json; sourceTree = "<group>"; };
 		DD46151618751E88008FCD16 /* news.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = news.json; sourceTree = "<group>"; };
@@ -661,6 +663,7 @@
 		DD46151218751E7A008FCD16 /* jsons */ = {
 			isa = PBXGroup;
 			children = (
+				DD43BBF818CDB0FA005F8ECB /* cities.json */,
 				DD1E4A7B18C324B9008658ED /* acts.json */,
 				DD46151418751E88008FCD16 /* azs.json */,
 				DD46151518751E88008FCD16 /* fuel.json */,
@@ -1046,6 +1049,7 @@
 				DDEB48A718542883006FAED3 /* price_border@2x.png in Resources */,
 				DD7ACF1318CB148300909572 /* 76.png in Resources */,
 				DDEB487518542883006FAED3 /* icon_atm_pressed@2x.png in Resources */,
+				DD43BBF918CDB0FA005F8ECB /* cities.json in Resources */,
 				DD7ACF1918CB148300909572 /* splash_ipad_r_portrait@2x.png in Resources */,
 				DDEB488718542883006FAED3 /* icon_service_pressed@2x.png in Resources */,
 				84CC0F8818A4B1AF006F84C6 /* bubble_dark@2x.png in Resources */,

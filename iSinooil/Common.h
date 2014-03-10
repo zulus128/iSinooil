@@ -35,6 +35,12 @@ enum {M_KM, M_MI, M_MT}; //km, miles, metres
 #define AZS_URL @"http://sinoapp.4design.asia/out.php?action=stations"
 #define FUEL_URL @"http://sinoapp.4design.asia/out.php?action=prices"
 #define DEVICE_REG_URL @"http://sinoapp.4design.asia/out.php?action=new&device_id=%@&type=ios"
+#define RECV_MSG_URL @"http://sinoapp.4design.asia/out.php?action=message&imei=%@&id=%d"
+#define SEND_MSG_URL @"http://sinoapp.4design.asia/out.php?action=message&imei=%@"
+#define CITIES_URL @"http://sinoapp.4design.asia/out.php?action=city"
+
+//cities.json
+#define CITY_NAME @"ttl"
 
 //azs.json
 #define STATION_ID @"id"
@@ -111,9 +117,11 @@ enum {M_KM, M_MI, M_MT}; //km, miles, metres
 - (NSDictionary*) getBranchAt:(int)n;
 
 - (NSString*) getStringForKey:(NSString*)key;
+- (NSString*) getCurrentCityName;
 
 @property (nonatomic, strong) NSArray* azsjson;
 @property (nonatomic, strong) NSArray* fueljson;
+@property (nonatomic, strong) NSArray* cityjson;
 @property (nonatomic, strong) NSArray* aboutjson;
 @property (nonatomic, strong) NSArray* newsjson;
 @property (nonatomic, strong) NSArray* actsjson;

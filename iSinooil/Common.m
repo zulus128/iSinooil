@@ -36,6 +36,8 @@
 
 //        self.needDistancesUpdate = YES;
         
+        self.selectedCity = -1;
+        
         self.allowSemaphore = dispatch_semaphore_create(0);
 
         int l = [[NSUserDefaults standardUserDefaults] integerForKey:@"language"];
@@ -97,6 +99,7 @@
         [self loadAboutData];
         [self loadAzsData];
         [self loadFuelData];
+        [self loadCityData];
         
         [self parseData];
         
@@ -179,7 +182,32 @@
     } else {
         
         NSLog(@"Parsing fuel: OK!");
-//        NSLog(@"fueljson: %@", self.fueljson);
+        //        NSLog(@"fueljson: %@", self.fueljson);
+    }
+    
+    NSString* azsCity = [docpath stringByAppendingPathComponent:@"cities.json"];
+    fe = [[NSFileManager defaultManager] fileExistsAtPath:azsCity];
+    if(!fe) {
+        
+        NSString *appFile = [[NSBundle mainBundle] pathForResource:@"cities" ofType:@"json"];
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        NSError *error;
+        [fileManager copyItemAtPath:appFile toPath:azsCity error:&error];
+    }
+    
+    NSString *city= [NSString stringWithContentsOfFile:azsCity encoding:NSUTF8StringEncoding error:nil];
+    tardata = [city dataUsingEncoding:NSUTF8StringEncoding];
+    self.cityjson = [NSJSONSerialization JSONObjectWithData:tardata options:NSDataReadingUncached error:&error];
+//    self.cityjson = [d objectForKey:FUEL_VALUES];
+    
+    if (!self.cityjson) {
+        
+        NSLog(@"Error parsing cities: %@", error);
+        
+    } else {
+        
+        NSLog(@"Parsing cities: OK!");
+        //        NSLog(@"fueljson: %@", self.fueljson);
     }
     
     NSString* ab = [docpath stringByAppendingPathComponent:@"about.json"];
@@ -572,6 +600,37 @@
     
 }
 
+- (void) loadCityData {
+    
+    NSArray* sp = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString* docpath = [sp objectAtIndex: 0];
+    
+    NSString* filePath = [docpath stringByAppendingPathComponent:@"cities.json"];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    
+    [request setURL:[NSURL URLWithString:CITIES_URL]];
+    
+    NSHTTPURLResponse* urlResponse = nil;
+    NSError *error = nil;
+    NSData* responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
+    if (responseData == nil) {
+        if ((error != nil) && self.internetActive) {
+            
+            UIAlertView* dialog = [[UIAlertView alloc] init];
+            [dialog setTitle:NSLocalizedString1(@"title_network_error", nil)];
+            [dialog setMessage:NSLocalizedString1(@"network_error", nil)];
+            [dialog addButtonWithTitle:@"OK"];
+            [dialog show];
+        }
+    }
+    else {
+        
+        [responseData writeToFile:filePath atomically:YES];
+        NSLog(@"cities loaded OK!");
+    }
+    
+}
+
 + (CGSize) currentScreenBoundsDependOnOrientation:(UIInterfaceOrientation) interfaceOrientation {
     
     CGRect screenBounds = [UIScreen mainScreen].bounds ;
@@ -881,17 +940,15 @@
     
 }
 
+- (NSString*) getCurrentCityName {
+
+    NSString* s = NSLocalizedString(@"AllCities", nil);
+    if(self.selectedCity >= 0) {
+    
+        NSDictionary* d = [[Common instance].cityjson objectAtIndex:self.selectedCity];
+        s = [d valueForKey:CITY_NAME];
+    }
+    return s;
+}
 
 @end
-
-//@implementation UINavigationController (StatusBarStyle)
-//
-//-(UIViewController *)childViewControllerForStatusBarStyle {
-//    return self.visibleViewController;
-//}
-//
-//-(UIViewController *)childViewControllerForStatusBarHidden {
-//    return self.visibleViewController;
-//}
-//
-//@end
