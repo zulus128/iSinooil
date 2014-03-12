@@ -30,13 +30,13 @@
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken  {
 
-    NSLog(@"My PUSH token is: %@", deviceToken);
 //    NSString* newStr = [[NSString alloc] initWithData:deviceToken encoding:NSUTF8StringEncoding];
     NSString * tokenAsString = [[[deviceToken description]
                                  stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]]
                                 stringByReplacingOccurrencesOfString:@" " withString:@""];
     [[Common instance] regDeviceForPush:tokenAsString];
     [[NSUserDefaults standardUserDefaults] setObject:tokenAsString forKey:DEVICE_TOKEN];
+    NSLog(@"My PUSH token is: %@", tokenAsString);
 
 }
 
