@@ -51,7 +51,21 @@
 
 - (void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
 
-    NSLog(@"Received PUSH notification: %@", userInfo);
+//    NSLog(@"Received PUSH notification: %@", userInfo);
+    
+    NSDictionary* apsInfo = [userInfo objectForKey:@"aps"];
+    NSString* alert = [apsInfo objectForKey:@"alert"];
+    UIAlertView* dialog = [[UIAlertView alloc] init];
+    [dialog setTitle:@"Push Message"];
+    [dialog setMessage:alert];
+    [dialog addButtonWithTitle:@"OK"];
+    [dialog show];
+    
+//    NSString *badge = [apsInfo objectForKey:@"badge"];
+//    NSLog(@"Received Push Badge: %@", badge);
+//    int currentBadgeNumber = application.applicationIconBadgeNumber;
+//    currentBadgeNumber += [[apsInfo objectForKey:@"badge"] integerValue];
+//    application.applicationIconBadgeNumber = currentBadgeNumber;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
