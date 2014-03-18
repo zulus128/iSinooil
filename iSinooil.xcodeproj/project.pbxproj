@@ -480,7 +480,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		844293A618A1EDC700DDC7F3 /* TestFlightSDK2.2.1 */ = {
+		844293A618A1EDC700DDC7F3 /* TestFlightSDK3.0.0 */ = {
 			isa = PBXGroup;
 			children = (
 				844293A718A1EDC700DDC7F3 /* libTestFlight.a */,
@@ -490,6 +490,7 @@
 				844293AB18A1EDC700DDC7F3 /* TestFlight+ManualSessions.h */,
 				844293AC18A1EDC700DDC7F3 /* TestFlight.h */,
 			);
+			name = TestFlightSDK3.0.0;
 			path = TestFlightSDK2.2.1;
 			sourceTree = "<group>";
 		};
@@ -582,7 +583,7 @@
 			isa = PBXGroup;
 			children = (
 				DD7ACF0218CB147200909572 /* icons */,
-				844293A618A1EDC700DDC7F3 /* TestFlightSDK2.2.1 */,
+				844293A618A1EDC700DDC7F3 /* TestFlightSDK3.0.0 */,
 				DD3F7458189E082F0082CD30 /* SDWebImage */,
 				84DA053D187D844F004592EC /* Fonts */,
 				846938E7187A84010037CABC /* Data */,
