@@ -79,10 +79,18 @@
 
 - (void)mapView:(MKMapView *)mv didUpdateUserLocation:(MKUserLocation *)userLocation {
 
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 500.0f, 500.0f);
+    [mv setRegion:region animated:YES];
+    
     if(![Common instance].fsttime) {
         
+//        MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(userLocation.location.coordinate, 500, 500);
+//        MKCoordinateRegion adjustedRegion = [mv regionThatFits:viewRegion];
+//        [mv setRegion:adjustedRegion animated:YES];
+
         [Common instance].fsttime = YES;
         [self addPoints:mv];
+//        NSLog(@"uc = %f %f", [Common instance].userCoordinate.latitude, [Common instance].userCoordinate.longitude);
         [Common instance].userCoordinate = userLocation.location.coordinate;
         [[Common instance] fillDists];
         

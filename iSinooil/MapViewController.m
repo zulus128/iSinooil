@@ -364,11 +364,15 @@
     
     [super viewDidLoad];
     
+    if([Common instance].userCoordinate.longitude < -1e4) {
+        
+        CLLocationCoordinate2D noLocation = {43.240682, 76.892621};
+        MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(noLocation, 5000, 5000);
+        MKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:viewRegion];
+        [self.mapView setRegion:adjustedRegion animated:YES];
+    }
     self.mapView.userTrackingMode = MKUserTrackingModeFollow;
-    CLLocationCoordinate2D noLocation = {43, 76};
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(noLocation, 500, 500);
-    MKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:viewRegion];
-    [self.mapView setRegion:adjustedRegion animated:YES];
+
 
     self.mapsour = [[MapSource alloc] initWithType:MAPTYPE_FULLWINDOW];
     self.mapView.delegate = self.mapsour;

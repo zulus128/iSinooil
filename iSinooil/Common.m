@@ -58,6 +58,8 @@
         self.languageBundle = [NSBundle bundleWithPath:path];
         self.lang = l;
         
+        CLLocationCoordinate2D noLocation = {-1e5, -1e5};
+        self.userCoordinate = noLocation;
         
         Reachability* internetReachable = [Reachability reachabilityForInternetConnection];
         NetworkStatus internetStatus = [internetReachable currentReachabilityStatus];
