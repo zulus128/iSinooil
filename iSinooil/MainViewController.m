@@ -170,7 +170,7 @@
 //    self.navigationController.navigationBarHidden = YES;
     
     self.mapView.userTrackingMode = MKUserTrackingModeFollow;
-    CLLocationCoordinate2D noLocation;
+    CLLocationCoordinate2D noLocation = {43, 76};
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(noLocation, 500, 500);
     MKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:viewRegion];
     [self.mapView setRegion:adjustedRegion animated:YES];

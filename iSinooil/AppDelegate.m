@@ -14,7 +14,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [TestFlight takeOff:@"d2f5e1af-8cd7-463e-b1b5-4f6fd0319b12"];
+    [TestFlight takeOff:@"9be99990-d71e-41b7-bc03-27c53dee6d2e"];
     
     
 //    [application setStatusBarHidden:NO];
