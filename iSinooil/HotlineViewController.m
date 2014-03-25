@@ -20,17 +20,24 @@
                                              selector:@selector(keyboardHide:)
                                                  name:UIKeyboardWillHideNotification
                                                object:nil];
+//    timer = YES;
+    [self recvMsg];
 }
 
 - (void) viewDidDisappear:(BOOL)animated {
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+    self.timer = NO;
 }
 
 - (void) willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
     
     CGSize s = [Common currentScreenBoundsDependOnOrientation:toInterfaceOrientation];
     self.view.frame = CGRectMake(0, 0, s.width, s.height);
+    
+    self.contentViewW.constant = s.width;
+
 }
 
 - (void) refresh {
@@ -58,6 +65,9 @@
                      }
                      completion:^(BOOL finished) {
                      }];
+    self.timer = !b;
+    [self recvMsg];
+
 }
 
 - (void)viewDidLoad {
@@ -81,7 +91,7 @@
 
 - (IBAction)call:(UIButton*)button {
 
-    NSString *phoneNumber = [@"telprompt://" stringByAppendingString:@"+7 777 7777777"];
+    NSString *phoneNumber = [@"telprompt://" stringByAppendingString:@"+7 800 0700180"];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
 }
 
@@ -101,15 +111,8 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
 
-//    CGRect f = self.msgFrameView.frame;
-//    [UIView animateWithDuration:anim_delay_keyb delay:0.0 options:UIViewAnimationOptionCurveEaseOut
-//                     animations:^{
-//                         
-//                         self.msgFrameView.frame = CGRectMake(f.origin.x, f.origin.y + 215, f.size.width, f.size.height);
-//                         
-//                     }
-//                     completion:^(BOOL finished) {
-//                     }];
+    [self sendMsg:textField.text];
+    
     [textField resignFirstResponder];
     return YES;
 }
@@ -150,10 +153,42 @@
 
 }
 
+- (void) sendMsg:(NSString*) msg {
+    
+    if(!msg)
+        return;
+    if(!msg.length)
+        return;
+    
+    [[Common instance] sendMessage:msg];
+    
+    [self recvMsg];
+    
+}
+
+- (void) recvMsg {
+    
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(recvMsg) object:nil];
+
+    NSLog(@"recvMsg");
+    NSDictionary* dict = [[Common instance] recvMessage];
+    
+    if(self.timer)
+        [self performSelector:@selector(recvMsg) withObject:nil afterDelay:2.0f];
+    
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)sendButtonPressed:(id)sender {
+
+    [self sendMsg:self.msgField.text];
+    [self.msgField resignFirstResponder];
+
 }
 
 @end

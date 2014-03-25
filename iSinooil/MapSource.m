@@ -25,6 +25,17 @@
 	return self;
 }
 
+- (void)refreshPinsAndCityChange {
+    
+    if([Common instance].selectedCity >= 0) {
+        
+        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance([[Common instance] getCurrentCityCoord], 500.0f, 500.0f);
+        [self.mapcontr.mapView setRegion:region animated:YES];
+    }
+    
+    [self refreshPins];
+}
+
 - (void)refreshPins {
 
     id userLocation = [self.mapcontr.mapView userLocation];
@@ -36,6 +47,8 @@
     }
     
     [self addPoints:self.mapcontr.mapView];
+    
+
 }
 //- (void)mapViewWillStartLocatingUser:(MKMapView *)mapView {
 //
@@ -54,8 +67,10 @@
         BOOL bs = [Common instance].serv?((ns.intValue & [Common instance].serv) == [Common instance].serv):YES;
         NSNumber* nc = [d valueForKey:STATION_CARD];
         BOOL bc = [Common instance].card?((nc.intValue & [Common instance].card) == [Common instance].card):YES;
+        NSNumber* ncity = [d valueForKey:STATION_CITY];
+        BOOL bct = ([Common instance].selectedCity >= 0)?(ncity.intValue == [[Common instance] getCurrentCityId]):YES;
         
-        if(bf && bs && bc) {
+        if(bf && bs && bc && bct) {
 
             NSNumber* n = [d valueForKey:STATION_LAT];
             CLLocationDegrees lat = n.doubleValue;
@@ -79,14 +94,11 @@
 
 - (void)mapView:(MKMapView *)mv didUpdateUserLocation:(MKUserLocation *)userLocation {
 
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 500.0f, 500.0f);
-    [mv setRegion:region animated:YES];
     
     if(![Common instance].fsttime) {
         
-//        MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(userLocation.location.coordinate, 500, 500);
-//        MKCoordinateRegion adjustedRegion = [mv regionThatFits:viewRegion];
-//        [mv setRegion:adjustedRegion animated:YES];
+        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 500.0f, 500.0f);
+        [mv setRegion:region animated:YES];
 
         [Common instance].fsttime = YES;
         [self addPoints:mv];

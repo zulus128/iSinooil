@@ -9,6 +9,7 @@
 #import "MenuViewController.h"
 #import "Common.h"
 #import "MapViewController.h"
+#import "HotlineViewController.h"
 
 @implementation MenuViewController
 
@@ -262,6 +263,16 @@
     view.frame = CGRectMake(0, fr.origin.y, fr.size.width, fr.size.height);
     
     [self makeInvisibleExcludeTag:HOT_VIEW_TAG];
+
+    for(UIViewController* vc in self.childViewControllers) {
+        
+        if(vc.view.tag == HOT_VIEW_TAG) {
+            
+            ((HotlineViewController*)vc).timer = YES;
+            [((HotlineViewController*)vc) recvMsg];
+            
+        }
+    }
 
 }
 

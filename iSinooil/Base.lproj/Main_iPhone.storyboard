@@ -1162,6 +1162,9 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="sendButtonPressed:" destination="LFi-bQ-iRj" eventType="touchUpInside" id="0GQ-uA-5w2"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -1198,6 +1201,8 @@
                     </view>
                     <connections>
                         <outlet property="callButton" destination="KDr-hB-hJh" id="ix6-Rj-2jh"/>
+                        <outlet property="contentViewH" destination="gOZ-E3-LPg" id="ODM-P2-j6Z"/>
+                        <outlet property="contentViewW" destination="lr8-cC-Ii9" id="VcP-PH-KmX"/>
                         <outlet property="msgField" destination="XXu-H8-jkP" id="9dg-5S-h6r"/>
                         <outlet property="msgFrameView" destination="se0-bZ-YQs" id="dBz-aC-38L"/>
                         <outlet property="msgInnerView" destination="uBN-65-MVo" id="Ocg-pH-a7p"/>

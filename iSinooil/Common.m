@@ -98,19 +98,21 @@
 
         }
         
-        [self loadAboutData];
-        [self loadAzsData];
-        [self loadFuelData];
-        [self loadCityData];
-        
-        [self parseData];
-        
         self.fuelSelected = 0;
         self.newsjson = [NSArray array];
         self.actsjson = [NSArray array];
 
-        [self loadNewsData];
-        [self loadActsData];
+//        [self loadAboutData];
+//        [self loadAzsData];
+//        [self loadFuelData];
+//        [self loadCityData];
+//        
+//        [self parseData];
+//
+//        [self loadNewsData];
+//        [self loadActsData];
+        
+        [self loadAndParse];
         
         self.azsDistances = [NSMutableDictionary dictionary];
         for (NSDictionary* d in self.azsjson) {
@@ -128,6 +130,20 @@
         }
 	}
 	return self;
+}
+
+- (void) loadAndParse {
+    
+    [self loadAboutData];
+    [self loadAzsData];
+    [self loadFuelData];
+    [self loadCityData];
+    
+    [self parseData];
+    
+    [self loadNewsData];
+    [self loadActsData];
+    
 }
 
 - (void) parseData {
@@ -304,11 +320,33 @@
     NSString* filePath = [docpath stringByAppendingPathComponent:@"news.json"];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
 //    NSLog(@"--- load news from %d", self.lastNews);
-    if(self.lastNews)
-        [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%d", NEWS_URL_LAST, self.lastNews]]];
-    else
-        [request setURL:[NSURL URLWithString:NEWS_URL]];
+    NSString* newsurl;
+    if(self.lastNews) {
+     
+//        [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%d", NEWS_URL_LAST, self.lastNews]]];
+        newsurl = [NSString stringWithFormat:@"%@%d", NEWS_URL_LAST, self.lastNews];
+    }
+    else {
+
+//        [request setURL:[NSURL URLWithString:NEWS_URL]];
+        newsurl = NEWS_URL;
+    }
     
+    NSString* la = @"&lang=ru";
+    switch (self.lang) {
+        case L_ENG:
+            la = @"&lang=en";
+            break;
+        case L_KZ:
+            la = @"&lang=kz";
+            break;
+        case L_RU:
+            la = @"&lang=ru";
+            break;
+    }
+    
+    [request setURL:[NSURL URLWithString:[newsurl stringByAppendingString:la]]];
+
     NSHTTPURLResponse* urlResponse = nil;
     NSError *error = nil;
     NSData* responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
@@ -448,11 +486,33 @@
     
     NSString* filePath = [docpath stringByAppendingPathComponent:@"acts.json"];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    if(self.lastAct)
-        [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%d", ACTS_URL_LAST, self.lastAct]]];
-    else
-        [request setURL:[NSURL URLWithString:ACTS_URL]];
+    NSString* actsurl;
+    if(self.lastAct) {
+        
+//        [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%d", ACTS_URL_LAST, self.lastAct]]];
+        actsurl = [NSString stringWithFormat:@"%@%d", ACTS_URL_LAST, self.lastAct];
+    }
+    else {
+     
+//        [request setURL:[NSURL URLWithString:ACTS_URL]];
+        actsurl = ACTS_URL;
+    }
     
+    NSString* la = @"&lang=ru";
+    switch (self.lang) {
+        case L_ENG:
+            la = @"&lang=en";
+            break;
+        case L_KZ:
+            la = @"&lang=kz";
+            break;
+        case L_RU:
+            la = @"&lang=ru";
+            break;
+    }
+    
+    [request setURL:[NSURL URLWithString:[actsurl stringByAppendingString:la]]];
+
     NSHTTPURLResponse* urlResponse = nil;
     NSError *error = nil;
     NSData* responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
@@ -517,7 +577,19 @@
     NSString* filePath = [docpath stringByAppendingPathComponent:@"about.json"];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     
-    [request setURL:[NSURL URLWithString:ABOUT_URL]];
+    NSString* la = @"&lang=ru";
+    switch (self.lang) {
+        case L_ENG:
+            la = @"&lang=en";
+            break;
+        case L_KZ:
+            la = @"&lang=kz";
+            break;
+        case L_RU:
+            la = @"&lang=ru";
+            break;
+    }
+    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", ABOUT_URL, la]]];
     
     NSHTTPURLResponse* urlResponse = nil;
     NSError *error = nil;
@@ -548,8 +620,21 @@
     NSString* filePath = [docpath stringByAppendingPathComponent:@"azs.json"];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     
-    [request setURL:[NSURL URLWithString:AZS_URL]];
-    
+//    [request setURL:[NSURL URLWithString:AZS_URL]];
+    NSString* la = @"&lang=ru";
+    switch (self.lang) {
+        case L_ENG:
+            la = @"&lang=en";
+            break;
+        case L_KZ:
+            la = @"&lang=kz";
+            break;
+        case L_RU:
+            la = @"&lang=ru";
+            break;
+    }
+    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", AZS_URL, la]]];
+
     NSHTTPURLResponse* urlResponse = nil;
     NSError *error = nil;
     NSData* responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
@@ -579,7 +664,20 @@
     NSString* filePath = [docpath stringByAppendingPathComponent:@"fuel.json"];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     
-    [request setURL:[NSURL URLWithString:FUEL_URL]];
+//    [request setURL:[NSURL URLWithString:FUEL_URL]];
+    NSString* la = @"&lang=ru";
+    switch (self.lang) {
+        case L_ENG:
+            la = @"&lang=en";
+            break;
+        case L_KZ:
+            la = @"&lang=kz";
+            break;
+        case L_RU:
+            la = @"&lang=ru";
+            break;
+    }
+    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", FUEL_URL, la]]];
     
     NSHTTPURLResponse* urlResponse = nil;
     NSError *error = nil;
@@ -610,8 +708,21 @@
     NSString* filePath = [docpath stringByAppendingPathComponent:@"cities.json"];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     
-    [request setURL:[NSURL URLWithString:CITIES_URL]];
-    
+//    [request setURL:[NSURL URLWithString:CITIES_URL]];
+    NSString* la = @"&lang=ru";
+    switch (self.lang) {
+        case L_ENG:
+            la = @"&lang=en";
+            break;
+        case L_KZ:
+            la = @"&lang=kz";
+            break;
+        case L_RU:
+            la = @"&lang=ru";
+            break;
+    }
+    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", CITIES_URL, la]]];
+   
     NSHTTPURLResponse* urlResponse = nil;
     NSError *error = nil;
     NSData* responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
@@ -937,20 +1048,107 @@
     else {
         
         NSString* newStr = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
-        NSLog(@"device registered OK:%@", newStr);
+        NSLog(@"device registered OK: %@", newStr);
     }
     
+    self.deviceId = dev_id;
 }
 
 - (NSString*) getCurrentCityName {
-
+    
     NSString* s = NSLocalizedString(@"AllCities", nil);
     if(self.selectedCity >= 0) {
-    
+        
         NSDictionary* d = [[Common instance].cityjson objectAtIndex:self.selectedCity];
         s = [d valueForKey:CITY_NAME];
     }
     return s;
+}
+
+- (int) getCurrentCityId {
+    
+    int s = -1;
+    if(self.selectedCity >= 0) {
+        
+        NSDictionary* d = [[Common instance].cityjson objectAtIndex:self.selectedCity];
+        NSNumber* ns = [d valueForKey:CITY_ID];
+        s = ns.intValue;
+    }
+    return s;
+}
+
+- (CLLocationCoordinate2D) getCurrentCityCoord {
+
+    CLLocationCoordinate2D s = {43.240682, 76.892621};
+    if(self.selectedCity >= 0) {
+        
+        NSDictionary* d = [[Common instance].cityjson objectAtIndex:self.selectedCity];
+        
+        NSNumber* n = [d valueForKey:CITY_LAT];
+        CLLocationDegrees lat = n.doubleValue;
+        n = [d valueForKey:CITY_LON];
+        CLLocationDegrees lon = n.doubleValue;
+        CLLocationCoordinate2D coord = { lat, lon };
+        s = coord;
+    }
+    return s;
+}
+
+- (void) sendMessage:(NSString*) msg {
+
+    NSDate* now = [NSDate date];
+    NSString* params = [NSString stringWithFormat:@"message=%@&time=%f", msg, now.timeIntervalSince1970];
+    NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:SEND_MSG_URL, self.deviceId]];
+    NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:url];
+    request.HTTPMethod = @"POST";
+    request.HTTPBody = [params dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSHTTPURLResponse* urlResponse = nil;
+    NSError *error = nil;
+    NSData* responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
+    if (responseData == nil) {
+        if ((error != nil) && self.internetActive) {
+            
+            UIAlertView* dialog = [[UIAlertView alloc] init];
+            [dialog setTitle:NSLocalizedString1(@"title_network_error", nil)];
+            [dialog setMessage:NSLocalizedString1(@"network_error", nil)];
+            [dialog addButtonWithTitle:@"OK"];
+            [dialog show];
+        }
+    }
+    else {
+        
+        NSString* newStr = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+        NSLog(@"sendMessage OK: %@", newStr);
+    }
+
+}
+
+- (NSDictionary*) recvMessage {
+
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:RECV_MSG_URL, self.deviceId, 0]]];
+    
+    NSHTTPURLResponse* urlResponse = nil;
+    NSError *error = nil;
+    NSData* responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
+    if (responseData == nil) {
+        if ((error != nil) && self.internetActive) {
+            
+            UIAlertView* dialog = [[UIAlertView alloc] init];
+            [dialog setTitle:NSLocalizedString1(@"title_network_error", nil)];
+            [dialog setMessage:NSLocalizedString1(@"network_error", nil)];
+            [dialog addButtonWithTitle:@"OK"];
+            [dialog show];
+        }
+    }
+    else {
+        
+        NSString* newStr = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+        NSLog(@"recvMessage OK: %@", newStr);
+    }
+    
+    return nil;
 }
 
 @end

@@ -194,6 +194,8 @@
 //    }
     
     self.dropdown.text = s;
+    [self.mapsour refreshPinsAndCityChange];
+
 }
 
 - (void) refresh {

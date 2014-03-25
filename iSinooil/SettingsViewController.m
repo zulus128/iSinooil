@@ -74,6 +74,7 @@
     [Common instance].languageBundle = [NSBundle bundleWithPath:path];
     [[Common instance].menucontr refresh];
 
+    [[Common instance] loadAndParse];
 }
 
 - (void) enSelected {
@@ -87,6 +88,9 @@
     NSString* path = [[NSBundle mainBundle] pathForResource:@"en" ofType:@"lproj"];
     [Common instance].languageBundle = [NSBundle bundleWithPath:path];
     [[Common instance].menucontr refresh];
+    
+    [[Common instance] loadAndParse];
+
 }
 
 - (void) kzSelected {
@@ -100,6 +104,9 @@
     NSString* path = [[NSBundle mainBundle] pathForResource:@"kk-KZ" ofType:@"lproj"];
     [Common instance].languageBundle = [NSBundle bundleWithPath:path];
     [[Common instance].menucontr refresh];
+    
+    [[Common instance] loadAndParse];
+
 }
 
 - (void) kmSelected {

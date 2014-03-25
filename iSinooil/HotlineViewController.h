@@ -15,16 +15,21 @@
     float deltaY;
 }
 
+- (void) recvMsg;
 - (IBAction)call:(UIButton*)button;
+- (IBAction)toMenu:(id)sender;
+- (IBAction)sendButtonPressed:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UIView *topView;
-- (IBAction)toMenu:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *callButton;
-
 @property (weak, nonatomic) IBOutlet UILabel *politeLabel;
 @property (weak, nonatomic) IBOutlet UITextField *msgField;
 @property (weak, nonatomic) IBOutlet UIButton *sendButton;
 @property (weak, nonatomic) IBOutlet UIView *msgView;
 @property (weak, nonatomic) IBOutlet UIView *msgInnerView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentViewW;
 @property (weak, nonatomic) IBOutlet UIView *msgFrameView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentViewH;
+@property (assign, readwrite) BOOL timer;
+
 @end

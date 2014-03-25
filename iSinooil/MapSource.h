@@ -21,6 +21,7 @@ enum { MAPTYPE_MAINMENU, MAPTYPE_FULLWINDOW };
 
 -(id) initWithType:(int)typ;
 - (void)refreshPins;
+- (void)refreshPinsAndCityChange;
 
 @property (weak, nonatomic) MapViewController* mapcontr;
 

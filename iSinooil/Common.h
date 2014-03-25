@@ -41,6 +41,9 @@ enum {M_KM, M_MI, M_MT}; //km, miles, metres
 
 //cities.json
 #define CITY_NAME @"ttl"
+#define CITY_ID @"id"
+#define CITY_LAT @"lat"
+#define CITY_LON @"lng"
 
 //azs.json
 #define STATION_ID @"id"
@@ -52,6 +55,7 @@ enum {M_KM, M_MI, M_MT}; //km, miles, metres
 #define STATION_SERV @"serv"
 #define STATION_CARD @"card"
 #define STATION_PHONE @"phone"
+#define STATION_CITY @"city"
 #define PHONE_NUMBER @"n"
 #define AZS_VALUES @"items"
 
@@ -118,6 +122,12 @@ enum {M_KM, M_MI, M_MT}; //km, miles, metres
 
 - (NSString*) getStringForKey:(NSString*)key;
 - (NSString*) getCurrentCityName;
+- (int) getCurrentCityId;
+- (CLLocationCoordinate2D) getCurrentCityCoord;
+
+- (void) loadAndParse;
+- (void) sendMessage:(NSString*) msg;
+- (NSDictionary*) recvMessage;
 
 @property (nonatomic, strong) NSArray* azsjson;
 @property (nonatomic, strong) NSArray* fueljson;
@@ -150,5 +160,7 @@ enum {M_KM, M_MI, M_MT}; //km, miles, metres
 @property (assign, readwrite) BOOL freeOfSems;
 
 @property (assign, readwrite) int selectedCity;
+
+@property(nonatomic, strong) NSString* deviceId;
 
 @end
