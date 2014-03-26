@@ -134,6 +134,11 @@
 
 - (void) loadAndParse {
     
+    self.lastNews = 0;
+    self.lastAct = 0;
+    self.newsjson = [NSArray array];
+    self.actsjson = [NSArray array];
+    
     [self loadAboutData];
     [self loadAzsData];
     [self loadFuelData];
@@ -309,6 +314,8 @@
 //        }
 
     }
+    
+//    NSLog(@"topnews = %@", self.newsjson);
 
 }
 
@@ -345,7 +352,8 @@
             break;
     }
     
-    [request setURL:[NSURL URLWithString:[newsurl stringByAppendingString:la]]];
+    NSString* req = [newsurl stringByAppendingString:la];
+    [request setURL:[NSURL URLWithString:req]];
 
     NSHTTPURLResponse* urlResponse = nil;
     NSError *error = nil;

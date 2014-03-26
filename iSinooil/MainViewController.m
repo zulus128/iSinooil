@@ -113,6 +113,8 @@
 
 - (void) updateNewsActs {
 
+//    NSLog(@"topnews = %@", [Common instance].newsjson);
+    
     NSString* pic = [[Common instance].topnews valueForKey:NEWS_PIC];
     [self.newsImage setImageWithURL:[NSURL URLWithString:pic] placeholderImage:[UIImage imageNamed:@"placeholder-icon"]];
 //    self.ttlLabel.text = [[Common instance].topnews valueForKey:NEWS_TTL];

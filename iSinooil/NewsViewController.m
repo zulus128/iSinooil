@@ -26,6 +26,8 @@
     labelPrices.font = FONT_STD_TOP_MENU;
     labelPrices.text = NSLocalizedString(@"News", nil);
     
+
+    [self.newsTable reloadData];
 }
 
 - (void)viewDidLoad {

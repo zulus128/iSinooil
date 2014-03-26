@@ -72,9 +72,11 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
     NSString* path = [[NSBundle mainBundle] pathForResource:@"ru" ofType:@"lproj"];
     [Common instance].languageBundle = [NSBundle bundleWithPath:path];
-    [[Common instance].menucontr refresh];
 
     [[Common instance] loadAndParse];
+   
+    [[Common instance].menucontr refresh];
+
 }
 
 - (void) enSelected {
@@ -87,9 +89,11 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
     NSString* path = [[NSBundle mainBundle] pathForResource:@"en" ofType:@"lproj"];
     [Common instance].languageBundle = [NSBundle bundleWithPath:path];
+
+    [[Common instance] loadAndParse];
+   
     [[Common instance].menucontr refresh];
     
-    [[Common instance] loadAndParse];
 
 }
 
@@ -103,9 +107,11 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
     NSString* path = [[NSBundle mainBundle] pathForResource:@"kk-KZ" ofType:@"lproj"];
     [Common instance].languageBundle = [NSBundle bundleWithPath:path];
+
+    [[Common instance] loadAndParse];
+   
     [[Common instance].menucontr refresh];
     
-    [[Common instance] loadAndParse];
 
 }
 
