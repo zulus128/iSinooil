@@ -25,17 +25,10 @@
     labelPrices.text = NSLocalizedString(@"About", nil);
     [self.bcontacts setTitle:NSLocalizedString(@"Contacts", nil) forState:UIControlStateNormal];
 
-}
-
-- (void)viewDidLoad {
-    
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    
     for(NSDictionary* d in [Common instance].aboutjson) {
         
         NSNumber* n = [d valueForKey:ABOUT_ID];
-//        NSLog(@"id = %d", n.intValue);
+        //        NSLog(@"id = %d", n.intValue);
         if(n.intValue == 1) {
             
             NSString *myHTML = [NSString stringWithFormat:@"<html> \n"
@@ -46,11 +39,18 @@
                                 "</head> \n"
                                 "<body>%@</body> \n"
                                 "</html>", @"HelveticaNeueCyr-Light", [NSNumber numberWithInt:12], [d valueForKey:ABOUT_TXT]];
-
+            
             [self.webview loadHTMLString:myHTML baseURL:nil];
             break;
         }
     }
+
+}
+
+- (void)viewDidLoad {
+    
+    [super viewDidLoad];
+	// Do any additional setup after loading the view.
     
     [self refresh];
 }

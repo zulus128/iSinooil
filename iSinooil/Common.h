@@ -20,7 +20,7 @@ enum {M_KM, M_MI, M_MT}; //km, miles, metres
 //#define NSLocalizedString(@"AIGAS", nil)
 
 #define DEVICE_TOKEN @"deviceToken"
-#define PUSH_ID_FOR_SIMULATOR @"11223344556677"
+#define PUSH_ID_FOR_SIMULATOR @"11223344556678"
 //urls
 #define URL_SHOP @"http://sinooilshop.kz/"
 #define URL_SITE @"http://www.sinooil.kz/"
@@ -44,6 +44,12 @@ enum {M_KM, M_MI, M_MT}; //km, miles, metres
 #define CITY_ID @"id"
 #define CITY_LAT @"lat"
 #define CITY_LON @"lng"
+
+//chat
+#define CHAT_MESSAGE @"message"
+#define CHAT_DIRECTION @"direction"
+#define CHAT_ID @"id"
+#define CHAT_TIME @"timestamp"
 
 //azs.json
 #define STATION_ID @"id"
@@ -160,6 +166,7 @@ enum {M_KM, M_MI, M_MT}; //km, miles, metres
 @property (assign, readwrite) BOOL freeOfSems;
 
 @property (assign, readwrite) int selectedCity;
+@property (assign, readwrite) int lastMsg;
 
 @property(nonatomic, strong) NSString* deviceId;
 

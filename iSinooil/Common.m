@@ -1105,7 +1105,7 @@
 - (void) sendMessage:(NSString*) msg {
 
     NSDate* now = [NSDate date];
-    NSString* params = [NSString stringWithFormat:@"message=%@&time=%f", msg, now.timeIntervalSince1970];
+    NSString* params = [NSString stringWithFormat:@"message=%@&time=%f", msg, 1000.0f * now.timeIntervalSince1970];
     NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:SEND_MSG_URL, self.deviceId]];
     NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:url];
     request.HTTPMethod = @"POST";
@@ -1132,10 +1132,12 @@
 
 }
 
-- (NSDictionary*) recvMessage {
+- (NSArray*) recvMessage {
 
+    NSArray* result = [NSArray array];
+    
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:RECV_MSG_URL, self.deviceId, 0]]];
+    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:RECV_MSG_URL, self.deviceId, self.lastMsg]]];
     
     NSHTTPURLResponse* urlResponse = nil;
     NSError *error = nil;
@@ -1152,11 +1154,41 @@
     }
     else {
         
-        NSString* newStr = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
-        NSLog(@"recvMessage OK: %@", newStr);
+        @try {
+            
+            NSString* newStr = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+//            NSLog(@"recvMessage OK: %@", newStr);
+            
+            NSError* error;
+//            NSData* tardata = [fnews dataUsingEncoding:NSUTF8StringEncoding];
+            result = [NSJSONSerialization JSONObjectWithData:responseData options:NSDataReadingUncached error:&error];
+            
+            for(NSDictionary* d in result) {
+                
+                NSNumber* i = [d valueForKey:CHAT_ID];
+                if(i.intValue > self.lastMsg) {
+                    
+                    self.lastMsg = i.intValue;
+                }
+            }
+//            if (!result) {
+//                
+//                NSLog(@"Error parsing chat: %@", error);
+//                
+//            } else {
+//                
+//                NSLog(@"Parsing chat: OK!");
+//            }
+            
+            
+        } @catch (NSException * e) {
+            NSLog(@"Exception2: %@", e);
+        } @finally {
+            //NSLog(@"finally");
+        }
     }
     
-    return nil;
+    return result;
 }
 
 @end
