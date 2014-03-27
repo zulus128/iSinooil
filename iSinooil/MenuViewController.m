@@ -110,6 +110,68 @@
     
     [self refresh];
 
+    
+    // Add swipeGestures
+    UISwipeGestureRecognizer *oneFingerSwipeLeft = [[UISwipeGestureRecognizer alloc]
+                                                     initWithTarget:self
+                                                     action:@selector(oneFingerSwipeLeft:)];
+    [oneFingerSwipeLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
+    [[self view] addGestureRecognizer:oneFingerSwipeLeft];
+    
+    UISwipeGestureRecognizer *oneFingerSwipeRight = [[UISwipeGestureRecognizer alloc]
+                                                      initWithTarget:self
+                                                      action:@selector(oneFingerSwipeRight:)];
+    [oneFingerSwipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
+    [[self view] addGestureRecognizer:oneFingerSwipeRight];
+}
+
+- (void) swipeView:(UIView*)v toLeft:(BOOL)left {
+
+    CGRect fr = v.frame;
+    BOOL b = (fr.origin.x < 1);
+    if((b && !left) || (!b && left)) {
+        
+
+        [UIView animateWithDuration:anim_delay delay:0.0 options:UIViewAnimationOptionCurveEaseIn
+                     animations:^{
+                         
+                         v.frame = CGRectMake(b?(fr.size.width - deltaX):0, fr.origin.y, fr.size.width, fr.size.height);
+                         
+                     }
+                     completion:^(BOOL finished) {
+                     }];
+    }
+
+}
+
+- (void)oneFingerSwipeLeft:(UITapGestureRecognizer *)recognizer {
+    // Insert your own code to handle swipe left
+    
+//    NSLog(@"- (void)oneFingerSwipeLeft");
+    for(UIViewController* vc in self.childViewControllers) {
+        
+        if(!vc.view.hidden) {
+            
+            [self swipeView:vc.view toLeft:YES];
+
+        }
+    }
+
+}
+
+- (void)oneFingerSwipeRight:(UITapGestureRecognizer *)recognizer {
+    // Insert your own code to handle swipe right
+    
+//    NSLog(@"- (void)oneFingerSwipeRight");
+    for(UIViewController* vc in self.childViewControllers) {
+        
+        if(!vc.view.hidden) {
+            
+            [self swipeView:vc.view toLeft:NO];
+            
+        }
+    }
+
 }
 
 - (void)didReceiveMemoryWarning {
