@@ -14,8 +14,8 @@
 "AIDI" = "DI";
 "AIGAS" = "GAS";
 "km" = "km";
-"title_network_error" = "Network error";
-"network_error" = "Check Internet connection and ry again.";
+"title_network_error" = "Error connecting to the internet. ";
+"network_error" = "Check the connection and try to refresh the data again. ";
 "daynews" = "News of the day";
 "centraloffice" = "Central office";
 "settingsname" = "Language";
@@ -62,4 +62,5 @@
 "Ust-Kamenogorsk" = "Ust-Kamenogorsk";
 "Shimkent" = "Shimkent";
 "AllCities" = "AllCities";
-
+"MapButton" = "Map";
+"ListButton" = "List";

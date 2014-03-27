@@ -42,6 +42,19 @@
         cell.time.textColor = [UIColor blackColor];
     }
     else {
+        
+        NSLocale *loc = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+        switch ([Common instance].lang) {
+            case L_ENG:
+                loc = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+                break;
+            case L_KZ:
+                loc = [[NSLocale alloc] initWithLocaleIdentifier:@"kk_KZ"];
+                break;
+            case L_RU:
+                loc = [[NSLocale alloc] initWithLocaleIdentifier:@"ru_RU"];
+                break;
+        }
 
         cell.time.font = FONT_NEWS_DATE;
         cell.time.textColor = [UIColor grayColor];
@@ -49,7 +62,8 @@
         NSDate* date = [NSDate dateWithTimeIntervalSince1970:n.longValue];
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
-        [dateFormatter setLocale:[NSLocale currentLocale]];
+//        [dateFormatter setLocale:[NSLocale currentLocale]];
+        [dateFormatter setLocale:loc];
         NSString *formattedDateString = [dateFormatter stringFromDate:date];
 //        NSLog(@"date = %@   %@", formattedDateString, [[NSLocale currentLocale] localeIdentifier]);
 //        NSLog(@"formattedDateString for locale %@: %@", [[dateFormatter locale] localeIdentifier], formattedDateString);

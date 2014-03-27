@@ -395,8 +395,26 @@
 //    NSNumber* num = [d valueForKey:NEWS_ID];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
 
-    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%d", NEWS_URL_FULL, n]]];
+    NSString* newsurl = [NSString stringWithFormat:@"%@%d", NEWS_URL_FULL, n];
     
+//    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%d", NEWS_URL_FULL, n]]];
+    
+    NSString* la = @"&lang=ru";
+    switch (self.lang) {
+        case L_ENG:
+            la = @"&lang=en";
+            break;
+        case L_KZ:
+            la = @"&lang=kz";
+            break;
+        case L_RU:
+            la = @"&lang=ru";
+            break;
+    }
+    
+    NSString* req = [newsurl stringByAppendingString:la];
+    [request setURL:[NSURL URLWithString:req]];
+   
     NSHTTPURLResponse* urlResponse = nil;
     NSError *error = nil;
     NSData* responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];

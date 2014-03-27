@@ -31,11 +31,24 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    NSNumber* n = [self.news valueForKey:NEWS_START_DATE];
+    NSLocale *loc = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+    switch ([Common instance].lang) {
+        case L_ENG:
+            loc = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+            break;
+        case L_KZ:
+            loc = [[NSLocale alloc] initWithLocaleIdentifier:@"kk_KZ"];
+            break;
+        case L_RU:
+            loc = [[NSLocale alloc] initWithLocaleIdentifier:@"ru_RU"];
+            break;
+    }
+   NSNumber* n = [self.news valueForKey:NEWS_START_DATE];
     NSDate* date = [NSDate dateWithTimeIntervalSince1970:n.longValue];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
-    [dateFormatter setLocale:[NSLocale currentLocale]];
+//    [dateFormatter setLocale:[NSLocale currentLocale]];
+    [dateFormatter setLocale:loc];
     NSString *formattedDateString = [dateFormatter stringFromDate:date];
     self.date.font = FONT_NEWS_DATE;
     self.date.text = formattedDateString;

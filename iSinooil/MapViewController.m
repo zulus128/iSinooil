@@ -353,6 +353,9 @@
         }
     }
 
+    [self.mapButton setTitle:NSLocalizedString(@"MapButton", nil) forState:UIControlStateNormal];
+    [self.listButton setTitle:NSLocalizedString(@"ListButton", nil) forState:UIControlStateNormal];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated {

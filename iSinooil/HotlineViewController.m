@@ -85,6 +85,10 @@
                      completion:^(BOOL finished) {
                      }];
     self.timer = !b;
+    
+    if(b)
+        [self.msgField resignFirstResponder];
+    
     [self recvMsg];
 
 }
@@ -130,7 +134,7 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
 
-    [self sendMsg:textField.text];
+//    [self sendMsg:textField.text];
     
     [textField resignFirstResponder];
     return YES;
@@ -180,6 +184,8 @@
         return;
     
     [[Common instance] sendMessage:msg];
+    
+    self.msgField.text = @"";
     
     [self recvMsg];
     

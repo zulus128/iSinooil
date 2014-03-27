@@ -14,8 +14,8 @@
 "AIDI" = "DI";
 "AIGAS" = "GAS";
 "km" = "km";
-"title_network_error" = "Network error";
-"network_error" = "Check Internet connection and ry again.";
+"title_network_error" = "ғаламтор құралымның қатесі";
+"network_error" = "құралымды тексерініз және деректерлерді тағы ретті жаңалау  көрініз";
 "daynews" = "News of the day";
 "centraloffice" = "Central office";
 "settingsname" = "Language";
@@ -41,7 +41,7 @@
 "Contacts" = "Contacts";
 "officeaddr" = "Almaty, Raimbek str. 74";
 "OfficeButton" = "Centr. office";
-"Branches" = "Branches";
+"Branches" = "ФИЛИАЛДАР";
 "Prices" = "Fuel prices";
 "Feedback" = "Feedback";
 "StationList" = "Station List";
@@ -62,3 +62,5 @@
 "Ust-Kamenogorsk" = "Ust-Kamenogorsk";
 "Shimkent" = "Shimkent";
 "AllCities" = "AllCities";
+"MapButton" = "Map";
+"ListButton" = "List";
