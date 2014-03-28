@@ -33,14 +33,28 @@
     ActCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     NSDictionary* act = [[Common instance] getActAt:indexPath.row];
-    
+
+    NSLocale *loc = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+    switch ([Common instance].lang) {
+        case L_ENG:
+            loc = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+            break;
+        case L_KZ:
+            loc = [[NSLocale alloc] initWithLocaleIdentifier:@"kk_KZ"];
+            break;
+        case L_RU:
+            loc = [[NSLocale alloc] initWithLocaleIdentifier:@"ru_RU"];
+            break;
+    }
+
     cell.time.font = FONT_NEWS_DATE;
     cell.time.textColor = [UIColor grayColor];
     NSNumber* n = [act valueForKey:NEWS_START_DATE];
     NSDate* date = [NSDate dateWithTimeIntervalSince1970:n.longValue];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
-    [dateFormatter setLocale:[NSLocale currentLocale]];
+//    [dateFormatter setLocale:[NSLocale currentLocale]];
+    [dateFormatter setLocale:loc];
     NSString *formattedDateString = [dateFormatter stringFromDate:date];
     n = [act valueForKey:NEWS_END_DATE];
     date = [NSDate dateWithTimeIntervalSince1970:n.longValue];

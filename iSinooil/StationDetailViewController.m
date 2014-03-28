@@ -228,8 +228,9 @@
     //        NSDictionary* d = [tels objectAtIndex:i];
     //        NSString* tel = [d objectForKey:PHONE_NUMBER];
     NSString* tel = (NSString*)[tels objectAtIndex:i];
-    
-    NSString *phoneNumber = [@"telprompt://" stringByAppendingString:tel];
+    NSString* tel1 = [tel stringByReplacingOccurrencesOfString:@" " withString:@""];
+
+    NSString *phoneNumber = [@"telprompt://" stringByAppendingString:tel1];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
 }
 

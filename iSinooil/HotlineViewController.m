@@ -114,7 +114,7 @@
 
 - (IBAction)call:(UIButton*)button {
 
-    NSString *phoneNumber = [@"telprompt://" stringByAppendingString:@"+7 800 0700180"];
+    NSString *phoneNumber = [@"telprompt://" stringByAppendingString:@"+78000700180"];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
 }
 
