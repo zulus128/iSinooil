@@ -2251,6 +2251,7 @@
                         <outlet property="backlab" destination="RuB-Yt-Zfj" id="ck4-Mo-ZWR"/>
                         <outlet property="detailViewH" destination="Wdi-KN-htM" id="k4E-Cg-Fmc"/>
                         <outlet property="detailViewW" destination="Bpf-h7-D3a" id="zE6-zf-Zha"/>
+                        <outlet property="pic" destination="DNh-Bz-xJ7" id="F41-wN-AR2"/>
                         <outlet property="st_name" destination="Gab-Ri-Pr1" id="qh3-9R-Psg"/>
                         <outlet property="st_name1" destination="vij-wa-Mwo" id="k3m-Ss-Ehm"/>
                         <outlet property="stationDescrLab" destination="Zfe-uC-Or9" id="Ezh-6Y-Qdg"/>

@@ -61,6 +61,7 @@ enum {M_KM, M_MI, M_MT}; //km, miles, metres
 #define STATION_SERV @"serv"
 #define STATION_CARD @"card"
 #define STATION_PHONE @"phone"
+#define STATION_PIC @"pic"
 #define STATION_CITY @"city"
 #define PHONE_NUMBER @"n"
 #define AZS_VALUES @"items"

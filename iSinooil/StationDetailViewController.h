@@ -22,5 +22,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *backlab;
 @property (weak, nonatomic) IBOutlet UILabel *st_name;
 @property (weak, nonatomic) IBOutlet UILabel *st_name1;
+@property (weak, nonatomic) IBOutlet UIImageView *pic;
 
 @end

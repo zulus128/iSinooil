@@ -7,6 +7,7 @@
 //
 
 #import "StationDetailViewController.h"
+#import "UIImageView+WebCache.h"
 
 @implementation StationDetailViewController
 
@@ -244,6 +245,11 @@
 	// Do any additional setup after loading the view.
     
     [self refresh];
+    
+    NSDictionary* dic = [[Common instance].azsjson objectAtIndex:[Common instance].stationRowSelected];
+    NSArray* ppic = [dic objectForKey:STATION_PIC];
+    
+    [self.pic setImageWithURL:[NSURL URLWithString:ppic] placeholderImage:[UIImage imageNamed:@"placeholder-icon"]];
 }
 
 - (void)didReceiveMemoryWarning
