@@ -1046,11 +1046,21 @@
 
 + (NSArray*) calculateRoutesFrom:(CLLocationCoordinate2D) f to: (CLLocationCoordinate2D) t {
     
-	NSString* apiResponse = [Common callMapServiceFrom:f to:t];
-    NSRange r1 = [apiResponse rangeOfString:@"points:" options:NSCaseInsensitiveSearch];
-    NSRange r2 = [apiResponse rangeOfString:@"levels:" options:NSCaseInsensitiveSearch];
-	NSString* encodedPoints = [apiResponse substringWithRange:NSMakeRange(r1.location + 8, r2.location - r1.location - 10)];
-	return [Common decodePolyLine:[encodedPoints mutableCopy]];
+    NSArray* res = nil;
+    @try {
+        NSString* apiResponse = [Common callMapServiceFrom:f to:t];
+        NSRange r1 = [apiResponse rangeOfString:@"points:" options:NSCaseInsensitiveSearch];
+        NSRange r2 = [apiResponse rangeOfString:@"levels:" options:NSCaseInsensitiveSearch];
+        NSString* encodedPoints = [apiResponse substringWithRange:NSMakeRange(r1.location + 8, r2.location - r1.location - 10)];
+        
+        res = [Common decodePolyLine:[encodedPoints mutableCopy]];
+    }
+    @catch (NSException *exception) {
+        NSLog(@"---+++ catched");
+    }
+    @finally {
+    }
+	return res;
 }
 
 - (void) regDeviceForPush:(NSString*)dev_id {
