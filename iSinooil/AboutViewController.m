@@ -16,15 +16,21 @@
     
     CGSize s = [Common currentScreenBoundsDependOnOrientation:toInterfaceOrientation];
     self.view.frame = CGRectMake(0, 0, s.width, s.height);
+    
+    self.webWidth.constant = s.width - 15;
+    
 }
 
-- (void) refresh {
+- (void) didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
     
-    UILabel* labelPrices = (UILabel*)[self.topView viewWithTag:TITLELABEL_TAG];
-    labelPrices.font = FONT_STD_TOP_MENU;
-    labelPrices.text = NSLocalizedString(@"About", nil);
-    [self.bcontacts setTitle:NSLocalizedString(@"Contacts", nil) forState:UIControlStateNormal];
+//    NSLog(@"wv = %f", self.webview.frame.size.width);
+    self.webHeight.constant = 1;
+    [self formWeb];
+    
+}
 
+- (void) formWeb {
+    
     for(NSDictionary* d in [Common instance].aboutjson) {
         
         NSNumber* n = [d valueForKey:ABOUT_ID];
@@ -47,11 +53,26 @@
 
 }
 
+- (void) refresh {
+    
+    UILabel* labelPrices = (UILabel*)[self.topView viewWithTag:TITLELABEL_TAG];
+    labelPrices.font = FONT_STD_TOP_MENU;
+    labelPrices.text = NSLocalizedString(@"About", nil);
+    [self.bcontacts setTitle:NSLocalizedString(@"Contacts", nil) forState:UIControlStateNormal];
+
+    CGSize s = [Common currentScreenBounds];
+    self.webWidth.constant = s.width - 15;
+
+    [self formWeb];
+
+}
+
 - (void)viewDidLoad {
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+
     [self refresh];
 }
 
@@ -63,10 +84,8 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)theWebView {
 
-    CGSize contentSize = theWebView.scrollView.contentSize;
-    CGRect f = theWebView.frame;
-    theWebView.frame = CGRectMake(f.origin.x, f.origin.y, f.size.width, contentSize.height);
-    
+    CGFloat height = [[self.webview stringByEvaluatingJavaScriptFromString:@"document.height"] floatValue];
+    self.webHeight.constant = height;//contentSize.height;
 }
 
 - (IBAction)toMenu:(id)sender {

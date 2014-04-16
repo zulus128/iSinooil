@@ -47,7 +47,7 @@
                         "</style> \n"
                         "</head> \n"
                         "<body>%@</body> \n"
-                        "</html>", @"HelveticaNeueCyr-Light", [NSNumber numberWithInt:12], [branch valueForKey:ABOUT_TXT]];
+                        "</html>", @"HelveticaNeueCyr-Light", [NSNumber numberWithInt:14], [branch valueForKey:ABOUT_TXT]];
     
     [cell.addrWebview loadHTMLString:myHTML baseURL:nil];
     

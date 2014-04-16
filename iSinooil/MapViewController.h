@@ -12,7 +12,7 @@
 #define GAP_SIZE3 35
 
 #define POPUP_TAG 778
-#define POPUPBUTTON_HEIGHT 25
+#define POPUPBUTTON_HEIGHT 30
 #define POPUP_WIDTH 160
 
 @class MapSource;

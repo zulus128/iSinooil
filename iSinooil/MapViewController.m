@@ -159,40 +159,6 @@
 
     NSString* s = [[Common instance] getCurrentCityName];
     
-//    NSString* s = NSLocalizedString(@"AllCities", nil);
-//    switch ([Common instance].selectedCity) {
-//        case 1:
-//            s = NSLocalizedString(@"Aktau", nil);
-//            break;
-//        case 2:
-//            s = NSLocalizedString(@"Aktobe", nil);
-//            break;
-//        case 3:
-//            s = NSLocalizedString(@"Almaty", nil);
-//            break;
-//        case 4:
-//            s = NSLocalizedString(@"Astana", nil);
-//            break;
-//        case 5:
-//            s = NSLocalizedString(@"Atyrau", nil);
-//            break;
-//        case 6:
-//            s = NSLocalizedString(@"Kizilorda", nil);
-//            break;
-//        case 7:
-//            s = NSLocalizedString(@"Taraz", nil);
-//            break;
-//        case 8:
-//            s = NSLocalizedString(@"Ust-Kamenogorsk", nil);
-//            break;
-//        case 9:
-//            s = NSLocalizedString(@"Shimkent", nil);
-//            break;
-//        case 0:
-//            s = NSLocalizedString(@"AllCities", nil);
-//            break;
-//    }
-    
     self.dropdown.text = s;
     [self.mapsour refreshPinsAndCityChange];
 
@@ -475,6 +441,8 @@
 
 - (IBAction)listTouchDown:(UIButton*)button {
     
+    [self refreshDropdown];
+
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
     [button setBackgroundImage: [UIImage imageNamed:@"tab_right_pressed.png"] forState:UIControlStateNormal];
@@ -546,7 +514,7 @@
     vv.layer.cornerRadius = 5;
     vv.layer.masksToBounds = YES;
     vv.backgroundColor = [UIColor blackColor];
-    vv.alpha = 0.4f;
+    vv.alpha = 0.7f;
     [v addSubview:vv];
     
     for(int i = 0; i < cnt; i++) {
@@ -557,40 +525,7 @@
             NSDictionary* d = [[Common instance].cityjson objectAtIndex:(i - 1)];
             s = [d valueForKey:CITY_NAME];
         }
-        
-//        NSString* s = NSLocalizedString(@"AllCities", nil);
-//        switch (i) {
-//            case 1:
-//                s = NSLocalizedString(@"Aktau", nil);
-//                break;
-//            case 2:
-//                s = NSLocalizedString(@"Aktobe", nil);
-//                break;
-//            case 3:
-//                s = NSLocalizedString(@"Almaty", nil);
-//                break;
-//            case 4:
-//                s = NSLocalizedString(@"Astana", nil);
-//                break;
-//            case 5:
-//                s = NSLocalizedString(@"Atyrau", nil);
-//                break;
-//            case 6:
-//                s = NSLocalizedString(@"Kizilorda", nil);
-//                break;
-//            case 7:
-//                s = NSLocalizedString(@"Taraz", nil);
-//                break;
-//            case 8:
-//                s = NSLocalizedString(@"Ust-Kamenogorsk", nil);
-//                break;
-//            case 9:
-//                s = NSLocalizedString(@"Shimkent", nil);
-//                break;
-//            case 0:
-//                s = NSLocalizedString(@"AllCities", nil);
-//                break;
-//        }
+
 
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         [button addTarget:self action:@selector(citySelected:) forControlEvents:UIControlEventTouchDown];
@@ -600,6 +535,13 @@
         button.tag = (i - 1);
         button.frame = CGRectMake(0, i * POPUPBUTTON_HEIGHT, POPUP_WIDTH, POPUPBUTTON_HEIGHT);
         [v addSubview:button];
-    }}
+    }
+}
+
+- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+
+    [self refreshDropdown];
+//    NSLog(@"ttt");
+}
 
 @end

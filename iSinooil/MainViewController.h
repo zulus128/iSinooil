@@ -10,7 +10,8 @@
 #import <MapKit/MapKit.h>
 
 #define METERS_PER_MILE 1609.344
-#define VERT_SIZE 870
+//#define VERT_SIZE 870
+#define VERT_SIZE 890
 
 @class MapSource;
 

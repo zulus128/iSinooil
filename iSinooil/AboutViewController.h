@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UIView *topView;
 
 - (IBAction)showDetails:(id)sender;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *webHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *webWidth;
 @property (weak, nonatomic) IBOutlet UIWebView *webview;
 @property (weak, nonatomic) IBOutlet UIButton *bcontacts;
 @end

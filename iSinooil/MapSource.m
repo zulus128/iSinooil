@@ -29,7 +29,7 @@
     
     if([Common instance].selectedCity >= 0) {
         
-        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance([[Common instance] getCurrentCityCoord], 500.0f, 500.0f);
+        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance([[Common instance] getCurrentCityCoord], 5000.0f, 5000.0f);
         [self.mapcontr.mapView setRegion:region animated:YES];
     }
     
