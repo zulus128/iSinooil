@@ -38,7 +38,7 @@
                                 "</style> \n"
                                 "</head> \n"
                                 "<body>%@</body> \n"
-                                "</html>", @"HelveticaNeueCyr-Light", [NSNumber numberWithInt:12], [d valueForKey:ABOUT_TXT]];
+                                "</html>", @"HelveticaNeueCyr-Light", [NSNumber numberWithInt:14], [d valueForKey:ABOUT_TXT]];
             
             [self.webview loadHTMLString:myHTML baseURL:nil];
             break;
@@ -59,6 +59,14 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)theWebView {
+
+    CGSize contentSize = theWebView.scrollView.contentSize;
+    CGRect f = theWebView.frame;
+    theWebView.frame = CGRectMake(f.origin.x, f.origin.y, f.size.width, contentSize.height);
+    
 }
 
 - (IBAction)toMenu:(id)sender {

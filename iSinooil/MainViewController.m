@@ -286,12 +286,24 @@
 
 - (IBAction)tapFB:(id)sender {
     
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URL_FB]];
+    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:URL_FB_SPEC]]){
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URL_FB_SPEC]];
+    }
+    else {
+        //Open the url as usual
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URL_FB]];
+    }
 }
 
 - (IBAction)tapVK:(id)sender {
     
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URL_VK]];
+    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:URL_VK_SPEC]]){
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URL_VK_SPEC]];
+    }
+    else {
+        //Open the url as usual
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URL_VK]];
+    }
 }
 
 - (IBAction)tapSettings:(id)sender {

@@ -1056,7 +1056,7 @@
         res = [Common decodePolyLine:[encodedPoints mutableCopy]];
     }
     @catch (NSException *exception) {
-        NSLog(@"---+++ catched");
+//        NSLog(@"---+++ catched");
     }
     @finally {
     }
