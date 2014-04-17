@@ -11,6 +11,7 @@
 @interface ActCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *pic;
 @property (weak, nonatomic) IBOutlet UILabel *time;
+@property (weak, nonatomic) IBOutlet UILabel *time1;
 @property (weak, nonatomic) IBOutlet UILabel *brief;
 
 @end

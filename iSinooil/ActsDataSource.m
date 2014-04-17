@@ -49,6 +49,8 @@
 
     cell.time.font = FONT_NEWS_DATE;
     cell.time.textColor = [UIColor grayColor];
+    cell.time1.font = FONT_NEWS_DATE;
+    cell.time1.textColor = [UIColor grayColor];
     NSNumber* n = [act valueForKey:NEWS_START_DATE];
     NSDate* date = [NSDate dateWithTimeIntervalSince1970:n.longValue];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -59,14 +61,23 @@
     n = [act valueForKey:NEWS_END_DATE];
     date = [NSDate dateWithTimeIntervalSince1970:n.longValue];
     NSString *formattedDateString1 = [dateFormatter stringFromDate:date];
-    cell.time.text = [NSString stringWithFormat:@"%@ - %@", formattedDateString, formattedDateString1];
+//    cell.time.text = [NSString stringWithFormat:@"%@ - %@", formattedDateString, formattedDateString1];
+    cell.time.text = [NSString stringWithFormat:@"%@ -", formattedDateString];
+    cell.time1.text = [NSString stringWithFormat:@"%@", formattedDateString1];
 
 
     NSString* pic = [act valueForKey:NEWS_PIC];
     [cell.pic setImageWithURL:[NSURL URLWithString:pic] placeholderImage:[UIImage imageNamed:@"placeholder-icon"]];
     
     cell.brief.font = FONT_NEWS_BRIEF;
-    cell.brief.text = [act valueForKey:NEWS_BRIEF];
+
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:[act valueForKey:NEWS_BRIEF]];
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    [paragraphStyle setLineSpacing:4];
+    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [[act valueForKey:NEWS_BRIEF] length])];
+    cell.brief.attributedText = attributedString;
+
+    //    cell.brief.text = [act valueForKey:NEWS_BRIEF];
     
     return cell;
 }

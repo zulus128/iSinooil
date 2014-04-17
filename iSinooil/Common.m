@@ -448,11 +448,11 @@
     NSString *myHTML = [NSString stringWithFormat:@"<html> \n"
                         "<head> \n"
                         "<style type=\"text/css\"> \n"
-                        "body {font-family: \"%@\"; font-size: %@;}\n"
+                        "body {font-family: \"%@\"; font-size: %@; line-height:1.4;}\n"
                         "</style> \n"
                         "</head> \n"
                         "<body>%@</body> \n"
-                        "</html>", @"HelveticaNeueCyr-Light", [NSNumber numberWithInt:11], res];
+                        "</html>", @"HelveticaNeueCyr-Light", [NSNumber numberWithInt:13], res];
     return myHTML;
 }
 

@@ -21,7 +21,7 @@
     NSDictionary* dic = [[Common instance].azsjson objectAtIndex:[Common instance].stationRowSelected];
     NSString* ppic = [dic objectForKey:STATION_PIC];
     
-    NSLog(@"pic = %@", ppic);
+    NSLog(@"dic = %@", dic);
     
     [self.pic setImageWithURL:[NSURL URLWithString:ppic] placeholderImage:[UIImage imageNamed:@"placeholder-icon"]];
 
@@ -31,11 +31,13 @@
     self.detailViewW.constant = s.width;
 
 //    NSDictionary* dic = [[Common instance].azsjson objectAtIndex:[Common instance].stationRowSelected];
-    NSString* num = [dic objectForKey:STATION_TITLE];
-    self.stationNumberLab.text = [[num componentsSeparatedByString:@"№"] objectAtIndex:1];
-    self.stationDescrLab.text = [dic objectForKey:STATION_DESCR];
+    NSString* num = [[NSLocalizedString(@"AZS", nil) stringByAppendingString:@" "] stringByAppendingString:[dic objectForKey:STATION_TITLE]];
+    NSString* num1 = [dic objectForKey:STATION_TITLE];
+    self.stationNumberLab.text = num1;//[[num componentsSeparatedByString:@"№"] objectAtIndex:1];
+//    self.stationDescrLab.text = [dic objectForKey:STATION_DESCR];
+    self.stationDescrLab.text = [dic objectForKey:STATION_ADDR];
 
-    self.st_name1.text = [[num componentsSeparatedByString:@"№"] objectAtIndex:0];
+    self.st_name1.text = NSLocalizedString(@"AZS", nil);//[[num componentsSeparatedByString:@"№"] objectAtIndex:0];
     self.st_name.text = num;
     
 //    NSLog(@"station = %@", dic);
@@ -251,7 +253,9 @@
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    
+
+    self.stationDescrLab.font = FONT_STATION_DESCR;
+
     [self refresh];
     
 }

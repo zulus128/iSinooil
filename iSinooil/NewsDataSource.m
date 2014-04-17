@@ -75,7 +75,12 @@
     [cell.pic setImageWithURL:[NSURL URLWithString:pic] placeholderImage:[UIImage imageNamed:@"placeholder-icon"]];
 
     cell.brief.font = FONT_NEWS_BRIEF;
-    cell.brief.text = [news valueForKey:NEWS_BRIEF];
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:[news valueForKey:NEWS_BRIEF]];
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    [paragraphStyle setLineSpacing:4];
+    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [[news valueForKey:NEWS_BRIEF] length])];
+    cell.brief.attributedText = attributedString;
+//    cell.brief.text = [news valueForKey:NEWS_BRIEF];
     
     return cell;
 }

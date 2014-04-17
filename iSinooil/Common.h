@@ -57,6 +57,7 @@ enum {M_KM, M_MI, M_MT}; //km, miles, metres
 #define STATION_ID @"id"
 #define STATION_TITLE @"ttl"
 #define STATION_DESCR @"desc"
+#define STATION_ADDR @"addr"
 #define STATION_LAT @"lat"
 #define STATION_LON @"lng"
 #define STATION_FUEL @"fuel"
