@@ -38,22 +38,11 @@
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^(void) {
 
-//        dispatch_semaphore_wait([Common instance].userCoordUpdatedSem, DISPATCH_TIME_FOREVER);
-
-//        NSLog(@"Station %d", indexPath.row);
-
-//        NSNumber* n = [dic valueForKey:STATION_LAT];
-//        CLLocationDegrees lat = n.doubleValue;
-//        n = [dic valueForKey:STATION_LON];
-//        CLLocationDegrees lon = n.doubleValue;
-//        CLLocationCoordinate2D coord = { lat, lon };
-
         NSNumber* n = [dic valueForKey:STATION_ID];
 
         if(![Common instance].freeOfSems)
             dispatch_semaphore_wait([Common instance].allowSemaphore, DISPATCH_TIME_FOREVER);
      
-//        float dist = [[Common instance] calculateDistTo:coord];
         float dist = [[Common instance] calculateDistToStation:n.intValue];
         
         dispatch_async(dispatch_get_main_queue(), ^{

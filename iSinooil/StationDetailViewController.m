@@ -18,12 +18,19 @@
 
 - (void) refresh {
 
+    NSDictionary* dic = [[Common instance].azsjson objectAtIndex:[Common instance].stationRowSelected];
+    NSString* ppic = [dic objectForKey:STATION_PIC];
+    
+    NSLog(@"pic = %@", ppic);
+    
+    [self.pic setImageWithURL:[NSURL URLWithString:ppic] placeholderImage:[UIImage imageNamed:@"placeholder-icon"]];
+
     [self.backlab setTitle:NSLocalizedString(@"StationList", nil) forState:UIControlStateNormal];
 
     CGSize s = [Common currentScreenBounds];
     self.detailViewW.constant = s.width;
 
-    NSDictionary* dic = [[Common instance].azsjson objectAtIndex:[Common instance].stationRowSelected];
+//    NSDictionary* dic = [[Common instance].azsjson objectAtIndex:[Common instance].stationRowSelected];
     NSString* num = [dic objectForKey:STATION_TITLE];
     self.stationNumberLab.text = [[num componentsSeparatedByString:@"№"] objectAtIndex:1];
     self.stationDescrLab.text = [dic objectForKey:STATION_DESCR];
@@ -240,17 +247,13 @@
     
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
     [self refresh];
     
-    NSDictionary* dic = [[Common instance].azsjson objectAtIndex:[Common instance].stationRowSelected];
-    NSArray* ppic = [dic objectForKey:STATION_PIC];
-    
-    [self.pic setImageWithURL:[NSURL URLWithString:ppic] placeholderImage:[UIImage imageNamed:@"placeholder-icon"]];
 }
 
 - (void)didReceiveMemoryWarning
