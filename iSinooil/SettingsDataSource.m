@@ -77,6 +77,10 @@
                 case 6://FUEL_BIT_GAS:
                     cell.value.text = NSLocalizedString(@"AIGAS", nil);
                     break;
+                case 7://FUEL_BIT_DTW:
+                    cell.value.text = NSLocalizedString(@"AIDIW", nil);
+                    break;
+
             }
 
             break;

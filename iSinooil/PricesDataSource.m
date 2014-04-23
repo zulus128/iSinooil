@@ -22,7 +22,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     int r = 0;
-    for (int i = FUEL_BIT_97; i <= FUEL_BIT_GAS; i = (i << 1)) {
+    for (int i = FUEL_BIT_97; i <= FUEL_BIT_DTW; i = (i << 1)) {
         
         r++;
     }
@@ -58,6 +58,9 @@
             break;
         case 6://FUEL_BIT_GAS:
             icon = NSLocalizedString(@"AIGAS", nil);
+            break;
+        case 7://FUEL_BIT_DTW:
+            icon = NSLocalizedString(@"AIDIW", nil);
             break;
     }
     

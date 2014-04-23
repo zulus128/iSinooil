@@ -62,7 +62,7 @@
     int fuel = ((NSNumber*)[dic valueForKey:STATION_FUEL]).intValue;
     //    NSLog(@"fuel = %d", fuel);
     float x = 20;
-    for (int i = FUEL_BIT_97; i <= FUEL_BIT_GAS; i = (i << 1)) {
+    for (int i = FUEL_BIT_97; i <= FUEL_BIT_DTW; i = (i << 1)) {
         
         if (!(fuel & i))
             continue;
@@ -89,6 +89,9 @@
                 break;
             case FUEL_BIT_GAS:
                 icon = @"icon_diesel_inactive.png";
+                break;
+            case FUEL_BIT_DTW:
+                icon = @"icon_dieselw_inactive.png";
                 break;
         }
         

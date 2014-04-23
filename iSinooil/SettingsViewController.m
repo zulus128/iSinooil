@@ -242,6 +242,9 @@
                     case 6://FUEL_BIT_GAS:
                         type = NSLocalizedString(@"AIGAS", nil);
                         break;
+                    case 7://FUEL_BIT_DTW:
+                        type = NSLocalizedString(@"AIDIW", nil);
+                        break;
                 }
 
                 UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];

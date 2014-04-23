@@ -35,13 +35,14 @@
     
     NSDictionary* news = [[Common instance] getNewsAt:indexPath.row];
 
-    if(!indexPath.row) {
-    
-        cell.time.font = FONT_NEWS_TOPNEWS;
-        cell.time.text = NSLocalizedString(@"daynews", nil);
-        cell.time.textColor = [UIColor blackColor];
-    }
-    else {
+//    if(!indexPath.row) {
+//    
+//        cell.time.font = FONT_NEWS_TOPNEWS;
+//        cell.time.text = NSLocalizedString(@"daynews", nil);
+//        cell.time.textColor = [UIColor blackColor];
+//    }
+//    else
+    {
         
         NSLocale *loc = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
         switch ([Common instance].lang) {

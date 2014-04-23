@@ -12,11 +12,12 @@
 "AI92" = "AI 92";
 "AI80" = "AI 80";
 "AIDI" = "DI";
+"AIDIW" = "DIw";
 "AIGAS" = "GAS";
 "km" = "km";
 "title_network_error" = "ғаламтор құралымның қатесі";
 "network_error" = "құралымды тексерініз және деректерлерді тағы ретті жаңалау  көрініз";
-"daynews" = "News of the day";
+"daynews" = "News";
 "centraloffice" = "Central office";
 "settingsname" = "Language";
 "settingsfuel" = "Fuel";

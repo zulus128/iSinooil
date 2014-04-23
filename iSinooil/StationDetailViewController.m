@@ -54,7 +54,7 @@
     float x = 20;
     y += 10;
     
-    for (int i = FUEL_BIT_97; i <= FUEL_BIT_GAS; i = (i << 1)) {
+    for (int i = FUEL_BIT_97; i <= FUEL_BIT_DTW; i = (i << 1)) {
         
         if (!(fuel & i))
             continue;
@@ -81,6 +81,9 @@
                 break;
             case FUEL_BIT_GAS:
                 icon = @"icon_diesel_inactive.png";
+                break;
+            case FUEL_BIT_DTW:
+                icon = @"icon_dieselw_inactive.png";
                 break;
         }
         

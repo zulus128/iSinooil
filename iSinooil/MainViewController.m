@@ -75,6 +75,9 @@
         case 6://FUEL_BIT_GAS:
             icon = NSLocalizedString(@"AIGAS", nil);
             break;
+        case 7://FUEL_BIT_DTW:
+            icon = NSLocalizedString(@"AIDIW", nil);
+            break;
     }
     
     self.aiLabel.text = icon;

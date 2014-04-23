@@ -88,6 +88,7 @@
 #define FUEL_BIT_80 16
 #define FUEL_BIT_DT 32
 #define FUEL_BIT_GAS 64
+#define FUEL_BIT_DTW 128
 
 #define STATIONCELL_HEIGHT 100
 #define PRICECELL_HEIGHT 70

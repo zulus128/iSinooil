@@ -18,6 +18,9 @@
 		849A29A918A22C8300A68987 /* ActsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A29A818A22C8300A68987 /* ActsViewController.m */; };
 		849A29AC18A22EDF00A68987 /* ActCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A29AB18A22EDF00A68987 /* ActCell.m */; };
 		84A1462318B31C340064A7C9 /* sino_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A1462218B31C340064A7C9 /* sino_logo.png */; };
+		84A7AD0519078B2300227C45 /* icon_dieselw_inactive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A7AD0319078B2300227C45 /* icon_dieselw_inactive@2x.png */; };
+		84A7AD0619078B2300227C45 /* icon_dieselw@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A7AD0419078B2300227C45 /* icon_dieselw@2x.png */; };
+		84A7AD0819078C0900227C45 /* icon_dieselw_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A7AD0719078C0900227C45 /* icon_dieselw_pressed@2x.png */; };
 		84BC6402187E7CBD00BF030B /* head_gr2.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BC6401187E7CBD00BF030B /* head_gr2.png */; };
 		84C68CC2188E524200FD68D0 /* PriceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C68CC1188E524200FD68D0 /* PriceViewController.m */; };
 		84CC0F7F18A4AFC9006F84C6 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CC0F7E18A4AFC9006F84C6 /* AboutViewController.m */; };
@@ -227,6 +230,9 @@
 		849A29AA18A22EDF00A68987 /* ActCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActCell.h; sourceTree = "<group>"; };
 		849A29AB18A22EDF00A68987 /* ActCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActCell.m; sourceTree = "<group>"; };
 		84A1462218B31C340064A7C9 /* sino_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sino_logo.png; sourceTree = "<group>"; };
+		84A7AD0319078B2300227C45 /* icon_dieselw_inactive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_dieselw_inactive@2x.png"; sourceTree = "<group>"; };
+		84A7AD0419078B2300227C45 /* icon_dieselw@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_dieselw@2x.png"; sourceTree = "<group>"; };
+		84A7AD0719078C0900227C45 /* icon_dieselw_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_dieselw_pressed@2x.png"; sourceTree = "<group>"; };
 		84BC6401187E7CBD00BF030B /* head_gr2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = head_gr2.png; sourceTree = "<group>"; };
 		84C68CC0188E524200FD68D0 /* PriceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceViewController.h; sourceTree = "<group>"; };
 		84C68CC1188E524200FD68D0 /* PriceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceViewController.m; sourceTree = "<group>"; };
@@ -813,6 +819,9 @@
 				DDEB482318542883006FAED3 /* icon_diesel@2x.png */,
 				DDEB482418542883006FAED3 /* icon_diesel_inactive@2x.png */,
 				DDEB482518542883006FAED3 /* icon_diesel_pressed@2x.png */,
+				84A7AD0319078B2300227C45 /* icon_dieselw_inactive@2x.png */,
+				84A7AD0719078C0900227C45 /* icon_dieselw_pressed@2x.png */,
+				84A7AD0419078B2300227C45 /* icon_dieselw@2x.png */,
 				DDEB482618542883006FAED3 /* icon_market@2x.png */,
 				DDEB482718542883006FAED3 /* icon_market_inactive@2x.png */,
 				DDEB482818542883006FAED3 /* icon_market_pressed@2x.png */,
@@ -1011,6 +1020,7 @@
 				DDEB487B18542883006FAED3 /* icon_diesel_pressed@2x.png in Resources */,
 				DDEB486818542883006FAED3 /* icon_93_inactive@2x.png in Resources */,
 				DD7ACF1418CB148300909572 /* 80.png in Resources */,
+				84A7AD0519078B2300227C45 /* icon_dieselw_inactive@2x.png in Resources */,
 				84CC0F8918A4B1AF006F84C6 /* bubble_light@2x.png in Resources */,
 				DD7ACF1718CB148300909572 /* splash_ipad_r.png in Resources */,
 				DDEB489818542883006FAED3 /* icon_fuel@2x.png in Resources */,
@@ -1040,6 +1050,7 @@
 				DD7ACF1B18CB148300909572 /* splash_iphone_retina_4inch.png in Resources */,
 				84DA0553187D846D004592EC /* HelveticaNeueCyr-Roman.otf in Resources */,
 				DD7ACF1218CB148300909572 /* 58.png in Resources */,
+				84A7AD0819078C0900227C45 /* icon_dieselw_pressed@2x.png in Resources */,
 				DDEB487218542883006FAED3 /* icon_amer_pressed@2x.png in Resources */,
 				DD46151918751E88008FCD16 /* fuel.json in Resources */,
 				DDEB489C18542883006FAED3 /* icon_metrics@2x.png in Resources */,
@@ -1056,6 +1067,7 @@
 				84CC0F8818A4B1AF006F84C6 /* bubble_dark@2x.png in Resources */,
 				844293AF18A1EDC700DDC7F3 /* release_notes.md in Resources */,
 				DDEB488E18542883006FAED3 /* icon_wash@2x.png in Resources */,
+				84A7AD0619078B2300227C45 /* icon_dieselw@2x.png in Resources */,
 				DDEB489718542883006FAED3 /* icon_feedback@2x.png in Resources */,
 				DDEB488518542883006FAED3 /* icon_service@2x.png in Resources */,
 				DDEB486E18542883006FAED3 /* icon_97_inactive@2x.png in Resources */,

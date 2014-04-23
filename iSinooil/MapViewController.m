@@ -71,6 +71,9 @@
         case FUEL_BIT_GAS:
             icon = @"icon_diesel";
             break;
+        case FUEL_BIT_DTW:
+            icon = @"icon_dieselw";
+            break;
     }
     
     [button setImage:[UIImage imageNamed:[NSString stringWithFormat:(button.selected?@"%@_pressed.png":@"%@.png"), icon]] forState:UIControlStateNormal];
@@ -183,7 +186,7 @@
     
     float y = 8;
     float x = 5;
-    for (int i = FUEL_BIT_97; i <= FUEL_BIT_GAS; i = (i << 1)) {
+    for (int i = FUEL_BIT_97; i <= FUEL_BIT_DTW; i = (i << 1)) {
         
         NSString* icon = @"icon_97.png";
         switch (i) {
@@ -206,7 +209,11 @@
                 icon = @"icon_diesel.png";
                 break;
             case FUEL_BIT_GAS:
-                icon = @"icon_diesel.png";
+//                icon = @"icon_diesel.png";
+                continue;
+                break;
+            case FUEL_BIT_DTW:
+                icon = @"icon_dieselw.png";
                 break;
         }
         
