@@ -156,15 +156,27 @@
 }
 
 - (void) refreshDropdown {
-
+    
     UIView* old = [self.view viewWithTag:POPUP_TAG];
     [old removeFromSuperview];
-
+    
     NSString* s = [[Common instance] getCurrentCityName];
     
     self.dropdown.text = s;
     [self.mapsour refreshPinsAndCityChange];
+    
+}
 
+- (void) refreshDropdown1 {
+    
+    UIView* old = [self.view viewWithTag:POPUP_TAG];
+    [old removeFromSuperview];
+    
+    NSString* s = [[Common instance] getCurrentCityName];
+    
+    self.dropdown.text = s;
+//    [self.mapsour refreshPinsAndCityChange];
+    
 }
 
 - (void) refresh {
@@ -547,7 +559,7 @@
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
 
-    [self refreshDropdown];
+    [self refreshDropdown1];
 //    NSLog(@"ttt");
 }
 

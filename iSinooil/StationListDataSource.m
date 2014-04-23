@@ -35,7 +35,11 @@
     cell.kmLab.text = @"...";
     NSString* num = [dic objectForKey:STATION_TITLE];
     cell.numberLab.text = [[num componentsSeparatedByString:@"№"] objectAtIndex:1];
-    
+
+//    NSNumber* n = [dic valueForKey:STATION_ID];
+//    float dist = [[Common instance] calculateDistToStation:n.intValue];
+//    cell.kmLab.text = [NSString stringWithFormat:@"%.1f %@", dist, NSLocalizedString(@"km", nil)];
+  
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^(void) {
 
         NSNumber* n = [dic valueForKey:STATION_ID];
@@ -51,6 +55,7 @@
             if (updateCell)
                 updateCell.kmLab.text = [NSString stringWithFormat:@"%.1f %@", dist, NSLocalizedString(@"km", nil)];
 //            NSLog(@"%d %f", indexPath.row, dist);
+//            [tableView reloadData];
         });
         
     });
