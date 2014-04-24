@@ -103,6 +103,7 @@ enum {M_KM, M_MI, M_MT}; //km, miles, metres
 @class PriceCell;
 //@class MenuViewController;
 #import "MenuViewController.h"
+#import "MapViewController.h"
 
 @interface Common : NSObject
 
@@ -164,6 +165,7 @@ enum {M_KM, M_MI, M_MT}; //km, miles, metres
 @property (assign, readwrite) int metrics;
 @property (nonatomic, retain) NSBundle* languageBundle;
 @property (nonatomic, weak) MenuViewController* menucontr;
+@property (nonatomic, weak) MapViewController* mapcontr;
 @property (assign, readwrite) BOOL internetActive;
 @property (assign, readwrite) int fuel;
 @property (assign, readwrite) int card;

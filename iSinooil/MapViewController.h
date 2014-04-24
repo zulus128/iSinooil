@@ -40,6 +40,7 @@
 - (IBAction)goPopup:(id)sender;
 
 - (void) showDetail:(int)num;
+- (void) showMap;
 
 - (void) showStationWithId:(int)sid;
 

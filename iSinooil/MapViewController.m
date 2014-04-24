@@ -357,6 +357,8 @@
     
     [super viewDidLoad];
     
+    [Common instance].mapcontr = self;
+    
     if([Common instance].userCoordinate.longitude < -1e4) {
         
         CLLocationCoordinate2D noLocation = {43.240682, 76.892621};
@@ -444,6 +446,11 @@
 
     StationDetailViewController* detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"stationDetailController"];
     [self.navigationController pushViewController:detailViewController animated:YES];
+}
+
+- (void) showMap {
+    
+    [self mapTouchDown:self.mapButton];
 }
 
 - (IBAction)mapTouchDown:(UIButton*)button {

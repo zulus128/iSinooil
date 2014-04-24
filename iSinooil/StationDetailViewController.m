@@ -269,4 +269,27 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)goMap:(id)sender {
+
+//    NSLog(@"goMap");
+   
+    [[Common instance].mapcontr showMap];
+
+    [self.navigationController popViewControllerAnimated:YES];
+
+    [self performSelector:@selector(goMap1) withObject:nil afterDelay:0.0f];
+
+}
+
+- (void) goMap1 {
+
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^(void) {
+    
+        NSDictionary* dic = [[Common instance].azsjson objectAtIndex:[Common instance].stationRowSelected];
+        NSNumber* n = [dic objectForKey:STATION_ID];
+        [[Common instance].menucontr showStationWithId:n.intValue];
+    });
+
+}
+
 @end

@@ -23,5 +23,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *st_name;
 @property (weak, nonatomic) IBOutlet UILabel *st_name1;
 @property (weak, nonatomic) IBOutlet UIImageView *pic;
+- (IBAction)goMap:(id)sender;
 
 @end
