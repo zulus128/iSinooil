@@ -165,6 +165,9 @@
     self.dropdown.text = s;
     [self.mapsour refreshPinsAndCityChange];
     
+    [[Common instance] filterOnSelectedCity];
+    [self.stationListTable reloadData];
+    
 }
 
 - (void) refreshDropdown1 {

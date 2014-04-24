@@ -181,19 +181,20 @@
         
         NSLog(@"Parsing azs: OK!");
         
-        NSArray *sortedArray;
-        sortedArray = [self.azsjson sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
-            NSDictionary *first = (NSDictionary*)a;
-            NSDictionary *second = (NSDictionary*)b;
-            NSString* s1 = [first valueForKey:STATION_TITLE];
-            NSString* s2 = [second valueForKey:STATION_TITLE];
-            return [s1 compare:s2];
-        }];
+//        NSArray *sortedArray;
+//        sortedArray = [self.azsjson sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+//            NSDictionary *first = (NSDictionary*)a;
+//            NSDictionary *second = (NSDictionary*)b;
+//            NSString* s1 = [first valueForKey:STATION_TITLE];
+//            NSString* s2 = [second valueForKey:STATION_TITLE];
+//            return [s1 compare:s2];
+//        }];
+//
+////        NSLog(@"azsjson: %@", sortedArray);
+//        
+//        self.sortedazsjson = sortedArray;
 
-//        NSLog(@"azsjson: %@", sortedArray);
-        
-        self.sortedazsjson = sortedArray;
-
+        [self filterOnSelectedCity];
     }
     
     NSString* azsFuel = [docpath stringByAppendingPathComponent:@"fuel.json"];
@@ -1157,6 +1158,31 @@
     }
     return s;
 }
+
+- (void) filterOnSelectedCity {
+    
+    NSArray *sortedArray;
+    sortedArray = [self.azsjson sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+        NSDictionary *first = (NSDictionary*)a;
+        NSDictionary *second = (NSDictionary*)b;
+        NSString* s1 = [first valueForKey:STATION_TITLE];
+        NSString* s2 = [second valueForKey:STATION_TITLE];
+        return [s1 compare:s2];
+    }];
+    
+    NSMutableArray* resarr = [NSMutableArray array];
+
+    for(NSDictionary* d in sortedArray) {
+    
+        NSNumber* n = [d valueForKey:STATION_CITY];
+        if((self.selectedCity < 0) || (n.intValue == self.selectedCity)) {
+            
+            [resarr addObject:d];
+        }
+    }
+    self.sortedazsjson = resarr;
+}
+
 
 - (void) sendMessage:(NSString*) msg {
 

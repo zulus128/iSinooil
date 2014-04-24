@@ -143,6 +143,7 @@ enum {M_KM, M_MI, M_MT}; //km, miles, metres
 - (void) loadAndParse;
 - (void) sendMessage:(NSString*) msg;
 - (NSDictionary*) recvMessage;
+- (void) filterOnSelectedCity;
 
 @property (nonatomic, strong) NSArray* azsjson;
 @property (nonatomic, strong) NSArray* sortedazsjson;

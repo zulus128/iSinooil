@@ -51,6 +51,8 @@
      
         float dist = [[Common instance] calculateDistToStation:n.intValue];
         
+        [self performSelector:@selector(prepareToRefreshTable) withObject:nil afterDelay:4.0f];
+
         dispatch_async(dispatch_get_main_queue(), ^{
             
             StationViewCell *updateCell = (id)[tableView cellForRowAtIndexPath:indexPath];
@@ -182,6 +184,14 @@
     }
     
     return cell;
+}
+
+- (void) prepareToRefreshTable {
+    
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(prepareToRefreshTable) object:nil];
+    
+    
+
 }
 
 /*
