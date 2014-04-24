@@ -31,5 +31,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *callButton;
 
 @property (nonatomic, strong) BranchesDataSource* brsour;
+@property (assign, readwrite) int selectedBrunch;
 
 @end

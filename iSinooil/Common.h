@@ -74,6 +74,10 @@ enum {M_KM, M_MI, M_MT}; //km, miles, metres
 #define ABOUT_ID @"id"
 #define ABOUT_TXT @"txt"
 #define ABOUT_TTL @"ttl"
+#define ABOUT_PHONE @"phone"
+#define ABOUT_ADDRESS @"address"
+#define ABOUT_LAT @"lat"
+#define ABOUT_LON @"lng"
 
 //fuel.json
 #define FUEL_VALUES @"value"
@@ -129,6 +133,7 @@ enum {M_KM, M_MI, M_MT}; //km, miles, metres
 
 - (int) getBranchesCount;
 - (NSDictionary*) getBranchAt:(int)n;
+- (NSDictionary*) getBranchWithId:(int)n;
 
 - (NSString*) getStringForKey:(NSString*)key;
 - (NSString*) getCurrentCityName;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ln3-ZL-TUP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ln3-ZL-TUP">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -1510,14 +1510,14 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     </mapView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contacts.png" translatesAutoresizingMaskIntoConstraints="NO" id="yMN-eu-ij2">
-                                        <rect key="frame" x="20" y="132" width="30" height="30"/>
+                                        <rect key="frame" x="10" y="132" width="30" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="0bz-Zh-VXD"/>
                                             <constraint firstAttribute="height" constant="30" id="27C-YC-Zn7"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Almaty, Raimbek str. 74" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rq0-fj-tSS">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Almaty, Raimbek str. 74" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rq0-fj-tSS">
                                         <rect key="frame" x="69" y="138" width="231" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
@@ -1536,8 +1536,8 @@
                                     <constraint firstItem="cxf-3k-6OH" firstAttribute="top" secondItem="VmB-bo-yak" secondAttribute="bottom" constant="57" id="6Ma-oc-AUE"/>
                                     <constraint firstItem="rq0-fj-tSS" firstAttribute="top" secondItem="VmB-bo-yak" secondAttribute="bottom" constant="20" id="8ju-jf-6mQ"/>
                                     <constraint firstItem="gu7-as-qQf" firstAttribute="leading" secondItem="eqi-V7-bol" secondAttribute="leading" constant="20" id="P2R-Wq-O4V"/>
-                                    <constraint firstItem="yMN-eu-ij2" firstAttribute="leading" secondItem="eqi-V7-bol" secondAttribute="leading" constant="20" id="SSU-T6-YQQ"/>
-                                    <constraint firstItem="rq0-fj-tSS" firstAttribute="leading" secondItem="yMN-eu-ij2" secondAttribute="trailing" constant="19" id="VNF-gW-WbW"/>
+                                    <constraint firstItem="yMN-eu-ij2" firstAttribute="leading" secondItem="eqi-V7-bol" secondAttribute="leading" constant="10" id="SSU-T6-YQQ"/>
+                                    <constraint firstItem="rq0-fj-tSS" firstAttribute="leading" secondItem="yMN-eu-ij2" secondAttribute="trailing" constant="10" id="VNF-gW-WbW"/>
                                     <constraint firstItem="yMN-eu-ij2" firstAttribute="top" secondItem="VmB-bo-yak" secondAttribute="bottom" constant="14" id="WfT-Pc-MvM"/>
                                     <constraint firstAttribute="trailing" secondItem="gu7-as-qQf" secondAttribute="trailing" constant="20" id="gqm-in-azc"/>
                                     <constraint firstAttribute="trailing" secondItem="rq0-fj-tSS" secondAttribute="trailing" constant="20" id="kN6-bW-XjD"/>

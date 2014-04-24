@@ -595,6 +595,21 @@
     return res;
 }
 
+- (NSDictionary*) getBranchWithId:(int)n {
+    
+    NSDictionary* res = nil;
+    for(NSDictionary* d in self.aboutjson) {
+        
+        NSNumber* nn = [d valueForKey:ABOUT_ID];
+        if (nn.intValue == n) {
+            
+            res = d;
+            break;
+        }
+    }
+    return res;
+}
+
 - (void) loadAboutData {
     
     NSArray* sp = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);

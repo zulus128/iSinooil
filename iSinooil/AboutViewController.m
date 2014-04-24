@@ -107,6 +107,7 @@
 - (IBAction)showDetails:(id)sender {
     
     AboutDetailViewController* detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"aboutDetailController"];
+    detailViewController.selectedBrunch = 1;
     [self.navigationController pushViewController:detailViewController animated:YES];
 
 }

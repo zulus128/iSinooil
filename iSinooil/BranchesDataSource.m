@@ -50,7 +50,8 @@
                         "</html>", @"HelveticaNeueCyr-Light", [NSNumber numberWithInt:14], [branch valueForKey:ABOUT_TXT]];
     
     [cell.addrWebview loadHTMLString:myHTML baseURL:nil];
-    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
     return cell;
 }
 
