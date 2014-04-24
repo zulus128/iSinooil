@@ -145,6 +145,7 @@ enum {M_KM, M_MI, M_MT}; //km, miles, metres
 - (NSDictionary*) recvMessage;
 
 @property (nonatomic, strong) NSArray* azsjson;
+@property (nonatomic, strong) NSArray* sortedazsjson;
 @property (nonatomic, strong) NSArray* fueljson;
 @property (nonatomic, strong) NSArray* cityjson;
 @property (nonatomic, strong) NSArray* aboutjson;

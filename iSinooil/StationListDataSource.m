@@ -21,7 +21,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return [Common instance].azsjson.count;
+//    return [Common instance].azsjson.count;
+    return [Common instance].sortedazsjson.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -31,7 +32,8 @@
     StationViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     
-    NSDictionary* dic = [[Common instance].azsjson objectAtIndex:indexPath.row];
+//    NSDictionary* dic = [[Common instance].azsjson objectAtIndex:indexPath.row];
+    NSDictionary* dic = [[Common instance].sortedazsjson objectAtIndex:indexPath.row];
     cell.kmLab.text = @"...";
     NSString* num = [dic objectForKey:STATION_TITLE];
     cell.numberLab.text = [[num componentsSeparatedByString:@"№"] objectAtIndex:1];

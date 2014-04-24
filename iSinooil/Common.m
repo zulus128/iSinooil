@@ -180,7 +180,20 @@
     } else {
         
         NSLog(@"Parsing azs: OK!");
-//        NSLog(@"azsjson: %@", self.azsjson);
+        
+        NSArray *sortedArray;
+        sortedArray = [self.azsjson sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+            NSDictionary *first = (NSDictionary*)a;
+            NSDictionary *second = (NSDictionary*)b;
+            NSString* s1 = [first valueForKey:STATION_TITLE];
+            NSString* s2 = [second valueForKey:STATION_TITLE];
+            return [s1 compare:s2];
+        }];
+
+//        NSLog(@"azsjson: %@", sortedArray);
+        
+        self.sortedazsjson = sortedArray;
+
     }
     
     NSString* azsFuel = [docpath stringByAppendingPathComponent:@"fuel.json"];

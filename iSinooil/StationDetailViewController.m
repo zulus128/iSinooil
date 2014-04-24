@@ -21,7 +21,7 @@
     NSDictionary* dic = [[Common instance].azsjson objectAtIndex:[Common instance].stationRowSelected];
     NSString* ppic = [dic objectForKey:STATION_PIC];
     
-    NSLog(@"dic = %@", dic);
+//    NSLog(@"dic = %@", dic);
     
     [self.pic setImageWithURL:[NSURL URLWithString:ppic] placeholderImage:[UIImage imageNamed:@"placeholder-icon"]];
 
