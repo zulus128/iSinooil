@@ -1165,17 +1165,57 @@
     sortedArray = [self.azsjson sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
         NSDictionary *first = (NSDictionary*)a;
         NSDictionary *second = (NSDictionary*)b;
+        
+        float distance1 = -1;
+        NSNumber* id1 = [first valueForKey:STATION_ID];
+        NSDictionary* dic1 = [self.azsDistances objectForKey:id1];
+        if(dic1) {
+            
+            NSNumber* nu1 = [dic1 valueForKey:AZS_NEEDUPDATE];
+            if(!nu1.intValue) {
+                
+                NSNumber* dist1 = [dic1 valueForKey:AZS_DIST];
+                distance1 = dist1.floatValue;
+            }
+        }
+        float distance2 = -1;
+        NSNumber* id2 = [second valueForKey:STATION_ID];
+        NSDictionary* dic2 = [self.azsDistances objectForKey:id2];
+        if(dic2) {
+            
+            NSNumber* nu2 = [dic2 valueForKey:AZS_NEEDUPDATE];
+            if(!nu2.intValue) {
+                
+                NSNumber* dist2 = [dic2 valueForKey:AZS_DIST];
+                distance2 = dist2.floatValue;
+            }
+        }
+
+//        NSLog(@"%f, %f", distance1, distance2);
+        if ((distance2 < 0.1f) && (distance1 > 0.1f)) {
+            
+            return NSOrderedAscending;
+        }
+        if ((distance1 < 0.1f) && (distance2 > 0.1f)) {
+            
+            return NSOrderedDescending;
+        }
+        if ((distance1 > 0.1f) && (distance2 > 0.1f)) {
+            
+            return [[NSNumber numberWithFloat:distance1] compare:[NSNumber numberWithFloat:distance2]];
+        }
+        
         NSString* s1 = [first valueForKey:STATION_TITLE];
         NSString* s2 = [second valueForKey:STATION_TITLE];
         return [s1 compare:s2];
     }];
     
     NSMutableArray* resarr = [NSMutableArray array];
-
+    int cid = [self getCurrentCityId];
     for(NSDictionary* d in sortedArray) {
     
         NSNumber* n = [d valueForKey:STATION_CITY];
-        if((self.selectedCity < 0) || (n.intValue == self.selectedCity)) {
+        if((cid < 0) || (n.intValue == cid)) {
             
             [resarr addObject:d];
         }

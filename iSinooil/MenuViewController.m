@@ -108,6 +108,17 @@
     viewController.view.frame = CGRectMake(fr.size.width - deltaX, fr.origin.y, fr.size.width, fr.size.height);
     viewController.view.hidden = YES;
     
+    [[self.bmain titleLabel] setFont:FONT_MENU];
+    [[self.babout titleLabel] setFont:FONT_MENU];
+    [[self.bmap titleLabel] setFont:FONT_MENU];
+    [[self.bnews titleLabel] setFont:FONT_MENU];
+    [[self.bacts titleLabel] setFont:FONT_MENU];
+    [[self.bhotline titleLabel] setFont:FONT_MENU];
+    [[self.bsettings titleLabel] setFont:FONT_MENU];
+    [[self.bshop titleLabel] setFont:FONT_MENU];
+    [[self.bsite titleLabel] setFont:FONT_MENU];
+    self.network.font = FONT_MENU;
+    
     [self refresh];
 
     
@@ -123,6 +134,8 @@
                                                       action:@selector(oneFingerSwipeRight:)];
     [oneFingerSwipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
     [[self view] addGestureRecognizer:oneFingerSwipeRight];
+    
+    
 }
 
 - (void) swipeView:(UIView*)v toLeft:(BOOL)left {
@@ -187,6 +200,11 @@
     [self.bmap setTitle:NSLocalizedString(@"Map", nil) forState:UIControlStateNormal];
     [self.bnews setTitle:NSLocalizedString(@"News", nil) forState:UIControlStateNormal];
     [self.bacts setTitle:NSLocalizedString(@"Actions", nil) forState:UIControlStateNormal];
+    [self.bhotline setTitle:NSLocalizedString(@"HotLine", nil) forState:UIControlStateNormal];
+    [self.bsettings setTitle:NSLocalizedString(@"Settings", nil) forState:UIControlStateNormal];
+    [self.bshop setTitle:NSLocalizedString(@"IShop", nil) forState:UIControlStateNormal];
+    [self.bsite setTitle:NSLocalizedString(@"Site", nil) forState:UIControlStateNormal];
+    self.network.text = NSLocalizedString(@"Networks", nil);
     
     for(UIViewController* vc in self.childViewControllers) {
         
@@ -250,6 +268,15 @@
 - (IBAction)actionsPressed:(id)sender {
     
     [self goLeft:ACTS_VIEW_TAG];
+}
+
+- (IBAction)hotlinePressed:(id)sender {
+}
+
+- (IBAction)settingsPressed:(id)sender {
+}
+
+- (IBAction)shopPressed:(id)sender {
 }
 
 - (IBAction)newsPressed:(id)sender {

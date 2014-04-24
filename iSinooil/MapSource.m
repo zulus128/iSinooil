@@ -118,6 +118,13 @@
             MapPoint *mp = [[MapPoint alloc] initWithCoordinate:newCoord title:[NSString stringWithFormat:@"Azam Home %d",i] subTitle:@"Home Sweet Home"];
             mp.number = i;
             [mv addAnnotation:mp];
+            
+
+//            CLLocationCoordinate2D vLoc = { 43.27143, 76.95885 };
+//            [Common instance].userCoordinate = vLoc;
+//            [[Common instance] fillDists];
+            
+
         }
         
 #endif

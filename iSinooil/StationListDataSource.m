@@ -51,7 +51,8 @@
      
         float dist = [[Common instance] calculateDistToStation:n.intValue];
         
-        [self performSelector:@selector(prepareToRefreshTable) withObject:nil afterDelay:4.0f];
+        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(prepareToRefreshTable:) object:nil];
+        [self performSelector:@selector(prepareToRefreshTable:) withObject:tableView afterDelay:4.0f];
 
         dispatch_async(dispatch_get_main_queue(), ^{
             
@@ -186,11 +187,15 @@
     return cell;
 }
 
-- (void) prepareToRefreshTable {
+- (void) prepareToRefreshTable:(UITableView*)tableView {
     
-    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(prepareToRefreshTable) object:nil];
+    NSLog(@"--prepareToRefreshTable");
     
-    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        [[Common instance] filterOnSelectedCity];
+        [tableView reloadData];
+    });
 
 }
 

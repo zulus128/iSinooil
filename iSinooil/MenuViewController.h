@@ -15,6 +15,10 @@
 - (IBAction)mapsPressed:(id)sender;
 - (IBAction)aboutPressed:(id)sender;
 - (IBAction)actionsPressed:(id)sender;
+- (IBAction)hotlinePressed:(id)sender;
+- (IBAction)settingsPressed:(id)sender;
+- (IBAction)shopPressed:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *sitePressed;
 
 - (void) showMaps;
 - (void) showPrices;
@@ -29,5 +33,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *bmap;
 @property (weak, nonatomic) IBOutlet UIButton *bnews;
 @property (weak, nonatomic) IBOutlet UIButton *bacts;
+@property (weak, nonatomic) IBOutlet UIButton *bhotline;
+@property (weak, nonatomic) IBOutlet UIButton *bsettings;
+@property (weak, nonatomic) IBOutlet UIButton *bshop;
+@property (weak, nonatomic) IBOutlet UIButton *bsite;
+@property (weak, nonatomic) IBOutlet UILabel *network;
 
 @end
