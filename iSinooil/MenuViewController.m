@@ -271,12 +271,25 @@
 }
 
 - (IBAction)hotlinePressed:(id)sender {
+
+    [self goLeft:HOT_VIEW_TAG];
 }
 
 - (IBAction)settingsPressed:(id)sender {
+
+    [self goLeft:SETT_VIEW_TAG];
 }
 
 - (IBAction)shopPressed:(id)sender {
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URL_SHOP]];
+
+}
+
+- (IBAction)sitePressed:(id)sender {
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URL_SITE]];
+
 }
 
 - (IBAction)newsPressed:(id)sender {
@@ -285,6 +298,28 @@
 
     [self goLeft:NEWS_VIEW_TAG];
 
+}
+
+- (IBAction)tapFB:(id)sender {
+    
+    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:URL_FB_SPEC]]){
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URL_FB_SPEC]];
+    }
+    else {
+        //Open the url as usual
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URL_FB]];
+    }
+}
+
+- (IBAction)tapVK:(id)sender {
+    
+    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:URL_VK_SPEC]]){
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URL_VK_SPEC]];
+    }
+    else {
+        //Open the url as usual
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URL_VK]];
+    }
 }
 
 - (void) showMaps {

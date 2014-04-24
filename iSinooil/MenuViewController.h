@@ -18,7 +18,10 @@
 - (IBAction)hotlinePressed:(id)sender;
 - (IBAction)settingsPressed:(id)sender;
 - (IBAction)shopPressed:(id)sender;
-@property (weak, nonatomic) IBOutlet UIButton *sitePressed;
+- (IBAction)sitePressed:(id)sender;
+
+- (IBAction)tapFB:(id)sender;
+- (IBAction)tapVK:(id)sender;
 
 - (void) showMaps;
 - (void) showPrices;

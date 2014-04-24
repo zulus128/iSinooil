@@ -693,7 +693,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="actionsPressed:" destination="VwP-S4-jtj" eventType="touchUpInside" id="AhE-vI-Py5"/>
                                     <action selector="hotlinePressed:" destination="VwP-S4-jtj" eventType="touchUpInside" id="kRk-8M-e5E"/>
                                 </connections>
                             </button>
@@ -709,8 +708,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="actionsPressed:" destination="VwP-S4-jtj" eventType="touchUpInside" id="iCM-79-1RY"/>
-                                    <action selector="hotlinePressed:" destination="VwP-S4-jtj" eventType="touchUpInside" id="CUt-1J-rcL"/>
                                     <action selector="settingsPressed:" destination="VwP-S4-jtj" eventType="touchUpInside" id="v9A-5D-nLg"/>
                                 </connections>
                             </button>
@@ -726,9 +723,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="actionsPressed:" destination="VwP-S4-jtj" eventType="touchUpInside" id="umq-5z-3fe"/>
-                                    <action selector="hotlinePressed:" destination="VwP-S4-jtj" eventType="touchUpInside" id="wXJ-Vx-qqO"/>
-                                    <action selector="settingsPressed:" destination="VwP-S4-jtj" eventType="touchUpInside" id="YJx-tM-08m"/>
                                     <action selector="shopPressed:" destination="VwP-S4-jtj" eventType="touchUpInside" id="xqi-kb-M7H"/>
                                 </connections>
                             </button>
@@ -744,10 +738,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="actionsPressed:" destination="VwP-S4-jtj" eventType="touchUpInside" id="jKn-7h-XqJ"/>
-                                    <action selector="hotlinePressed:" destination="VwP-S4-jtj" eventType="touchUpInside" id="tsK-th-2Ao"/>
-                                    <action selector="settingsPressed:" destination="VwP-S4-jtj" eventType="touchUpInside" id="kVs-QM-IGV"/>
-                                    <action selector="shopPressed:" destination="VwP-S4-jtj" eventType="touchUpInside" id="ako-0C-Cve"/>
+                                    <action selector="sitePressed:" destination="VwP-S4-jtj" eventType="touchUpInside" id="6B9-US-o0m"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bne-0y-WFj" userLabel="Line1">
@@ -848,6 +839,9 @@
                                     <constraint firstAttribute="width" constant="41" id="5qh-1O-ELc"/>
                                     <constraint firstAttribute="height" constant="41" id="UgT-B1-vh7"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="wth-gf-pZm" appends="YES" id="r8P-MV-0IU"/>
+                                </connections>
                             </imageView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_vk.png" translatesAutoresizingMaskIntoConstraints="NO" id="imh-OC-9W7">
                                 <rect key="frame" x="220" y="465" width="41" height="41"/>
@@ -857,6 +851,9 @@
                                     <constraint firstAttribute="height" constant="41" id="6su-fr-04W"/>
                                     <constraint firstAttribute="width" constant="41" id="Oad-PO-PDy"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="2iE-3B-H83" appends="YES" id="TUl-LV-j6o"/>
+                                </connections>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="marker.png" translatesAutoresizingMaskIntoConstraints="NO" id="OGD-h9-EGs">
                                 <rect key="frame" x="24" y="380" width="16" height="16"/>
@@ -984,10 +981,19 @@
                         <outlet property="bshop" destination="H0Z-iE-bdx" id="V8q-zK-veF"/>
                         <outlet property="bsite" destination="PM0-Yy-LWQ" id="mWo-05-6sL"/>
                         <outlet property="network" destination="aaA-zr-4IK" id="hGm-Eg-KMe"/>
-                        <outlet property="sitePressed" destination="PM0-Yy-LWQ" id="17z-xK-C5E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="twI-fB-qZl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="wth-gf-pZm">
+                    <connections>
+                        <action selector="tapFB:" destination="VwP-S4-jtj" id="QZX-0r-5o0"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="2iE-3B-H83">
+                    <connections>
+                        <action selector="tapVK:" destination="VwP-S4-jtj" id="lNa-F7-BO2"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="305" y="-1"/>
         </scene>
