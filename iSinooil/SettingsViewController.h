@@ -26,4 +26,6 @@
 @property (nonatomic, strong) SettingsDataSource* setsour;
 @property (weak, nonatomic) IBOutlet UITableView *settTableView;
 
+- (IBAction)tablePressed:(id)sender;
+
 @end

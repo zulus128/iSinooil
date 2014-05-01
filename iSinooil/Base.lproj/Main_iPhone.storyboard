@@ -1543,6 +1543,7 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <gestureRecognizers/>
                                         <connections>
                                             <outlet property="arrDown" destination="rQo-YE-H3f" id="yyH-eB-onp"/>
                                             <outlet property="arrUp" destination="K21-1C-u0r" id="SmB-KE-fju"/>
@@ -1555,6 +1556,7 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="HDD-RQ-6VI" firstAttribute="leading" secondItem="y7K-IJ-eek" secondAttribute="leading" id="5rD-5z-hl4"/>
                             <constraint firstItem="HDD-RQ-6VI" firstAttribute="top" secondItem="y7K-IJ-eek" secondAttribute="top" id="8l9-7J-gYx"/>
@@ -1564,6 +1566,9 @@
                             <constraint firstAttribute="trailing" secondItem="HDD-RQ-6VI" secondAttribute="trailing" id="rx0-rH-vLf"/>
                             <constraint firstItem="dTt-rz-jaX" firstAttribute="top" secondItem="yS7-Hi-9sd" secondAttribute="bottom" id="yw5-y9-aeU"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="vPy-8O-RZl" appends="YES" id="wnf-dS-37F"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="settTableView" destination="yS7-Hi-9sd" id="VYK-NR-DbE"/>
@@ -1571,6 +1576,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fen-qw-X6g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="vPy-8O-RZl">
+                    <connections>
+                        <action selector="tablePressed:" destination="FbO-Nl-uG4" id="Fwv-xa-a9u"/>
+                        <outlet property="delegate" destination="FbO-Nl-uG4" id="yG0-VI-Wc2"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="399" y="1749"/>
         </scene>

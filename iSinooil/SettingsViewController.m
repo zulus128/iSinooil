@@ -9,6 +9,7 @@
 #import "SettingsViewController.h"
 #import "Common.h"
 #import "SettingsDataSource.h"
+#import "SettingsCell.h"
 
 @implementation SettingsViewController
 
@@ -314,6 +315,16 @@
         [self showPopup];
     }
 
+}
+
+- (IBAction)tablePressed:(id)sender {
+    
+    [self hidePopup];
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+
+    return ![NSStringFromClass([touch.view class]) isEqualToString:@"UITableViewCellContentView"];
 }
 
 @end
