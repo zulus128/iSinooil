@@ -2237,19 +2237,21 @@
                                             <action selector="menu:" destination="ehy-aB-IHd" eventType="touchUpInside" id="MbB-eb-JCI"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="300" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stations" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srS-dX-17e">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="300" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Stations" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srS-dX-17e">
                                         <rect key="frame" x="51" y="38" width="100" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="qwO-oC-2VT"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Almaty" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I39-wc-2KW" userLabel="Dropdown Label - Label">
-                                        <rect key="frame" x="127" y="41" width="161" height="21"/>
+                                    <label opaque="NO" clipsSubviews="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Almaty" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I39-wc-2KW" userLabel="Dropdown Label - Label" customClass="OSLabel">
+                                        <rect key="frame" x="151" y="41" width="169" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <gestureRecognizers/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="161" id="C0e-a6-2vX"/>
                                             <constraint firstAttribute="height" constant="21" id="hA7-yQ-m8D"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -2259,8 +2261,8 @@
                                             <outletCollection property="gestureRecognizers" destination="mNf-X8-sx2" appends="YES" id="yrG-uk-IYr"/>
                                         </connections>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowdown_light.png" translatesAutoresizingMaskIntoConstraints="NO" id="3HW-uE-VIl">
-                                        <rect key="frame" x="296" y="46" width="16" height="10"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="arrowdown_light.png" translatesAutoresizingMaskIntoConstraints="NO" id="3HW-uE-VIl">
+                                        <rect key="frame" x="196" y="46" width="16" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="10" id="ALq-Bz-e4l"/>
@@ -2273,14 +2275,17 @@
                                     <constraint firstItem="iI6-7y-Khq" firstAttribute="leading" secondItem="6bG-Rj-KHf" secondAttribute="leading" id="2pJ-Hb-xyC"/>
                                     <constraint firstItem="2dj-XE-4gF" firstAttribute="top" secondItem="6bG-Rj-KHf" secondAttribute="top" id="8Um-B8-0lK"/>
                                     <constraint firstAttribute="height" constant="70" id="GTM-yE-qCE"/>
+                                    <constraint firstItem="srS-dX-17e" firstAttribute="leading" secondItem="iI6-7y-Khq" secondAttribute="trailing" constant="8" id="RYC-Vh-OU2"/>
                                     <constraint firstAttribute="height" secondItem="2dj-XE-4gF" secondAttribute="height" id="TT9-Vd-jqZ"/>
                                     <constraint firstAttribute="width" secondItem="2dj-XE-4gF" secondAttribute="width" id="VFd-E0-qxD"/>
+                                    <constraint firstItem="I39-wc-2KW" firstAttribute="leading" secondItem="srS-dX-17e" secondAttribute="trailing" id="WYo-dQ-OdW"/>
                                     <constraint firstAttribute="trailing" secondItem="3HW-uE-VIl" secondAttribute="trailing" constant="8" id="dCo-gc-a57"/>
                                     <constraint firstItem="2dj-XE-4gF" firstAttribute="leading" secondItem="6bG-Rj-KHf" secondAttribute="leading" id="gJP-La-daR"/>
+                                    <constraint firstItem="I39-wc-2KW" firstAttribute="top" secondItem="6bG-Rj-KHf" secondAttribute="top" constant="41" id="nQ9-p1-glb"/>
                                     <constraint firstItem="iI6-7y-Khq" firstAttribute="top" secondItem="6bG-Rj-KHf" secondAttribute="top" constant="27" id="pUm-qb-Tyv"/>
                                     <constraint firstItem="3HW-uE-VIl" firstAttribute="top" secondItem="6bG-Rj-KHf" secondAttribute="top" constant="46" id="pbT-1C-fe1"/>
-                                    <constraint firstItem="3HW-uE-VIl" firstAttribute="leading" secondItem="I39-wc-2KW" secondAttribute="trailing" constant="8" id="qEm-Js-Rfa"/>
-                                    <constraint firstItem="I39-wc-2KW" firstAttribute="top" secondItem="6bG-Rj-KHf" secondAttribute="top" constant="41" id="rme-Xm-P09"/>
+                                    <constraint firstItem="srS-dX-17e" firstAttribute="top" secondItem="6bG-Rj-KHf" secondAttribute="top" constant="44" id="qTa-MK-NhF"/>
+                                    <constraint firstAttribute="trailing" secondItem="I39-wc-2KW" secondAttribute="trailing" id="smm-qB-ON7"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQ7-Ab-CYh" userLabel="MapButton">

@@ -357,6 +357,8 @@
     
     [super viewDidLoad];
     
+    self.dropdown.edgeInsets = UIEdgeInsetsMake(0, 0, 0, 30);
+    
     [Common instance].mapcontr = self;
     
     if([Common instance].userCoordinate.longitude < -1e4) {
@@ -510,7 +512,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-//    selectedRow = indexPath.row;
+    [self refreshDropdown1];
     [Common instance].stationRowSelected = indexPath.row;
     [self showStationDetails];
 }
@@ -532,7 +534,7 @@
     
     int cnt = [Common instance].cityjson.count + 1;
     CGRect f = self.dropdown.frame;
-    UIView* v = [[UIView alloc] initWithFrame:CGRectMake(f.origin.x + 10, f.origin.y + 20, POPUP_WIDTH, cnt * POPUPBUTTON_HEIGHT)];
+    UIView* v = [[UIView alloc] initWithFrame:CGRectMake(f.origin.x + f.size.width - 170, f.origin.y + 20, POPUP_WIDTH, cnt * POPUPBUTTON_HEIGHT)];
     v.layer.cornerRadius = 5;
     v.layer.masksToBounds = YES;
     v.tag = POPUP_TAG;

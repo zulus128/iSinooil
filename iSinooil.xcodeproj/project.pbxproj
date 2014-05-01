@@ -91,6 +91,7 @@
 		DD7ACF1A18CB148300909572 /* splash_ipad_r@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DD7ACF0D18CB148300909572 /* splash_ipad_r@2x.png */; };
 		DD7ACF1B18CB148300909572 /* splash_iphone_retina_4inch.png in Resources */ = {isa = PBXBuildFile; fileRef = DD7ACF0E18CB148300909572 /* splash_iphone_retina_4inch.png */; };
 		DD7ACF1C18CB148300909572 /* splash_iphone_retina.png in Resources */ = {isa = PBXBuildFile; fileRef = DD7ACF0F18CB148300909572 /* splash_iphone_retina.png */; };
+		DD7E062D1911E4BD0007D306 /* OSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD7E062C1911E4BD0007D306 /* OSLabel.m */; };
 		DD96D13D189E7E4700B78B1D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DD96D13C189E7E4700B78B1D /* libz.dylib */; };
 		DDA70D211876DA7200C89F86 /* MapPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA70D201876DA7200C89F86 /* MapPoint.m */; };
 		DDA70D241876E0DD00C89F86 /* MapSource.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA70D231876E0DD00C89F86 /* MapSource.m */; };
@@ -327,6 +328,8 @@
 		DD7ACF0D18CB148300909572 /* splash_ipad_r@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash_ipad_r@2x.png"; sourceTree = "<group>"; };
 		DD7ACF0E18CB148300909572 /* splash_iphone_retina_4inch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash_iphone_retina_4inch.png; sourceTree = "<group>"; };
 		DD7ACF0F18CB148300909572 /* splash_iphone_retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash_iphone_retina.png; sourceTree = "<group>"; };
+		DD7E062B1911E4BD0007D306 /* OSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSLabel.h; sourceTree = "<group>"; };
+		DD7E062C1911E4BD0007D306 /* OSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSLabel.m; sourceTree = "<group>"; };
 		DD96D13C189E7E4700B78B1D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		DDA70D1F1876DA7200C89F86 /* MapPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapPoint.h; sourceTree = "<group>"; };
 		DDA70D201876DA7200C89F86 /* MapPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapPoint.m; sourceTree = "<group>"; };
@@ -872,6 +875,8 @@
 				DDBE9BAE18A66D20000FB34D /* BranchCell.m */,
 				DDBE9BB718A679F1000FB34D /* SettingsCell.h */,
 				DDBE9BB818A679F1000FB34D /* SettingsCell.m */,
+				DD7E062B1911E4BD0007D306 /* OSLabel.h */,
+				DD7E062C1911E4BD0007D306 /* OSLabel.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1112,6 +1117,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD7E062D1911E4BD0007D306 /* OSLabel.m in Sources */,
 				DD3F7470189E082F0082CD30 /* UIImageView+WebCache.m in Sources */,
 				DDBE9BBC18A67A78000FB34D /* SettingsDataSource.m in Sources */,
 				847E7CB8188EADB8007401F1 /* PricesDataSource.m in Sources */,

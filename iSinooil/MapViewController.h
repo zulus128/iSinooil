@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "OSLabel.h"
 
 #define GAP_SIZE3 35
 
@@ -36,7 +37,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *mapButton;
 - (IBAction)listTouchDown:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *listButton;
-@property (weak, nonatomic) IBOutlet UILabel *dropdown;
+@property (weak, nonatomic) IBOutlet OSLabel *dropdown;
 - (IBAction)goPopup:(id)sender;
 
 - (void) showDetail:(int)num;
