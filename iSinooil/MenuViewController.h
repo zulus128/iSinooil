@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define MENU_VERT_SIZE 480
+
 @interface MenuViewController : UIViewController
 
 - (IBAction)newsPressed:(id)sender;
@@ -19,6 +21,9 @@
 - (IBAction)settingsPressed:(id)sender;
 - (IBAction)shopPressed:(id)sender;
 - (IBAction)sitePressed:(id)sender;
+@property (weak, nonatomic) IBOutlet UIView *contentView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentViewW;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentViewH;
 
 - (IBAction)tapFB:(id)sender;
 - (IBAction)tapVK:(id)sender;

@@ -19,19 +19,26 @@
     [self.navigationController setNavigationBarHidden:YES animated:animated];
 }
 
-//-(UIStatusBarStyle)preferredStatusBarStyle {
-//
-//    return UIStatusBarStyleLightContent;
-//}
-
-//- (BOOL)prefersStatusBarHidden {
-//    return NO; // your own visibility code
-//}
+- (void) willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    
+    //    NSLog(@"will rotate menu");
+    
+    CGSize s = [Common currentScreenBoundsDependOnOrientation:toInterfaceOrientation];
+    self.view.frame = CGRectMake(0, 0, s.width, s.height);
+    self.contentViewH.constant = s.height > MENU_VERT_SIZE?s.height:MENU_VERT_SIZE;
+    self.contentViewW.constant = s.width;
+    
+}
 
 - (void)viewDidLoad {
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+
+    CGSize s = [Common currentScreenBounds];
+    self.view.frame = CGRectMake(0, 0, s.width, s.height);
+    self.contentViewH.constant = MENU_VERT_SIZE;
+    self.contentViewW.constant = s.width;
 
 
     [Common instance].menucontr = self;
