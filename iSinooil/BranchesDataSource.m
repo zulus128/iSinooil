@@ -8,13 +8,15 @@
 
 #import "BranchesDataSource.h"
 #import "Common.h"
-#import "BranchCell.h"
+//#import "BranchCell.h"
 
 @implementation BranchesDataSource
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
+    self.tableView1 = tableView;
     
     return 1;
 }
@@ -49,11 +51,46 @@
                         "<body>%@</body> \n"
                         "</html>", @"HelveticaNeueCyr-Light", [NSNumber numberWithInt:14], [branch valueForKey:ABOUT_TXT]];
     
+    cell.addrWebview.delegate = cell;
+    
     [cell.addrWebview loadHTMLString:myHTML baseURL:nil];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
 
+    cell.delegate = self; // <-- add this
+    
+//    [cell AssignWebView:[ListOfQuestions objectAtIndex:indexPath.row]];
+//
+//    NSLog(@"indexPath = %ld", (long)indexPath.row);
+
+    if([[[Common instance].didReloadRowsBools objectForKey:[NSString stringWithFormat:@"%ld",(long)indexPath.row]] boolValue] != YES) {
+
+    [cell checkHeight];
+    
+    }
     return cell;
 }
 
+- (void) branchCell:(BranchCell *)cell shouldAssignHeight:(CGFloat)newHeight {
+    
+    NSLog(@"newH = %f", newHeight);
+//    NSLog(@"Class of Cell: %@", NSStringFromClass(cell.class));
+    
+//    NSIndexPath *indexPath = [self.tableView1 indexPathForCell:cell];
+//    newHeight = 150;
+    CGPoint pos = [cell convertPoint:CGPointZero toView:self.tableView1];
+    NSIndexPath *indexPath = [self.tableView1 indexPathForRowAtPoint:pos];
+//    NSIndexPath *indexPath = [self.tableView1 cellForRowAtIndexPath:indexPath1];
+    
+//    NSLog(@"indexPath = %ld", (long)indexPath.row);
+//    NSLog(@"indexPath = %@", indexPath);
+    [[Common instance].cellHeights setObject:[NSNumber numberWithFloat:newHeight] forKey:[NSString stringWithFormat:@"%ld",(long)indexPath.row]];
+    [[Common instance].didReloadRowsBools setObject:[NSNumber numberWithBool:YES] forKey:[NSString stringWithFormat:@"%ld",(long)indexPath.row]];
+
+    [self.tableView1 beginUpdates];
+    [self.tableView1 reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    [self.tableView1 endUpdates];
+    
+//    [self.tableView1 reloadData];
+}
 
 @end

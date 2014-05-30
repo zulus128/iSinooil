@@ -35,7 +35,10 @@
 	if(self !=nil) {
 
 //        self.needDistancesUpdate = YES;
-        
+
+        self.cellHeights = [NSMutableDictionary dictionary];
+        self.didReloadRowsBools = [NSMutableDictionary dictionary];
+
         self.selectedCity = -1;
         
         self.allowSemaphore = dispatch_semaphore_create(0);

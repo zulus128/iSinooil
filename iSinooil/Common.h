@@ -183,4 +183,7 @@ enum {M_KM, M_MI, M_MT}; //km, miles, metres
 
 @property(nonatomic, strong) NSString* deviceId;
 
+@property(nonatomic, strong) NSMutableDictionary *cellHeights;
+@property(nonatomic, strong) NSMutableDictionary *didReloadRowsBools;
+
 @end

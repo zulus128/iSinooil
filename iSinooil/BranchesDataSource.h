@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BranchCell.h"
 
-@interface BranchesDataSource : NSObject <UITableViewDataSource>
+@protocol BranchCellDelegate;
+
+@interface BranchesDataSource : NSObject <UITableViewDataSource, BranchCellDelegate>
+
+@property (strong, nonatomic) UITableView * tableView1;
 
 @end

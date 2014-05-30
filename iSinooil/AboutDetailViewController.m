@@ -139,7 +139,16 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    return BRANCHCELL_HEIGHT;
+    NSString *key = [NSString stringWithFormat:@"%ld",(long)indexPath.row];
+    
+    if([[Common instance].cellHeights objectForKey:key] == nil) {
+        
+        return BRANCHCELL_HEIGHT;
+    } else {
+        
+        return ((NSNumber*)[[Common instance].cellHeights objectForKey:key]).floatValue;
+    }
+//    return BRANCHCELL_HEIGHT;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
