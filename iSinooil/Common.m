@@ -36,8 +36,8 @@
 
 //        self.needDistancesUpdate = YES;
 
-        self.cellHeights = [NSMutableDictionary dictionary];
-        self.didReloadRowsBools = [NSMutableDictionary dictionary];
+//        self.cellHeights = [NSMutableDictionary dictionary];
+//        self.didReloadRowsBools = [NSMutableDictionary dictionary];
 
         self.selectedCity = -1;
         
@@ -137,6 +137,9 @@
 
 - (void) loadAndParse {
     
+    self.cellHeights = [NSMutableDictionary dictionary];
+    self.didReloadRowsBools = [NSMutableDictionary dictionary];
+
     self.lastNews = 0;
     self.lastAct = 0;
     self.newsjson = [NSArray array];

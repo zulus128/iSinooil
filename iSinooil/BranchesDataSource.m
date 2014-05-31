@@ -51,38 +51,45 @@
                         "<body>%@</body> \n"
                         "</html>", @"HelveticaNeueCyr-Light", [NSNumber numberWithInt:14], [branch valueForKey:ABOUT_TXT]];
     
+    cell.delegate = self; // <-- add this
     cell.addrWebview.delegate = cell;
-    
     [cell.addrWebview loadHTMLString:myHTML baseURL:nil];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-
-    cell.delegate = self; // <-- add this
     
 //    [cell AssignWebView:[ListOfQuestions objectAtIndex:indexPath.row]];
 //
 //    NSLog(@"indexPath = %ld", (long)indexPath.row);
 
-    if([[[Common instance].didReloadRowsBools objectForKey:[NSString stringWithFormat:@"%ld",(long)indexPath.row]] boolValue] != YES) {
-
-    [cell checkHeight];
-    
-    }
+//    if([[[Common instance].didReloadRowsBools objectForKey:[NSString stringWithFormat:@"%ld",(long)indexPath.row]] boolValue] != YES) {
+//
+//    [cell checkHeight];
+//    
+//    }
     return cell;
 }
 
 - (void) branchCell:(BranchCell *)cell shouldAssignHeight:(CGFloat)newHeight {
     
-    NSLog(@"newH = %f", newHeight);
+//    NSLog(@"newH = %f", newHeight);
 //    NSLog(@"Class of Cell: %@", NSStringFromClass(cell.class));
     
 //    NSIndexPath *indexPath = [self.tableView1 indexPathForCell:cell];
-//    newHeight = 150;
+    newHeight += 50.0f;
+    
     CGPoint pos = [cell convertPoint:CGPointZero toView:self.tableView1];
     NSIndexPath *indexPath = [self.tableView1 indexPathForRowAtPoint:pos];
 //    NSIndexPath *indexPath = [self.tableView1 cellForRowAtIndexPath:indexPath1];
     
 //    NSLog(@"indexPath = %ld", (long)indexPath.row);
 //    NSLog(@"indexPath = %@", indexPath);
+  
+    
+    if([[[Common instance].didReloadRowsBools objectForKey:[NSString stringWithFormat:@"%ld",(long)indexPath.row]] boolValue] == YES) {
+        
+        return;
+    }
+
+    
     [[Common instance].cellHeights setObject:[NSNumber numberWithFloat:newHeight] forKey:[NSString stringWithFormat:@"%ld",(long)indexPath.row]];
     [[Common instance].didReloadRowsBools setObject:[NSNumber numberWithBool:YES] forKey:[NSString stringWithFormat:@"%ld",(long)indexPath.row]];
 

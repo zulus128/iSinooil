@@ -370,27 +370,12 @@
     }
     self.mapView.userTrackingMode = MKUserTrackingModeFollow;
 
-
     self.mapsour = [[MapSource alloc] initWithType:MAPTYPE_FULLWINDOW];
     self.mapView.delegate = self.mapsour;
     self.mapsour.mapcontr = self;
-    
     self.listsour = [[StationListDataSource alloc] init];
-//    self.stationList.delegate = self.listsour;
-  
     self.stationListTable.delegate = self;
     self.stationListTable.dataSource = self.listsour;
-
-//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^(void) {
-//        
-//        dispatch_semaphore_wait([Common instance].allowSemaphore, DISPATCH_TIME_FOREVER);
-//        
-//        NSLog(@"go3");
-//        self.stationListTable.delegate = self;
-//        self.stationListTable.dataSource = self.listsour;
-//        [self.stationListTable reloadData];
-//        
-//    });
     
     [Common instance].mymapview = self.mapView;
     
@@ -513,8 +498,22 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [self refreshDropdown1];
-    [Common instance].stationRowSelected = indexPath.row;
-    [self showStationDetails];
+    
+    NSDictionary* dic = [[Common instance].sortedazsjson objectAtIndex:indexPath.row];
+//    NSLog(@"%@", dic);
+    NSNumber* sid = [dic objectForKey:STATION_ID];
+    int i = 0;
+    for (NSDictionary* azs in [Common instance].azsjson) {
+        
+        NSNumber* sid1 = [azs objectForKey:STATION_ID];
+        if(sid.intValue == sid1.intValue) {
+            
+            [Common instance].stationRowSelected = i;//indexPath.row;
+            [self showStationDetails];
+            break;
+        }
+        i++;
+    }
 }
 
 -(void) citySelected:(id)sender {

@@ -7,21 +7,15 @@
 //
 
 #import "AppDelegate.h"
-#import "TestFlight.h"
+//#import "TestFlight.h"
 #import "Common.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [TestFlight takeOff:@"9be99990-d71e-41b7-bc03-27c53dee6d2e"];
+//    [TestFlight takeOff:@"9be99990-d71e-41b7-bc03-27c53dee6d2e"];
     
-    
-//    [application setStatusBarHidden:NO];
-//    [application setStatusBarStyle:UIStatusBarStyleDefault];
-//    [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
-//    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-
     // Регистируем девайс на приём push-уведомлений
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes: (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
     

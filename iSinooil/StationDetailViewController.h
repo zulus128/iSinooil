@@ -15,12 +15,14 @@
 - (IBAction)back:(id)sender;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *detailViewW;
+@property (weak, nonatomic) IBOutlet UILabel *seeOnMapLab;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *detailViewH;
 @property (weak, nonatomic) IBOutlet UILabel *stationNumberLab;
 @property (weak, nonatomic) IBOutlet UILabel *stationDescrLab;
 @property (weak, nonatomic) IBOutlet UIView *stationDetailView;
 @property (weak, nonatomic) IBOutlet UIButton *backlab;
 @property (weak, nonatomic) IBOutlet UILabel *st_name;
+@property (weak, nonatomic) IBOutlet UITextView *stationDescrText;
 @property (weak, nonatomic) IBOutlet UILabel *st_name1;
 @property (weak, nonatomic) IBOutlet UIImageView *pic;
 - (IBAction)goMap:(id)sender;

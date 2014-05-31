@@ -196,7 +196,7 @@
          return;
          
     CLLocationCoordinate2D c = view.annotation.coordinate;
-    NSLog(@"didSel %f %f", c.latitude, c.longitude);
+//    NSLog(@"didSel %f %f", c.latitude, c.longitude);
 
     MapPoint* me = [[MapPoint alloc] initWithCoordinate:[Common instance].userCoordinate title:@"me" subTitle:@"meme"];
     MapPoint* to = [[MapPoint alloc] initWithCoordinate:c title:@"to" subTitle:@"toto"];
@@ -219,7 +219,8 @@
 - (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id < MKOverlay >)overlay {
     
     MKPolylineRenderer *renderer = [[MKPolylineRenderer alloc] initWithOverlay:overlay];
-    renderer.strokeColor = [UIColor blueColor];
+//    renderer.strokeColor = [UIColor blueColor];
+    renderer.strokeColor = [UIColor colorWithRed:180/255.0 green:42/255.0 blue:42/255.0 alpha:1];
     renderer.lineWidth = 5.0;
     return renderer;
 }

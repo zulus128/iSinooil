@@ -40,7 +40,7 @@
     
 //    NSLog(@"webview frame size %f",aWebView.frame.size.height);
     
-//    [self checkHeight];
+    [self checkHeight];
 }
 
 - (void)checkHeight {

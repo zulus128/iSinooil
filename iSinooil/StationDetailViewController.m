@@ -19,6 +19,7 @@
 - (void) refresh {
 
     NSDictionary* dic = [[Common instance].azsjson objectAtIndex:[Common instance].stationRowSelected];
+//    NSDictionary* dic = [[Common instance].sortedazsjson objectAtIndex:[Common instance].stationRowSelected];
     NSString* ppic = [dic objectForKey:STATION_PIC];
     
 //    NSLog(@"dic = %@", dic);
@@ -35,7 +36,11 @@
     NSString* num1 = [dic objectForKey:STATION_TITLE];
     self.stationNumberLab.text = num1;//[[num componentsSeparatedByString:@"№"] objectAtIndex:1];
 //    self.stationDescrLab.text = [dic objectForKey:STATION_DESCR];
-    self.stationDescrLab.text = [dic objectForKey:STATION_ADDR];
+
+//    self.stationDescrLab.text = [dic objectForKey:STATION_ADDR];
+    self.stationDescrText.text = [dic objectForKey:STATION_ADDR];
+    
+    self.seeOnMapLab.text = NSLocalizedString(@"SeeOnMap", nil);
 
     self.st_name1.text = NSLocalizedString(@"AZS", nil);//[[num componentsSeparatedByString:@"№"] objectAtIndex:0];
     self.st_name.text = num;
@@ -47,7 +52,7 @@
             [v removeFromSuperview];
     }
     
-    float y = 180;
+    float y = 160;
     
     int fuel = ((NSNumber*)[dic valueForKey:STATION_FUEL]).intValue;
     //    NSLog(@"fuel = %d", fuel);
@@ -257,7 +262,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 
-    self.stationDescrLab.font = FONT_STATION_DESCR;
+//    self.stationDescrLab.font = FONT_STATION_DESCR;
+    self.stationDescrText.font = FONT_STATION_DESCR;
 
     [self refresh];
     
