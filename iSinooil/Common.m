@@ -39,7 +39,7 @@
 //        self.cellHeights = [NSMutableDictionary dictionary];
 //        self.didReloadRowsBools = [NSMutableDictionary dictionary];
 
-        self.selectedCity = -1;
+        self.selectedCity = 2/*Almaty*/;//-1;
         
         self.allowSemaphore = dispatch_semaphore_create(0);
 
@@ -60,6 +60,9 @@
         NSString* path = [[NSBundle mainBundle] pathForResource:ls ofType:@"lproj"];
         self.languageBundle = [NSBundle bundleWithPath:path];
         self.lang = l;
+        
+        l = [[NSUserDefaults standardUserDefaults] integerForKey:@"km_miles"];
+        self.metrics = l;
         
         CLLocationCoordinate2D noLocation = {-1e5, -1e5};
         self.userCoordinate = noLocation;
@@ -1036,7 +1039,7 @@
             
             for (int i = 0; i < 100; i++) {
 
-                dispatch_semaphore_signal([Common instance].allowSemaphore);
+                dispatch_semaphore_signal(self.allowSemaphore);
             }
 
             NSLog(@"all dists updated");
@@ -1130,7 +1133,7 @@
     NSString* s = NSLocalizedString(@"AllCities", nil);
     if(self.selectedCity >= 0) {
         
-        NSDictionary* d = [[Common instance].cityjson objectAtIndex:self.selectedCity];
+        NSDictionary* d = [self.cityjson objectAtIndex:self.selectedCity];
         s = [d valueForKey:CITY_NAME];
     }
     return s;
@@ -1141,7 +1144,7 @@
     int s = -1;
     if(self.selectedCity >= 0) {
         
-        NSDictionary* d = [[Common instance].cityjson objectAtIndex:self.selectedCity];
+        NSDictionary* d = [self.cityjson objectAtIndex:self.selectedCity];
         NSNumber* ns = [d valueForKey:CITY_ID];
         s = ns.intValue;
     }
@@ -1153,7 +1156,7 @@
     CLLocationCoordinate2D s = {43.240682, 76.892621};
     if(self.selectedCity >= 0) {
         
-        NSDictionary* d = [[Common instance].cityjson objectAtIndex:self.selectedCity];
+        NSDictionary* d = [self.cityjson objectAtIndex:self.selectedCity];
         
         NSNumber* n = [d valueForKey:CITY_LAT];
         CLLocationDegrees lat = n.doubleValue;

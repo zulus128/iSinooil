@@ -22,6 +22,7 @@
 #define NSLocalizedString(key,_comment) [[Common instance] getStringForKey:key]
 #define NSLocalizedString1(key,_comment) [self getStringForKey:key]
 
+#define KM_IN_MILE 1.609f
 
 #define MAIN_VIEW_TAG 1234
 #define MAPS_VIEW_TAG 1235

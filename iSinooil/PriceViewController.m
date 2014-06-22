@@ -28,6 +28,7 @@
     labelPrices.font = FONT_STD_TOP_MENU;
     labelPrices.text = NSLocalizedString(@"Prices", nil);
     
+    [self.pricesListTable reloadData];
 }
 
 - (void)viewDidLoad {
@@ -35,6 +36,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+//    [Common instance].pricecontr = self;
+
     self.listsour = [[PricesDataSource alloc] init];
     self.pricesListTable.dataSource = self.listsour;
     self.pricesListTable.delegate = self;

@@ -17,7 +17,7 @@
 //    [TestFlight takeOff:@"9be99990-d71e-41b7-bc03-27c53dee6d2e"];
     
     // Регистируем девайс на приём push-уведомлений
-    [[UIApplication sharedApplication] registerForRemoteNotificationTypes: (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
+//    [[UIApplication sharedApplication] registerForRemoteNotificationTypes: (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
     
     return YES;
 }

@@ -122,6 +122,10 @@
     [self hidePopup];
     [self.settTableView reloadData];
     [[Common instance].menucontr refresh];
+//    [[Common instance].pricecontr refresh];
+
+    [[NSUserDefaults standardUserDefaults] setInteger:M_KM forKey:@"km_miles"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 
 }
 
@@ -131,6 +135,10 @@
     [self hidePopup];
     [self.settTableView reloadData];
     [[Common instance].menucontr refresh];
+//    [[Common instance].pricecontr refresh];
+
+    [[NSUserDefaults standardUserDefaults] setInteger:M_MI forKey:@"km_miles"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (void) meSelected {
@@ -139,6 +147,11 @@
     [self hidePopup];
     [self.settTableView reloadData];
     [[Common instance].menucontr refresh];
+//    [[Common instance].pricecontr refresh];
+    
+    [[NSUserDefaults standardUserDefaults] setInteger:M_MT forKey:@"km_miles"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+
 }
 
 - (void) hidePopup {

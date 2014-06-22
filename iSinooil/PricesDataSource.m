@@ -91,8 +91,21 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             
             PriceCell *updateCell = (id)[tableView cellForRowAtIndexPath:indexPath];
-            if (updateCell)
-                updateCell.distLabel.text = [NSString stringWithFormat:@"%.1f %@", dist, NSLocalizedString(@"km", nil)];
+            if (updateCell) {
+//                updateCell.distLabel.text = [NSString stringWithFormat:@"%.1f %@", dist, NSLocalizedString(@"km", nil)];
+                switch ([Common instance].metrics) {
+                    case M_KM:
+                        updateCell.distLabel.text = [NSString stringWithFormat:@"%.1f %@", dist, NSLocalizedString(@"km", nil)];
+                        break;
+                    case M_MI:
+                        updateCell.distLabel.text = [NSString stringWithFormat:@"%.1f %@", dist / KM_IN_MILE, NSLocalizedString(@"miles", nil)];
+                        break;
+                    case M_MT:
+                        updateCell.distLabel.text = [NSString stringWithFormat:@"%.0f %@", dist * 1000, NSLocalizedString(@"metres", nil)];
+                        break;
+                }
+ 
+            }
         });
         
     });

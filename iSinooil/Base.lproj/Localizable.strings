@@ -14,7 +14,6 @@
 "AIDI" = "DI";
 "AIDIW" = "DIw";
 "AIGAS" = "GAS";
-"km" = "km";
 "title_network_error" = "Error connecting to the internet. ";
 "network_error" = "Check the connection and try to refresh the data again. ";
 "daynews" = "News";
