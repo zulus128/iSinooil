@@ -36,7 +36,14 @@
     NSDictionary* dic = [[Common instance].sortedazsjson objectAtIndex:indexPath.row];
     cell.kmLab.text = @"...";
     NSString* num = [dic objectForKey:STATION_TITLE];
-    cell.numberLab.text = [[num componentsSeparatedByString:@"№"] objectAtIndex:1];
+    @try {
+        cell.numberLab.text = [[num componentsSeparatedByString:@"№"] objectAtIndex:1];
+    }
+    @catch (NSException *exception) {
+        cell.numberLab.text = num;
+    }
+    @finally {
+    }
 
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^(void) {
 

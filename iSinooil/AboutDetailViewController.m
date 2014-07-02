@@ -77,6 +77,8 @@
     self.branchesTableView.dataSource = self.brsour;
     self.branchesTableView.delegate = self;
 
+    self.view.backgroundColor = [UIColor whiteColor];
+
     [self refresh];
 }
 

@@ -188,7 +188,8 @@
         
     } else {
         
-        NSLog(@"Parsing azs: OK!");
+//        NSLog(@"Parsing azs: OK!");
+        NSLog(@"Parsing azs: OK! %@", self.azsjson);
         
 //        NSArray *sortedArray;
 //        sortedArray = [self.azsjson sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
@@ -393,8 +394,9 @@
     }
     else {
         
-        [responseData writeToFile:filePath atomically:YES];
-        NSLog(@"news loaded OK!");
+        if([responseData length] > 1)
+            [responseData writeToFile:filePath atomically:YES];
+        NSLog(@"news loaded OK! %lu", (unsigned long)[responseData length]);
     }
     
     [self parseNews];
@@ -577,8 +579,9 @@
     }
     else {
         
-        [responseData writeToFile:filePath atomically:YES];
-        NSLog(@"actions loaded OK!");
+        if([responseData length] > 1)
+            [responseData writeToFile:filePath atomically:YES];
+        NSLog(@"actions loaded OK! %lu", (unsigned long)[responseData length]);
     }
     
     [self parseActs];
@@ -670,8 +673,9 @@
     }
     else {
         
-        [responseData writeToFile:filePath atomically:YES];
-        NSLog(@"abouts loaded OK!");
+        if([responseData length] > 1)
+            [responseData writeToFile:filePath atomically:YES];
+        NSLog(@"abouts loaded OK! %lu", (unsigned long)[responseData length]);
     }
     
 }
@@ -714,8 +718,9 @@
     }
     else {
         
-        [responseData writeToFile:filePath atomically:YES];
-        NSLog(@"azss loaded OK!");
+        if([responseData length] > 1)
+            [responseData writeToFile:filePath atomically:YES];
+        NSLog(@"azss loaded OK! %lu", (unsigned long)[responseData length]);
     }
     
 }
@@ -758,8 +763,9 @@
     }
     else {
         
-        [responseData writeToFile:filePath atomically:YES];
-        NSLog(@"fuels loaded OK!");
+        if([responseData length] > 1)
+            [responseData writeToFile:filePath atomically:YES];
+        NSLog(@"fuels loaded OK! %lu", (unsigned long)[responseData length]);
     }
     
 }
@@ -802,8 +808,9 @@
     }
     else {
         
-        [responseData writeToFile:filePath atomically:YES];
-        NSLog(@"cities loaded OK!");
+        if([responseData length] > 1)
+            [responseData writeToFile:filePath atomically:YES];
+        NSLog(@"cities loaded OK! %lu", (unsigned long)[responseData length]);
     }
     
 }
