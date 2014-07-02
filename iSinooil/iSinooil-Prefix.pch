@@ -74,6 +74,8 @@
 
 #define COLOR_ABOUT_CENTRALOFFICE [UIColor colorWithRed:(0x2d/255.f) green:(0x2d/255.f) blue:(0x2d/255.f) alpha:1.0f]
 
+#define CALLBACK_EMAIL @"call@sinooil.kz"
+
 /*
  ГАЗ 64
  ДТ 32

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #define GAP_SIZE2 25
+#define GAP_SIZE2_1 29
 
 @interface StationDetailViewController : UIViewController
 

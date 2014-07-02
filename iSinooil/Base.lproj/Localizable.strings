@@ -14,8 +14,8 @@
 "AIDI" = "DI";
 "AIDIW" = "DIw";
 "AIGAS" = "GAS";
-"title_network_error" = "Error connecting to the internet. ";
-"network_error" = "Check the connection and try to refresh the data again. ";
+"title_network_error" = "Network error";
+"network_error" = "Check Internet connection and try again.";
 "daynews" = "News";
 "centraloffice" = "Central office";
 "settingsname" = "Language";
@@ -48,7 +48,7 @@
 "AZS" = "St.";
 "Hotline" = "Hotline";
 "Call" = "Call";
-"polite" = "Or talk to polite operator:";
+"polite" = "Leave a comment or suggestion";
 "YourMsg" = "Your message";
 "Send" = "Send";
 "Stations" = "Stations";

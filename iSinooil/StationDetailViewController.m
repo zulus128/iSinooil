@@ -8,6 +8,7 @@
 
 #import "StationDetailViewController.h"
 #import "UIImageView+WebCache.h"
+#import <MessageUI/MessageUI.h>
 
 @implementation StationDetailViewController
 
@@ -85,7 +86,7 @@
                 icon = @"icon_diesel_inactive.png";
                 break;
             case FUEL_BIT_GAS:
-                icon = @"icon_diesel_inactive.png";
+                icon = @"icon_dieselw_inactive.png";
                 break;
             case FUEL_BIT_DTW:
                 icon = @"icon_dieselw_inactive.png";
@@ -147,7 +148,7 @@
         iv.tag = ICON_TAG;
         [self.stationDetailView addSubview:iv];
         
-        x += GAP_SIZE2;
+        x += GAP_SIZE2_1;
         if(x >= (s.width - 20)) {
             x = 20;
             y += 40;
@@ -181,7 +182,7 @@
         iv.tag = ICON_TAG;
         [self.stationDetailView addSubview:iv];
         
-        x += GAP_SIZE2;
+        x += GAP_SIZE2_1;
         if(x >= (s.width - 20)) {
             x = 20;
             y += 40;
@@ -233,6 +234,43 @@
 }
 
 - (void)callBack:(UIButton*)button {
+    
+    if ([MFMailComposeViewController canSendMail]){
+        MFMailComposeViewController *controller = [[MFMailComposeViewController alloc] init];
+        controller.mailComposeDelegate = self;
+        [controller setToRecipients:[NSArray arrayWithObject:CALLBACK_EMAIL]];
+        [self presentViewController:controller animated:YES completion:nil];
+    }
+    else{
+        UIAlertView *anAlert = [[UIAlertView alloc] initWithTitle:@"error" message:@"No mail account setup on device" delegate:self cancelButtonTitle:nil otherButtonTitles:nil];
+        [anAlert addButtonWithTitle:@"Cancel"];
+        [anAlert show];
+    }
+}
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller    didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
+{
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            NSLog(@"Mail cancelled: you cancelled the operation and no email message was queued.");
+            break;
+        case MFMailComposeResultSaved:
+            NSLog(@"Mail saved: you saved the email message in the drafts folder.");
+            break;
+        case MFMailComposeResultSent:
+            NSLog(@"Mail send: the email message is queued in the outbox. It is ready to send.");
+            break;
+        case MFMailComposeResultFailed:
+            NSLog(@"Mail failed: the email message was not saved or queued, possibly due to an error.");
+            break;
+        default:
+            NSLog(@"Mail not sent.");
+            break;
+    }
+    
+    // Remove the mail view
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 - (void)callTel:(UIButton*)button {

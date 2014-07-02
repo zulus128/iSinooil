@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		84377AE118DAF71A009C35C5 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 844293A718A1EDC700DDC7F3 /* libTestFlight.a */; };
 		84397BB718B4F61D0059C1D8 /* StationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84397BB618B4F61D0059C1D8 /* StationDetailViewController.m */; };
+		843A98EE1963C74F0048A840 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843A98ED1963C74F0048A840 /* MessageUI.framework */; };
 		844293A518A1ED0F00DDC7F3 /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = 844293A418A1ED0F00DDC7F3 /* UIScrollView+SVInfiniteScrolling.m */; };
 		844293AE18A1EDC700DDC7F3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 844293A818A1EDC700DDC7F3 /* README.md */; };
 		844293AF18A1EDC700DDC7F3 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 844293A918A1EDC700DDC7F3 /* release_notes.md */; };
@@ -212,6 +213,7 @@
 /* Begin PBXFileReference section */
 		84397BB518B4F61D0059C1D8 /* StationDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationDetailViewController.h; sourceTree = "<group>"; };
 		84397BB618B4F61D0059C1D8 /* StationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationDetailViewController.m; sourceTree = "<group>"; };
+		843A98ED1963C74F0048A840 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		844293A318A1ED0F00DDC7F3 /* UIScrollView+SVInfiniteScrolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVInfiniteScrolling.h"; sourceTree = "<group>"; };
 		844293A418A1ED0F00DDC7F3 /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
 		844293A718A1EDC700DDC7F3 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
@@ -467,6 +469,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				843A98EE1963C74F0048A840 /* MessageUI.framework in Frameworks */,
 				DD96D13D189E7E4700B78B1D /* libz.dylib in Frameworks */,
 				DDEB474E1854211B006FAED3 /* MapKit.framework in Frameworks */,
 				84377AE118DAF71A009C35C5 /* libTestFlight.a in Frameworks */,
@@ -578,6 +581,7 @@
 		9CF17A4218431F7F007FF8D9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				843A98ED1963C74F0048A840 /* MessageUI.framework */,
 				DD96D13C189E7E4700B78B1D /* libz.dylib */,
 				DDEB474D1854211B006FAED3 /* MapKit.framework */,
 				9CF17A4318431F7F007FF8D9 /* Foundation.framework */,
@@ -1319,7 +1323,7 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "B60684BE-C191-4D51-B500-472A69708EE9";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1341,7 +1345,7 @@
 					"$(PROJECT_DIR)/iSinooil/TestFlightSDK2.2.1",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "B60684BE-C191-4D51-B500-472A69708EE9";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
