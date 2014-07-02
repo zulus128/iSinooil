@@ -27,6 +27,7 @@
 - (IBAction)call:(UIButton*)button;
 - (IBAction)toMenu:(id)sender;
 - (IBAction)sendButtonPressed:(id)sender;
+- (IBAction)tapChat:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UIView *topView;
 @property (weak, nonatomic) IBOutlet UIButton *callButton;
@@ -37,6 +38,7 @@
 @property (weak, nonatomic) IBOutlet UIView *msgInnerView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentViewW;
 @property (weak, nonatomic) IBOutlet UIView *msgFrameView;
+@property (weak, nonatomic) IBOutlet UIView *greyFrameView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scroll;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentViewH;
 @property (assign, readwrite) BOOL timer;

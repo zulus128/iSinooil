@@ -143,10 +143,12 @@
 - (void) keyboardHide:(NSNotification*)notification {
 
     CGRect f = self.msgFrameView.frame;
+    CGRect f1 = self.greyFrameView.frame;
     [UIView animateWithDuration:anim_delay_keyb delay:0.0 options:UIViewAnimationOptionCurveEaseOut
                      animations:^{
                          
                          self.msgFrameView.frame = CGRectMake(f.origin.x, f.origin.y + deltaY, f.size.width, f.size.height);
+                         self.greyFrameView.frame = CGRectMake(f1.origin.x, f1.origin.y + deltaY, f1.size.width, f1.size.height);
                          
                      }
                      completion:^(BOOL finished) {
@@ -165,10 +167,13 @@
     deltaY = keyboardFrameConverted.size.height;
     
     CGRect f = self.msgFrameView.frame;
+    CGRect f1 = self.greyFrameView.frame;
     [UIView animateWithDuration:anim_delay_keyb delay:0.0 options:UIViewAnimationOptionCurveEaseOut
                      animations:^{
                          
                          self.msgFrameView.frame = CGRectMake(f.origin.x, f.origin.y - deltaY, f.size.width, f.size.height);
+                         
+                         self.greyFrameView.frame = CGRectMake(f1.origin.x, f1.origin.y - deltaY, f1.size.width, f1.size.height);
                          
                      }
                      completion:^(BOOL finished) {
@@ -288,6 +293,13 @@
 
     CGPoint bottomOffset = CGPointMake(0, self.scroll.contentSize.height - self.scroll.bounds.size.height);
     [self.scroll setContentOffset:bottomOffset animated:YES];
+
+}
+
+- (IBAction)tapChat:(id)sender {
+    
+//    [self keyboardHide:nil];
+    [self.msgField resignFirstResponder];
 
 }
 

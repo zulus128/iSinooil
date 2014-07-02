@@ -1357,10 +1357,14 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="309"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="309" id="gOZ-E3-LPg"/>
                                                     <constraint firstAttribute="width" constant="320" id="lr8-cC-Ii9"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="uSy-Sp-704" appends="YES" id="GLU-nA-FPa"/>
+                                                </connections>
                                             </view>
                                         </subviews>
                                         <constraints>
@@ -1471,6 +1475,7 @@
                         <outlet property="chatView" destination="HBy-lR-Aml" id="ols-HF-tsi"/>
                         <outlet property="contentViewH" destination="gOZ-E3-LPg" id="ODM-P2-j6Z"/>
                         <outlet property="contentViewW" destination="lr8-cC-Ii9" id="VcP-PH-KmX"/>
+                        <outlet property="greyFrameView" destination="QXv-UL-XaP" id="qrU-K9-YMr"/>
                         <outlet property="msgField" destination="XXu-H8-jkP" id="9dg-5S-h6r"/>
                         <outlet property="msgFrameView" destination="se0-bZ-YQs" id="dBz-aC-38L"/>
                         <outlet property="msgInnerView" destination="uBN-65-MVo" id="Ocg-pH-a7p"/>
@@ -1482,6 +1487,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ltx-8K-tRL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="uSy-Sp-704">
+                    <connections>
+                        <action selector="tapChat:" destination="LFi-bQ-iRj" id="CGV-tS-M3E"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1426" y="952"/>
         </scene>
