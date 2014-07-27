@@ -233,6 +233,8 @@
     self.siteLabel.font = FONT_MAINMENU_ISHOP;
     self.netwLabel.font = FONT_MAINMENU_ISHOP;
     
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
+
 }
 
 - (BOOL)shouldAutorotate
@@ -256,7 +258,13 @@
 
 - (IBAction)menu:(id)sender {
     
+//    CGRect fr = self.view.frame;
+//    BOOL b = (fr.origin.x < 1);
+
     [self doMenu];
+    
+//    [[UIApplication sharedApplication] setStatusBarStyle:!b?UIStatusBarStyleDefault:UIStatusBarStyleLightContent animated:YES];
+
 }
 
 - (IBAction)tapPrice:(id)sender {

@@ -39,6 +39,7 @@ enum {M_KM, M_MI, M_MT}; //km, miles, metres
 #define DEVICE_REG_URL @"http://sinoapp.4design.asia/out.php?action=new&device_id=%@&type=ios"
 #define RECV_MSG_URL @"http://sinoapp.4design.asia/out.php?action=message&imei=%@&id=%d"
 #define SEND_MSG_URL @"http://sinoapp.4design.asia/out.php?action=message&imei=%@"
+#define SEND_STATION_FEEDBACK_URL @"http://sinoapp.4design.asia/out.php?action=feedback&t=%@&m=%@"
 #define CITIES_URL @"http://sinoapp.4design.asia/out.php?action=city"
 
 //cities.json
@@ -145,6 +146,9 @@ enum {M_KM, M_MI, M_MT}; //km, miles, metres
 - (void) loadAndParse;
 - (void) sendMessage:(NSString*) msg;
 - (NSDictionary*) recvMessage;
+
+- (void) sendStationFeedback:(NSString*) msg forStation:(NSString*)station;
+
 - (void) filterOnSelectedCity;
 
 @property (nonatomic, strong) NSArray* azsjson;

@@ -34,8 +34,26 @@
                      completion:^(BOOL finished) {
                      }];
     
-    [[UIApplication sharedApplication] setStatusBarStyle:!b?UIStatusBarStyleDefault:UIStatusBarStyleLightContent animated:YES];
+//    [[UIApplication sharedApplication] setStatusBarStyle:!b?UIStatusBarStyleDefault:UIStatusBarStyleLightContent animated:YES];
+  
+    [[UIApplication sharedApplication] setStatusBarStyle:(!b && (self.view.tag == MAIN_VIEW_TAG))?UIStatusBarStyleDefault:UIStatusBarStyleLightContent animated:YES];
+
+}
+
+- (void) doMenuFromSwipe {
+
+    self.view.hidden = NO;
     
+    CGRect fr = self.view.frame;
+    BOOL b = (fr.origin.x < 1);
+
+    if(b)
+        [self addTransButton];
+    else
+        [self delTransButton];
+ 
+    [[UIApplication sharedApplication] setStatusBarStyle:(!b && (self.view.tag == MAIN_VIEW_TAG))?UIStatusBarStyleDefault:UIStatusBarStyleLightContent animated:YES];
+
 }
 
 - (void) delTransButton {

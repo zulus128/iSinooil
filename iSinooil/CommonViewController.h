@@ -10,8 +10,9 @@
 
 @interface CommonViewController : UIViewController
 
-- (void) addTransButton;
+//- (void) addTransButton;
 - (void) delTransButton;
 - (void) doMenu;
+- (void) doMenuFromSwipe;
 
 @end

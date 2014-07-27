@@ -12,6 +12,24 @@
 
 @implementation StationDetailViewController
 
+- (void) viewWillAppear:(BOOL)animated {
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardShow:)
+                                                 name:UIKeyboardWillShowNotification
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardHide:)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:nil];
+}
+
+- (void) viewDidDisappear:(BOOL)animated {
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+}
+
 - (void) willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
     
     [self refresh];
@@ -235,43 +253,75 @@
 
 - (void)callBack:(UIButton*)button {
     
-    if ([MFMailComposeViewController canSendMail]){
-        MFMailComposeViewController *controller = [[MFMailComposeViewController alloc] init];
-        controller.mailComposeDelegate = self;
-        [controller setToRecipients:[NSArray arrayWithObject:CALLBACK_EMAIL]];
-        [self presentViewController:controller animated:YES completion:nil];
-    }
-    else{
-        UIAlertView *anAlert = [[UIAlertView alloc] initWithTitle:@"error" message:@"No mail account setup on device" delegate:self cancelButtonTitle:nil otherButtonTitles:nil];
-        [anAlert addButtonWithTitle:@"Cancel"];
-        [anAlert show];
-    }
+//    if ([MFMailComposeViewController canSendMail]){
+//        MFMailComposeViewController *controller = [[MFMailComposeViewController alloc] init];
+//        controller.mailComposeDelegate = self;
+//        [controller setToRecipients:[NSArray arrayWithObject:CALLBACK_EMAIL]];
+//        [self presentViewController:controller animated:YES completion:nil];
+//    }
+//    else{
+//        UIAlertView *anAlert = [[UIAlertView alloc] initWithTitle:@"error" message:@"No mail account setup on device" delegate:self cancelButtonTitle:nil otherButtonTitles:nil];
+//        [anAlert addButtonWithTitle:@"Cancel"];
+//        [anAlert show];
+//    }
+    
+    UITextView *myTextView = [[UITextView alloc] initWithFrame:CGRectMake(20, button.frame.origin.y + 70, 281, TEXTVIEW_HEIGHT)];
+//    myTextView.text = @"";
+    myTextView.editable = YES;
+    myTextView.tag = TAG_TO_DEL;
+    myTextView.delegate = self;
+    myTextView.userInteractionEnabled = YES;
+    myTextView.backgroundColor = [UIColor lightGrayColor];
+    myTextView.layer.cornerRadius = CORNER_RADIUS;
+    myTextView.layer.masksToBounds = YES;
+
+    //some other setup like setting the font for the UITextView...
+    [self.stationDetailView addSubview:myTextView];
+//    [myTextView sizeToFit];
+    [myTextView becomeFirstResponder];
+    
+//    CGRect f = self.stationDetailView.frame;
+//    self.stationDetailView.frame = CGRectMake(f.origin.x, f.origin.y + 70 + TEXTVIEW_HEIGHT, f.size.width, f.size.height);
+
+    self.detailViewH.constant = self.detailViewH.constant + 70 + TEXTVIEW_HEIGHT;
+
+    
 }
 
-- (void)mailComposeController:(MFMailComposeViewController*)controller    didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
-{
-    switch (result)
-    {
-        case MFMailComposeResultCancelled:
-            NSLog(@"Mail cancelled: you cancelled the operation and no email message was queued.");
-            break;
-        case MFMailComposeResultSaved:
-            NSLog(@"Mail saved: you saved the email message in the drafts folder.");
-            break;
-        case MFMailComposeResultSent:
-            NSLog(@"Mail send: the email message is queued in the outbox. It is ready to send.");
-            break;
-        case MFMailComposeResultFailed:
-            NSLog(@"Mail failed: the email message was not saved or queued, possibly due to an error.");
-            break;
-        default:
-            NSLog(@"Mail not sent.");
-            break;
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    
+    if([text isEqualToString:@"\n"]) {
+        [textView resignFirstResponder];
+        return NO;
     }
     
-    // Remove the mail view
-    [self dismissModalViewControllerAnimated:YES];
+    return YES;
 }
+
+//- (void)mailComposeController:(MFMailComposeViewController*)controller    didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
+//{
+//    switch (result)
+//    {
+//        case MFMailComposeResultCancelled:
+//            NSLog(@"Mail cancelled: you cancelled the operation and no email message was queued.");
+//            break;
+//        case MFMailComposeResultSaved:
+//            NSLog(@"Mail saved: you saved the email message in the drafts folder.");
+//            break;
+//        case MFMailComposeResultSent:
+//            NSLog(@"Mail send: the email message is queued in the outbox. It is ready to send.");
+//            break;
+//        case MFMailComposeResultFailed:
+//            NSLog(@"Mail failed: the email message was not saved or queued, possibly due to an error.");
+//            break;
+//        default:
+//            NSLog(@"Mail not sent.");
+//            break;
+//    }
+//    
+//    // Remove the mail view
+//    [self dismissModalViewControllerAnimated:YES];
+//}
 
 - (void)callTel:(UIButton*)button {
     
@@ -335,5 +385,34 @@
     });
 
 }
+
+- (void) keyboardHide:(NSNotification*)notification {
+    
+    NSString* s = [[[Common instance] getCurrentCityName] stringByAppendingString:self.stationNumberLab.text];
+    UITextView* tv = (UITextView*)[self.stationDetailView viewWithTag:TAG_TO_DEL];
+    [[Common instance]sendStationFeedback:tv.text forStation:s];
+    [tv removeFromSuperview];
+    self.detailViewH.constant = self.detailViewH.constant - 70 - deltaY - TEXTVIEW_HEIGHT;
+}
+
+- (void) keyboardShow:(NSNotification*)notification {
+    
+    CGRect keyboardFrame = [[[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    //    NSLog(@"keyboard frame raw %@", NSStringFromCGRect(keyboardFrame));
+    
+    UIWindow *window = [[[UIApplication sharedApplication] windows]objectAtIndex:0];
+    UIView *mainSubviewOfWindow = window.rootViewController.view;
+    CGRect keyboardFrameConverted = [mainSubviewOfWindow convertRect:keyboardFrame fromView:window];
+    //    NSLog(@"keyboard frame converted %@", NSStringFromCGRect(keyboardFrameConverted));
+    deltaY = keyboardFrameConverted.size.height;
+    
+
+    self.detailViewH.constant = self.detailViewH.constant + deltaY;
+    
+    CGPoint p = self.scrollView.contentOffset;
+    
+    [self.scrollView setContentOffset:CGPointMake(p.x, p.y + deltaY + TEXTVIEW_HEIGHT) animated:NO];
+}
+
 
 @end

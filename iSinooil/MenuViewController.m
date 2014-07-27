@@ -173,7 +173,8 @@
         
         if(!vc.view.hidden) {
             
-            [vc delTransButton];
+//            [vc delTransButton];
+            [vc doMenuFromSwipe];
             [self swipeView:vc.view toLeft:YES];
 
         }
@@ -189,8 +190,9 @@
         
         if(!vc.view.hidden) {
             
-            [vc addTransButton];
-            [self swipeView:vc.view toLeft:NO];
+//            [vc addTransButton];
+            [vc doMenuFromSwipe];
+          [self swipeView:vc.view toLeft:NO];
             
         }
     }
@@ -225,9 +227,10 @@
 
 - (void) makeInvisibleExcludeTag:(int)tag {
 
-    for(UIViewController* vc in self.childViewControllers) {
+    for(CommonViewController* vc in self.childViewControllers) {
 
         vc.view.hidden = (vc.view.tag != tag);
+        [vc delTransButton];
     }
 
     [[UIApplication sharedApplication] setStatusBarStyle:(tag == MAIN_VIEW_TAG)?UIStatusBarStyleDefault:UIStatusBarStyleLightContent animated:YES];
@@ -236,7 +239,7 @@
 
 - (void) goLeft:(int) tag {
 
-    NSLog(@"tag = %d", tag);
+//    NSLog(@"tag = %d", tag);
 
     [self makeInvisibleExcludeTag:tag];
 

@@ -1244,6 +1244,17 @@
     self.sortedazsjson = resarr;
 }
 
+- (void) sendStationFeedback:(NSString*) msg forStation:(NSString*)station {
+
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:SEND_STATION_FEEDBACK_URL, station, msg]]];
+    
+    NSHTTPURLResponse* urlResponse = nil;
+    NSError *error = nil;
+    NSData* responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
+
+}
+
 
 - (void) sendMessage:(NSString*) msg {
 

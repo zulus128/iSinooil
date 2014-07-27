@@ -34,6 +34,7 @@
 #define HOT_VIEW_TAG 1241
 
 #define TRANSBUTTON_TAG 1242
+#define TAG_TO_DEL 1243
 
 #define deltaX 50
 #define anim_delay 0.2f

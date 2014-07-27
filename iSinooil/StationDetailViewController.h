@@ -11,7 +11,15 @@
 #define GAP_SIZE2 25
 #define GAP_SIZE2_1 29
 
-@interface StationDetailViewController : UIViewController
+#define TEXTVIEW_HEIGHT 100
+
+#define anim_delay_keyb1 0.3f
+
+@interface StationDetailViewController : UIViewController <UITextViewDelegate> {
+    
+    float deltaY;
+
+}
 
 - (IBAction)back:(id)sender;
 
@@ -27,5 +35,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *st_name1;
 @property (weak, nonatomic) IBOutlet UIImageView *pic;
 - (IBAction)goMap:(id)sender;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end
