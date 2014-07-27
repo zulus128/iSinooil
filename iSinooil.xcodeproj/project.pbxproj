@@ -79,6 +79,7 @@
 		DD46151818751E88008FCD16 /* azs.json in Resources */ = {isa = PBXBuildFile; fileRef = DD46151418751E88008FCD16 /* azs.json */; };
 		DD46151918751E88008FCD16 /* fuel.json in Resources */ = {isa = PBXBuildFile; fileRef = DD46151518751E88008FCD16 /* fuel.json */; };
 		DD46151A18751E88008FCD16 /* news.json in Resources */ = {isa = PBXBuildFile; fileRef = DD46151618751E88008FCD16 /* news.json */; };
+		DD73A5C31984D82600E7BBC0 /* CommonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD73A5C21984D82600E7BBC0 /* CommonViewController.m */; };
 		DD7ACF1018CB148300909572 /* 29.png in Resources */ = {isa = PBXBuildFile; fileRef = DD7ACF0318CB148300909572 /* 29.png */; };
 		DD7ACF1118CB148300909572 /* 40.png in Resources */ = {isa = PBXBuildFile; fileRef = DD7ACF0418CB148300909572 /* 40.png */; };
 		DD7ACF1218CB148300909572 /* 58.png in Resources */ = {isa = PBXBuildFile; fileRef = DD7ACF0518CB148300909572 /* 58.png */; };
@@ -317,6 +318,8 @@
 		DD46151418751E88008FCD16 /* azs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = azs.json; sourceTree = "<group>"; };
 		DD46151518751E88008FCD16 /* fuel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fuel.json; sourceTree = "<group>"; };
 		DD46151618751E88008FCD16 /* news.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = news.json; sourceTree = "<group>"; };
+		DD73A5C11984D82600E7BBC0 /* CommonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonViewController.h; sourceTree = "<group>"; };
+		DD73A5C21984D82600E7BBC0 /* CommonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonViewController.m; sourceTree = "<group>"; };
 		DD7ACF0318CB148300909572 /* 29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 29.png; sourceTree = "<group>"; };
 		DD7ACF0418CB148300909572 /* 40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 40.png; sourceTree = "<group>"; };
 		DD7ACF0518CB148300909572 /* 58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 58.png; sourceTree = "<group>"; };
@@ -690,6 +693,8 @@
 		DD613618187854D200059DA8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DD73A5C11984D82600E7BBC0 /* CommonViewController.h */,
+				DD73A5C21984D82600E7BBC0 /* CommonViewController.m */,
 				84CC0F7D18A4AFC9006F84C6 /* AboutViewController.h */,
 				84CC0F7E18A4AFC9006F84C6 /* AboutViewController.m */,
 				DDBE9BA518A6315A000FB34D /* AboutDetailViewController.h */,
@@ -1131,6 +1136,7 @@
 				DDBE9BAC18A66BEE000FB34D /* BranchesDataSource.m in Sources */,
 				84C68CC2188E524200FD68D0 /* PriceViewController.m in Sources */,
 				DDBE9BC418A6ADDB000FB34D /* UIViewController+Refresh.m in Sources */,
+				DD73A5C31984D82600E7BBC0 /* CommonViewController.m in Sources */,
 				84397BB718B4F61D0059C1D8 /* StationDetailViewController.m in Sources */,
 				84FDF89D187AA9610082595A /* StationViewCell.m in Sources */,
 				DDEB48B518544CF5006FAED3 /* MyMapView.m in Sources */,

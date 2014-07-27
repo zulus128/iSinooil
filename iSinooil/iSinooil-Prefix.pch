@@ -33,6 +33,8 @@
 #define SETT_VIEW_TAG 1240
 #define HOT_VIEW_TAG 1241
 
+#define TRANSBUTTON_TAG 1242
+
 #define deltaX 50
 #define anim_delay 0.2f
 
@@ -130,4 +132,6 @@
 #define CARD_BIT_VISA 1
 #define CARD_BIT_AE 2
 #define CARD_BIT_MC 4
+
+#define CORNER_RADIUS 5.0f
 

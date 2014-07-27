@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h> 
 #import <MapKit/MapKit.h>
+#import "CommonViewController.h"
 
 #define METERS_PER_MILE 1609.344
 //#define VERT_SIZE 870
@@ -15,7 +16,7 @@
 
 @class MapSource;
 
-@interface MainViewController : UIViewController
+@interface MainViewController : CommonViewController
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UIScrollView *vertScroll;

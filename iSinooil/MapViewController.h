@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import "OSLabel.h"
+#import "CommonViewController.h"
 
 #define GAP_SIZE3 35
 
@@ -19,7 +20,7 @@
 @class MapSource;
 @class StationListDataSource;
 
-@interface MapViewController : UIViewController <UITableViewDelegate> {
+@interface MapViewController : CommonViewController <UITableViewDelegate> {
     
 //    long selectedRow;
 

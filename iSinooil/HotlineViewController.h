@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonViewController.h"
 
 #define anim_delay_keyb 0.3f
 
@@ -16,7 +17,7 @@
 #define X_LEFT 25
 #define Y_BETWEEN_BUBBLES 5
 
-@interface HotlineViewController : UIViewController <UITextFieldDelegate> {
+@interface HotlineViewController : CommonViewController <UITextFieldDelegate> {
     
     float deltaY;
     float Y;

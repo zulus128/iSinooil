@@ -188,8 +188,8 @@
         
     } else {
         
-//        NSLog(@"Parsing azs: OK!");
-        NSLog(@"Parsing azs: OK! %@", self.azsjson);
+        NSLog(@"Parsing azs: OK!");
+//        NSLog(@"Parsing azs: OK! %@", self.azsjson);
         
 //        NSArray *sortedArray;
 //        sortedArray = [self.azsjson sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
@@ -313,7 +313,7 @@
         
     } else {
         
-        NSLog(@"Parsing news: OK!");
+        NSLog(@"Parsing news: OK! cnt = %d", self.newsjson.count);
         
 //        if(!self.lastNews) {
 
@@ -394,12 +394,14 @@
     }
     else {
         
-        if([responseData length] > 1)
+        if([responseData length] > 1) {
+
             [responseData writeToFile:filePath atomically:YES];
+            [self parseNews];
+        }
         NSLog(@"news loaded OK! %lu", (unsigned long)[responseData length]);
     }
     
-    [self parseNews];
     
 }
 
@@ -579,12 +581,15 @@
     }
     else {
         
-        if([responseData length] > 1)
+        if([responseData length] > 1) {
+            
             [responseData writeToFile:filePath atomically:YES];
+            [self parseActs];
+
+        }
         NSLog(@"actions loaded OK! %lu", (unsigned long)[responseData length]);
     }
     
-    [self parseActs];
     
 }
 

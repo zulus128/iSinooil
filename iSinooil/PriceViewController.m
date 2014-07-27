@@ -62,18 +62,21 @@
 
 - (IBAction)toMenu:(id)sender {
 
-    self.view.hidden = NO;
+//    self.view.hidden = NO;
+//    
+//    CGRect fr = self.view.frame;
+//    BOOL b = (fr.origin.x < 1);
+//    [UIView animateWithDuration:anim_delay delay:0.0 options:UIViewAnimationOptionCurveEaseIn
+//                     animations:^{
+//                         
+//                         self.view.frame = CGRectMake(b?(fr.size.width - deltaX):0, fr.origin.y, fr.size.width, fr.size.height);
+//                         
+//                     }
+//                     completion:^(BOOL finished) {
+//                     }];
     
-    CGRect fr = self.view.frame;
-    BOOL b = (fr.origin.x < 1);
-    [UIView animateWithDuration:anim_delay delay:0.0 options:UIViewAnimationOptionCurveEaseIn
-                     animations:^{
-                         
-                         self.view.frame = CGRectMake(b?(fr.size.width - deltaX):0, fr.origin.y, fr.size.width, fr.size.height);
-                         
-                     }
-                     completion:^(BOOL finished) {
-                     }];
+    [self doMenu];
+
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

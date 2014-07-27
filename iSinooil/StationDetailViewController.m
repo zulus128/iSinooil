@@ -57,7 +57,7 @@
     
     int fuel = ((NSNumber*)[dic valueForKey:STATION_FUEL]).intValue;
     //    NSLog(@"fuel = %d", fuel);
-    float x = 20;
+    float x = 12;
     y += 10;
     
     for (int i = FUEL_BIT_97; i <= FUEL_BIT_DTW; i = (i << 1)) {
@@ -207,7 +207,7 @@
         [button addTarget:self action:@selector(callTel:) forControlEvents:UIControlEventTouchDown];
         [button setTitle:tel forState:UIControlStateNormal];
         [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        button.frame = CGRectMake(8, y, 305, 60);
+        button.frame = CGRectMake(20, y, 281, 60);
         button.tag = ICON_TAG + i;
         [button setImage:[UIImage imageNamed:@"icon_call.png"] forState:UIControlStateNormal];
         button.imageEdgeInsets = UIEdgeInsetsMake(0, -50, 0, 0);
@@ -221,7 +221,7 @@
     [button addTarget:self action:@selector(callBack:) forControlEvents:UIControlEventTouchDown];
     [button setTitle:NSLocalizedString(@"Feedback", nil) forState:UIControlStateNormal];
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    button.frame = CGRectMake(8, y, 305, 60);
+    button.frame = CGRectMake(20, y, 281, 60);
     button.tag = ICON_TAG;
     [button setImage:[UIImage imageNamed:@"icon_feedback.png"] forState:UIControlStateNormal];
     button.imageEdgeInsets = UIEdgeInsetsMake(0, -50, 0, 0);

@@ -72,24 +72,28 @@
 
 - (IBAction)toMenu:(id)sender {
     
-    self.view.hidden = NO;
-    
+//    self.view.hidden = NO;
+//    
     CGRect fr = self.view.frame;
     BOOL b = (fr.origin.x < 1);
-    [UIView animateWithDuration:anim_delay delay:0.0 options:UIViewAnimationOptionCurveEaseIn
-                     animations:^{
-                         
-                         self.view.frame = CGRectMake(b?(fr.size.width - deltaX):0, fr.origin.y, fr.size.width, fr.size.height);
-                         
-                     }
-                     completion:^(BOOL finished) {
-                     }];
+//    [UIView animateWithDuration:anim_delay delay:0.0 options:UIViewAnimationOptionCurveEaseIn
+//                     animations:^{
+//                         
+//                         self.view.frame = CGRectMake(b?(fr.size.width - deltaX):0, fr.origin.y, fr.size.width, fr.size.height);
+//                         
+//                     }
+//                     completion:^(BOOL finished) {
+//                     }];
+
+
     self.timer = !b;
     
     if(b)
         [self.msgField resignFirstResponder];
     
     [self recvMsg];
+
+    [self doMenu];
 
 }
 
@@ -229,6 +233,8 @@
             UIView* v = [[UIView alloc] initWithFrame:CGRectMake(0, Y, s.width, expectedLabelSize.height + 2 * Y_GAP)];
             UIImageView* iv = [[UIImageView alloc] initWithFrame:CGRectMake(X_LEFT, 0, s.width - X_GAP - X_LEFT - TEXT_GAP_X * 2, expectedLabelSize.height + 2 * Y_GAP)];
             iv.image = [UIImage imageNamed:@"bubble_light.png"];
+            iv.layer.cornerRadius = CORNER_RADIUS;
+            iv.layer.masksToBounds = YES;
             [v addSubview:iv];
             UIImageView* iv1 = [[UIImageView alloc] initWithFrame:CGRectMake(X_LEFT - 11, v.frame.size.height - 12 - 10, 12, 12)];
             iv1.image = [UIImage imageNamed:@"bubble_ligth_tail.png"];
@@ -253,11 +259,14 @@
             float w = s.width - X_GAP - X_LEFT - TEXT_GAP_X * 2;
             UIImageView* iv = [[UIImageView alloc] initWithFrame:CGRectMake(s.width - X_LEFT - w, 0, w, expectedLabelSize.height + 2 * Y_GAP)];
             iv.image = [UIImage imageNamed:@"bubble_dark.png"];
+            iv.layer.cornerRadius = CORNER_RADIUS;
+            iv.layer.masksToBounds = YES;
+
             [v addSubview:iv];
             UIImageView* iv1 = [[UIImageView alloc] initWithFrame:CGRectMake(s.width - X_LEFT - 1, v.frame.size.height - 12 - 10, 12, 12)];
             iv1.image = [UIImage imageNamed:@"bubble_dark_tail.png"];
             [v addSubview:iv1];
-            UILabel* lab = [[UILabel alloc]initWithFrame:CGRectMake(s.width - X_LEFT - w + TEXT_GAP_X, v.frame.size.height / 2 - expectedLabelSize.height / 2, expectedLabelSize.width, expectedLabelSize.height + 2)];
+            UILabel* lab = [[UILabel alloc]initWithFrame:CGRectMake(s.width - X_LEFT - w + TEXT_GAP_X - 5, v.frame.size.height / 2 - expectedLabelSize.height / 2, expectedLabelSize.width, expectedLabelSize.height + 2)];
             lab.font = FONT_CHAT_MSG;
             lab.textColor = [UIColor whiteColor];
             lab.numberOfLines = 0;

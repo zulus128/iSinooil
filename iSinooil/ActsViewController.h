@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonViewController.h"
 
 @class ActsDataSource;
 
-@interface ActsViewController : UIViewController <UITableViewDelegate>
+@interface ActsViewController : CommonViewController <UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *topView;
 - (IBAction)toMenu:(id)sender;

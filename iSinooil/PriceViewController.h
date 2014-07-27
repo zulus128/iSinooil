@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonViewController.h"
 
 @class PricesDataSource;
 
-@interface PriceViewController : UIViewController <UITableViewDelegate>
+@interface PriceViewController : CommonViewController <UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *topView;
 - (IBAction)toMenu:(id)sender;

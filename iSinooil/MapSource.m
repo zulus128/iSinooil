@@ -194,15 +194,19 @@
     
     if(![view isKindOfClass:[StationAnnotationView class]])
          return;
-         
-    CLLocationCoordinate2D c = view.annotation.coordinate;
-//    NSLog(@"didSel %f %f", c.latitude, c.longitude);
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^(void) {
+        
+        CLLocationCoordinate2D c = view.annotation.coordinate;
+        //    NSLog(@"didSel %f %f", c.latitude, c.longitude);
+        
+        MapPoint* me = [[MapPoint alloc] initWithCoordinate:[Common instance].userCoordinate title:@"me" subTitle:@"meme"];
+        MapPoint* to = [[MapPoint alloc] initWithCoordinate:c title:@"to" subTitle:@"toto"];
+        [((MyMapView *)mapView) showRouteFrom:me to:to];
+        
+        //for iOS7 routing    [((MyMapView *)mapView) showRouteTo:c];
+    });
 
-    MapPoint* me = [[MapPoint alloc] initWithCoordinate:[Common instance].userCoordinate title:@"me" subTitle:@"meme"];
-    MapPoint* to = [[MapPoint alloc] initWithCoordinate:c title:@"to" subTitle:@"toto"];
-    [((MyMapView *)mapView) showRouteFrom:me to:to];
-
-//for iOS7 routing    [((MyMapView *)mapView) showRouteTo:c];
     
 }
 

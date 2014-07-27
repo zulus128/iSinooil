@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonViewController.h"
 
 #define POPUP_TAG 777
 #define POPUPBUTTON_HEIGHT 35
@@ -14,7 +15,7 @@
 
 @class SettingsDataSource;
 
-@interface SettingsViewController : UIViewController <UITableViewDelegate> {
+@interface SettingsViewController : CommonViewController <UITableViewDelegate> {
     
     int selectedRow;
 }

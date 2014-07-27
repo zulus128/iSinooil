@@ -256,19 +256,7 @@
 
 - (IBAction)menu:(id)sender {
     
-    CGRect fr = self.view.frame;
-    BOOL b = (fr.origin.x < 1);
-    [UIView animateWithDuration:anim_delay delay:0.0 options:UIViewAnimationOptionCurveEaseIn
-                     animations:^{
-                         
-                         self.view.frame = CGRectMake(b?(fr.size.width - deltaX):0, fr.origin.y, fr.size.width, fr.size.height);
-                         
-                     }
-                     completion:^(BOOL finished) {
-                     }];
-    
-    [[UIApplication sharedApplication] setStatusBarStyle:!b?UIStatusBarStyleDefault:UIStatusBarStyleLightContent animated:YES];
-
+    [self doMenu];
 }
 
 - (IBAction)tapPrice:(id)sender {

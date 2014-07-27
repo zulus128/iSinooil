@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonViewController.h"
 
 @class NewsDataSource;
 
-@interface NewsViewController : UIViewController <UITableViewDelegate>
+@interface NewsViewController : CommonViewController <UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *topView;
 
 - (IBAction)toMenu:(id)sender;

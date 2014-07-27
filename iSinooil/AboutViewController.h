@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonViewController.h"
 
-@interface AboutViewController : UIViewController <UIWebViewDelegate>
+@interface AboutViewController : CommonViewController <UIWebViewDelegate>
 
 - (IBAction)toMenu:(id)sender;
 

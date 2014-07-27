@@ -10,6 +10,7 @@
 #import "Common.h"
 #import "MapViewController.h"
 #import "HotlineViewController.h"
+#import "CommonViewController.h"
 
 @implementation MenuViewController
 
@@ -168,10 +169,11 @@
     // Insert your own code to handle swipe left
     
 //    NSLog(@"- (void)oneFingerSwipeLeft");
-    for(UIViewController* vc in self.childViewControllers) {
+    for(CommonViewController* vc in self.childViewControllers) {
         
         if(!vc.view.hidden) {
             
+            [vc delTransButton];
             [self swipeView:vc.view toLeft:YES];
 
         }
@@ -183,10 +185,11 @@
     // Insert your own code to handle swipe right
     
 //    NSLog(@"- (void)oneFingerSwipeRight");
-    for(UIViewController* vc in self.childViewControllers) {
+    for(CommonViewController* vc in self.childViewControllers) {
         
         if(!vc.view.hidden) {
             
+            [vc addTransButton];
             [self swipeView:vc.view toLeft:NO];
             
         }
@@ -233,7 +236,7 @@
 
 - (void) goLeft:(int) tag {
 
-//    NSLog(@"tag = %d", tag);
+    NSLog(@"tag = %d", tag);
 
     [self makeInvisibleExcludeTag:tag];
 
