@@ -42,6 +42,7 @@
 "officeaddr" = "Алматы, ул. Райымбека, 74";
 "OfficeButton" = "Центр. офис";
 "Branches" = "Филиалы";
+"Branch" = "Филиал";
 "Prices" = "Цены на ГСМ";
 "Feedback" = "Оставить отзыв";
 "StationList" = "Список АЗС";

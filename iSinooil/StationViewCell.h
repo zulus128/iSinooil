@@ -12,5 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *numberLab;
 @property (weak, nonatomic) IBOutlet UILabel *kmLab;
+@property (weak, nonatomic) IBOutlet UILabel *azsLab;
 
 @end

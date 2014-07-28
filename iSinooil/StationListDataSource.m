@@ -44,6 +44,7 @@
     }
     @finally {
     }
+    cell.azsLab.text = NSLocalizedString(@"AZS", nil);
 
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^(void) {
 

@@ -38,10 +38,11 @@
 "IShop" = "Интернет дүкен";
 "Site" = "Sinooil сайты";
 "Networks" = "Қауымдас.:";
-"Contacts" = "Байланыс. мекен-жайлары";
+"Contacts" = "Байланыстар";
 "officeaddr" = "Almaty, Raimbek str. 74";
 "OfficeButton" = "Орт. кеңсе";
 "Branches" = "Филиалдар";
+"Branch" = "Филиал";
 "Prices" = "ЖЖМ бағалары";
 "Feedback" = "Тілегіңізді қалдырыңыз";
 "StationList" = "Тізбе";

@@ -1246,13 +1246,19 @@
 
 - (void) sendStationFeedback:(NSString*) msg forStation:(NSString*)station {
 
+    NSString *escapedM = [msg stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString *escapedT = [station stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSLog(@"m = %@, t = %@", escapedM, escapedT);
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:SEND_STATION_FEEDBACK_URL, station, msg]]];
+    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:SEND_STATION_FEEDBACK_URL, escapedT, escapedM]]];
     
     NSHTTPURLResponse* urlResponse = nil;
     NSError *error = nil;
     NSData* responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
-
+    NSUInteger len = [responseData length];
+    Byte *byteData= (Byte*)malloc(len);
+    [responseData getBytes:byteData length:len];
+    NSLog(@"ret = %d", byteData[0]);
 }
 
 

@@ -39,6 +39,8 @@
     cell.branchLabel.font = FONT_BRANCH_TITLE;
     cell.nameLabel.font = FONT_BRANCH_TITLE;
     cell.nameLabel.text = [branch valueForKey:ABOUT_TTL];
+    cell.branchLabel.text = NSLocalizedString(@"Branch", nil);
+
 //    cell.addrLabel.font = FONT_BRANCH_ADDR;
 //    cell.addrLabel.text = [branch valueForKey:ABOUT_TXT];
     

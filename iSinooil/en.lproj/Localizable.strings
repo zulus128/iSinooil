@@ -42,6 +42,7 @@
 "officeaddr" = "Almaty, Raimbek str. 74";
 "OfficeButton" = "Centr. office";
 "Branches" = "Branches";
+"Branch" = "Branch";
 "Prices" = "Fuel prices";
 "Feedback" = "Feedback";
 "StationList" = "Station List";

@@ -2217,7 +2217,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="22" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tsm-me-fOe">
-                                                    <rect key="frame" x="80" y="19" width="42" height="21"/>
+                                                    <rect key="frame" x="80" y="19" width="67" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                     <color key="textColor" red="0.64313725490196072" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -2237,6 +2237,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="azsLab" destination="HRa-Va-JCW" id="FWU-0l-KT4"/>
                                             <outlet property="kmLab" destination="B4d-a9-RrQ" id="xAM-qe-i6Y"/>
                                             <outlet property="numberLab" destination="tsm-me-fOe" id="1n3-31-iEh"/>
                                         </connections>
@@ -2296,8 +2297,8 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Almaty" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I39-wc-2KW" userLabel="Dropdown Label - Label" customClass="OSLabel">
-                                        <rect key="frame" x="151" y="31" width="169" height="21"/>
+                                    <label opaque="NO" clipsSubviews="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Almaty" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I39-wc-2KW" userLabel="Dropdown Label - Label" customClass="OSLabel">
+                                        <rect key="frame" x="151" y="28" width="169" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <gestureRecognizers/>
                                         <constraints>
