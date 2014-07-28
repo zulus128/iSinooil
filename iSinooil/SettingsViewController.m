@@ -66,6 +66,47 @@
 
 }
 
+- (void) langSelected {
+
+    UIView* activityView = [[UIView alloc] initWithFrame: CGRectMake(0, 0, 3000, 3000)];
+    activityView.backgroundColor = [UIColor blackColor];
+    activityView.alpha = 0.5f;
+    activityView.tag = TAG_ACTIVITY_VIEW;
+    
+    UIView* activityView1 = [[UIView alloc] initWithFrame: CGRectMake(self.view.center.x - 30, self.view.center.y - 30, 60, 60)];
+    activityView1.backgroundColor = [UIColor blackColor];
+    activityView1.alpha = 0.5f;
+    activityView1.layer.cornerRadius = CORNER_RADIUS;
+    activityView1.layer.masksToBounds = YES;
+    activityView1.tag = TAG_ACTIVITY_VIEW1;
+
+    UIActivityIndicatorView *activityWheel = [[UIActivityIndicatorView alloc] initWithFrame: CGRectMake(self.view.frame.size.width / 2 - 40, (self.view.frame.size.height - 0) / 2 - 40, 80, 80)];
+    activityWheel.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
+    activityWheel.autoresizingMask = (UIViewAutoresizingFlexibleLeftMargin |
+                                      UIViewAutoresizingFlexibleRightMargin |
+                                      UIViewAutoresizingFlexibleTopMargin |
+                                      UIViewAutoresizingFlexibleBottomMargin);
+    [activityView addSubview:activityWheel];
+    [self.view addSubview: activityView];
+    [self.view addSubview: activityView1];
+    [activityWheel startAnimating];
+
+    [self performSelector:@selector(langSelected1) withObject:nil afterDelay:0.0f];
+
+}
+
+- (void) langSelected1 {
+
+    [[Common instance] loadAndParse];
+    [[Common instance].menucontr refresh];
+//    [activityWheel stopAnimating];
+    UIView* v = [self.view viewWithTag:TAG_ACTIVITY_VIEW];
+    [v removeFromSuperview];
+    v = [self.view viewWithTag:TAG_ACTIVITY_VIEW1];
+    [v removeFromSuperview];
+
+}
+
 - (void) ruSelected {
     
     [Common instance].lang = L_RU;
@@ -77,9 +118,9 @@
     NSString* path = [[NSBundle mainBundle] pathForResource:@"ru" ofType:@"lproj"];
     [Common instance].languageBundle = [NSBundle bundleWithPath:path];
 
-    [[Common instance] loadAndParse];
-   
-    [[Common instance].menucontr refresh];
+//    [[Common instance] loadAndParse];
+//    [[Common instance].menucontr refresh];
+    [self langSelected];
 
 }
 
@@ -94,10 +135,9 @@
     NSString* path = [[NSBundle mainBundle] pathForResource:@"en" ofType:@"lproj"];
     [Common instance].languageBundle = [NSBundle bundleWithPath:path];
 
-    [[Common instance] loadAndParse];
-   
-    [[Common instance].menucontr refresh];
-    
+    //    [[Common instance] loadAndParse];
+    //    [[Common instance].menucontr refresh];
+    [self langSelected];
 
 }
 
@@ -112,10 +152,9 @@
     NSString* path = [[NSBundle mainBundle] pathForResource:@"kk-KZ" ofType:@"lproj"];
     [Common instance].languageBundle = [NSBundle bundleWithPath:path];
 
-    [[Common instance] loadAndParse];
-   
-    [[Common instance].menucontr refresh];
-    
+    //    [[Common instance] loadAndParse];
+    //    [[Common instance].menucontr refresh];
+    [self langSelected];
 
 }
 
