@@ -35,7 +35,8 @@
     
 //    CGSize s = [Common currentScreenBounds];
 //    self.contentViewW.constant = s.width;
-    self.contentViewH.constant = self.scroll.frame.size.height;
+//    self.contentViewH.constant = self.scroll.frame.size.height;
+    [self scrollIt];
 }
 
 - (void) willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
@@ -211,6 +212,7 @@
     CGSize maximumLabelSize = CGSizeMake(s.width - X_GAP - X_LEFT - TEXT_GAP_X * 2, 1000);
     
     BOOL b = NO;
+//    NSLog(@"+++ count: %d", dict.count);
 //    for (NSDictionary* d in dict) {
     for (long i = (dict.count - 1); i >=0; i--) {
         
@@ -286,6 +288,7 @@
         
         self.contentViewH.constant = (Y > self.scroll.frame.size.height)?Y:self.contentViewH.constant;
 //        NSLog(@"h = %f", self.contentViewH.constant);
+//        self.contentViewH.constant = 2000;
     }
     if(b) {
 
@@ -300,7 +303,10 @@
 
 - (void) scrollIt {
 
-    CGPoint bottomOffset = CGPointMake(0, self.scroll.contentSize.height - self.scroll.bounds.size.height);
+//    NSLog(@"++scrollIt");
+    float yyy = self.scroll.contentSize.height - self.scroll.bounds.size.height;
+    NSLog(@"yyy = %f %f", yyy, self.scroll.contentSize.height);
+    CGPoint bottomOffset = CGPointMake(0, yyy);
     [self.scroll setContentOffset:bottomOffset animated:YES];
 
 }

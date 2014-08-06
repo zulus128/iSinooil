@@ -242,7 +242,7 @@
     button.frame = CGRectMake(20, y, 281, 60);
     button.tag = ICON_TAG;
     [button setImage:[UIImage imageNamed:@"icon_feedback.png"] forState:UIControlStateNormal];
-    button.imageEdgeInsets = UIEdgeInsetsMake(0, -50, 0, 0);
+    button.imageEdgeInsets = UIEdgeInsetsMake(0, ([Common instance].lang == L_KZ)?-25:-50, 0, 0);
     [button setBackgroundImage:[UIImage imageNamed:@"button1.png"] forState:UIControlStateNormal];
     [self.stationDetailView addSubview:button];
 

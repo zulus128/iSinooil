@@ -11,6 +11,10 @@
 #define GAP_SIZE 23
 #define GAP_SIZE1 30
 
-@interface StationListDataSource : NSObject <UITableViewDataSource>
+@interface StationListDataSource : NSObject <UITableViewDataSource> {
+    
+    float x;
+    float y;
+}
 
 @end

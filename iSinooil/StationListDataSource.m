@@ -80,13 +80,15 @@
         
     });
     
+//    NSLog(@"--- %f", cell.contentView.frame.size.width);
     for (UIView* v in cell.contentView.subviews) {
         if(v.tag == ICON_TAG)
             [v removeFromSuperview];
     }
     int fuel = ((NSNumber*)[dic valueForKey:STATION_FUEL]).intValue;
     //    NSLog(@"fuel = %d", fuel);
-    float x = 20;
+    x = 20;
+    y = 60;
     for (int i = FUEL_BIT_97; i <= FUEL_BIT_DTW; i = (i << 1)) {
         
         if (!(fuel & i))
@@ -113,19 +115,22 @@
                 icon = @"icon_diesel_inactive.png";
                 break;
             case FUEL_BIT_GAS:
-                icon = @"icon_diesel_inactive.png";
+                icon = @"icon_dieselw_inactive.png";
                 break;
             case FUEL_BIT_DTW:
                 icon = @"icon_dieselw_inactive.png";
                 break;
         }
         
-        UIImageView* iv = [[UIImageView alloc] initWithFrame:CGRectMake(x, 60, ICON_SIZE, ICON_SIZE)];
+        UIImageView* iv = [[UIImageView alloc] initWithFrame:CGRectMake(x, y, ICON_SIZE, ICON_SIZE)];
         iv.image = [UIImage imageNamed:icon];
         iv.tag = ICON_TAG;
         [cell.contentView addSubview:iv];
         
         x += GAP_SIZE;
+        if(x > (cell.contentView.frame.size.width - 50))
+            [self changeY:cell];
+
     }
     
     int serv = ((NSNumber*)[dic valueForKey:STATION_SERV]).intValue;
@@ -163,12 +168,15 @@
                 break;
         }
         
-        UIImageView* iv = [[UIImageView alloc] initWithFrame:CGRectMake(x, 60, ICON_SIZE, ICON_SIZE)];
+        UIImageView* iv = [[UIImageView alloc] initWithFrame:CGRectMake(x, y, ICON_SIZE, ICON_SIZE)];
         iv.image = [UIImage imageNamed:icon];
         iv.tag = ICON_TAG;
         [cell.contentView addSubview:iv];
         
         x += GAP_SIZE1;
+        if(x > (cell.contentView.frame.size.width - 50))
+            [self changeY:cell];
+
     }
     
     int card = ((NSNumber*)[dic valueForKey:STATION_CARD]).intValue;
@@ -191,15 +199,31 @@
                 break;
         }
         
-        UIImageView* iv = [[UIImageView alloc] initWithFrame:CGRectMake(x, 60, ICON_SIZE, ICON_SIZE)];
+        UIImageView* iv = [[UIImageView alloc] initWithFrame:CGRectMake(x, y, ICON_SIZE, ICON_SIZE)];
         iv.image = [UIImage imageNamed:icon];
         iv.tag = ICON_TAG;
         [cell.contentView addSubview:iv];
         
         x += GAP_SIZE1;
+        if(x > (cell.contentView.frame.size.width - 50))
+            [self changeY:cell];
     }
     
     return cell;
+}
+
+- (void) changeY:(StationViewCell *)cell {
+    
+    x = 20;
+    for (UIView* v in cell.contentView.subviews) {
+        if(v.tag == ICON_TAG) {
+            
+            CGRect f = v.frame;
+            v.frame = CGRectMake(f.origin.x, f.origin.y - 20, f.size.width, f.size.height);
+        }
+    }
+    y += 7;
+
 }
 
 - (void) prepareToRefreshTable:(UITableView*)tableView {
