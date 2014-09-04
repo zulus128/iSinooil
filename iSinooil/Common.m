@@ -1266,6 +1266,7 @@
 
     NSDate* now = [NSDate date];
     NSString* params = [NSString stringWithFormat:@"message=%@&time=%f", msg, 1000.0f * now.timeIntervalSince1970];
+//    NSLog(@"dev_id = %@", self.deviceId);
     NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:SEND_MSG_URL, self.deviceId]];
     NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:url];
     request.HTTPMethod = @"POST";
