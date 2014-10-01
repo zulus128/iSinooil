@@ -17,7 +17,7 @@
 //    [TestFlight takeOff:@"9be99990-d71e-41b7-bc03-27c53dee6d2e"];
     
     // Регистируем девайс на приём push-уведомлений
-    [[UIApplication sharedApplication] registerForRemoteNotificationTypes: (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
+    [[Common instance] registerPush];
     
     return YES;
 }
@@ -82,6 +82,9 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

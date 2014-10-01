@@ -10,29 +10,29 @@
 	<string>iSinooil</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>815B633B-3F78-4623-AC45-E16A2A524C58</key>
+		<key>749BAF629A3DB6399D4A939B1F46B86F074B0A43</key>
 		<string>https://github.com/zulus128/iSinooil.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>iSinooil.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>815B633B-3F78-4623-AC45-E16A2A524C58</key>
+		<key>749BAF629A3DB6399D4A939B1F46B86F074B0A43</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/zulus128/iSinooil.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>815B633B-3F78-4623-AC45-E16A2A524C58</string>
+	<string>749BAF629A3DB6399D4A939B1F46B86F074B0A43</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>815B633B-3F78-4623-AC45-E16A2A524C58</string>
+			<string>749BAF629A3DB6399D4A939B1F46B86F074B0A43</string>
 			<key>IDESourceControlWCCName</key>
 			<string>iSinooil</string>
 		</dict>

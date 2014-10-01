@@ -150,6 +150,7 @@ enum {M_KM, M_MI, M_MT}; //km, miles, metres
 - (void) sendStationFeedback:(NSString*) msg forStation:(NSString*)station;
 
 - (void) filterOnSelectedCity;
+- (void) registerPush;
 
 @property (nonatomic, strong) NSArray* azsjson;
 @property (nonatomic, strong) NSArray* sortedazsjson;
@@ -191,6 +192,8 @@ enum {M_KM, M_MI, M_MT}; //km, miles, metres
 
 @property(nonatomic, strong) NSMutableDictionary *cellHeights;
 @property(nonatomic, strong) NSMutableDictionary *didReloadRowsBools;
+
+@property (nonatomic, strong) NSString *currSysVer;
 
 @end
 

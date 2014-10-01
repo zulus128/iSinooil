@@ -39,6 +39,8 @@
 //        self.cellHeights = [NSMutableDictionary dictionary];
 //        self.didReloadRowsBools = [NSMutableDictionary dictionary];
 
+        self.currSysVer = [[UIDevice currentDevice] systemVersion];
+
         self.selectedCity = 2/*Almaty*/;//-1;
         
         self.allowSemaphore = dispatch_semaphore_create(0);
@@ -1137,9 +1139,26 @@
         NSLog(@"device registered OK: %@", newStr);
     }
     
-    self.deviceId = dev_id;
+    self.deviceId = dev_id?dev_id:PUSH_ID_FOR_SIMULATOR;
+    if(!dev_id) {
+        
+        NSLog(@"null dev_id");
+        [self registerPush];
+    }
 }
 
+- (void) registerPush {
+    
+    NSLog(@"registerPush");
+    if ([self.currSysVer floatValue] >= 8) {
+        
+        [[UIApplication sharedApplication] registerForRemoteNotifications];
+    }
+    else {
+        
+        [[UIApplication sharedApplication] registerForRemoteNotificationTypes: (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
+    }
+}
 - (NSString*) getCurrentCityName {
     
     NSString* s = NSLocalizedString(@"AllCities", nil);
