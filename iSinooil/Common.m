@@ -1152,7 +1152,8 @@
     NSLog(@"registerPush");
     if ([self.currSysVer floatValue] >= 8) {
         
-        [[UIApplication sharedApplication] registerForRemoteNotifications];
+        [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
+       [[UIApplication sharedApplication] registerForRemoteNotifications];
     }
     else {
         
